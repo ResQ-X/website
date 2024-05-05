@@ -1,0 +1,133 @@
+.hero_section__inner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* .hero_img_container  */
+.hero_img_container {
+  overflow: hidden;
+}
+
+.hero_img_container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* .hero_text_container  */
+.hero_text_container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(21, 21, 21, 0.5);
+  z-index: 2;
+}
+
+.hero_text_container__inner {
+  text-align: center;
+  max-width: 98.6rem;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.hero_text_title,
+.hero_text_title__highlight {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 6.4rem;
+  font-weight: 800;
+  line-height: 9.6rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.hero_text_title__highlight {
+  color: #ff8500;
+}
+
+p.hero_text_description {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3.6rem;
+  color: #ffffff;
+  margin-top: 0.8rem;
+}
+
+.waitlist_button_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.waitlist_button_wrapper button {
+  width: 24rem;
+}
+
+/* Media Queries */
+@media (max-width: 1240px) {
+  .hero_text_title,
+  .hero_text_title__highlight {
+    font-size: 5.2rem;
+    line-height: 8rem;
+  }
+
+  p.hero_text_description {
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+  }
+}
+
+@media (max-width: 990px) {
+  .hero_text_title,
+  .hero_text_title__highlight {
+    font-size: 4.4rem;
+    line-height: 6.4rem;
+  }
+
+  p.hero_text_description {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    margin-top: 0.6rem;
+  }
+}
+
+@media (max-width: 675px) {
+  .hero_text_title,
+  .hero_text_title__highlight {
+    font-size: 3.6rem;
+    line-height: 5.2rem;
+  }
+
+  p.hero_text_description {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero_text_title,
+  .hero_text_title__highlight {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+
+  p.hero_text_description {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .hero_text_title,
+  .hero_text_title__highlight {
+    font-size: 2.9rem;
+    line-height: 4.4rem;
+  }
+}

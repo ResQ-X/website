@@ -1,42 +1,102 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@1,200..800&display=swap");
+
+:root {
+  --main-maxwidth: 1260px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif !important;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+html {
+  font-size: 62.5%;
+  background: var(--neutral-colours-white, #fff);
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Inter", sans-serif !important;
+  background: var(--neutral-colours-white, #fff);
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+select {
+  /* For Firefox */
+  -webkit-appearance: none;
+  /* for Chrome */
+  -moz-appearance: none;
+  appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*  */
+.form-group {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Message handler wrapper */
+.app--actions-handler-wrapper {
+  top: 0px !important;
+  right: 30px !important;
+}
+
+/* Media Queries */
+
+@media (min-width: 1400px) {
+  :root {
+    --main-maxwidth: 1360px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 1500px) {
+  :root {
+    --main-maxwidth: 1460px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (min-width: 1600px) {
+  :root {
+    --main-maxwidth: 1560px;
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@media (max-width: 675px) {
+  .app--row-container {
+    padding: 0 16px;
+  }
 }

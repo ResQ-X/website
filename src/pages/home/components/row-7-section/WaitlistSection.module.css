@@ -1,0 +1,26 @@
+.waitlist_section {
+  padding-bottom: 12rem;
+}
+
+.section_header_container {
+  text-align: center;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1240px) {
+  .waitlist_section {
+    padding-bottom: 10rem;
+  }
+}
+
+@media (max-width: 990px) {
+  .waitlist_section {
+    padding-bottom: 8rem;
+  }
+}
+
+@media (max-width: 675px) {
+  .waitlist_section {
+    padding-bottom: 6rem;
+  }
+}
