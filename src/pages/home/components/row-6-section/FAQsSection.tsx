@@ -66,6 +66,8 @@ function FAQsSection() {
           ))}
         </div>
       </div>
+
+      <span id="waitlist"></span>
     </section>
   );
 }

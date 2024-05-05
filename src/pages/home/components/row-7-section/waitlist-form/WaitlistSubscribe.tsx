@@ -12,7 +12,8 @@ const WaitlistSubscribe = () => {
     setErrorHandlerObj,
     setSuccessHandlerObj,
   } = useDisplayMessage({ noScrollTop: true });
-  const URL = "https://resqx.us22.list-manage.com/subscribe/post";
+  const URL =
+    "https://resqx.us22.list-manage.com/subscribe/post?u=0d53a3cd8dfccebb3884c43b9&amp;id=bb0346d241";
 
   return (
     <MailchimpSubscribe
