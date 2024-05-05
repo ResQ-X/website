@@ -1,0 +1,133 @@
+.section_header_container {
+  text-align: center;
+}
+
+.service_list_boxes_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+/* Service List Box */
+.service_list_box {
+  max-width: 45.6rem;
+  height: 29.4rem;
+  padding: 4rem;
+  border-radius: 2rem;
+}
+
+.service_list_box__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 4.2rem;
+  color: #061d37;
+  margin-top: 1.8rem;
+}
+
+.service_list_box__description {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+  color: #061d37;
+  margin-top: 0.4rem;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 1400px) {
+  .service_list_box {
+    max-width: 42.6rem;
+    height: 33.4rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .service_list_box {
+    max-width: 45.6rem;
+    height: 31.4rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .service_list_box {
+    max-width: 48.6rem;
+    height: 29.4rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .service_list_box__description {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media (max-width: 990px) {
+  .service_list_box {
+    max-width: 39.2rem;
+    height: 28.4rem;
+    padding: 3.2rem;
+    border-radius: 1.8rem;
+  }
+
+  .service_list_box__title {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    margin-top: 1.6rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .service_list_box {
+    max-width: 34.6rem;
+    height: 26.4rem;
+    padding: 2.8rem;
+  }
+
+  .service_list_box__title {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 1.4rem;
+  }
+
+  .service_list_box__description {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .service_list_box {
+    max-width: 30.6rem;
+    height: 26.4rem;
+    padding: 2rem;
+    border-radius: 1.6rem;
+  }
+
+  .service_list_box__title {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .service_list_box__description {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+}
+
+@media (max-width: 675px) {
+  .service_list_boxes_container {
+    margin-top: 3.2rem;
+  }
+
+  .service_list_box {
+    max-width: 100%;
+    min-height: 10.4rem;
+    height: 100%;
+    padding: 2rem 2.4rem;
+    border-radius: 1.6rem;
+  }
+}
