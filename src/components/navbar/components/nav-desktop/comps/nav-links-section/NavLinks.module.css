@@ -20,7 +20,13 @@
   color: #000000;
 }
 
+.active_link_wrapper a {
+  color: #ff8500;
+}
+
 /* Mobile Container */
 .mobile_nav_link_wrapper {
   min-width: 80px;
+  /* background-color: red; */
+  text-align: left;
 }
