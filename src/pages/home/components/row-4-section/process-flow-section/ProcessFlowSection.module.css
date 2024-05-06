@@ -1,0 +1,126 @@
+.process_flow_section {
+  margin-top: 2.4rem;
+}
+
+.process_flow_description_wrapper {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+  color: #000000;
+  margin-top: 4rem;
+}
+
+.process_flow_description_wrapper p:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.process_flow_container__desktop {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1.8rem;
+}
+
+.process_flow__column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+}
+
+.process_flow_container__desktop .process_flow_box {
+  margin-left: 2.6rem;
+}
+
+.process_flow_container__desktop .process_flow_box:nth-child(1) {
+  margin-left: 0;
+}
+
+/* Process Flow Box */
+.process_flow_box {
+  max-width: 34.8rem;
+  width: 100%;
+  height: 17.2rem;
+  padding: 2.4rem;
+  border-radius: 1.2rem;
+  background: #feefe6;
+}
+
+.process_flow_box .description_wrapper {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #000000;
+}
+
+/* Media Queries */
+@media (max-width: 1600px) {
+  .process_flow_container__desktop .process_flow_box {
+    margin-left: 1.2rem;
+  }
+}
+
+@media (max-width: 1600px) {
+  .process_flow_container__desktop .process_flow_box {
+    margin-left: 0.8rem;
+  }
+
+  .vector_arrow_icon_wrapper img {
+    height: 70%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .process_flow_container__desktop {
+    max-width: 70rem;
+    margin: 0 auto;
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  .process_flow__column_two,
+  .process_flow__column_three,
+  .process_flow__column_four {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2.4rem;
+  }
+
+  .process_flow__column_two,
+  .process_flow__column_three,
+  .process_flow__column_four {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 675px) {
+  .process_flow_description_wrapper {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+
+  .vector_arrow_icon_wrapper img {
+    height: 100%;
+    transform: translateY(-9rem);
+  }
+
+  /* Process Flow Box */
+  .process_flow_box {
+    max-width: 26rem;
+    min-height: 12.8rem;
+    height: 100%;
+    padding: 1.2rem;
+  }
+
+  .process_flow_box .description_wrapper {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+
+  .process_flow_box .icon_wrapper img {
+    height: 2.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .vector_arrow_icon_wrapper img {
+    height: 80%;
+  }
+}

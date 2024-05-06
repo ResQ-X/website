@@ -1,4 +1,4 @@
-export const AllTestimonies = [
+export const TestimoniesList = [
   {
     name: "Emeka O",
     location: "Lagos",

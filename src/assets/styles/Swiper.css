@@ -2,3 +2,16 @@
 .swiper-slide-shadow-right {
   display: none !important;
 }
+
+/* LEAFLET MAP */
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.leaflet-control,
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-pane {
+  z-index: 35 !important;
+}

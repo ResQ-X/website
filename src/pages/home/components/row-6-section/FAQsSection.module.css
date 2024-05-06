@@ -52,7 +52,7 @@ button.accordion_header_title_wrapper {
 
 .accordion_answer_wrapper ol,
 .accordion_answer_wrapper ul {
-  display: inline-block;
+  display: block;
   padding-left: 4.5rem;
   margin-top: 0.6rem;
 }
