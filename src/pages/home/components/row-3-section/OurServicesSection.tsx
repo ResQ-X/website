@@ -13,7 +13,7 @@ function OurServicesSection() {
 
           {/* Section Description */}
           <p className="section_sub_text_wrapper">
-            We provide your vehicle breakdown coverage safely and efficiently
+            We provide your vehicle roadside assistance safely and efficiently
           </p>
         </div>
 
