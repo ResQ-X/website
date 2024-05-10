@@ -32,7 +32,7 @@ export const FAQsList = [
   {
     question: "What areas does ResQ-X cover?",
     answer:
-      "Currently, ResQ-X provides roadside assistance services in the Lekki area of Lagos, Nigeria. We are actively working on expanding our coverage to other parts of Lagos and beyond. Please check our website or mobile app for the most up-to-date coverage information.",
+      "Currently, ResQ-X provides roadside assistance services in the Lekki area of Lagos, Nigeria.",
   },
   {
     question: "Is ResQ-X available 24/7?",
@@ -41,7 +41,7 @@ export const FAQsList = [
   },
   {
     question: "How can I contact ResQ-X customer support?",
-    answer: `If you have any questions or concerns, our friendly customer support team is here to help. You can reach us via:<ul><li>In-app chat</li><li>Email:  <a href='mailto:support@resqx.com' target='_blank' rel='noreferrer'>support@resqx.com</a></li><li>Phone: <a target='_blank' rel='noreferrer' href='tel:+2348179977001'>+2348179977001</a></li></ul>Our customer support hours are 8am - 7pm .`,
+    answer: `If you have any questions or concerns, our friendly customer support team is here to help. You can reach us via:<ul><li>In-app chat</li><li>Email:  <a href='mailto:hello@resqx.net' target='_blank' rel='noreferrer'>hello@resqx.net</a></li><li>Phone: <a target='_blank' rel='noreferrer' href='tel:+2348179977001'>+2348179977001</a></li></ul>Our customer support hours are 8am - 7pm .`,
   },
   {
     question: "What vehicles does ResQ-X service?",
@@ -54,7 +54,7 @@ export const FAQsList = [
 //   {
 //     question: "What services does ResQX offer?",
 //     answer:
-//       "ResQX offers fast, courteous, and inexpensive breakdown coverage in Lagos. Our dedicated fleet of patrols responds to all vehicle emergency needs 24/7. We provide on-the-spot vehicle repair, free car health checks, discounts on tyres from selected retailers, and free legal advice.",
+//       "ResQX offers fast, courteous, and inexpensive roadside assistance in Lagos. Our dedicated fleet of patrols responds to all vehicle emergency needs 24/7. We provide on-the-spot vehicle repair, free car health checks, discounts on tyres from selected retailers, and free legal advice.",
 //   },
 //   {
 //     question: "Is ResQX fully insured?",
@@ -74,7 +74,7 @@ export const FAQsList = [
 //   {
 //     question: "Does ResQX offer discounts on tyres?",
 //     answer:
-//       "Yes, ResQX provides discounts on tyres from selected retailers as part of our services. We aim to offer comprehensive assistance to our customers beyond just breakdown coverage.",
+//       "Yes, ResQX provides discounts on tyres from selected retailers as part of our services. We aim to offer comprehensive assistance to our customers beyond just roadside assistance.",
 //   },
 //   {
 //     question: "Can ResQX fix my vehicle on the spot?",
@@ -89,7 +89,7 @@ export const FAQsList = [
 //   {
 //     question: "Is there a fee for using ResQX's services?",
 //     answer:
-//       "ResQX aims to provide affordable breakdown coverage, and there are no hidden fees associated with our services. You only pay for what you need, with no additional charges.",
+//       "ResQX aims to provide affordable roadside assistance, and there are no hidden fees associated with our services. You only pay for what you need, with no additional charges.",
 //   },
 //   {
 //     question: "How can I contact ResQX for assistance?",
@@ -99,16 +99,16 @@ export const FAQsList = [
 //   {
 //     question: "Does ResQX offer any additional benefits?",
 //     answer:
-//       "In addition to breakdown coverage, ResQX provides free legal advice to assist you with any related issues. We strive to offer comprehensive support to our customers beyond just roadside assistance.",
+//       "In addition to roadside assistance, ResQX provides free legal advice to assist you with any related issues. We strive to offer comprehensive support to our customers beyond just roadside assistance.",
 //   },
 //   {
-//     question: "What sets ResQX apart from other breakdown coverage providers?",
+//     question: "What sets ResQX apart from other roadside assistance providers?",
 //     answer:
 //       "ResQX stands out for its quick response time, on-the-spot vehicle repair, free car health checks, discounts on tyres, and free legal advice. We are committed to providing exceptional service and ensuring customer satisfaction.",
 //   },
 //   {
 //     question: "Can I open an account with ResQX online?",
 //     answer:
-//       "Currently, ResQX does not offer accounts. We focus solely on providing breakdown coverage and related services to our customers in Lagos.",
+//       "Currently, ResQX does not offer accounts. We focus solely on providing roadside assistance and related services to our customers in Lagos.",
 //   },
 // ];
