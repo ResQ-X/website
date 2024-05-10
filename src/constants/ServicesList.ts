@@ -11,7 +11,7 @@ export const ServicesList = [
     icon: roadIcon,
     title: "Roadside Assistance",
     description:
-      "We are a reliable breakdown coverage service available 24/7, offering fast, affordable and friendly assistance. Your trusted partner for roadside support and peace of mind.",
+      "We are a reliable roadside assistance service available 24/7, offering fast, affordable and friendly assistance. Your trusted partner for roadside support and peace of mind.",
     backgroundColor: "#feefe6",
   },
   {
@@ -32,28 +32,28 @@ export const ServicesList = [
     icon: batteryChargingIcon,
     title: "Jump Start",
     description:
-      "We extend prompt and friendly jump-starts, a vital element of our 24/7 breakdown coverage. Count on us for swift assistance.",
+      "We extend prompt and friendly jump-starts, a vital element of our 24/7 roadside assistance. Count on us for swift assistance.",
     backgroundColor: "#E7EFFD",
   },
   {
     icon: heartPulseIcon,
     title: "Health Check",
     description:
-      "We offer routine vehicle health checks, your reliable partner for comprehensive breakdown coverage ensuring worry-free journeys.",
+      "We offer routine vehicle health checks, your reliable partner for comprehensive roadside assistance ensuring worry-free journeys.",
     backgroundColor: "#EDDFFB",
   },
   {
     icon: tyreIcon,
     title: "Flat Tire Assistance",
     description:
-      "Efficient flat tire assistance, seamlessly integrated into our comprehensive breakdown coverage and roadside assistance services for you.",
+      "Efficient flat tire assistance, seamlessly integrated into our comprehensive roadside assistance and roadside assistance services for you.",
     backgroundColor: "#F8FADB",
   },
   {
     icon: gasStationIcon,
     title: "Fuel Delivery",
     description:
-      "Timely fuel delivery, a vital aspect of our comprehensive breakdown coverage, providing dependable roadside assistance.",
+      "Timely fuel delivery, a vital aspect of our comprehensive roadside assistance, providing dependable roadside assistance.",
     backgroundColor: "#FAE0E0",
   },
 ];

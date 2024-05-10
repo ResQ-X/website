@@ -104,7 +104,7 @@ function ProcessFlowSection() {
           A first responder is a mobile technician, from the fleet of
           technicians signed up to the platform. This way ResQX’s average
           response time is under 15 minutes. This is why we remain the leading
-          breakdown coverage platform in Lagos, Nigeria.
+          roadside assistance platform in Lagos, Nigeria.
         </p>
 
         <p>
