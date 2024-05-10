@@ -1,5 +1,5 @@
 function Pricing() {
-  return <div>Pricing</div>;
+  return <main className={`about-main-section`}>Pricing</main>;
 }
 
 export default Pricing;
