@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import angleLeftIcon from "../../../../../assets/images/svg/angle-left-icon.svg";
 import angleRightIcon from "../../../../../assets/images/svg/angle-right-icon.svg";
 import { useLayoutEffect, useState } from "react";
-import { AllTestimonies } from "../../../../../constants/Testimonies";
+import { TestimoniesList } from "../../../../../constants/TestimoniesList";
 
 function SwiperCards() {
   // Functions, States and Variables
@@ -16,18 +16,20 @@ function SwiperCards() {
   const [slidesPerView, setSlidesPerView] = useState(3);
   const [activeSwiperIndex, setActiveSwiperIndex] = useState(0);
 
+  // Functions
+  // Handle On Screen Resize
+  function handleResize() {
+    if (window.innerWidth <= 768) {
+      setSlidesPerView(1); // Show 1 card on mobile
+    } else if (window.innerWidth <= 1600) {
+      setSlidesPerView(2);
+    } else {
+      setSlidesPerView(3);
+    }
+  }
+
   //   Side Effects
   useLayoutEffect(() => {
-    function handleResize() {
-      if (window.innerWidth <= 768) {
-        setSlidesPerView(1); // Show 1 card on mobile
-      } else if (window.innerWidth <= 1600) {
-        setSlidesPerView(2);
-      } else {
-        setSlidesPerView(3);
-      }
-    }
-
     // Call handleResize initially and add event listener
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -59,8 +61,11 @@ function SwiperCards() {
           setActiveSwiperIndex(swiper.activeIndex);
         }}
       >
-        {AllTestimonies.map((testimonyObject, index) => (
-          <SwiperSlide className={styles.swiper_slide_container}>
+        {TestimoniesList.map((testimonyObject, index) => (
+          <SwiperSlide
+            key={index + 1}
+            className={styles.swiper_slide_container}
+          >
             <div
               key={Math.floor(Math.random()) * 10000}
               style={{

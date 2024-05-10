@@ -1,6 +1,7 @@
 import HeroSection from "./components/row-1-section/HeroSection";
 import WhatWeOfferSection from "./components/row-2-section/WhatWeOfferSection";
 import OurServicesSection from "./components/row-3-section/OurServicesSection";
+import HowItWorks from "./components/row-4-section/HowItWorks";
 import Testimonies from "./components/row-5-section/Testimonies";
 import FAQsSection from "./components/row-6-section/FAQsSection";
 import WaitlistSection from "./components/row-7-section/WaitlistSection";
@@ -16,6 +17,9 @@ function Home() {
 
       {/* Row 3 Section || Our Services Section*/}
       <OurServicesSection />
+
+      {/* Row 4 Section || How It Works Section*/}
+      <HowItWorks />
 
       {/* Row 5 Section || What Our Members are Saying Section*/}
       <Testimonies />
