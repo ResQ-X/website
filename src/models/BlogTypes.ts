@@ -1,27 +1,12 @@
-
-
-export interface  IBlog {
-    ID: number;
-    post_author: number;
-    post_date: string;
-    post_date_gmt: string;
-    post_title: string;
-    post_content: string;
-    post_name: string;
-    post_excerpt: string;
-    post_status: string;
-    comment_status: string;
-    ping_status: string;
-    post_password: string;
-    to_ping: string;
-    pinged: string;
-    post_modified: string;
-    post_modified_gmt: string;
-    post_content_filtered: string;
-    post_parent: number;
-    guid: string;
-    menu_order: number;
-    post_type: string;
-    post_mime_type: string;
-    comment_count: number;
+// Blogs
+export interface IBlog {
+  ID: number;
+  categories: string[];
+  image: string;
+  post_content: string;
+  post_date: string;
+  post_date_gmt: string;
+  post_status: string;
+  post_title: string;
+  post_type: string;
 }

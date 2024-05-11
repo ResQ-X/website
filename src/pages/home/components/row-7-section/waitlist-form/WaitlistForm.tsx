@@ -11,6 +11,9 @@ import {
 } from "../../../../../models/ToastHandlerTypes";
 import { handleClearToastMessage } from "../../../../../hooks/useDisplayMessage";
 import PrimaryButton from "../../../../../components/buttons/primary-button/PrimaryButton";
+import axios from "axios";
+import { api } from "../../../../../api/config";
+import { handleAPIError } from "../../../../../utils/handleAPIError";
 
 interface IProps {
   status: any;
@@ -36,36 +39,66 @@ function WaitlistForm({
   // States
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
+  //
+  const [isLoading, setIsLoading] = useState(false);
 
   //   Functions
   //   Handles API call to submit form
   const handleSubmitForm = function (e: MouseEvent<HTMLButtonElement>) {
     // Clear Toast Message
     handleClearToastMessage(setErrorHandlerObj, setSuccessHandlerObj);
-
-    // if (email === "") {
-    //   e.preventDefault();
-    //   setErrorHandlerObj({
-    //     hasError: true,
-    //     message: "Please enter a valid email address",
-    //   });
-
-    //   return null;
-    // }
-
+    // Check if any form input is empty
     const isAnyFormInputEmpty = email === "" || firstName === "";
 
     if (!isAnyFormInputEmpty) {
       e.preventDefault();
 
-      const data = {
-        MERGE0: email,
-        MERGE1: firstName,
-      };
-      // Call onValidated function to validate form and submit data
-      const isFormValidated = onValidated(data);
-      return isFormValidated;
+      // Check if email address is valid
+
+      const emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]/;
+      // Email Pattern validation
+      const isEmailPatternMatched = emailPattern.test(email);
+      if (!isEmailPatternMatched) {
+        setErrorHandlerObj({
+          hasError: true,
+          message: "Please enter a valid email address.",
+        });
+        return false;
+      }
+
+      // Call the API to submit form
+      handleCallAPIToSubmitForm();
     }
+  };
+
+  // Handle Call the API to submit form and submit form to mailchimp on sucess
+  const handleCallAPIToSubmitForm = function () {
+    // Mailchimp Payload Data
+    const mailchimpPayloadData = {
+      MERGE0: email,
+      MERGE1: firstName,
+    };
+
+    // API Payload Data
+    const apiPayloadData = {
+      firstName,
+      email,
+    };
+
+    // API URL
+    const URL = `${api}/api/v1/contact/welcome-email`;
+    setIsLoading(true);
+    axios
+      .post(URL, apiPayloadData)
+      .then(() => {
+        // Call the onValidated function to submit data mailchimp on success to validate form and submit data
+        const isFormValidated = onValidated(mailchimpPayloadData);
+        return isFormValidated;
+      })
+      .catch((ex) => {
+        handleAPIError(ex, setErrorHandlerObj);
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const getMessage = (message: any) => {
@@ -135,10 +168,12 @@ function WaitlistForm({
 
         {/* Submit Button Wrapper */}
         <PrimaryButton
-          placeholder={status === "sending" ? "Joining..." : "Join Waitlist"}
+          placeholder={
+            isLoading || status === "sending" ? "Joining..." : "Join Waitlist"
+          }
           withArrow={true}
-          isActionLoading={status === "sending"}
-          disabled={status === "sending"}
+          isActionLoading={isLoading || status === "sending"}
+          disabled={isLoading || status === "sending"}
           onClick={(e) => handleSubmitForm(e)}
           className={styles.subscribe_button_wrapper}
         />
