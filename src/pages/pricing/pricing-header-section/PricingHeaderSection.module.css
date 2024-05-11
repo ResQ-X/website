@@ -1,0 +1,10 @@
+.pricing_header_section {
+  padding-top: 4rem;
+}
+
+/* Media Queries */
+@media (max-width: 425px) {
+  .pricing_header_section {
+    padding-top: 2rem;
+  }
+}
