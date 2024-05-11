@@ -40,7 +40,13 @@ function FAQsSection() {
                   handleToggleCurrentAccordion(index);
                 }}
               >
-                <div className={styles.accordion_question_wrapper}>
+                <div
+                  className={`${styles.accordion_question_wrapper}  ${
+                    activeAccordionIndex === index
+                      ? styles.active_question_wrapper
+                      : ""
+                  }`}
+                >
                   <p className="">{faq.question}</p>
                 </div>
 

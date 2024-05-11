@@ -2,6 +2,10 @@
   margin-top: 10rem;
 }
 
+.app__main_section {
+  padding: 4rem 0 6rem;
+}
+
 .app__row_container {
   max-width: var(--main-maxwidth);
   margin: auto;
@@ -84,6 +88,10 @@
 }
 
 @media (max-width: 425px) {
+  .app__main_section {
+    padding: 2rem 0 4rem;
+  }
+
   .section_title {
     font-size: 2.8rem;
     line-height: 4rem;
