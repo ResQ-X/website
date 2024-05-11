@@ -23,11 +23,12 @@
 }
 
 ul.services_list_wrapper {
-  list-style: none;
+  list-style: circle;
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
   row-gap: 1.2rem;
+  padding-left: 3rem;
 }
 
 .waitlist_button_wrapper {
@@ -60,8 +61,6 @@ ul.services_list_wrapper {
 
   ul.services_list_wrapper {
     margin-top: 3rem;
-    padding-left: 3rem;
-    list-style: circle;
     text-align: left;
   }
 

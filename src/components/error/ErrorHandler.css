@@ -1,0 +1,58 @@
+.error-handler-container {
+  position: absolute;
+  top: 30px;
+  min-height: 40px;
+  max-width: 561px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: rgba(204, 53, 30, 0.2);
+  border: 1.5px solid #ff473e;
+  z-index: 32;
+  padding: 8px 15px;
+  padding-right: 25px;
+  font-size: 14px;
+  line-height: 25px;
+  color: #2e2e2e;
+  animation: slideLeft 1s ease-in-out;
+}
+
+.error-handler-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancel-error-buutton-wrrapper {
+  margin-left: 10px;
+}
+.cancel-error-buutton-wrrapper button {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.cancel-error-buutton-wrrapper button img {
+  height: 18px;
+  position: absolute;
+  right: 10px;
+  bottom: 30%;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translate3d(0, -350px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Media Queries */
+/* @media (max-width: 615px) {
+  .error-handler-container {
+    position: absolute;
+  }
+} */

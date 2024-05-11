@@ -25,7 +25,7 @@ function WhatWeOfferSection() {
 
           {/* Section Description */}
           <p className="section_sub_text_wrapper">
-            We provide fast, courteous and inexpensive breakdown coverage in
+            We provide fast, courteous and inexpensive roadside assistance in
             Lagos. We are fully insured and been in business since 2023. We are
             ready to respond to all your vehicle emergency needs 24 hours a day,
             seven days a week.

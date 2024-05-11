@@ -90,8 +90,8 @@ function Footer() {
         {/* Email Link Container*/}
         <div className={styles.email_link_container}>
           Send us a mail at{" "}
-          <a href="mailto:hello@resqx.com" target="_blank" rel="noreferrer">
-            hello@resqx.com
+          <a href="mailto:hello@resqx.net" target="_blank" rel="noreferrer">
+            hello@resqx.net
           </a>
         </div>
 

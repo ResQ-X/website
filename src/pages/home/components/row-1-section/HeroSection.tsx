@@ -18,15 +18,17 @@ function HeroSection() {
             className={`app__row_container ${styles.hero_text_container__inner}`}
           >
             <h1 className={styles.hero_text_title}>
-              We Provide the Highest Quality
+              Reliable Roadside Assistance
             </h1>
             <h1 className={styles.hero_text_title__highlight}>
-              Breakdown Coverage
+              When You Need It Most
             </h1>
             <p className={styles.hero_text_description}>
-              The leading breakdown coverage provider for as little as &#8358;
+              {/* The leading roadside assistance provider for as little as &#8358;
               {(5000).toLocaleString()}. We provide fast, courteous and
-              inexpensive breakdown coverage products in Lagos
+              inexpensive roadside assistance products in Lagos */}
+              Join our waitlist for exclusive access to Lagos' premier breakdown
+              coverage, startin at just ₦5,000.
             </p>
 
             {/* Join the Waitlist Button */}
