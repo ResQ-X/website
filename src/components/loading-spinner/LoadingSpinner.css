@@ -1,0 +1,28 @@
+.loader-container > .spinner-container {
+  padding: 10px 0;
+}
+
+.spinner-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  width: 35px;
+  height: 35px;
+  border: 8px solid #cccccc; /* Light grey */
+  border-top: 8px solid #ff8500; /* Blue */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+  z-index: 30;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

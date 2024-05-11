@@ -9,7 +9,7 @@ function Pricing() {
   const [pricingFilter, setPricingFilter] = useState("quarterly");
 
   return (
-    <main className={`about-main-section`}>
+    <main className={`app__main_section`}>
       <div className={`app__row_container`}>
         {/* Pricing Header Section */}
         <PricingHeaderSection />
