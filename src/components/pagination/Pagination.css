@@ -53,70 +53,126 @@
   cursor: pointer;
 }
 
-@media (max-width: 767px) {
-  li:first-child,
-  li.active,
-  li.active-sibling:nth-last-child(2),
-  li:last-child {
-    display: inline-block !important;
+@media (max-width: 768px) {
+  .pagination__ li:first-child,
+  .pagination__ li.active,
+  .pagination__ li.active-sibling:nth-last-child(2),
+  .pagination__ li:last-child {
+    display: flex !important;
   }
-  li:first-child:nth-last-child(n + 6) ~ li {
+  .pagination__ li:first-child:nth-last-child(n + 6) ~ .pagination__ li {
     display: none;
   }
-  li:first-child:nth-last-child(n + 6) ~ li:nth-last-child(-n + 3) {
-    display: inline-block;
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li:nth-last-child(-n + 3) {
+    display: flex;
   }
-  li:first-child:nth-last-child(n + 6) ~ li:nth-last-child(3):before {
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li:nth-last-child(3):before {
     content: "\2026";
     font-size: 24px;
     display: inline-block;
-    margin-right: 2.5px;
-    margin-left: 2.5px;
+    margin-right: 5px;
+    margin-left: 5px;
   }
-  li:first-child:nth-last-child(n + 6).active:before,
-  li:first-child:nth-last-child(n + 6) ~ li.active:before {
+  .pagination__ li:first-child:nth-last-child(n + 6).active:before,
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active:before {
     content: "\2026";
     font-size: 24px;
     display: inline-block;
-    margin-right: 2.5px;
-    margin-left: 2.5px;
+    margin-right: 5px;
+    margin-left: 5px;
   }
-  li:first-child:nth-last-child(n + 6).active:after,
-  li:first-child:nth-last-child(n + 6) ~ li.active:after {
+  .pagination__ li:first-child:nth-last-child(n + 6).active:after,
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active:after {
     content: "\2026";
     font-size: 24px;
     display: inline-block;
-    margin-left: 2.5px;
-    margin-right: 2.5px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
-  li:first-child:nth-last-child(n + 6).active:nth-child(-n + 2):before,
-  li:first-child:nth-last-child(n + 6) ~ li.active:nth-child(-n + 2):before,
-  li:first-child:nth-last-child(n + 6).active:nth-last-child(-n + 2):before,
-  li:first-child:nth-last-child(n + 6)
-    ~ li.active:nth-last-child(-n + 2):before,
-  li:first-child:nth-last-child(n + 6).active:nth-child(-n + 2):after,
-  li:first-child:nth-last-child(n + 6) ~ li.active:nth-child(-n + 2):after,
-  li:first-child:nth-last-child(n + 6).active:nth-last-child(-n + 2):after,
-  li:first-child:nth-last-child(n + 6)
-    ~ li.active:nth-last-child(-n + 2):after {
+  .pagination__
+    li:first-child:nth-last-child(n + 6).active:nth-child(-n + 2):before,
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active:nth-child(-n + 2):before,
+  .pagination__
+    li:first-child:nth-last-child(n + 6).active:nth-last-child(-n + 2):before,
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active:nth-last-child(-n + 2):before,
+  .pagination__
+    li:first-child:nth-last-child(n + 6).active:nth-child(-n + 2):after,
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active:nth-child(-n + 2):after,
+  .pagination__
+    li:first-child:nth-last-child(n + 6).active:nth-last-child(-n + 2):after,
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active:nth-last-child(-n + 2):after {
     display: none;
   }
-  li:first-child:nth-last-child(n + 6).active ~ li:nth-last-child(-n + 3),
-  li:first-child:nth-last-child(n + 6) ~ li.active ~ li:nth-last-child(-n + 3) {
+  .pagination__
+    li:first-child:nth-last-child(n + 6).active
+    ~ .pagination__
+    li:nth-last-child(-n + 3),
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active
+    ~ .pagination__
+    li:nth-last-child(-n + 3) {
     display: none;
   }
-  li:first-child:nth-last-child(n + 6).active ~ li:nth-child(-n + 3),
-  li:first-child:nth-last-child(n + 6) ~ li.active ~ li:nth-child(-n + 3) {
-    display: inline-block;
+  .pagination__
+    li:first-child:nth-last-child(n + 6).active
+    ~ .pagination__
+    li:nth-child(-n + 3),
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active
+    ~ .pagination__
+    li:nth-child(-n + 3) {
+    display: flex;
   }
-  li:first-child:nth-last-child(n + 6).active ~ li:nth-child(-n + 2):after,
-  li:first-child:nth-last-child(n + 6)
-    ~ li.active
-    ~ li:nth-child(-n + 2):after {
+  .pagination__
+    li:first-child:nth-last-child(n + 6).active
+    ~ .pagination__
+    li:nth-child(-n + 2):after,
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active
+    ~ .pagination__
+    li:nth-child(-n + 2):after {
     display: none;
   }
-  li:first-child:nth-last-child(n + 6).active ~ li:nth-child(3):after,
-  li:first-child:nth-last-child(n + 6) ~ li.active ~ li:nth-child(3):after {
+  .pagination__
+    li:first-child:nth-last-child(n + 6).active
+    ~ .pagination__
+    li:nth-child(3):after,
+  .pagination__
+    li:first-child:nth-last-child(n + 6)
+    ~ .pagination__
+    li.active
+    ~ .pagination__
+    li:nth-child(3):after {
     content: "\2026";
     font-size: 24px;
     display: inline-block;
@@ -126,83 +182,163 @@
 }
 
 @media (min-width: 768px) {
-  li:first-child,
-  li.active-sibling,
-  li.active,
-  li.active + li,
-  li:last-child {
-    display: inline-block !important;
+  .pagination__ li:first-child,
+  .pagination__ li.active-sibling,
+  .pagination__ li.active,
+  .pagination__ li.active + .pagination__ li,
+  .pagination__ li:last-child {
+    display: flex !important;
+    align-items: center;
   }
-  li:first-child:nth-last-child(n + 8) ~ li {
+  .pagination__ li:first-child:nth-last-child(n + 8) ~ .pagination__ li {
     display: none;
   }
-  li:first-child:nth-last-child(n + 8) ~ li.active-sibling:before {
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active-sibling:before {
     content: "\2026";
     font-size: 24px;
     display: inline-block;
     margin-right: 2.5px;
     margin-left: 2.5px;
   }
-  li:first-child:nth-last-child(n + 8) ~ li.active + li:after {
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active
+    + .pagination__
+    li:after {
     content: "\2026";
     font-size: 24px;
     display: inline-block;
     margin-left: 2.5px;
     margin-right: 2.5px;
   }
-  li:first-child:nth-last-child(n + 8) ~ li:nth-last-child(-n + 5) {
-    display: inline-block;
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li:nth-last-child(-n + 5) {
+    display: flex;
+    align-items: center;
   }
-  li:first-child:nth-last-child(n + 8) ~ li:nth-last-child(5):before {
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li:nth-last-child(5):before {
     content: "\2026";
     font-size: 24px;
     display: inline-block;
     margin-right: 2.5px;
     margin-left: 2.5px;
   }
-  li:first-child:nth-last-child(n + 8) ~ li:nth-child(-n + 2):before,
-  li:first-child:nth-last-child(n + 8) ~ li:nth-last-child(-n + 2):before,
-  li:first-child:nth-last-child(n + 8)
-    ~ li.active-sibling:nth-last-child(-n + 4):before,
-  li:first-child:nth-last-child(n + 8) ~ li:nth-child(-n + 2):after,
-  li:first-child:nth-last-child(n + 8) ~ li:nth-last-child(-n + 2):after,
-  li:first-child:nth-last-child(n + 8)
-    ~ li.active-sibling:nth-last-child(-n + 4):after {
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li:nth-child(-n + 2):before,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li:nth-last-child(-n + 2):before,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active-sibling:nth-last-child(-n + 4):before,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li:nth-child(-n + 2):after,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li:nth-last-child(-n + 2):after,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active-sibling:nth-last-child(-n + 4):after {
     display: none !important;
   }
-  li:first-child:nth-last-child(n + 8).active ~ li:nth-last-child(-n + 5),
-  li:first-child:nth-last-child(n + 8) ~ li.active ~ li:nth-last-child(-n + 5) {
+  .pagination__
+    li:first-child:nth-last-child(n + 8).active
+    ~ .pagination__
+    li:nth-last-child(-n + 5),
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active
+    ~ .pagination__
+    li:nth-last-child(-n + 5) {
     display: none;
   }
-  li:first-child:nth-last-child(n + 8).active
-    ~ li:nth-last-child(-n + 5):before,
-  li:first-child:nth-last-child(n + 8)
-    ~ li.active
-    ~ li:nth-last-child(-n + 5):before {
+  .pagination__
+    li:first-child:nth-last-child(n + 8).active
+    ~ .pagination__
+    li:nth-last-child(-n + 5):before,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active
+    ~ .pagination__
+    li:nth-last-child(-n + 5):before {
     display: none;
   }
-  li:first-child:nth-last-child(n + 8).active ~ li:nth-child(-n + 5),
-  li:first-child:nth-last-child(n + 8) ~ li.active ~ li:nth-child(-n + 5) {
-    display: inline-block;
+  .pagination__
+    li:first-child:nth-last-child(n + 8).active
+    ~ .pagination__
+    li:nth-child(-n + 5),
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active
+    ~ .pagination__
+    li:nth-child(-n + 5) {
+    display: flex;
+    align-items: center;
   }
-  li:first-child:nth-last-child(n + 8).active ~ li:nth-child(-n + 4):after,
-  li:first-child:nth-last-child(n + 8)
-    ~ li.active
-    ~ li:nth-child(-n + 4):after {
+  .pagination__
+    li:first-child:nth-last-child(n + 8).active
+    ~ .pagination__
+    li:nth-child(-n + 4):after,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active
+    ~ .pagination__
+    li:nth-child(-n + 4):after {
     display: none;
   }
-  li:first-child:nth-last-child(n + 8).active ~ li:nth-child(5):after,
-  li:first-child:nth-last-child(n + 8) ~ li.active ~ li:nth-child(5):after {
+  .pagination__
+    li:first-child:nth-last-child(n + 8).active
+    ~ .pagination__
+    li:nth-child(5):after,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active
+    ~ .pagination__
+    li:nth-child(5):after {
     content: "\2026";
     font-size: 24px;
     display: inline-block;
     margin-left: 2.5px;
     margin-right: 2.5px;
   }
-  li:first-child:nth-last-child(n + 8).active:before,
-  li:first-child:nth-last-child(n + 8) ~ li.active:before,
-  li:first-child:nth-last-child(n + 8).active:after,
-  li:first-child:nth-last-child(n + 8) ~ li.active:after {
+  .pagination__ li:first-child:nth-last-child(n + 8).active:before,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active:before,
+  .pagination__ li:first-child:nth-last-child(n + 8).active:after,
+  .pagination__
+    li:first-child:nth-last-child(n + 8)
+    ~ .pagination__
+    li.active:after {
     display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .pagination__ {
+    padding: 0 16px;
   }
 }

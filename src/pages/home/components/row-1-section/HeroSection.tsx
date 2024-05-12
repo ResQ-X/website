@@ -28,7 +28,7 @@ function HeroSection() {
               {(5000).toLocaleString()}. We provide fast, courteous and
               inexpensive roadside assistance products in Lagos */}
               Join our waitlist for exclusive access to Lagos' premier breakdown
-              coverage, startin at just ₦5,000.
+              coverage, starting at just ₦5,000.
             </p>
 
             {/* Join the Waitlist Button */}
