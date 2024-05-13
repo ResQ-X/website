@@ -18,7 +18,7 @@ function Layout({ children }: IProps) {
 
   // UseEffects
   useEffect(() => {
-    window.scroll({ behavior: "smooth" });
+    window.scroll({ top: 0, behavior: "smooth" });
   }, [location]);
 
   useEffect(() => {
