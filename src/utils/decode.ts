@@ -228,7 +228,6 @@ export function getRandomPoint(
   const newLat = newLatRad * (180 / Math.PI);
   const newLng = newLngRad * (180 / Math.PI);
 
-  console.log({ latitude: newLat, longitude: newLng, originLat, originLng });
   return { latitude: newLat, longitude: newLng };
 }
 
