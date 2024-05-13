@@ -43,7 +43,7 @@ const LeafletMap = ({ userCoordinates, respondentPos }: IProps) => {
 
   return (
     <MapContainer
-      center={center}
+      center={userCoordinates[0] === 0 ? center : userCoordinates}
       style={{ width: "100%", height: "100%" }}
       zoom={15}
       attributionControl={false}
