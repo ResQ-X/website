@@ -98,7 +98,7 @@ button.accordion_header_title_wrapper {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 475px) {
   .faqs_wrappper {
     margin-top: 1.6rem;
   }

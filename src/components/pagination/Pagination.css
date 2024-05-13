@@ -337,7 +337,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 475px) {
   .pagination__ {
     padding: 0 16px;
   }

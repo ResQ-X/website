@@ -64,7 +64,13 @@ function Footer() {
                 <div className={styles.footer_links_wrapper}>
                   {socialsLinks?.map((footerLink, index) => (
                     <div key={index + 1} className={styles.footer_column_link}>
-                      <Link to={footerLink.url}>{footerLink.name}</Link>
+                      <Link
+                        target="_blank"
+                        rel="noreferrer"
+                        to={footerLink.url}
+                      >
+                        {footerLink.name}
+                      </Link>
                     </div>
                   ))}
                 </div>

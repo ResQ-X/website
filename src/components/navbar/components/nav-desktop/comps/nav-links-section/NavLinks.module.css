@@ -27,6 +27,6 @@
 /* Mobile Container */
 .mobile_nav_link_wrapper {
   min-width: 80px;
-  /* background-color: red; */
-  text-align: left;
+  display: flex;
+  justify-content: center;
 }
