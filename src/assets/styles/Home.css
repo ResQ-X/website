@@ -87,7 +87,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 475px) {
   .app__main_section {
     padding: 2rem 0 4rem;
   }

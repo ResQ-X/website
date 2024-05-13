@@ -40,7 +40,7 @@ export const allSubscriptionOptions = [
       {
         id: 2,
         title: "Basic",
-        price: 40000,
+        price: 55100,
         features: basicFeatures,
         duration: "annually",
       },
@@ -59,7 +59,7 @@ export const allSubscriptionOptions = [
       {
         id: 4,
         title: "Extra",
-        price: 75000,
+        price: 100700,
         features: extraFeatures,
         duration: "annually",
       },
@@ -78,7 +78,7 @@ export const allSubscriptionOptions = [
       {
         id: 6,
         title: "Premium",
-        price: 110000,
+        price: 150100,
         features: premiumFeatures,
         duration: "annually",
       },

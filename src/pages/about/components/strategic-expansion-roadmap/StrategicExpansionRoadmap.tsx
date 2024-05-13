@@ -15,7 +15,7 @@ function StrategicExpansionRoadmap() {
 
           <div className={styles.roadmap_text_wrapper}>
             <p>
-              Initially, ResQX breakdown coverage will be available in Lagos,
+              Initially, ResQX roadside assistance will be available in Lagos,
               with plans for progressive expansion to cover the entire city. As
               we establish a robust operational infrastructure and build our
               subscriber base, we intend to extend our services to other key

@@ -7,7 +7,7 @@ export const OtherServices = [
     icon: batteryChargingIcon,
     title: "Battery Replacement",
     description:
-      "Get a new battery if we can't recharge yours — saving you ₦50000 on average.",
+      "Get a new battery if we can't recharge yours — saving you ₦50,000 on average.",
   },
   {
     icon: tyreIcon,
@@ -19,6 +19,6 @@ export const OtherServices = [
     icon: keyIcon,
     title: "Key Replacement",
     description:
-      "Lost your car keys? We'll replace them, saving you ₦35000 on average.",
+      "Lost your car keys? We'll replace them, saving you ₦35,000 on average.",
   },
 ];

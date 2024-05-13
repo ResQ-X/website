@@ -44,7 +44,7 @@ img.dotted_line_image {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 475px) {
   .header_container {
     padding-top: 6rem;
     padding-bottom: 9rem;
