@@ -23,7 +23,6 @@ const MapSection = () => {
   ) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    // console.log({ latitude, longitude });
     setUserCoordinates([latitude, longitude]);
   };
 
