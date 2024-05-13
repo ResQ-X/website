@@ -45,7 +45,7 @@ const LeafletMap = ({ userCoordinates, respondentPos }: IProps) => {
     <MapContainer
       center={center}
       style={{ width: "100%", height: "100%" }}
-      zoom={10}
+      zoom={15}
       attributionControl={false}
       // scrollWheelZoom={false}
       // zoomControl={false}
@@ -79,7 +79,7 @@ const MapContent = ({
   const map = useMap();
   useEffect(() => {
     if (!userCoordinates || userCoordinates.length !== 2) return;
-    map.setZoom(15);
+    map.setZoom(18);
     map.flyTo(userCoordinates, map.getZoom());
   }, [userCoordinates]);
 
