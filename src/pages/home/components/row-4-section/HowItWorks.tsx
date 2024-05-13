@@ -25,8 +25,6 @@ function HowItWorks() {
 
         {/* MAP SECTION */}
         <MapSection />
-        {/* --------------------- */}
-        {/* <MapSection2 /> */}
       </div>
     </section>
   );

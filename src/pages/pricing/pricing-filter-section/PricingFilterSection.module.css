@@ -1,10 +1,13 @@
 .pricing_filter_container {
+  display: flex;
+  justify-content: center;
   margin-top: 2.4rem;
 }
 
 .pricing_filter_wrapper {
   width: max-content;
   display: flex;
+  justify-content: center;
   border: 1px solid #c4c4c4;
   padding: 0.6rem;
   border-radius: 1.2rem;
@@ -50,7 +53,7 @@ button.pricing_filter_item.active {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 475px) {
   button.pricing_filter_item {
     font-size: 1.4rem;
   }

@@ -34,10 +34,7 @@ function WhatWeOfferSection() {
           {/* List of What We Offer  */}
           <ul className={styles.services_list_wrapper}>
             {WhatWeOfferList.map((service, index) => (
-              <li
-                className="section_sub_text_wrapper"
-                key={Math.random() * index + 1}
-              >
+              <li className="section_sub_text_wrapper" key={index + 1}>
                 {service}
               </li>
             ))}
