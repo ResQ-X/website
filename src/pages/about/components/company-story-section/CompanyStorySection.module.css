@@ -36,6 +36,7 @@
 .company_detail_box__description ol {
   margin-top: 0.6rem;
   padding-left: 4rem;
+  list-style: decimal;
 }
 
 .company_detail_box__description ol li {
