@@ -3,6 +3,7 @@ import styles from "../../Blogs.module.css";
 import { Link } from "react-router-dom";
 import defaultBlogImg from "../../../../assets/images/others/blog/blog-image-6.png";
 import { IBlog } from "../../../../models/BlogTypes";
+import { motion } from "framer-motion";
 
 // Interfaces
 interface IProps {
@@ -14,7 +15,12 @@ function BlogCard({ blog }: IProps) {
     <div className={styles.blog_box_container}>
       <Link to={`/blog/${blog.ID}`}>
         <div className={styles.blog_image_wrapper}>
-          <img src={blog.image ? blog.image : defaultBlogImg} />
+          <motion.img
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.1 }}
+            transition={{ duration: 0.4 }}
+            src={blog.image ? blog.image : defaultBlogImg}
+          />
         </div>
 
         <div className={styles.blog_name_wrapper}>{blog.post_title}</div>
