@@ -10,6 +10,7 @@ import { IBlog } from "../../../models/BlogTypes";
 import useDisplayMessage from "../../../hooks/useDisplayMessage";
 import ErrorHandler from "../../../components/error/ErrorHandler";
 import moment from "moment";
+import PageTransition from "../../../components/animations/page-transition-animation/PageTransition";
 
 function BlogPreview() {
   const { id } = useParams();
@@ -85,4 +86,5 @@ function BlogPreview() {
   );
 }
 
-export default BlogPreview;
+const HOCBlogPreview = PageTransition(BlogPreview);
+export default HOCBlogPreview;

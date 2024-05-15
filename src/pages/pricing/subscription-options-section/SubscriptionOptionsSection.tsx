@@ -46,7 +46,8 @@ function SubscriptionOptionsSection({ pricingFilter }: IProps) {
               <div className={styles.subscription_box_original_price}>
                 {subscriptionOption.originalPrice && (
                   <>
-                    &#8358;{subscriptionOption.originalPrice?.toLocaleString()}
+                    &#8358;
+                    {subscriptionOption.originalPrice?.toLocaleString()}
                   </>
                 )}
               </div>

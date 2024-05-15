@@ -3,6 +3,7 @@ import PricingFilterSection from "./pricing-filter-section/PricingFilterSection"
 import PricingHeaderSection from "./pricing-header-section/PricingHeaderSection";
 import SubscriptionOptionsSection from "./subscription-options-section/SubscriptionOptionsSection";
 import OtherServicesSection from "./other-services-section/OtherServicesSection";
+import PageTransition from "../../components/animations/page-transition-animation/PageTransition";
 
 function Pricing() {
   // Functions, States and Variables
@@ -30,4 +31,5 @@ function Pricing() {
   );
 }
 
-export default Pricing;
+const HOCPricing = PageTransition(Pricing);
+export default HOCPricing;

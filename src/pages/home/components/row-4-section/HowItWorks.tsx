@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./HowItWorks.module.css";
 import MapSection from "./map-section/MapSection";
 import ProcessFlowSection from "./process-flow-section/ProcessFlowSection";
+import ContainerReveal from "../../../../components/animations/container-reveal/ContainerReveal";
 
 function HowItWorks() {
   // Functions, States and Variables
@@ -48,14 +49,18 @@ function HowItWorks() {
       >
         <div className={styles.section_header_container}>
           {/* Section Title */}
-          <h1 className="section_title">
-            How it <span>Works</span>
-          </h1>
+          <ContainerReveal>
+            <h1 className="section_title">
+              How it <span>Works</span>
+            </h1>
+          </ContainerReveal>
 
           {/* Section Description */}
-          <p className="section_sub_text_wrapper">
-            We provide your vehicle roadside assistance safely and efficiently
-          </p>
+          <ContainerReveal delay={0.1}>
+            <p className="section_sub_text_wrapper">
+              We provide your vehicle roadside assistance safely and efficiently
+            </p>
+          </ContainerReveal>
         </div>
 
         {/* Process Flow Section */}

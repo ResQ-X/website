@@ -1,3 +1,7 @@
+import {
+  pageVariants,
+  transition1,
+} from "../../constants/AnimationTransitions";
 import HeroSection from "./components/row-1-section/HeroSection";
 import WhatWeOfferSection from "./components/row-2-section/WhatWeOfferSection";
 import OurServicesSection from "./components/row-3-section/OurServicesSection";
@@ -5,10 +9,19 @@ import HowItWorks from "./components/row-4-section/HowItWorks";
 import Testimonies from "./components/row-5-section/Testimonies";
 import FAQsSection from "./components/row-6-section/FAQsSection";
 import WaitlistSection from "./components/row-7-section/WaitlistSection";
+import { motion } from "framer-motion";
+import PageTransition from "../../components/animations/page-transition-animation/PageTransition";
 
 function Home() {
   return (
-    <main className={`home-container-main-section`}>
+    <motion.main
+      variants={pageVariants}
+      initial={"hidden"}
+      animate={"visible"}
+      exit={"hidden"}
+      transition={transition1}
+      className={`home-container-main-section`}
+    >
       {/* Row 1 Section || Hero Section */}
       <HeroSection />
 
@@ -29,8 +42,9 @@ function Home() {
 
       {/* Row 7 Section || Waitlist Section*/}
       <WaitlistSection />
-    </main>
+    </motion.main>
   );
 }
 
-export default Home;
+const HOCHome = PageTransition(Home);
+export default HOCHome;

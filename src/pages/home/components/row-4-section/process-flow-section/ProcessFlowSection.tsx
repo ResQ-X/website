@@ -7,6 +7,7 @@ import vectorArrow3 from "../../../../../assets/images/others/home/process-flow-
 import vectorArrow4 from "../../../../../assets/images/others/home/process-flow-icons/vector-arrow-4.svg";
 import vectorArrow5 from "../../../../../assets/images/others/home/process-flow-icons/vector-arrow-5.svg";
 import { useLayoutEffect, useState } from "react";
+import ContainerReveal from "../../../../../components/animations/container-reveal/ContainerReveal";
 
 function ProcessFlowSection() {
   // Functions, States and Variables
@@ -38,6 +39,7 @@ function ProcessFlowSection() {
         <div className={styles.process_flow__column}>
           {/* Process Flow Box */}
           <ProcessFlowBox
+            index={0}
             icon={ProcessFlowList[0].icon}
             description={ProcessFlowList[0].description}
           />
@@ -56,6 +58,7 @@ function ProcessFlowSection() {
 
           {/* Process Flow Box */}
           <ProcessFlowBox
+            index={1}
             icon={ProcessFlowList[1].icon}
             description={ProcessFlowList[1].description}
           />
@@ -66,6 +69,7 @@ function ProcessFlowSection() {
         >
           {/* Process Flow Box */}
           <ProcessFlowBox
+            index={2}
             icon={ProcessFlowList[2].icon}
             description={ProcessFlowList[2].description}
           />
@@ -92,6 +96,7 @@ function ProcessFlowSection() {
 
           {/* Process Flow Box */}
           <ProcessFlowBox
+            index={3}
             icon={ProcessFlowList[3].icon}
             description={ProcessFlowList[3].description}
           />
@@ -100,19 +105,23 @@ function ProcessFlowSection() {
 
       {/* Process Flow Description Wrapper */}
       <div className={styles.process_flow_description_wrapper}>
-        <p>
-          A first responder is a mobile technician, from the fleet of
-          technicians signed up to the platform. This way ResQX’s average
-          response time is under 15 minutes. This is why we remain the leading
-          roadside assistance platform in Lagos, Nigeria.
-        </p>
+        <ContainerReveal>
+          <p>
+            A first responder is a mobile technician, from the fleet of
+            technicians signed up to the platform. This way ResQX’s average
+            response time is under 15 minutes. This is why we remain the leading
+            roadside assistance platform in Lagos, Nigeria.
+          </p>
+        </ContainerReveal>
 
-        <p>
-          Explore our rapid assistance demo! Witness our commitment to reaching
-          you in under 15 minutes. Track our first responders with the live map
-          as they come to your aid. Your safety matters – see how ResQX keeps
-          you informed during breakdowns. Take a quick tour now!
-        </p>
+        <ContainerReveal>
+          <p>
+            Explore our rapid assistance demo! Witness our commitment to
+            reaching you in under 15 minutes. Track our first responders with
+            the live map as they come to your aid. Your safety matters – see how
+            ResQX keeps you informed during breakdowns. Take a quick tour now!
+          </p>
+        </ContainerReveal>
       </div>
     </section>
   );

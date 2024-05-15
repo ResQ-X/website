@@ -1,5 +1,6 @@
 import React from "react";
 import "./PrimaryButton.css";
+import { motion } from "framer-motion";
 
 // Interfaces
 interface IProps {
@@ -17,11 +18,14 @@ function PrimaryButton({
   onClick,
 }: IProps) {
   return (
-    <div className={`primary-button-wrapper ${className}`}>
+    <motion.div
+      whileHover={{ y: -4 }}
+      className={`primary-button-wrapper ${className}`}
+    >
       <button disabled={disabled} onClick={onClick}>
         {placeholder}
       </button>
-    </div>
+    </motion.div>
   );
 }
 
