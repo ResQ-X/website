@@ -2,8 +2,11 @@ import styles from "./WhatWeOfferSection.module.css";
 import heroImage from "../../../../assets/images/others/home/hero-img-2.webp";
 import PrimaryButton from "../../../../components/buttons/primary-button/PrimaryButton";
 import { WhatWeOfferList } from "../../../../constants/WhatWeOfferList";
+import { motion } from "framer-motion";
+import ContainerReveal from "../../../../components/animations/container-reveal/ContainerReveal";
 
 function WhatWeOfferSection() {
+  // Functions, States and Variables
   return (
     <section className={`home__row_section ${styles.what_we_offer_section}`}>
       <div
@@ -11,41 +14,57 @@ function WhatWeOfferSection() {
       >
         {/* LEFT COLUMN */}
         <div className={styles.section__left_column}>
-          <div className={styles.hero_image_container}>
-            <img src={heroImage} alt="a man fixing a car" />
-          </div>
+          <motion.div className={styles.hero_image_container}>
+            <motion.img
+              src={heroImage}
+              alt="a man fixing a car"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.1 }}
+              transition={{ duration: 0.4 }}
+            />
+          </motion.div>
         </div>
 
         {/* RIGHT CONTAINER */}
         <div className={styles.section__right_column}>
           {/* Section Title */}
-          <h1 className="section_title">
-            What <span>We Offer</span>
-          </h1>
+          <ContainerReveal>
+            <h1 className="section_title">
+              What <span>We Offer</span>
+            </h1>
+          </ContainerReveal>
 
           {/* Section Description */}
-          <p className="section_sub_text_wrapper">
-            We provide fast, courteous and inexpensive roadside assistance in
-            Lagos. We are fully insured and been in business since 2023. We are
-            ready to respond to all your vehicle emergency needs 24 hours a day,
-            seven days a week.
-          </p>
+          <ContainerReveal delay={0.1}>
+            <p className="section_sub_text_wrapper">
+              We provide fast, courteous and inexpensive roadside assistance in
+              Lagos. We are fully insured and been in business since 2023. We
+              are ready to respond to all your vehicle emergency needs 24 hours
+              a day, seven days a week.
+            </p>
+          </ContainerReveal>
 
           {/* List of What We Offer  */}
-          <ul className={styles.services_list_wrapper}>
-            {WhatWeOfferList.map((service, index) => (
-              <li className="section_sub_text_wrapper" key={index + 1}>
-                {service}
-              </li>
-            ))}
-          </ul>
+          <ContainerReveal delay={0.1}>
+            <ul className={styles.services_list_wrapper}>
+              {WhatWeOfferList.map((service, index) => (
+                <li className="section_sub_text_wrapper" key={index + 1}>
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </ContainerReveal>
 
           {/* Join the Waitlist Button */}
-          <PrimaryButton
-            placeholder="Join Waitlist"
-            onClick={() => (window.location.href = "/#waitlist")}
-            className={styles.waitlist_button_wrapper}
-          />
+          <div className={styles.waitlist_button_container}>
+            <ContainerReveal delay={0.2}>
+              <PrimaryButton
+                placeholder="Join Waitlist"
+                onClick={() => (window.location.href = "/#waitlist")}
+                className={styles.waitlist_button_wrapper}
+              />
+            </ContainerReveal>
+          </div>
         </div>
       </div>
     </section>

@@ -11,6 +11,7 @@ import LoadingSpinner from "../../components/loading-spinner/LoadingSpinner";
 import BEPagination from "../../components/pagination/be-pagination/BEPagination";
 import { handleAPIError } from "../../utils/handleAPIError";
 import BlogHeaderSection from "./comps/blogs-header-section/BlogHeaderSection";
+import PageTransition from "../../components/animations/page-transition-animation/PageTransition";
 
 function Blogs() {
   // Functions, States and Variables
@@ -88,4 +89,5 @@ function Blogs() {
   );
 }
 
-export default Blogs;
+const HOCBlogs = PageTransition(Blogs);
+export default HOCBlogs;

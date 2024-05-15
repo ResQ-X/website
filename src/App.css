@@ -75,8 +75,20 @@ a {
   right: 30px !important;
 }
 
-/* Media Queries */
+/* Cursor */
+.cursor_wrapper {
+  height: 3.2rem;
+  width: 3.2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+  background-color: #000000;
+  border-radius: 50%;
+}
 
+/* Media Queries */
 @media (min-width: 1400px) {
   :root {
     --main-maxwidth: 1360px;

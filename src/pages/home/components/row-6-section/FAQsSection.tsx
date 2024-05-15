@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./FAQsSection.module.css";
 import angleDownIcon from "../../../../assets/images/svg/angle-down-icon.svg";
 import { FAQsList } from "../../../../constants/FaqsList";
+import ContainerReveal from "../../../../components/animations/container-reveal/ContainerReveal";
 
 function FAQsSection() {
   // Functions, State and Variables
@@ -19,9 +20,11 @@ function FAQsSection() {
         {/* Header Container */}
         <div className={styles.section_header_container}>
           {/* Section Title */}
-          <h1 className="section_title">
-            Answers to <span>Your Questions</span>
-          </h1>
+          <ContainerReveal>
+            <h1 className="section_title">
+              Answers to <span>Your Questions</span>
+            </h1>
+          </ContainerReveal>
         </div>
 
         {/* FAQs Container */}
