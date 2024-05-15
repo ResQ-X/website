@@ -62,6 +62,13 @@ button.accordion_header_title_wrapper {
   margin-top: 0.6rem;
 }
 
+.accordion_answer_wrapper ol {
+  list-style: decimal;
+}
+
+.accordion_answer_wrapper ul {
+  list-style: disc;
+}
 /* Media Queries */
 @media (max-width: 990px) {
   .accordion_question_wrapper {
