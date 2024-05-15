@@ -6,7 +6,7 @@ export const companyLinks = [
 
 export const productLinks = [
   { name: "FAQs", url: "/#faqs" },
-  { name: "Pricing", url: "pricing" },
+  { name: "Pricing", url: "/pricing" },
 ];
 
 export const socialsLinks = [
