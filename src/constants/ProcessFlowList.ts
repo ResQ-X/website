@@ -10,7 +10,7 @@ export const ProcessFlowList = [
   },
   {
     icon: phoneIcon,
-    description: "Your car breaks down and you can’t get it moving",
+    description: "You request a rescue using the ResQX app",
   },
   {
     icon: personIcon,
