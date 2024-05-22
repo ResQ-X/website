@@ -5,7 +5,7 @@ import truckIcon from "../../assets/images/others/preloader/truck-icon.svg";
 
 function Preloader() {
   // Functions, States and Variables
-  const duration = import.meta.env.VITE_APP_PRELOADER_TIMER || 5000; // Total duration in milliseconds
+  const duration = import.meta.env.VITE_APP_PRELOADER_TIMER || 2000; // Total duration in milliseconds
   let startTime: number | null = null;
 
   //   States
