@@ -24,7 +24,7 @@ function Layout({ children }: IProps) {
   }, [location]);
 
   useEffect(() => {
-    const loaderTimer = import.meta.env.VITE_APP_PRELOADER_TIMER || 5000;
+    const loaderTimer = import.meta.env.VITE_APP_PRELOADER_TIMER || 2000;
     const preloaderTimeout = setTimeout(() => {
       setIsPageLoading(false);
     }, loaderTimer);
@@ -41,7 +41,7 @@ function Layout({ children }: IProps) {
     if (isFirstTimeVisit) setIsFirstTimeLoadingUpApp(true);
 
     // If the user has loaded up app initially but is navigating page, remove the local storage value for first visit
-    if (localStorage.getItem("firstTimeVisit")) {
+    if (isFirstTimeVisit) {
       return () => {
         // Cleanup
         localStorage.removeItem("firstTimeVisit");

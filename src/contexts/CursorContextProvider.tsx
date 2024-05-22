@@ -22,7 +22,6 @@ function CursorContextProvider({ children }: ICursorContextProviderProps) {
   //   UseEffects
   useEffect(() => {
     const updateCursorPosition = (e: MouseEvent) => {
-      console.log({ x: e.clientX, y: e.clientY });
       setCursorPosition({ x: e.clientX, y: e.clientY });
     };
 
