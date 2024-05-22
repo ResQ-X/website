@@ -14,7 +14,9 @@ function AppRoutes() {
 
   useEffect(() => {
     // Set a local storage value to detect that this is first time visit
-    localStorage.setItem("firstTimeVisit", "true");
+    if (location.pathname === "/") {
+      localStorage.setItem("firstTimeVisit", "true");
+    }
   }, []);
 
   return (
