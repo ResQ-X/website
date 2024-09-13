@@ -11,7 +11,7 @@ export const NavItem = ({ name, path }: { name: string; path: string }) => {
     <li>
       <Link
         href={path}
-        className={`relative font-semibold ${pathName === path ? " pb-4" : ""}`}
+        className={`relative ${pathName === path ? " pb-4" : ""}`}
       >
         {name}
         {pathName === path && (
