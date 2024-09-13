@@ -11,7 +11,7 @@
 @tailwind components;
 @tailwind utilities;
 
-input[type='number'] {
+/* input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
@@ -90,7 +90,7 @@ input[type='number']::-webkit-outer-spin-button {
       --input: 217.2 32.6% 17.5%;
       --ring: 212.7 26.8% 83.9%;
     }
-  }
+  } */
 
   /* @layer base {
     * {

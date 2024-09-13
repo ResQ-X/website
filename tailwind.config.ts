@@ -119,23 +119,7 @@ const config = {
       "13xl": "32px",
       inherit: "inherit",
     },
-    screens: {
-      mq1250: {
-        raw: "screen and (max-width: 1250px)",
-      },
-      lg: {
-        max: "1200px",
-      },
-      mq1100: {
-        raw: "screen and (max-width: 1100px)",
-      },
-      mq750: {
-        raw: "screen and (max-width: 750px)",
-      },
-      mq450: {
-        raw: "screen and (max-width: 450px)",
-      },
-    },
+    
   },
   plugins: [
     require("tailwindcss-animate"),
