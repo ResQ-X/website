@@ -1,6 +1,5 @@
-import { inter } from '@/ui/fonts/fonts';
-import { Metadata } from 'next';
-import { AuthProvider } from '../lib/contexts/auth.context';
+import { inter } from "@/ui/fonts/fonts";
+import { Metadata } from "next";
 import "@/ui/styles/global.css";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -8,17 +7,15 @@ import { cn } from "@/lib/utils";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
- 
+});
+
 export const metadata: Metadata = {
   title: {
-    template: '%s | Resq-X',
-    default: 'Resq-X',
+    template: "%s | Resq-X",
+    default: "Resq-X",
   },
-  description: 'Resq-X Website',
-  //metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  description: "Resq-X Website",
 };
-
 
 export default function RootLayout({
   children,
@@ -27,16 +24,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* <body className={'${inter.className} antialiased'}> */}
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          "bg-background min-h-screen font-sans antialiased",
+          // fontSans.variable,
         )}
       >
-      <AuthProvider>
-          {children}
-      </AuthProvider>
+        {children}
       </body>
     </html>
   );

@@ -28,11 +28,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/lib/placeholder-data.js",
-    "src/scripts/seed.js", 
-    "app/lib/actions/invoice/invoice.actionsts", 
-    ".DEVDOCS/unused/base.repository.api.ts", 
-    ".DEVDOCS/unused/base_class.repository.from_api.ts"  
   ],
   "exclude": ["node_modules"]
 }
