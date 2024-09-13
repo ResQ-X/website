@@ -34,7 +34,7 @@ export const Footer = () => {
 
         {/* Second Column */}
         <div className="flex flex-col pt-8 lg:w-3/4 lg:flex-row lg:pl-36">
-          <div className="flex-1">
+          <div className="mb-8 mt-6 flex-1 lg:mb-0 lg:mt-0">
             <p className="pb-8 font-roboto text-lg text-white">Services</p>
             <p className="pb-4 font-roboto text-sm text-white">Tow truck</p>
             <p className="pb-4 font-roboto text-sm text-white">Fuel delivery</p>
@@ -45,21 +45,21 @@ export const Footer = () => {
             </p>
             <p className="pb-4 font-roboto text-sm text-white">Onward travel</p>
           </div>
-          <div className="flex-1">
+          <div className="mb-8 flex-1 lg:mb-0">
             <p className="pb-8 font-roboto text-lg text-white">More</p>
             <FooterLinkItem name="Blog" path="/blog" />
             <FooterLinkItem name="Membership" path="/membership" />
             <FooterLinkItem name="Partner" path="/partner" />
             <FooterLinkItem name="Support" path="/contact" />
           </div>
-          <div className="flex-1">
+          <div className="mb-8 flex-1 lg:mb-0">
             <p className="pb-8 font-roboto text-lg text-white">Company</p>
             <FooterLinkItem name="About Us" path="/about" />
             <FooterLinkItem name="Careers" path="/careers" />
             <FooterLinkItem name="FAQs" path="/faqs" />
             <FooterLinkItem name="Contact Us" path="/contact" />
           </div>
-          <div className="flex-1">
+          <div className="mb-8 flex-1 lg:mb-0">
             <p className="pb-8 font-roboto text-lg text-white">Locations</p>
             <p className="pb-4 font-roboto text-sm text-white">
               Third Mainland Bridge
