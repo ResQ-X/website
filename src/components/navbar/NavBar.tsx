@@ -6,14 +6,14 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { ResqxLogo } from "../ResxqLogo";
 import Image from "next/image";
 import { NavItem } from "./NavItem";
-import NavButton from "../buttons/NavButton";
+import { NavButton } from "../buttons/NavButton";
 
 export const NavBar = () => {
   return (
     <div className="navbar flex items-center justify-between bg-white px-8 py-4 font-['Raleway'] text-base text-[#332414]">
       <div className=" px-0">
         {/* MOBILE MENU ICON */}
-        <div className="dropdown lg:hidden">
+        <div className="dropdown  lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,13 +33,13 @@ export const NavBar = () => {
 
           <ul
             tabIndex={0}
-            className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
+            className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-white p-2 shadow"
           >
             <NavItem name={"Home"} path={"/"} />
             <li>
               <details>
                 <summary>Discover Us</summary>
-                <ul className="flex flex-col items-start bg-white p-1.5">
+                <ul className="flex flex-col items-start bg-white p-1.5 text-xs">
                   <NavItem name={"About"} path={"/about"} />
                   <NavItem name={"Services"} path={"/services"} />
                   <NavItem name={"Careers"} path={"/careers"} />
@@ -68,7 +68,7 @@ export const NavBar = () => {
             <li>
               <details>
                 <summary>Partner</summary>
-                <ul className="bg-white p-2">
+                <ul className="bg-white p-2 text-xs">
                   <NavItem name={"Earn with ResQ-X"} path={"/membership"} />
                   <NavItem name={"Partner with ResQ-X"} path={"/partner"} />
                 </ul>
@@ -88,7 +88,7 @@ export const NavBar = () => {
           <li>
             <details>
               <summary>Discover Us</summary>
-              <ul className="flex flex-col items-center bg-white p-1.5">
+              <ul className="flex flex-col items-center bg-white p-1.5 text-xs">
                 <NavItem name={"About"} path={"/about"} />
                 <NavItem name={"Services"} path={"/services"} />
                 <NavItem name={"Careers"} path={"/careers"} />
@@ -102,7 +102,7 @@ export const NavBar = () => {
       </div>
 
       {/* RIGHT NAV */}
-      <div className="">
+      <div className="text-base">
         <ul className="menu menu-horizontal hidden px-1 lg:flex">
           <li>
             <a>
@@ -123,15 +123,16 @@ export const NavBar = () => {
           <li>
             <details>
               <summary>Partner</summary>
-              <ul className="flex w-48 flex-col items-center bg-white p-1.5">
+              <ul className="flex w-48 flex-col items-center bg-white p-1.5 text-xs">
                 <NavItem name={"Earn with ResQ-X"} path={"/membership"} />
                 <NavItem name={"Partner with ResQ-X"} path={"/partner"} />
               </ul>
             </details>
           </li>
         </ul>
-        {/* <a className="btn ml-10">Get App</a> */}
-        <NavButton />
+        <ul className="menu menu-horizontal px-1">
+          <NavButton />
+        </ul>
       </div>
     </div>
   );
