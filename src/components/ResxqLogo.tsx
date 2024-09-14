@@ -7,8 +7,8 @@ export const ResqxLogo = () => {
       height={83}
       width={214}
       alt="Logo"
-      src={"/logos/resqx_logo.png"}
-      className="relative h-[83px]  max-w-full overflow-hidden object-cover"
+      src={"/logos/resqx_navbar_logo.png"}
+      className="relative h-[70px]  max-w-full overflow-hidden object-cover"
     />
   );
 };
