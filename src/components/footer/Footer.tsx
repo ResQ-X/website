@@ -2,6 +2,7 @@ import { ResqxLogo } from "../ResxqLogo";
 import { FooterLinkItem } from "./FooterLinkItem";
 import { FooterNav } from "./FooterNav";
 import { FooterSocialIcon } from "./FooterSocialIcon";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -10,9 +11,13 @@ export const Footer = () => {
         {/* First Column */}
         <div className="w-full lg:w-1/4">
           <div className="flex flex-col">
-            <div>
-              <ResqxLogo />
-            </div>
+            <Image
+              height={83}
+              width={214}
+              alt="Logo"
+              src={"/logos/resqx_logo.png"}
+              className="relative max-w-full overflow-hidden object-cover pb-6"
+            />
             <p className="font-roboto text-lg text-white">
               We are a reliable roadside assistance service provider available
               24/7, offering fast, affordable and friendly assistance. Your

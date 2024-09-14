@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { ResqxLogo } from "../ResxqLogo";
 import Image from "next/image";
 import { NavItem } from "./NavItem";
-import { NavButton } from "../buttons/NavButton";
+import { NavButton } from "./NavButton";
 
 export const NavBar = () => {
   return (
