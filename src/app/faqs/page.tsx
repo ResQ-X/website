@@ -3,7 +3,7 @@ import { FaqsAccordion } from "@/components/FaqsAccordion";
 import { faqsList } from "@/lib/values/faqs.values";
 import { FaqModel } from "@/lib/models/faq.model";
 
-export default function Page() {
+export default function Faqs() {
   return (
     <div className="px-12 py-16">
       <div className="flex flex-col justify-center gap-10 lg:flex-row lg:px-10">
