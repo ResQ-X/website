@@ -52,7 +52,7 @@ export const sendAdminMessage = async (data: ContactMessageModel) => {
   //console.log('==== \n\n sendAdminMessage CALLED !!! \n\n ====');
   try {
     const msg = {
-    to: data.email,
+    to: sender,
     from: sender, 
     subject: 'Website Contact Message',
     html: await getAdminMessage(data),
@@ -76,7 +76,7 @@ export const sendUserMessage = async (data: ContactMessageModel) => {
   try {
     const msg = {
     to: data.email,
-    from: sender, 
+    from: `"ResQ-X" <${sender}>`, 
     subject: subject,
     html: await getUserMessage(data.firstName),
     };
