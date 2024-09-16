@@ -1,13 +1,13 @@
 "use client";
 
-import { Toast } from "@/components/Toast";
+import { IconButton } from "@/components/buttons/IconButton";
 import { ServerResponseModel } from "@/lib/models";
 import { ContactMessageModel } from "@/lib/models/contact.model";
 import { hasEmptyFields } from "@/lib/utils";
 import { handleContactMessage } from "@/server/contact";
-import { ServerResponse } from "http";
-import Image from "next/image";
 import { useState } from "react";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const ContactForm = () => {
   const defaultData: ContactMessageModel = {
@@ -26,8 +26,20 @@ export const ContactForm = () => {
     defaultServerResponse,
   );
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [toast, setToast] = useState<JSX.Element | null>(null);
+  const [customToast, setToast] = useState<JSX.Element | null>(null);
 
+  const notify = (message: string) =>
+    toast(message, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   // Handling input change
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -87,13 +99,14 @@ export const ContactForm = () => {
           setServerResponseMessage(response.message);
           setServerResponse(response);
           setIsLoading(false);
+          notify(response.message);
 
-          setToast(
+          /* setToast(
             Toast(
               serverResponse.statusCode === 201 ? "success" : "error",
               serverResponse.message,
             ),
-          );
+          ); */
         }
         setIsLoading(false);
         setData(defaultData);
@@ -173,7 +186,6 @@ export const ContactForm = () => {
                     value={data.message}
                     onChange={handleInputChange}
                     className="input input-bordered min-h-[138px] rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
-                    style={{ color: "#93979b" }}
                     required
                   ></textarea>
                 </div>
@@ -186,6 +198,7 @@ export const ContactForm = () => {
                     {isLoading ? "...Sending" : "Submit"}
                   </button>
                 </div>
+                <ToastContainer />
               </form>
               {/* {toast && <div>{toast}</div>} */}
             </div>
@@ -198,18 +211,11 @@ export const ContactForm = () => {
             className="no-underline"
             target="_blank"
           >
-            <div className="font-raleway relative box-border flex max-h-[65px] w-[214px] flex-row items-center justify-center gap-2 rounded-[88px] px-4 py-3 text-base text-white [background:linear-gradient(180deg,_#ff8500,_#995000)]">
-              <button className="text-center font-roboto text-lg font-medium text-white ">
-                091-234-13450
-              </button>
-              <Image
-                height={200}
-                width={200}
-                alt="Contact Image"
-                src={"/icons/call_calling.png"}
-                className="white w-6 object-cover"
-              />
-            </div>
+            <IconButton
+              text="091-234-13450"
+              icon="/icons/call_calling.png"
+              alt="Contact Image"
+            />
           </a>
           <a
             href="tel:2349123413450"
@@ -217,18 +223,11 @@ export const ContactForm = () => {
             className="no-underline"
             target="_blank"
           >
-            <div className="font-raleway relative box-border flex max-h-[65px] w-[214px] flex-row items-center justify-center gap-2 rounded-[88px] px-4 py-3 text-base text-white [background:linear-gradient(180deg,_#ff8500,_#995000)]">
-              <button className="text-center font-roboto text-lg font-medium text-white ">
-                Live chat
-              </button>
-              <Image
-                height={200}
-                width={200}
-                alt="Contact Image"
-                src={"/icons/call_calling.png"}
-                className="white w-6 object-cover"
-              />
-            </div>
+            <IconButton
+              text="Live chat"
+              icon="/icons/chat_icon.png"
+              alt="Chat Icon"
+            />
           </a>
         </div>
       </div>

@@ -59,7 +59,7 @@ export const NavBar = () => {
                     height={24}
                     width={24}
                     alt="Call Icon"
-                    src={"/icons/call-calling.png"}
+                    src={"/icons/call_calling_dark.png"}
                     className="relative h-[24px]  max-w-full overflow-hidden object-cover text-[#736250]"
                   />
                 </div>
@@ -114,7 +114,7 @@ export const NavBar = () => {
                   height={24}
                   width={24}
                   alt="Call Icon"
-                  src={"/icons/call-calling.png"}
+                  src={"/icons/call_calling_dark.png"}
                   className="relative h-[24px]  max-w-full overflow-hidden object-cover text-[#736250]"
                 />
               </div>
