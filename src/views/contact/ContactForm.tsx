@@ -14,7 +14,6 @@ export const ContactForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
     message: "",
   };
   const defaultServerResponse: ServerResponseModel = {} as ServerResponseModel;
@@ -69,29 +68,40 @@ export const ContactForm = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    try {
+      console.log("handleSubmit CLICKED !!!");
+      e.preventDefault();
 
-    const hasEmptyProperty: boolean = hasEmptyFields(data);
-    if (hasEmptyProperty) {
-      setHasEmptyFields(true);
-      return;
+      const hasEmptyProperty: boolean = hasEmptyFields(data);
+      if (hasEmptyProperty) {
+        setHasEmptyFields(true);
+        console.log("handleSubmit setHasEmptyFields !!!");
+        return;
+      } else {
+        setIsLoading(true);
+        console.log(`handleSubmit setIsLoading ${isLoading} !!!`);
+        if (validateForm()) {
+          console.log("handleSubmit VALIDATED !!!");
+          const response: ServerResponseModel =
+            await handleContactMessage(data);
+          setServerResponseMessage(response.message);
+          setServerResponse(response);
+          setIsLoading(false);
+
+          setToast(
+            Toast(
+              serverResponse.statusCode === 201 ? "success" : "error",
+              serverResponse.message,
+            ),
+          );
+        }
+        setIsLoading(false);
+        setData(defaultData);
+        console.log("handleSubmit COMPLETED !!!");
+      }
+    } catch (error) {
+      console.log(`handleSubmit ERROR: ${error} !!!`);
     }
-    setIsLoading(true);
-    if (validateForm()) {
-      const response: ServerResponseModel = await handleContactMessage(data);
-      setServerResponseMessage(response.message);
-      setServerResponse(response);
-      setIsLoading(false);
-      setData(defaultData);
-      /* setToast(
-        Toast(
-          serverResponse.statusCode === 201 ? "success" : "error",
-          serverResponse.message,
-        ),
-      ); */
-      setIsLoading(false);
-    }
-    setIsLoading(false);
   };
 
   return (
