@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const HomeHowItWorks = () => {
   return (
-    <div className="mb-[44] w-full">
+    <div className="mb-[44px] w-full">
       <div className="flex items-center justify-center">
         <button className="btn btn-outline flex h-[60px] flex-row items-center justify-center rounded-[99px] px-6 py-2 font-['Raleway'] text-base font-bold text-[#FF8500]">
           <p>How it works</p>

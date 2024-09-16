@@ -1,10 +1,11 @@
+import { offeringList } from "@/lib/values/offerings.values";
 import Image from "next/image";
 
 export const HomeTopTierOfferings = () => {
   return (
-    <div className="mb-[120] w-full">
+    <div className="mx-[58px] mb-[120px] font-['Raleway']">
       <div className="flex flex-col items-center justify-center font-['Raleway']">
-        <p className="text[#332414] text-[64px] font-semibold leading-[75px]">
+        <p className="text-center text-[64px] font-semibold leading-[75px] text-[#332414]">
           Our Top-Tier Offerings
         </p>
         <div className="rounded-full p-2">
@@ -13,15 +14,35 @@ export const HomeTopTierOfferings = () => {
             width={2000}
             alt="Underline Image"
             src={"/images/underline_image.png"}
-            className="h-[33px] w-[] object-cover"
+            className="h-[37px] w-[223px] object-cover"
           />
         </div>
-        <p className="text-lg font-normal text-[#333333]">
+        <p className="text-center text-lg font-normal text-[#333333]">
           We provide your vehicle roadside assistance safely and efficiently
         </p>
       </div>
       <div className="mt-20">
-        <div className="grid grid-cols-4 gap-[175px]"></div>
+        <div className="  grid gap-x-[175px] gap-y-[68px] md:grid-cols-2 lg:grid-cols-3">
+          {offeringList.map((offering) => (
+            <div className="flex flex-col justify-start">
+              <div className="p-2">
+                <Image
+                  height={2000}
+                  width={2000}
+                  alt={offering.title}
+                  src={offering.image}
+                  className="h-[61px] max-w-[110px] object-cover"
+                />
+              </div>
+              <p className="text-25px mb-[17px] font-semibold leading-[29px] text-black">
+                {offering.title}
+              </p>
+              <p className="text-base font-normal leading-[24px]">
+                {offering.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
