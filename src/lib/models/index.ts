@@ -4,3 +4,9 @@ export interface ServerResponseModel {
   message: string;
   timestamp: string;
 }
+
+export interface OfferingModel {
+  image: string;
+  title: string;
+  description: string;
+}

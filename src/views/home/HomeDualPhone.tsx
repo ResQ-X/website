@@ -1,0 +1,17 @@
+import Image from "next/image";
+
+export const HomeDualPhone = () => {
+  return (
+    <div className="mb-[39] w-full">
+      <div className="flex items-center justify-center">
+        <Image
+          height={1200}
+          width={1200}
+          alt="Contact Image"
+          src={"/images/home/home_dual_phone_image.png"}
+          className="w-[472.14px] object-cover"
+        />
+      </div>
+    </div>
+  );
+};

@@ -53,7 +53,7 @@ export const sendAdminMessage = async (data: ContactMessageModel) => {
   try {
     const msg = {
     to: sender,
-    from: sender, 
+    from: `"ResQ-X Website" <${sender}>`, 
     subject: 'Website Contact Message',
     html: await getAdminMessage(data),
     };
