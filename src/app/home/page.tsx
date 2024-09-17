@@ -1,6 +1,7 @@
 import { IconButton } from "@/components/buttons/IconButton";
 import { HomeDualPhone } from "@/views/home/HomeDualPhone";
 import { HomeFacts } from "@/views/home/HomeFacts";
+import { HomeGetAppTabs } from "@/views/home/HomeGetAppTabs";
 import { HomeHero } from "@/views/home/HomeHero";
 import { HomeHowItWorks } from "@/views/home/HomeHowItWorks";
 import { HomeSlider } from "@/views/home/HomeSlider";
@@ -16,6 +17,7 @@ export default function Home() {
         <HomeHowItWorks />
         <HomeTopTierOfferings />
         <HomeSlider />
+        <HomeGetAppTabs />
       </div>
     </main>
   );
