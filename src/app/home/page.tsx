@@ -3,6 +3,7 @@ import { HomeDualPhone } from "@/views/home/HomeDualPhone";
 import { HomeFacts } from "@/views/home/HomeFacts";
 import { HomeHero } from "@/views/home/HomeHero";
 import { HomeHowItWorks } from "@/views/home/HomeHowItWorks";
+import { HomeSlider } from "@/views/home/HomeSlider";
 import { HomeTopTierOfferings } from "@/views/home/HomeTopTierOfferings";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <HomeDualPhone />
         <HomeHowItWorks />
         <HomeTopTierOfferings />
+        <HomeSlider />
       </div>
     </main>
   );
