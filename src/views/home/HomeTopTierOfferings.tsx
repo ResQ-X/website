@@ -22,7 +22,7 @@ export const HomeTopTierOfferings = () => {
         </p>
       </div>
       <div className="mt-20">
-        <div className="  grid gap-x-[175px] gap-y-[68px] md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-x-[175px] gap-y-[68px] md:grid-cols-2 lg:grid-cols-3">
           {offeringList.map((offering) => (
             <div className="flex flex-col justify-start">
               <div className="p-2">

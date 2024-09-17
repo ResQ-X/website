@@ -29,6 +29,10 @@ export const HomeGetAppTabs = () => {
         </div>
       </div>
 
+      <div className="my-8 text-center text-[32px] font-semibold leading-[38px] tracking-[-2%] text-[#332414]">
+        Get the app
+      </div>
+
       {/* Conditional Rendering of Tab Content */}
       <div className="mt-6">
         {selectedTab === "Customer" ? (
