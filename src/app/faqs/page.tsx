@@ -21,8 +21,8 @@ export default function Faqs() {
             Frequently Asked Questions
           </p>
           <div>
-            {faqsList.map((faq) => (
-              <div>
+            {faqsList.map((faq, index) => (
+              <div key={index}>
                 <FaqsAccordion key={faq.id} {...faq} />
               </div>
             ))}

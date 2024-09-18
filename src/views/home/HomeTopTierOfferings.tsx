@@ -23,8 +23,8 @@ export const HomeTopTierOfferings = () => {
       </div>
       <div className="mt-20">
         <div className="grid gap-x-[175px] gap-y-[68px] md:grid-cols-2 lg:grid-cols-3">
-          {offeringList.map((offering) => (
-            <div className="flex flex-col justify-start">
+          {offeringList.map((offering, index) => (
+            <div key={index} className="flex flex-col justify-start">
               <div className="p-2">
                 <Image
                   height={2000}
