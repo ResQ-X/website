@@ -13,7 +13,7 @@ export const HomeHero = () => {
         </h1>
       </div>
       <div>
-        <div className="mt-10 flex w-full flex-row justify-center gap-4 pb-[468px]">
+        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 pb-[468px] md:flex-row">
           <a
             href={customerPlayStoreLink}
             rel="noopener noreferrer"

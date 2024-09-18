@@ -25,37 +25,31 @@ export const HomeSlider = () => {
 
   return (
     <div className="mb-[120px] flex h-[309px] items-center bg-[#FAF8F5] font-['Raleway']">
-      <div className="relative w-full overflow-hidden px-20">
+      <div className="relative w-full overflow-hidden lg:px-20">
         <div
           ref={HomeCarouselRef}
-          className="flex flex-row gap-x-10 pl-10 pr-10 transition-transform duration-700 ease-in-out"
+          className="flex flex-row gap-x-10 transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * slideWidth}%)` }}
         >
-          {/* Ensure all cards take full width of the container */}
-          <div className="min-w-full">
-            <HomeSliderCard
-              number="01"
-              text="We fix 4 out of 5 breakdowns on the spot"
-            />
-          </div>
-          <div className="min-w-full">
-            <HomeSliderCard
-              number="02"
-              text="We fix 4 out of 5 breakdowns on the spot"
-            />
-          </div>
-          <div className="min-w-full">
-            <HomeSliderCard
-              number="03"
-              text="We fix 4 out of 5 breakdowns on the spot"
-            />
-          </div>
-          <div className="min-w-full">
-            <HomeSliderCard
-              number="04"
-              text="We fix 4 out of 5 breakdowns on the spot"
-            />
-          </div>
+          <HomeSliderCard
+            number="01"
+            text="We fix 4 out of 5 breakdowns on the spot"
+          />
+
+          <HomeSliderCard
+            number="02"
+            text="We fix 4 out of 5 breakdowns on the spot"
+          />
+
+          <HomeSliderCard
+            number="03"
+            text="We fix 4 out of 5 breakdowns on the spot"
+          />
+
+          <HomeSliderCard
+            number="04"
+            text="We fix 4 out of 5 breakdowns on the spot"
+          />
         </div>
 
         {/* Optional prev/next buttons */}

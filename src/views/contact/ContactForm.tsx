@@ -204,7 +204,7 @@ export const ContactForm = () => {
             </div>
           </div>
         </div>
-        <div className="mt-10 flex w-full flex-row justify-center gap-4 lg:w-2/4 lg:gap-8">
+        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 md:flex-row lg:w-2/4 lg:gap-8">
           <a
             href="tel:2349123413450"
             rel="noopener noreferrer"
