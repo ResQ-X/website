@@ -5,7 +5,7 @@ interface IProps {}
 
 export const HomeBlogSectionCard = () => {
   return (
-    <div className="relative h-[300px] w-full rounded-xl bg-[url('/images/home/blog/blog_post_1.png')] bg-cover bg-center">
+    <div className="relative h-[300px] w-full rounded-xl bg-[url('/images/home/blog/1.png')] bg-cover bg-center">
       <div className="absolute inset-0 rounded-xl bg-black opacity-50"></div>
       <div className="flex flex-col items-center justify-start">
         <div className="relative z-10 px-6">

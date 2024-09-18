@@ -9,6 +9,8 @@ import { HomeHowItWorks } from "@/views/home/HomeHowItWorks";
 import { HomeSlider } from "@/views/home/HomeSlider";
 import { HomeTopTierOfferings } from "@/views/home/HomeTopTierOfferings";
 import { Testimonial } from "@/views/tesimonials/Testimonial";
+import Faqs from "../faqs/page";
+import { HomeCtaSection } from "@/views/home/HomeCtaSection";
 
 export default function Home() {
   return (
@@ -24,6 +26,8 @@ export default function Home() {
         <HomeGetMovingSteps />
         <HomeBlogSection />
         <Testimonial />
+        <Faqs />
+        <HomeCtaSection />
       </div>
     </main>
   );
