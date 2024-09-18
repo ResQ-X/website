@@ -3,7 +3,7 @@ import Credentials from 'next-auth/providers/credentials';
 import { authConfig } from './auth.config';
 import { z } from 'zod';
 import { User as FirebaseUser } from 'firebase/auth';
-import { login } from '@/lib/actions/auth/auth.actions';
+//import { login } from '@/lib/actions/auth/auth.actions';
 
 // =======
 // All commented out parts to be used if we are commmunicating with Stream API to authenticate with the API
@@ -25,9 +25,9 @@ export const { auth, signIn, signOut } = NextAuth({
  
         if (parsedCredentials.success) {
           const { email, password } = parsedCredentials.data;
-          const {error, result} = await login(email, password);
+          const { error, result } = {error: "error", result: "result"} //await login(email, password);
           if (error) return null;
-          if (result) {
+          /* if (result) {
             const idToken = await result.user.getIdToken(true);
 
             const firebaseUser: FirebaseUser = result.user;
@@ -41,7 +41,7 @@ export const { auth, signIn, signOut } = NextAuth({
               emailVerified: firebaseUser.emailVerified,
             }
             return value;
-          }
+          } */
         }
 
         console.log('Invalid credentials');
