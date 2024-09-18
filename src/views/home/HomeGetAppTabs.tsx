@@ -29,8 +29,8 @@ export const HomeGetAppTabs = () => {
         </div>
       </div>
 
-      <div className="my-8 text-center text-[32px] font-semibold leading-[38px] tracking-[-2%] text-[#332414]">
-        Get the app
+      <div className="my-8 pl-24 text-start text-[32px] font-semibold leading-[38px] tracking-[-2%] text-[#332414] lg:pl-0 lg:text-center">
+        {selectedTab === "Customer" ? "Get the app" : "Grow with ResQ-X"}
       </div>
 
       {/* Conditional Rendering of Tab Content */}
