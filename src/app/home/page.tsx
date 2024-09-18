@@ -1,4 +1,5 @@
 import { IconButton } from "@/components/buttons/IconButton";
+import { HomeBlogSection } from "@/views/home/HomeBlogSection";
 import { HomeDualPhone } from "@/views/home/HomeDualPhone";
 import { HomeFacts } from "@/views/home/HomeFacts";
 import { HomeGetAppTabs } from "@/views/home/HomeGetAppTabs";
@@ -7,6 +8,7 @@ import { HomeHero } from "@/views/home/HomeHero";
 import { HomeHowItWorks } from "@/views/home/HomeHowItWorks";
 import { HomeSlider } from "@/views/home/HomeSlider";
 import { HomeTopTierOfferings } from "@/views/home/HomeTopTierOfferings";
+import { Testimonial } from "@/views/tesimonials/Testimonial";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
         <HomeSlider />
         <HomeGetAppTabs />
         <HomeGetMovingSteps />
+        <HomeBlogSection />
+        <Testimonial />
       </div>
     </main>
   );

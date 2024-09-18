@@ -10,3 +10,12 @@ export interface OfferingModel {
   title: string;
   description: string;
 }
+
+
+export interface IUserReview {
+  avatar: string;
+  name: string;
+  date: string;
+  review: string;
+  location: string;
+}
