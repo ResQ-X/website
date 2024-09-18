@@ -1,5 +1,7 @@
 import { FlatLeftIconButton } from "@/components/buttons/FlatLeftIconButton";
+import { customerAppStoreLink, customerPlayStoreLink } from "@/lib/constants";
 import Image from "next/image";
+import { HomeGetAppCard } from "./HomeGetAppCard";
 
 export const HomeGetAppTabCustomer = () => {
   return (
@@ -41,44 +43,34 @@ export const HomeGetAppTabCustomer = () => {
               />
             </div>
             <div className="mt-5 flex flex-col items-start justify-start gap-10 lg:mt-0 lg:flex-row lg:gap-x-6">
-              <FlatLeftIconButton
-                text="Play store"
-                icon="/icons/play_store_logo.png"
-                alt=""
-              />
-              <FlatLeftIconButton
-                text="App store"
-                icon="/icons/app_store_logo.png"
-                alt=""
-              />
+              <a
+                href={customerPlayStoreLink}
+                rel="noopener noreferrer"
+                className="no-underline"
+                target="_blank"
+              >
+                <FlatLeftIconButton
+                  text="Play store"
+                  icon="/icons/play_store_logo.png"
+                  alt=""
+                />
+              </a>
+
+              <a
+                href={customerAppStoreLink}
+                rel="noopener noreferrer"
+                className="no-underline"
+                target="_blank"
+              >
+                <FlatLeftIconButton
+                  text="App store"
+                  icon="/icons/app_store_logo.png"
+                  alt=""
+                />
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
-
-export const HomeGetAppCard = ({
-  image,
-  text,
-}: {
-  image: string;
-  text: string;
-}) => {
-  return (
-    <div className="mt-6 flex justify-start">
-      <div className="mb-11 flex flex-col items-center justify-center gap-4">
-        <Image
-          height={1200}
-          width={1200}
-          alt="Customer Phone Image"
-          src={image}
-          className="h-[144px] w-auto max-w-[200px] object-cover"
-        />
-        <p className="font-['Raleway'] text-[24px] font-semibold leading-[28.18px] tracking-[-2%] text-[#FAF8F5]">
-          {text}
-        </p>
       </div>
     </div>
   );
