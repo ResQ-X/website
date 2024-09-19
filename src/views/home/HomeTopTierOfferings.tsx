@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export const HomeTopTierOfferings = () => {
   return (
-    <div className="mx-[58px] mb-[120px] font-['Raleway']">
+    <div className="mx-[20px] mb-[120px] font-['Raleway'] md:mx-[58px]">
       <div className="flex flex-col items-center justify-center font-['Raleway']">
-        <p className="text-center text-[64px] font-semibold leading-[75px] text-[#332414]">
+        <p className="text-center text-[50px] font-semibold leading-[75px] text-[#332414] md:text-[64px]">
           Our Top-Tier Offerings
         </p>
         <div className="rounded-full p-2">
@@ -17,14 +17,17 @@ export const HomeTopTierOfferings = () => {
             className="h-[37px] w-[223px] object-cover"
           />
         </div>
-        <p className="text-center text-lg font-normal text-[#333333]">
+        <p className=" text-center text-lg font-normal text-[#333333]">
           We provide your vehicle roadside assistance safely and efficiently
         </p>
       </div>
       <div className="mt-20">
         <div className="grid gap-x-[175px] gap-y-[68px] md:grid-cols-2 lg:grid-cols-3">
           {offeringList.map((offering, index) => (
-            <div key={index} className="flex flex-col justify-start">
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center md:items-start md:justify-start"
+            >
               <div className="p-2">
                 <Image
                   height={2000}

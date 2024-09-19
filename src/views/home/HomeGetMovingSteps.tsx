@@ -5,14 +5,14 @@ export const HomeGetMovingSteps = () => {
   return (
     <div className="mb-20">
       <div className="mb-[30px] px-6 text-center">
-        <p className=" font-['Raleway] text-[32px] font-semibold leading-[37.57px] tracking-[-2%] text-[#736250]">
+        <p className=" font-['Raleway] text-[22px] font-semibold leading-[37.57px] tracking-[-2%] text-[#736250] md:text-[32px]">
           Stuck on the Road?
         </p>
-        <p className="font-['Raleway] text-[64px] font-bold leading-[75.14px] tracking-[-2%] text-[#332414]">
+        <p className="font-['Raleway] text-[50px] font-bold leading-[75.14px] tracking-[-2%] text-[#332414] md:text-[64px]">
           Get Moving in 3 Steps
         </p>
       </div>
-      <div className="mb-[-390px] flex w-full justify-center">
+      <div className="mb-[-390px] flex w-full justify-center px-6">
         <HomeStepsSlider />
       </div>
       <div className="bg-[#000B28]">

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const HomeDualPhone = () => {
   return (
-    <div className="mb-[39] w-full">
+    <div className="mb-[39] w-full px-5 md:px-0">
       <div className="flex items-center justify-center">
         <Image
           height={1200}

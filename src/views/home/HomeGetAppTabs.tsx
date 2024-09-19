@@ -1,6 +1,5 @@
 "use client";
 
-import { FlatButton } from "@/components/buttons/FlatButton";
 import { HomeGetAppTabCustomer } from "./HomeGetAppTabCustomer";
 import { HomeGetAppTabServiceProvider } from "./HomeGetAppTabServiceProvider";
 import { useState } from "react";
@@ -29,7 +28,7 @@ export const HomeGetAppTabs = () => {
         </div>
       </div>
 
-      <div className="my-8 pl-24 text-start text-[32px] font-semibold leading-[38px] tracking-[-2%] text-[#332414] lg:pl-0 lg:text-center">
+      <div className="my-8 text-center text-[32px] font-semibold leading-[38px] tracking-[-2%] text-[#332414]">
         {selectedTab === "Customer" ? "Get the app" : "Grow with ResQ-X"}
       </div>
 

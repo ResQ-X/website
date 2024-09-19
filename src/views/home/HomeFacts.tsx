@@ -1,7 +1,7 @@
 export const HomeFacts = () => {
   return (
     <div className="mb-11 w-full pt-8">
-      <div className="flex flex-row items-center justify-center gap-16">
+      <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
         <div className="flex flex-col items-center justify-center">
           <p className="font-poppins text-3xl font-bold leading-[34px] text-[#6E7DDB]">
             1200+

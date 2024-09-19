@@ -49,7 +49,7 @@ export const UserReview: FC<IUserReview> = (review: IUserReview) => {
       </div>
       <div>
         <div className="font-raleway flex flex-col items-start justify-start gap-4">
-          <div className="tracking-[-0.02em] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] [display:-webkit-inline-box]">
+          <div className="mb-4 tracking-[-0.02em] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] [display:-webkit-inline-box]">
             <p className="">{review.review}</p>
           </div>
           <div className="h-6 font-body-medium-medium-heebo-14 font-medium leading-[150%] text-darkslateblue">

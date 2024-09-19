@@ -8,7 +8,7 @@ export const HomeGetAppCard = ({
   text: string;
 }) => {
   return (
-    <div className="mt-6 flex justify-start">
+    <div className="mt-6 flex justify-center lg:justify-start">
       <div className="mb-11 flex flex-col items-center justify-center gap-4">
         <Image
           height={1200}
