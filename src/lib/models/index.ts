@@ -19,3 +19,9 @@ export interface IUserReview {
   review: string;
   location: string;
 }
+
+export interface ICoreValue {
+  image: string;
+  title: string;
+  description: string;
+}

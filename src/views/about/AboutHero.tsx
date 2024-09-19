@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const AboutHero = () => {
   return (
-    <div className="bg-[#faf8f5] px-0 pb-0">
+    <div className="mb-[55px] bg-[#faf8f5] px-0 pb-0">
       <div className="flex flex-col items-end lg:flex-row lg:justify-end lg:gap-16">
         <div className="my-[96px] lg:w-3/5">
           <div className="w-full px-5 lg:pl-10">

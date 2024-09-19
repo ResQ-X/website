@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { FaqsAccordion } from "@/components/FaqsAccordion";
 import { faqsList } from "@/lib/values/faqs.values";
-import { FaqModel } from "@/lib/models/faq.model";
 
 export default function Faqs() {
   return (
