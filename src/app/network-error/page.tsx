@@ -7,11 +7,11 @@ export default function NetworkError() {
   return (
     <div className="px-12 py-16">
       <div className="flex flex-col items-center justify-center lg:flex-row lg:gap-16 lg:px-40">
-        <div className="flex w-full flex-col items-center text-left lg:w-2/5 lg:items-start">
+        <div className="flex w-full flex-col items-center text-center lg:w-2/5 lg:items-start lg:text-left">
           <h1 className="mb-4 font-['Raleway'] text-[40px] font-bold leading-[46.96px] tracking-[-2%] text-black">
             Oops....
           </h1>
-          <h2 className="mb-[18px] text-center font-['Raleway'] text-[32px] font-semibold leading-[37.57px] tracking-[-2%] text-black">
+          <h2 className="mb-[18px]  font-['Raleway'] text-[32px] font-semibold leading-[37.57px] tracking-[-2%] text-black">
             Looks like you're offline.
           </h2>
           <p className="mb-[60px] text-center font-['Raleway'] text-lg font-normal  text-black lg:text-start">
