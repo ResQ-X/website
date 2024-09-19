@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const HomeCtaSection = () => {
   return (
-    <div className="mx-5 mb-[200px] rounded-lg bg-[#000B28] px-8 py-8 lg:mx-[175px]">
+    <div className="mx-5 mb-[60px] rounded-lg bg-[#000B28] px-8 py-8 lg:mx-[175px] lg:mb-[200px]">
       <div className="flex flex-col items-center justify-center md:flex-row">
         <div className="w-3/5">
           <p className="font-['Clash Display'] mb-8 text-center text-[48px] font-bold leading-[48px] text-white md:text-start">

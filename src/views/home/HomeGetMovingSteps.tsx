@@ -16,7 +16,7 @@ export const HomeGetMovingSteps = () => {
         <HomeStepsSlider />
       </div>
       <div className="bg-[#000B28]">
-        <div className="flex flex-col items-end justify-center px-[100px] pb-9 pt-[400px] text-center">
+        <div className="flex flex-col items-end justify-center px-3 pb-9 pt-[400px] text-center md:px-[100px]">
           <p className="font-['Raleway] text-[32px] font-semibold leading-[37.57px] tracking-[-2%] text-white">
             Our goal is to provide reliable roadside assistance with a quick
             response time within 15 minutes, using the latest technology.

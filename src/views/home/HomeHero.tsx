@@ -5,7 +5,7 @@ export const HomeHero = () => {
   return (
     <div className="h-[792px] w-full bg-[url('/images/home/home_hero_image.png')] bg-cover bg-center ">
       <div className="mb-8 pt-40">
-        <h1 className="text-center font-['Raleway'] text-[68px] font-bold leading-[72px] tracking-[-4%]">
+        <h1 className="text-center font-['Raleway'] text-[50px] font-bold leading-[72px] tracking-[-4%] md:text-[68px]">
           <span className="text-[#332414]">Instant Roadside Assistance</span>{" "}
           <span className="bg-gradient-to-b from-[#ff8500] to-[#995000] bg-clip-text text-transparent">
             Anywhere

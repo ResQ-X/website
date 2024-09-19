@@ -5,11 +5,11 @@ import { testimonialList } from "@/lib/values/testimonial.values";
 export const Testimonial = () => {
   return (
     <div className="mb-20 mt-20">
-      <div className="flex flex-col items-center justify-center gap-6 px-[30px] md:px-[100px] lg:px-[200px]">
-        <p className="text-center text-[50px] font-semibold leading-[75.14px] text-[#121212] md:text-[64px]">
+      <div className="flex flex-col items-center justify-center gap-6 px-[20px] md:px-[100px] lg:px-[200px]">
+        <p className="text-center text-[40px] font-semibold leading-[75.14px] text-[#121212] md:text-[64px]">
           Real Stories,
         </p>
-        <p className="mt-[-25px] text-center text-[50px] font-semibold leading-[75.14px] text-[#121212] md:text-[64px]">
+        <p className="mt-[-25px] text-center text-[40px] font-semibold leading-[75.14px] text-[#121212] md:text-[64px]">
           Real Satisfaction
         </p>
         <div>

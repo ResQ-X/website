@@ -40,7 +40,7 @@ export const HomeTopTierOfferings = () => {
               <p className="text-25px mb-[17px] font-semibold leading-[29px] text-black">
                 {offering.title}
               </p>
-              <p className="text-base font-normal leading-[24px]">
+              <p className="text-center text-base font-normal leading-[24px] md:text-start">
                 {offering.description}
               </p>
             </div>

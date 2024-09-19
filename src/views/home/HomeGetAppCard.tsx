@@ -17,7 +17,7 @@ export const HomeGetAppCard = ({
           src={image}
           className="h-[144px] w-auto max-w-[200px] object-cover"
         />
-        <p className="font-['Raleway'] text-[24px] font-semibold leading-[28.18px] tracking-[-2%] text-[#FAF8F5]">
+        <p className="text-center font-['Raleway'] text-[24px] font-semibold leading-[28.18px] tracking-[-2%] text-[#FAF8F5]">
           {text}
         </p>
       </div>
