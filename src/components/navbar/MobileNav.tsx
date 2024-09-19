@@ -5,12 +5,10 @@ import Image from "next/image";
 import { NavItem } from "./NavItem";
 
 export const MobileNav = () => {
-  // State to manage dropdown visibility
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle the menu
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle the state between true/false
+    setIsMenuOpen(!isMenuOpen);
     console.log(isMenuOpen);
   };
 
@@ -20,7 +18,7 @@ export const MobileNav = () => {
         tabIndex={0}
         role="button"
         className="btn btn-ghost lg:hidden"
-        onClick={toggleMenu} // Toggle menu on click
+        onClick={toggleMenu}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +37,7 @@ export const MobileNav = () => {
       </div>
 
       {/* Dropdown Menu */}
-      {isMenuOpen && ( // Only show the menu if isMenuOpen is true
+      {isMenuOpen && (
         <ul
           tabIndex={0}
           className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-white p-2 shadow"
