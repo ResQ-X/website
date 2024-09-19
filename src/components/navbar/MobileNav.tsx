@@ -1,27 +1,54 @@
-import { ResqxLogo } from "../ResxqLogo";
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { NavItem } from "./NavItem";
-import { NavButton } from "./NavButton";
-import { MobileNav } from "./MobileNav";
 
-export const NavBar = () => {
+export const MobileNav = () => {
+  // State to manage dropdown visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Function to toggle the menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Toggle the state between true/false
+    console.log(isMenuOpen);
+  };
+
   return (
-    <div className="navbar flex items-center justify-between bg-white px-1 py-4 font-['Raleway'] text-base text-[#332414] md:px-8">
-      <div className=" px-0">
-        {/* MOBILE MENU ICON */}
-        <MobileNav />
-        {/* LOGO */}
-        <ResqxLogo />
+    <div className="dropdown lg:hidden">
+      <div
+        tabIndex={0}
+        role="button"
+        className="btn btn-ghost lg:hidden"
+        onClick={toggleMenu} // Toggle menu on click
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h8m-8 6h16"
+          />
+        </svg>
       </div>
 
-      {/* CENTER NAV */}
-      <div className="  hidden lg:flex lg:flex-row">
-        <ul className="menu menu-horizontal px-1">
+      {/* Dropdown Menu */}
+      {isMenuOpen && ( // Only show the menu if isMenuOpen is true
+        <ul
+          tabIndex={0}
+          className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-white p-2 shadow"
+        >
           <NavItem name={"Home"} path={"/"} />
           <li>
             <details>
               <summary>Discover Us</summary>
-              <ul className="flex flex-col items-center bg-white p-1.5 text-xs">
+              <ul className="flex flex-col items-start bg-white p-1.5 text-xs">
                 <NavItem name={"About"} path={"/about"} />
                 <NavItem name={"Services"} path={"/services"} />
                 <NavItem name={"Careers"} path={"/careers"} />
@@ -31,12 +58,6 @@ export const NavBar = () => {
           </li>
           <NavItem name={"Blog"} path={"/blog"} />
           <NavItem name={"Get in touch"} path={"/contact"} />
-        </ul>
-      </div>
-
-      {/* RIGHT NAV */}
-      <div className="text-base">
-        <ul className="menu menu-horizontal hidden px-1 lg:flex">
           <li>
             <a>
               <div className="flex flex-row">
@@ -55,18 +76,15 @@ export const NavBar = () => {
           </li>
           <li>
             <details>
-              <summary className="text-[#FF8500]">Partner</summary>
-              <ul className="flex w-48 flex-col items-center bg-white p-1.5 text-xs">
+              <summary>Partner</summary>
+              <ul className="bg-white p-2 text-xs">
                 <NavItem name={"Earn with ResQ-X"} path={"/membership"} />
                 <NavItem name={"Partner with ResQ-X"} path={"/partner"} />
               </ul>
             </details>
           </li>
         </ul>
-        <ul className="menu menu-horizontal px-1">
-          <NavButton />
-        </ul>
-      </div>
+      )}
     </div>
   );
 };
