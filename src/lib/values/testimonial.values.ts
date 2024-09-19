@@ -4,7 +4,7 @@ export const testimonialList: IUserReview[] = [
   {
     avatar: '/images/testimonial/1.png',
     name: 'KaiB',
-    date: '22 July',
+    date: '22 Jul.',
     review: `
     ResQ-X saved my day! I was stranded with a flat tire, and within 20 minutes,
     they had me back on the road. Fast, friendly, and reliable service. Highly recommend!
@@ -14,7 +14,7 @@ export const testimonialList: IUserReview[] = [
   {
     avatar: '/images/testimonial/1.png',
     name: 'KaiB',
-    date: '22 July',
+    date: '22 Jul.',
     review: `
     ResQ-X saved my day! I was stranded with a flat tire, and within 20 minutes,
     they had me back on the road. Fast, friendly, and reliable service. Highly recommend!
@@ -24,7 +24,7 @@ export const testimonialList: IUserReview[] = [
   {
     avatar: '/images/testimonial/1.png',
     name: 'KaiB',
-    date: '22 July',
+    date: '22 Jul.',
     review: `
     ResQ-X saved my day! I was stranded with a flat tire, and within 20 minutes,
     they had me back on the road. Fast, friendly, and reliable service. Highly recommend!
