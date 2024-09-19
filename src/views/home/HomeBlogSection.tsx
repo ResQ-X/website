@@ -7,7 +7,7 @@ export const HomeBlogSection = () => {
         Tips for you
       </p>
 
-      <div className="grid-col-1 grid justify-items-start gap-6 px-10 lg:grid-cols-2">
+      <div className="grid-col-1 grid justify-items-start gap-6 px-4 md:px-10 lg:grid-cols-2">
         <HomeBlogSectionCard />
         <HomeBlogSectionCard />
         <HomeBlogSectionCard />

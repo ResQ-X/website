@@ -10,7 +10,7 @@ import { NavButton } from "./NavButton";
 
 export const NavBar = () => {
   return (
-    <div className="navbar flex items-center justify-between bg-white px-8 py-4 font-['Raleway'] text-base text-[#332414]">
+    <div className="navbar flex items-center justify-between bg-white px-1 py-4 font-['Raleway'] text-base text-[#332414] md:px-8">
       <div className=" px-0">
         {/* MOBILE MENU ICON */}
         <div className="dropdown  lg:hidden">
