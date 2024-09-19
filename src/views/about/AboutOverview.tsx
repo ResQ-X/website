@@ -16,15 +16,23 @@ export const AboutOverview = () => {
             className="relative max-h-full w-full overflow-hidden object-cover"
           />
         </div>
-        <div className="w-full text-left lg:ml-[29px] lg:w-2/4">
+        <div className="mt-6 w-full text-left lg:ml-[29px] lg:mt-0 lg:w-2/4">
           <div className="">
-            <div className="mb-3 flex flex-row">
-              <div></div>
+            <div className="mb-3 flex flex-row items-center gap-2">
+              <div className="rounded-lg bg-[#ffce99] p-2">
+                <Image
+                  height={1200}
+                  width={1200}
+                  alt="Contact Image"
+                  src={"/icons/diagonal_icon.png"}
+                  className="w-4 object-cover"
+                />
+              </div>
               <p className="text-xl font-semibold leading-[23.48px] tracking-[-2%] text-[#1F1F1F]">
                 Who are we?
               </p>
             </div>
-            <p className="mb-3 font-['Inter']  text-[40px] font-bold leading-[46.96px] tracking-[-2%]  text-[#1F1F1F]">
+            <p className="mb-3 text-[40px] font-bold leading-[46.96px] tracking-[-2%]  text-[#1F1F1F]">
               Our Company Overview
             </p>
             <p className="mb-6 text-base font-normal leading-[21.13px] tracking-[-2%] text-[#A89887]">
