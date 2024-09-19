@@ -1,11 +1,10 @@
 import { IUserReview } from "@/lib/models";
-import type { NextPage } from "next";
 import { FC } from "react";
 
 export const UserReview: FC<IUserReview> = (review: IUserReview) => {
   return (
     <div className="relative box-border flex shrink-0 flex-col items-start justify-start gap-4 rounded-radius-200 bg-white p-4 text-left font-body-medium-medium-heebo-14 text-sm text-text-text-body shadow-[0px_4px_25px_rgba(0,_0,_0,_0.12)]">
-      <div className="flex flex-row items-center justify-between ">
+      <div className="flex w-full flex-row items-center justify-between ">
         <div className="flex flex-row items-center justify-start gap-2">
           <img
             className="relative h-8 w-8 rounded-[50%] object-cover"
@@ -48,9 +47,9 @@ export const UserReview: FC<IUserReview> = (review: IUserReview) => {
           />
         </div>
       </div>
-      <div className="font-raleway flex w-[378px] flex-col items-start justify-start gap-4">
-        <div className="relative w-[360px] items-center overflow-hidden text-ellipsis tracking-[-0.02em] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] [display:-webkit-inline-box]">
-          {review.review}
+      <div className="font-raleway flex flex-col items-start justify-start gap-4">
+        <div className="relative  items-center tracking-[-0.02em] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] [display:-webkit-inline-box]">
+          <p className="">{review.review}</p>
         </div>
         <div className="relative flex h-3 w-[378px] shrink-0 items-center font-body-medium-medium-heebo-14 font-medium leading-[150%] text-darkslateblue">
           {review.location}
