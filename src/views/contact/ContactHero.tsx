@@ -10,8 +10,8 @@ export const ContactHero = () => {
         <div className="lg:w-2/4"></div>
         <div className="mx-0 w-full px-2 lg:w-2/4 lg:px-0">
           <Image
-            height={700}
-            width={700}
+            height={2000}
+            width={2000}
             alt="Contact Image"
             src={"/images/contact/contact_image_group.png"}
             className="w-full object-cover"

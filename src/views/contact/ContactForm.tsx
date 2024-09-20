@@ -119,132 +119,97 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="bg-transparent  lg:pl-20">
-      <div className="flex flex-col lg:flex-row lg:justify-end lg:gap-16">
-        <div className="w-full p-8 lg:-mt-[380px] lg:w-2/4">
-          <div className="card w-full shrink-0 bg-white shadow-2xl">
-            <div className="card-body">
-              <p className="mb-6 text-center font-['Raleway'] text-[28px] font-extrabold leading-[37.57px] tracking-[-2%] text-[#303A42] lg:text-start lg:text-[32px]">
-                We love to hear from you!
-              </p>
-              <form onSubmit={handleSubmit}>
-                <div className="form-control flex max-w-full flex-row items-center justify-between gap-4">
-                  <div className="form-control">
-                    <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
-                      <span className="">First name</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="First Name"
-                      id="firstName"
-                      name="firstName"
-                      value={data.firstName}
-                      onChange={handleInputChange}
-                      className="input input-bordered w-full rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
-                      required
-                    />
-                  </div>
+    <div className="card w-full shrink-0 bg-white shadow-2xl">
+      <div className="card-body">
+        <p className="mb-6 text-center font-['Raleway'] text-[28px] font-extrabold leading-[37.57px] tracking-[-2%] text-[#303A42] lg:text-start lg:text-[32px]">
+          We love to hear from you!
+        </p>
+        <form onSubmit={handleSubmit}>
+          <div className="form-control flex max-w-full flex-row items-center justify-between gap-4">
+            <div className="form-control">
+              <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
+                <span className="">First name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="First Name"
+                id="firstName"
+                name="firstName"
+                value={data.firstName}
+                onChange={handleInputChange}
+                className="input input-bordered w-full rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
+                required
+              />
+            </div>
 
-                  <div className="form-control">
-                    <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
-                      <span className="">Last name</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Last name"
-                      id="lastName"
-                      name="lastName"
-                      value={data.lastName}
-                      onChange={handleInputChange}
-                      className="input input-bordered w-full rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="form-control">
-                  <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
-                    <span className="">Email</span>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Ex JohnDoe214@gmail.com"
-                    id="email"
-                    name="email"
-                    value={data.email}
-                    onChange={handleInputChange}
-                    className="input input-bordered rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
-                    required
-                  />
-                </div>
-                <div className="form-control">
-                  <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
-                    <span className="">Subject</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Subject"
-                    id="subject"
-                    name="subject"
-                    value={data.subject}
-                    onChange={handleInputChange}
-                    className="input input-bordered rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
-                    required
-                  />
-                </div>
-                <div className="form-control">
-                  <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
-                    <span className="">What can we help you with ?</span>
-                  </label>
-                  <textarea
-                    placeholder="Type here your message"
-                    id="message"
-                    name="message"
-                    value={data.message}
-                    onChange={handleInputChange}
-                    className="input input-bordered min-h-[138px] rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
-                    required
-                  ></textarea>
-                </div>
-
-                <div className="font-raleway text-2xl form-control relative mt-6 box-border flex max-h-[65px] max-w-[464px] justify-center rounded-[12px] px-1 py-3 font-semibold text-white [background:linear-gradient(180deg,_#ff8500,_#995000)]">
-                  <button
-                    type="submit"
-                    className="text-center text-lg text-white"
-                  >
-                    {isLoading ? "...Sending" : "Submit"}
-                  </button>
-                </div>
-                <ToastContainer />
-              </form>
+            <div className="form-control">
+              <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
+                <span className="">Last name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Last name"
+                id="lastName"
+                name="lastName"
+                value={data.lastName}
+                onChange={handleInputChange}
+                className="input input-bordered w-full rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
+                required
+              />
             </div>
           </div>
-        </div>
-        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 md:flex-row lg:w-2/4 lg:gap-8">
-          <a
-            href="tel:2349123413450"
-            rel="noopener noreferrer"
-            className="no-underline"
-            target="_blank"
-          >
-            <IconButton
-              text="091-234-13450"
-              icon="/icons/call_calling.png"
-              alt="Contact Image"
+          <div className="form-control">
+            <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
+              <span className="">Email</span>
+            </label>
+            <input
+              type="email"
+              placeholder="Ex JohnDoe214@gmail.com"
+              id="email"
+              name="email"
+              value={data.email}
+              onChange={handleInputChange}
+              className="input input-bordered rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
+              required
             />
-          </a>
-          <a
-            href="tel:2349123413450"
-            rel="noopener noreferrer"
-            className="no-underline"
-            target="_blank"
-          >
-            <IconButton
-              text="Live chat"
-              icon="/icons/chat_icon.png"
-              alt="Chat Icon"
+          </div>
+          <div className="form-control">
+            <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
+              <span className="">Subject</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Subject"
+              id="subject"
+              name="subject"
+              value={data.subject}
+              onChange={handleInputChange}
+              className="input input-bordered rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
+              required
             />
-          </a>
-        </div>
+          </div>
+          <div className="form-control">
+            <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
+              <span className="">What can we help you with ?</span>
+            </label>
+            <textarea
+              placeholder="Type here your message"
+              id="message"
+              name="message"
+              value={data.message}
+              onChange={handleInputChange}
+              className="input input-bordered min-h-[138px] rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
+              required
+            ></textarea>
+          </div>
+
+          <div className="font-raleway text-2xl form-control relative mt-6 box-border flex max-h-[65px] max-w-[464px] justify-center rounded-[12px] px-1 py-3 font-semibold text-white [background:linear-gradient(180deg,_#ff8500,_#995000)]">
+            <button type="submit" className="text-center text-lg text-white">
+              {isLoading ? "...Sending" : "Submit"}
+            </button>
+          </div>
+          <ToastContainer />
+        </form>
       </div>
     </div>
   );
