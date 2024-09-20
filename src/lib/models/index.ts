@@ -35,3 +35,11 @@ export interface IVacancy {
   role: string;
   deadline: string;
 }
+
+export interface IMembershipPlan {
+  price: string;
+  benefitList: string[];
+  type: string;
+  url: string;
+  customClassName: string;
+}
