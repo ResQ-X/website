@@ -77,7 +77,7 @@ export const sendUserMessage = async (data: ContactMessageModel) => {
     const msg = {
     to: data.email,
     from: `"ResQ-X" <${sender}>`, 
-    subject: subject,
+    subject: data.subject,
     html: await getUserMessage(data.firstName),
     };
   
@@ -104,6 +104,8 @@ export async function getAdminMessage(data: ContactMessageModel){
           <p>${data.firstName} ${data.lastName}</p> 
           <strong>Email: </strong>
           <p>${data.email}</p> 
+          <strong>Subject: </strong> 
+          <p>${data.subject}</p> 
           <strong>Message: </strong> 
           <p>${data.message}</p> 
           </div>

@@ -26,6 +26,12 @@ export interface ICoreValue {
   description: string;
 }
 
+export interface IAdditionalService {
+  image: string;
+  title: string;
+  description: string;
+}
+
 export interface IWhyWork {
   title: string;
   description: string;

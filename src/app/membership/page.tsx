@@ -1,3 +1,4 @@
+import { AdditionalServices } from "@/views/membership/AdditionalServices";
 import { MembershipHero } from "@/views/membership/MembershipHero";
 import { MembershipPlans } from "@/views/membership/MembershipPlans";
 
@@ -7,6 +8,7 @@ export default function Page() {
       <div>
         <MembershipHero />
         <MembershipPlans />
+        <AdditionalServices />
       </div>
     </main>
   );
