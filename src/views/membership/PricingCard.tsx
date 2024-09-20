@@ -5,8 +5,14 @@ import Link from "next/link";
 export const PricingCard = (plan: IMembershipPlan) => {
   return (
     <div className="w-full shrink-0 font-['Raleway'] ">
-      <div className="flex flex-col rounded-lg bg-white pb-[52px] pt-[52] shadow-2xl">
-        <div className="my-10 mb-[29px] flex flex-row items-center justify-between pl-3 pr-0">
+      <div
+        className={`flex flex-col rounded-lg bg-white shadow-2xl`}
+        style={{
+          paddingTop: plan.paddingTop ? plan.paddingTop : `41px`,
+          paddingBottom: plan.paddingBottom ? plan.paddingBottom : `52px`,
+        }}
+      >
+        <div className="mb-[29px] flex flex-row items-center justify-between pl-3 pr-0">
           <p className="text-[24px] font-semibold leading-[28.18px] tracking-[-2%] text-[#736250]">
             {plan.price}
             <span className="text-base font-bold leading-[18.78px]  text-[#736250]">

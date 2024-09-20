@@ -42,4 +42,6 @@ export interface IMembershipPlan {
   type: string;
   url: string;
   customClassName: string;
+  paddingTop?: string;
+  paddingBottom?: string;
 }

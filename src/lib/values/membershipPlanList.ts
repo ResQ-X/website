@@ -18,6 +18,8 @@ export const quaterlyPlanList: IMembershipPlan[] = [
     price: '₦26,500',
     type: 'Extra',
     url: '',
+    paddingTop: '46px',
+    paddingBottom: '113px',
     customClassName: "[background:linear-gradient(180deg,_#ff8500,_#995000)]",
     benefitList: [
       "Roadside assistance 1/4 mile from your home",
