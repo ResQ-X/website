@@ -57,7 +57,7 @@ export const NavBar = () => {
             <details>
               <summary className="text-[#FF8500]">Partner</summary>
               <ul className="flex w-48 flex-col items-center bg-white p-1.5 text-xs">
-                <NavItem name={"Earn with ResQ-X"} path={"/membership"} />
+                <NavItem name={"Earn with ResQ-X"} path={"/grow-with-us"} />
                 <NavItem name={"Partner with ResQ-X"} path={"/partner"} />
               </ul>
             </details>
