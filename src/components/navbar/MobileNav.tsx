@@ -76,7 +76,7 @@ export const MobileNav = () => {
             <details>
               <summary>Partner</summary>
               <ul className="bg-white p-2 text-xs">
-                <NavItem name={"Earn with ResQ-X"} path={"/membership"} />
+                <NavItem name={"Earn with ResQ-X"} path={"/grow-with-us"} />
                 <NavItem name={"Partner with ResQ-X"} path={"/partner"} />
               </ul>
             </details>
