@@ -25,3 +25,13 @@ export interface ICoreValue {
   title: string;
   description: string;
 }
+
+export interface IWhyWork {
+  title: string;
+  description: string;
+}
+
+export interface IVacancy {
+  role: string;
+  deadline: string;
+}
