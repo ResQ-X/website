@@ -13,6 +13,7 @@ export const ContactForm = () => {
   const defaultData: ContactMessageModel = {
     firstName: "",
     lastName: "",
+    subject: "",
     email: "",
     message: "",
   };
@@ -177,6 +178,21 @@ export const ContactForm = () => {
                 </div>
                 <div className="form-control">
                   <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
+                    <span className="">Subject</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Subject"
+                    id="subject"
+                    name="subject"
+                    value={data.subject}
+                    onChange={handleInputChange}
+                    className="input input-bordered rounded-[10px] bg-[#E9E9E9] py-3 text-lg text-[#303A42] placeholder-[#93979b]"
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label pb-4 font-['Raleway'] text-xl font-medium text-[#303A42]">
                     <span className="">What can we help you with ?</span>
                   </label>
                   <textarea
@@ -200,7 +216,6 @@ export const ContactForm = () => {
                 </div>
                 <ToastContainer />
               </form>
-              {/* {toast && <div>{toast}</div>} */}
             </div>
           </div>
         </div>

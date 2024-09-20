@@ -1,5 +1,3 @@
-import { whyWorkList } from "@/lib/values/whywork.values";
-import { WhyWorkWithUsCard } from "./WhyWorkWithUsCard";
 import { VacancyCard } from "./VacancyCard";
 import { vacancyList } from "@/lib/values/vacancy.values";
 

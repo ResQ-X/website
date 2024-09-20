@@ -1,3 +1,4 @@
+import { CareerContact } from "@/views/careers/CareerContact";
 import { CareerHero } from "@/views/careers/CareerHero";
 import { CareerImages } from "@/views/careers/CareerImages";
 import { VacancySection } from "@/views/careers/VacancySection";
@@ -10,6 +11,7 @@ export default function Page() {
       <CareerImages />
       <WhyWorkWithUs />
       <VacancySection />
+      <CareerContact />
     </div>
   );
 }
