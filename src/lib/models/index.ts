@@ -51,3 +51,10 @@ export interface IMembershipPlan {
   paddingTop?: string;
   paddingBottom?: string;
 }
+
+export interface IPartnerHowItWorks {
+  number: string;
+  title: string;
+  description: string;
+  image: string;
+}
