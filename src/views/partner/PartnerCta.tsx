@@ -1,37 +1,25 @@
 import { FlatRightIconButton } from "@/components/buttons/FlatRightIconButton";
+import Link from "next/link";
 
 export const PartnerCta = () => {
   return (
-    <div className="relative min-h-[350px] w-full rounded-xl bg-[url('/images/home/blog/1.png')] bg-cover bg-center md:min-h-[300px]">
+    <div className="relative mx-4 flex min-h-[350px] items-center justify-center rounded-xl bg-[url('/images/partner/partner_cta_image.jpeg')] bg-cover bg-center md:min-h-[300px] lg:mx-[120px] lg:px-[100px]">
       <div className="absolute inset-0 rounded-xl bg-black opacity-50"></div>
-      <div className="flex flex-col items-center justify-start">
-        <div className="relative z-10 px-6">
-          <div className="flex flex-col justify-between">
-            <div className=" pt-10 text-start text-white">
-              <p className="mb-3 max-h-[180px] font-['Raleway'] text-[24px] font-semibold leading-[32px] tracking-[-2%] md:text-[28px]">
-                Navigating the Rainy Season: Flood-Prone Areas in Lagos You Need
-                to Know
-              </p>
-              <p className="mb-[62px] font-['Raleway'] text-base font-semibold leading-[21.13px] tracking-[-2%] md:text-lg">
-                August 12, 2024
-              </p>
-            </div>
-            <div className="mt-[-20px]">
-              <a
-                href={""}
-                rel="noopener noreferrer"
-                className="no-underline"
-                target="_blank"
-              >
-                <FlatRightIconButton
-                  text="Read More"
-                  alt="Arrow Right Icon"
-                  icon="/icons/arrow_right_long_icon.png"
-                />
-              </a>
-            </div>
+      <div className="relative z-10 my-auto flex flex-col items-center">
+        <p className="mb-[43px] max-h-[180px] text-center font-['Merriweather'] text-[40px] font-semibold leading-[58px] text-white md:text-[50px]">
+          Protect your fleet today!
+        </p>
+        <Link href="/contact">
+          <div
+            className={`font-raleway relative box-border flex min-h-[60px] w-[250px] min-w-[100px] flex-row items-center justify-center gap-2 rounded-[88px] p-[10px] text-lg leading-6 tracking-[-2%] text-white [background:linear-gradient(180deg,_#407BFF,_#08318D)]`}
+          >
+            <button
+              className={`text-center font-['Raleway'] text-base font-semibold leading-[21px] tracking-[-2%]`}
+            >
+              Get a quote
+            </button>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

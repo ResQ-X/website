@@ -27,7 +27,7 @@ export const PartnerHero = () => {
                   className={`font-raleway relative box-border flex min-h-[60px] w-[250px] min-w-[100px] flex-row items-center justify-center gap-2 rounded-[88px] p-[10px] text-lg leading-6 tracking-[-2%] text-white [background:linear-gradient(180deg,_#407BFF,_#332414)]`}
                 >
                   <button
-                    className={`text-center font-['Raleway'] text-lg font-semibold leading-[21px] tracking-[-2%]`}
+                    className={`text-center font-['Raleway'] text-base font-semibold leading-[21px] tracking-[-2%]`}
                   >
                     Get a quote
                   </button>
