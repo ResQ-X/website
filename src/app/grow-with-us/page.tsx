@@ -2,6 +2,7 @@ import { GrowWithUsHero } from "@/views/grow-with-us/GrowWithUsHero";
 import Faqs from "../faqs/page";
 import { CareerContact } from "@/views/careers/CareerContact";
 import { WhatYouGain } from "@/views/grow-with-us/WhatYouGain";
+import { GrowWithUsRectangle } from "@/views/grow-with-us/GrowWithUsRectangle";
 
 export default function Page() {
   return (
@@ -9,6 +10,7 @@ export default function Page() {
       <div>
         <GrowWithUsHero />
         <WhatYouGain />
+        <GrowWithUsRectangle />
         <CareerContact />
         <Faqs />
       </div>
