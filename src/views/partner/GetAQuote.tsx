@@ -1,7 +1,84 @@
+import { ContactForm } from "../contact/ContactForm";
+import Image from "next/image";
+
 export const GetAQuote = () => {
   return (
-    <div>
-      <div></div>
+    <div className="mx-4 mb-[120px] lg:mx-[55px]">
+      <div className="mb-6 font-['Raleway']">
+        <p className="mb-4 text-center text-[50px] font-bold leading-[55px] text-[#1F1F1F] md:text-[75px] md:leading-[75.14px]">
+          Get A Quote
+        </p>
+        <p className="text-center text-base font-normal text-[##333333] lg:px-[320px]">
+          Reach out to us for a personalized quote that meets your unique
+          business needs.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div>
+          <ContactForm />
+        </div>
+
+        <div className="relative flex items-center">
+          <div className="absolute inset-0 grid grid-cols-2 ">
+            <div className="h-full w-full bg-white"></div>
+            <div className="h-full w-full rounded-s-[8px] bg-[#407BFF]"></div>
+          </div>
+
+          <div className="relative  bg-[#031846] py-[100px] pl-[70px] pr-[170px] font-['Raleway']">
+            <p className="mb-[40px] text-[40px] font-bold leading-[46.96px] text-[#FAF8F5] ">
+              Info
+            </p>
+            <div className=" flex flex-col ">
+              <ContactItem
+                title="Contact"
+                description="091-234-13450"
+                icon="/icons/call_calling.png"
+              />
+              <ContactItem
+                title="Email"
+                description="info@resqx.com"
+                icon="/icons/email.png"
+              />
+              <ContactItem
+                title="Address"
+                description="Lagos, Nigeria"
+                icon="/icons/location.png"
+              />
+              <ContactItem
+                title="Instagram"
+                description="ResQ-X"
+                icon="/icons/instagram.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+interface ContactItemProps {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export const ContactItem = ({ title, description, icon }: ContactItemProps) => {
+  return (
+    <div className="mb-[42px] flex flex-row items-center text-white">
+      <div className="mr-[6px]">
+        <Image
+          height={2000}
+          width={2000}
+          alt={title}
+          src={icon}
+          className="w-8 object-cover"
+        />
+      </div>
+      <p className=" text-[28px] font-semibold leading-[32.87px] ">{title}</p>
+      <p className="mx-3 text-[25px] text-[#F2E7DA] ">-</p>
+      <p className="font-roboto text-[18px] font-normal leading-[21.09px] ">
+        {description}
+      </p>
     </div>
   );
 };
