@@ -58,3 +58,9 @@ export interface IPartnerHowItWorks {
   description: string;
   image: string;
 }
+
+export interface IKeyBenefit {
+  image: string;
+  title: string;
+  description: string;
+}
