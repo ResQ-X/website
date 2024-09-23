@@ -6,7 +6,7 @@ import { MobileNav } from "./MobileNav";
 
 export const NavBar = () => {
   return (
-    <div className="navbar flex items-center justify-between bg-white px-1 py-4 font-['Raleway'] text-base text-[#332414] md:px-8">
+    <div className="navbar z-10 flex items-center justify-between bg-white px-1 py-4 font-['Raleway'] text-base text-[#332414] md:px-8">
       <div className=" px-0">
         {/* MOBILE MENU ICON */}
         <MobileNav />
@@ -15,7 +15,7 @@ export const NavBar = () => {
       </div>
 
       {/* CENTER NAV */}
-      <div className="  hidden lg:flex lg:flex-row">
+      <div className="z-10 hidden lg:flex lg:flex-row">
         <ul className="menu menu-horizontal px-1">
           <NavItem name={"Home"} path={"/"} />
           <li>
@@ -35,7 +35,7 @@ export const NavBar = () => {
       </div>
 
       {/* RIGHT NAV */}
-      <div className="text-base">
+      <div className="z-10 text-base">
         <ul className="menu menu-horizontal hidden px-1 lg:flex">
           <li>
             <a>

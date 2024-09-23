@@ -14,7 +14,7 @@ export const GetAQuote = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div>
+        <div className="mb-20 lg:mb-0">
           <ContactForm />
         </div>
 
@@ -33,21 +33,25 @@ export const GetAQuote = () => {
                 title="Contact"
                 description="091-234-13450"
                 icon="/icons/call_calling.png"
+                url="tel:2349123413450"
               />
               <ContactItem
                 title="Email"
                 description="info@resqx.com"
                 icon="/icons/email.png"
+                url="mailto:info@resqx.com"
               />
               <ContactItem
                 title="Address"
                 description="Lagos, Nigeria"
                 icon="/icons/location.png"
+                url={""}
               />
               <ContactItem
                 title="Instagram"
                 description="ResQ-X"
                 icon="/icons/instagram.png"
+                url="https://instagram.com/resqx"
               />
             </div>
           </div>
@@ -60,9 +64,15 @@ interface ContactItemProps {
   title: string;
   description: string;
   icon: string;
+  url: string;
 }
 
-export const ContactItem = ({ title, description, icon }: ContactItemProps) => {
+export const ContactItem = ({
+  title,
+  description,
+  icon,
+  url,
+}: ContactItemProps) => {
   return (
     <div className="mb-[42px] flex flex-col items-center text-white md:flex-row">
       <div className="mb-2 mr-[6px] md:mb-0">
@@ -78,9 +88,17 @@ export const ContactItem = ({ title, description, icon }: ContactItemProps) => {
         {title}
       </p>
       <p className="mx-3 hidden text-[25px] text-[#F2E7DA] md:block">-</p>
-      <p className="font-roboto text-[18px] font-normal leading-[21.09px] ">
-        {description}
-      </p>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="no-underline"
+      >
+        {" "}
+        <p className="font-roboto text-[18px] font-normal leading-[21.09px] ">
+          {description}
+        </p>
+      </a>
     </div>
   );
 };

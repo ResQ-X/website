@@ -1,7 +1,7 @@
 "use client";
 
 import { EmblaOptionsType } from "embla-carousel";
-import { EmblaCarousel } from "./embla/EmblaCarousel";
+import { EmblaCarousel } from "../../../.DEVDOCS/embla/EmblaCarousel";
 import { HomeSliderCard } from "./HomeSliderCard";
 import React, { useEffect, useRef, useState } from "react";
 
