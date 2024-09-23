@@ -1,3 +1,5 @@
+import React, { useState, useEffect, useRef } from "react";
+
 import { ResqxLogo } from "../ResxqLogo";
 import Image from "next/image";
 import { NavItem } from "./NavItem";
