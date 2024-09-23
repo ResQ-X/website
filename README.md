@@ -1,1 +1,1 @@
-## Church Membership Management System
+## ResQ-X Company Website

@@ -1,7 +1,4 @@
 import Image from "next/image";
-import { FaqsAccordion } from "@/components/FaqsAccordion";
-import { faqsList } from "@/lib/values/faqs.values";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export default function NetworkError() {
   return (

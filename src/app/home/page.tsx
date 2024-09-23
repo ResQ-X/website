@@ -11,9 +11,6 @@ import { HomeTopTierOfferings } from "@/views/home/HomeTopTierOfferings";
 import { Testimonial } from "@/views/tesimonials/Testimonial";
 import Faqs from "../faqs/page";
 import { HomeCtaSection } from "@/views/home/HomeCtaSection";
-import { EmblaCarouselAuto } from "@/views/home/EmblaCarouselAuto";
-import NewSlider from "@/views/home/NewSlider";
-import PartnerLogos from "@/views/home/slider/Slider";
 
 export default function Home() {
   return (
