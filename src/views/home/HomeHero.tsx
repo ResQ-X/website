@@ -3,7 +3,7 @@ import { customerAppStoreLink, customerPlayStoreLink } from "@/lib/constants";
 
 export const HomeHero = () => {
   return (
-    <div className="h-[792px] w-full bg-[url('/images/home/home_hero_image.png')] bg-cover bg-center ">
+    <div className="h-[792px] w-full bg-[url('/images/home/home_hero_image.gif')] bg-cover bg-center ">
       <div className="mb-8 pt-40">
         <h1 className="text-center font-['Raleway'] text-[50px] font-bold leading-[72px] tracking-[-4%] md:text-[68px]">
           <span className="text-[#332414]">Instant Roadside Assistance</span>{" "}
@@ -13,7 +13,7 @@ export const HomeHero = () => {
         </h1>
       </div>
       <div>
-        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 pb-[468px] md:flex-row">
+        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 pb-[468px] md:flex-row ">
           <a
             href={customerPlayStoreLink}
             rel="noopener noreferrer"

@@ -24,8 +24,8 @@ export const GetAQuote = () => {
             <div className="h-full w-full rounded-s-[8px] bg-[#407BFF]"></div>
           </div>
 
-          <div className="relative  bg-[#031846] py-[100px] pl-[70px] pr-[170px] font-['Raleway']">
-            <p className="mb-[40px] text-[40px] font-bold leading-[46.96px] text-[#FAF8F5] ">
+          <div className="relative my-10 mr-10 w-full bg-[#031846] px-5 py-20 font-['Raleway'] lg:py-[100px] lg:pl-[70px] lg:pr-[170px]">
+            <p className="mb-[40px] text-center text-[40px] font-bold leading-[46.96px] text-[#FAF8F5] md:text-start ">
               Info
             </p>
             <div className=" flex flex-col ">
@@ -64,8 +64,8 @@ interface ContactItemProps {
 
 export const ContactItem = ({ title, description, icon }: ContactItemProps) => {
   return (
-    <div className="mb-[42px] flex flex-row items-center text-white">
-      <div className="mr-[6px]">
+    <div className="mb-[42px] flex flex-col items-center text-white md:flex-row">
+      <div className="mb-2 mr-[6px] md:mb-0">
         <Image
           height={2000}
           width={2000}
@@ -74,8 +74,10 @@ export const ContactItem = ({ title, description, icon }: ContactItemProps) => {
           className="w-8 object-cover"
         />
       </div>
-      <p className=" text-[28px] font-semibold leading-[32.87px] ">{title}</p>
-      <p className="mx-3 text-[25px] text-[#F2E7DA] ">-</p>
+      <p className="mb-3 text-[28px] font-semibold leading-[32.87px] md:mb-0 ">
+        {title}
+      </p>
+      <p className="mx-3 hidden text-[25px] text-[#F2E7DA] md:block">-</p>
       <p className="font-roboto text-[18px] font-normal leading-[21.09px] ">
         {description}
       </p>

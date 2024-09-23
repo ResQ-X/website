@@ -1,7 +1,38 @@
+"use client";
+
+import "@/ui/styles/partner_logo_animation.css";
+
+// List of logo images (example URLs)
+const logos = [
+  "/images/home/steps/step_1.png",
+  "/images/home/steps/step_2.png",
+  "/images/home/steps/step_3.png",
+  "/images/home/steps/step_1.png",
+  "/images/home/steps/step_3.png",
+];
+
 export const PartnerBrands = () => {
   return (
-    <div>
-      <div></div>
+    <div className=" mb-[80px] bg-[#FAF8F5] px-[65px] pb-[51px] pt-5">
+      <p className="mb-5 text-center font-['Raleway'] text-[28px] font-semibold leading-[32.87px] tracking-[-2%] text-[#736250] ">
+        Trusted By
+      </p>
+      <div className="overflow-hidden">
+        <div
+          className={`logo-row flex`}
+          style={{ animationDuration: "20s" }} // Adjust speed
+        >
+          {logos.map((logo, index) => (
+            <div key={index} className="logo-card mx-5 flex-none">
+              <img
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                className="h-20 w-auto"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

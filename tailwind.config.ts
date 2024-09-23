@@ -17,7 +17,8 @@ const config = {
   			'2xl': '1400px'
   		}
   	},
-  	extend: {
+    extend: {
+      
   		colors: {
   			'cold-grey-white': '#fff',
   			'text-txt-primary': '#000',

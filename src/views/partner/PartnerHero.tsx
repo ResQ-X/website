@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export const PartnerHero = () => {
   return (
-    <div className="mb-[100px] border-t-[2px] border-[#faf8f5] bg-white px-0 pb-0">
+    <div className="mb-[80px] border-t-[2px] border-[#faf8f5] bg-white px-0 pb-0 lg:mb-[10px]">
       <div className="flex flex-col items-center gap-2 lg:flex-row lg:gap-2 lg:px-10 lg:py-20">
         <div className="mt-14 pb-10 lg:my-auto lg:w-3/5 lg:pb-0">
           <div className="w-full">
