@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const AdditionalServiceCard = (value: ICoreValue) => {
   return (
-    <div className="rounded-lg border-[3px] border-[#332414] font-['Raleway'] tracking-[-2%]">
+    <div className="h-full rounded-lg border-[3px] border-[#332414] font-['Raleway'] tracking-[-2%]">
       <div className="">
         <Image
           height={2000}

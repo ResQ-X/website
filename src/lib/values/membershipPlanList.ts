@@ -2,7 +2,7 @@ import { IMembershipPlan } from "../models";
 
 export const quaterlyPlanList: IMembershipPlan[] = [
   {
-    price: '₦39,500',
+    price: '₦40,500',
     type: 'Premium',
     url: '',
     customClassName: "bg-[#FF725E]",
@@ -15,7 +15,7 @@ export const quaterlyPlanList: IMembershipPlan[] = [
     ],
   },
   {
-    price: '₦26,500',
+    price: '₦27,500',
     type: 'Extra',
     url: '',
     paddingTop: '46px',
@@ -30,7 +30,7 @@ export const quaterlyPlanList: IMembershipPlan[] = [
     ],
   },
   {
-    price: '₦14,500',
+    price: '₦15,000',
     type: 'Basic',
     url: '',
     customClassName: "bg-[#332414]",
@@ -46,7 +46,7 @@ export const quaterlyPlanList: IMembershipPlan[] = [
 
 export const annualPlanList: IMembershipPlan[] = [
   {
-    price: '₦39,500',
+    price: '₦165,000',
     type: 'Premium',
     url: '',
     customClassName: "bg-[#FF725E]",
@@ -59,7 +59,7 @@ export const annualPlanList: IMembershipPlan[] = [
     ],
   },
   {
-    price: '₦26,500',
+    price: '₦110,700',
     type: 'Extra',
     url: '',
     paddingTop: '46px',
@@ -74,7 +74,7 @@ export const annualPlanList: IMembershipPlan[] = [
     ],
   },
   {
-    price: '₦14,500',
+    price: '₦65,100',
     type: 'Basic',
     url: '',
     customClassName: "bg-[#332414]",
