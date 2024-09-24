@@ -25,7 +25,7 @@ export default function Home() {
         <HomeGetAppTabs />
         <HomeGetMovingSteps />
         <HomeBlogSection />
-        <Testimonial />
+        <Testimonial heading={["Real Stories,", "Real Satisfaction"]} />
         <Faqs />
         <HomeCtaSection />
       </div>

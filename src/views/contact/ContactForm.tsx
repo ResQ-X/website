@@ -123,8 +123,10 @@ export const ContactForm = ({
 
   return (
     <div className="card w-full shrink-0 bg-white shadow-2xl">
-      <div className="card-body">
-        <p className={`mb-6 text-center font-['Raleway'] ${textSize} font-extrabold leading-[37.57px] tracking-[-2%] text-[#303A42] lg:text-start lg:text-[32px]`}>
+      <div className="card-body px-4 md:px-8">
+        <p
+          className={`mb-6 text-center font-['Raleway'] ${textSize} font-extrabold leading-[37.57px] tracking-[-2%] text-[#303A42] lg:text-start lg:text-[32px]`}
+        >
           {title}
         </p>
         <form onSubmit={handleSubmit}>

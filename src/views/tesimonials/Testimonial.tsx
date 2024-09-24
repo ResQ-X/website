@@ -2,15 +2,15 @@ import Image from "next/image";
 import { UserReview } from "./UserReview";
 import { testimonialList } from "@/lib/values/testimonial.values";
 
-export const Testimonial = () => {
+export const Testimonial = ({ heading }: { heading: string[] }) => {
   return (
     <div className="mb-20 mt-20">
       <div className="flex flex-col items-center justify-center gap-6 px-[20px] md:px-[100px] lg:px-[200px]">
         <p className="text-center text-[40px] font-semibold leading-[75.14px] text-[#121212] md:text-[64px]">
-          Real Stories,
+          {heading[0]}
         </p>
         <p className="mt-[-25px] text-center text-[40px] font-semibold leading-[75.14px] text-[#121212] md:text-[64px]">
-          Real Satisfaction
+          {heading[1]}
         </p>
         <div>
           <Image

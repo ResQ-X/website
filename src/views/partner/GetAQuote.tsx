@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const GetAQuote = () => {
   return (
-    <div className="mx-4 mb-[120px] lg:mx-[55px]">
+    <div id="GetAQuote" className="mx-4 mb-[120px] lg:mx-[55px]">
       <div className="mb-6 font-['Raleway']">
         <p className="mb-4 text-center text-[50px] font-bold leading-[55px] text-[#1F1F1F] md:text-[75px] md:leading-[75.14px]">
           Get A Quote

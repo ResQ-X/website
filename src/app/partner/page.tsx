@@ -19,7 +19,7 @@ export default function Page() {
         <ApiIntegration />
         <GetAQuote />
         <PartnerCta />
-        <Testimonial />
+        <Testimonial heading={["Here’s what our", "partners say"]} />
         <Faqs />
       </div>
     </main>
