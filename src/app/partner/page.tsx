@@ -7,6 +7,13 @@ import { PartnerBrands } from "@/views/partner/PartnerBrands";
 import { KeyBenefits } from "@/views/partner/KeyBenefits";
 import { PartnerHowItWorks } from "@/views/partner/PartnerHowItWorks";
 import { GetAQuote } from "@/views/partner/GetAQuote";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Partner With Us - ResQ-X | Fast, Reliable And Affordable Roadside Assistance Near You",
+  description: "Resq-X Website",
+};
 
 export default function Page() {
   return (

@@ -1,7 +1,11 @@
 import Image from "next/image";
-import { FaqsAccordion } from "@/components/FaqsAccordion";
-import { faqsList } from "@/lib/values/faqs.values";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "404: Not Found - ResQ-X | Fast, Reliable And Affordable Roadside Assistance Near You",
+  description: "Resq-X Website",
+};
 
 export default function NotFound() {
   return (

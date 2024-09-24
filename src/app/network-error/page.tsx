@@ -1,4 +1,11 @@
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Network Error - ResQ-X | Fast, Reliable And Affordable Roadside Assistance Near You",
+  description: "Resq-X Website",
+};
 
 export default function NetworkError() {
   return (
