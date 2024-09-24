@@ -4,11 +4,11 @@ import "@/ui/styles/slider_animation.css";
 
 // List of logo images (example URLs)
 const logos = [
-  "/images/home/steps/step_1.png",
-  "/images/home/steps/step_2.png",
-  "/images/home/steps/step_3.png",
-  "/images/home/steps/step_1.png",
-  "/images/home/steps/step_3.png",
+  "/images/partner/brands/1.jpg",
+  "/images/partner/brands/2.png",
+  "/images/partner/brands/3.png",
+  "/images/partner/brands/1.jpg",
+  "/images/partner/brands/3.png",
 ];
 
 export const PartnerBrands = () => {

@@ -71,3 +71,11 @@ export interface IService {
   image: string;
   reverse: boolean;
 }
+
+export interface ITeam {
+  id: number;
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+}

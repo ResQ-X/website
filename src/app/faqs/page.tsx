@@ -15,11 +15,11 @@ export default function Faqs() {
             className="relative max-h-full w-full overflow-hidden object-cover"
           />
         </div>
-        <div className="w-full text-left lg:w-3/5">
+        <div className="h-full w-full text-left lg:max-h-[600px] lg:w-3/5">
           <p className="font-['Inter'] text-[32px] font-bold text-black">
             Frequently Asked Questions
           </p>
-          <div>
+          <div className="overflow-y-auto lg:max-h-[400px]">
             {faqsList.map((faq, index) => (
               <div key={index}>
                 <FaqsAccordion key={faq.id} {...faq} />

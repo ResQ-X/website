@@ -2,9 +2,9 @@ import { AboutOverview } from "@/views/about/AboutOverview";
 import Faqs from "../faqs/page";
 import { AboutHero } from "@/views/about/AboutHero";
 import { AboutCoreValues } from "@/views/about/AboutCoreValues";
-import { AboutTeam } from "@/views/about/AboutTeam";
 import { Metadata } from "next";
 import { NewsletterSection } from "@/views/about/NewsletterSection";
+import { Team } from "@/views/about/Team";
 
 export const metadata: Metadata = {
   title:
@@ -18,7 +18,7 @@ export default function Page() {
       <AboutHero />
       <AboutOverview />
       <AboutCoreValues />
-      <AboutTeam />
+      <Team />
       <Faqs />
       <NewsletterSection />
     </div>
