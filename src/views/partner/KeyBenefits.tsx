@@ -1,6 +1,6 @@
 import { KeyBenefitsCard } from "./KeyBenefitsCard";
 import { keyBenefitList } from "@/lib/values/keybenefits.values";
-import "@/ui/styles/partner_logo_animation.css";
+import "@/ui/styles/slider_animation.css";
 
 export const KeyBenefits = () => {
   return (
@@ -12,11 +12,15 @@ export const KeyBenefits = () => {
       </div>
       <div className="overflow-hidden">
         <div
-          className={`logo-row flex gap-x-10 md:gap-y-10`}
-          style={{ animationDuration: "20s" }} // Adjust speed
+          className={`slider-row flex gap-x-10 md:gap-y-10`}
+          style={{ animationDuration: "10s" }} // Adjust speed
         >
           {keyBenefitList.map((value, index) => (
             <KeyBenefitsCard key={index} {...value} />
+          ))}
+          {/* Clone the slides to ensure a smooth loop */}
+          {keyBenefitList.map((value, index) => (
+            <KeyBenefitsCard key={`clone-${index}`} {...value} />
           ))}
         </div>
       </div>

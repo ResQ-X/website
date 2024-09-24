@@ -1,26 +1,28 @@
 "use client";
-import "@/ui/styles/partner_logo_animation.css";
 
+import "@/ui/styles/slider_animation.css";
 import { homeSlideList } from "@/lib/values/homeSlide.values";
 import { HomeSliderCard } from "./HomeSliderCard";
 import React, { useEffect, useRef, useState } from "react";
 
 export const HomeSlider = () => {
   return (
-    <div className="mb-[120px] flex h-[309px] items-center bg-[#FAF8F5] font-['Raleway']">
-      <div className="overflow-hidden">
-        <div
-          className={`logo-row flex gap-x-10 md:gap-y-10`}
-          style={{ animationDuration: "10s" }} // Adjust speed
-        >
-          {homeSlideList.map((slide, index) => (
-            <HomeSliderCard
-              key={index}
-              number={slide.number}
-              text={slide.text}
-            />
-          ))}
-        </div>
+    <div className="mb-[120px] flex h-[309px] items-center overflow-hidden bg-[#FAF8F5] font-['Raleway']">
+      <div
+        className="slider-row relative flex gap-x-10"
+        style={{ animationDuration: "40s" }}
+      >
+        {homeSlideList.map((slide, index) => (
+          <HomeSliderCard key={index} number={slide.number} text={slide.text} />
+        ))}
+        {/* Clone the slides to ensure a smooth loop */}
+        {homeSlideList.map((slide, index) => (
+          <HomeSliderCard
+            key={`clone-${index}`}
+            number={slide.number}
+            text={slide.text}
+          />
+        ))}
       </div>
     </div>
   );
@@ -31,14 +33,6 @@ export const HomeSliderWithSwipe = () => {
   const totalSlides = 4;
   const slideWidth = 100; // Adjust to 100% for full-width slides
   const HomeCarouselRef = useRef<HTMLDivElement>(null);
-
-  // Slide data with different number and text for each slide
-  const slidesData = [
-    { number: "01", text: "We fix 4 out of 5 breakdowns on the spot" },
-    { number: "02", text: "Comprehensive roadside assistance" },
-    { number: "03", text: "Get expert help within minutes" },
-    { number: "04", text: "Your fleet in safe hands" },
-  ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -58,7 +52,7 @@ export const HomeSliderWithSwipe = () => {
           className="flex transition-transform duration-1000 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * slideWidth}%)` }}
         >
-          {slidesData.map((slide, index) => (
+          {homeSlideList.map((slide, index) => (
             <div
               key={index}
               className={`relative flex-shrink-0 transition-all duration-1000 ease-in-out ${

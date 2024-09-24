@@ -1,26 +1,36 @@
 /* styles/globals.css */
 
-.logo-row {
+/* .logo-row {
   display: flex;
   animation: slideLeft linear infinite;
   animation-play-state: running;
-}
+} */
 
-.animation-paused {
-  animation-play-state: paused;
+.slider-row {
+  display: flex;
+  animation: slideLeft linear infinite;
+ /*  animation: slideLeft 20s linear infinite;  // I decided to set the speed in each component*/
+  animation-play-state: running;
 }
 
 @keyframes slideLeft {
   0% {
-    transform: translateX(100%); /* Start from the right */
+    transform: translateX(0); /* Start from the current position */
   }
   100% {
     transform: translateX(-100%); /* Move completely to the left */
   }
 }
 
+.animation-paused {
+  animation-play-state: paused;
+}
+
+
 /* Add styles for individual logo cards */
 .logo-card {
   min-width: 150px; /* Adjust size based on logo */
   padding: 10px;
 }
+
+

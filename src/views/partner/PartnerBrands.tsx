@@ -1,6 +1,6 @@
 "use client";
 
-import "@/ui/styles/partner_logo_animation.css";
+import "@/ui/styles/slider_animation.css";
 
 // List of logo images (example URLs)
 const logos = [
@@ -19,11 +19,21 @@ export const PartnerBrands = () => {
       </p>
       <div className="overflow-hidden">
         <div
-          className={`logo-row flex`}
+          className={`slider-row flex`}
           style={{ animationDuration: "20s" }} // Adjust speed
         >
           {logos.map((logo, index) => (
             <div key={index} className="logo-card mx-5 flex-none">
+              <img
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                className="h-20 w-auto"
+              />
+            </div>
+          ))}
+          {/* Clone the slides to ensure a smooth loop */}
+          {logos.map((logo, index) => (
+            <div key={`clone-${index}`} className="logo-card mx-5 flex-none">
               <img
                 src={logo}
                 alt={`Logo ${index + 1}`}
