@@ -101,15 +101,15 @@ export const NewsletterSection = () => {
   };
 
   return (
-    <div className="relative mx-4 flex min-h-[350px] items-center justify-center rounded-xl bg-[url('/images/newsletter_bg.png')] bg-cover bg-center md:min-h-[300px] lg:mx-[120px] lg:px-[100px]">
+    <div className="relative mx-4 mb-[80px] flex min-h-[350px] items-center justify-center rounded-xl bg-[url('/images/newsletter_bg.png')] bg-cover bg-center md:min-h-[300px] lg:mx-[120px] lg:px-[100px]">
       <div className="absolute inset-0 rounded-xl bg-black opacity-20"></div>
       <div className="relative z-10 mb-10 mt-[57px] flex flex-col items-center">
-        <p className="mb-[43px] max-h-[180px] text-center font-['Merriweather'] text-[40px] font-bold leading-[58px] text-white md:text-[50px]">
+        <p className="mb-[43px] max-h-[180px] px-4 text-center font-['Merriweather'] text-[35px] font-bold leading-[58px] text-white md:text-[50px]">
           Keep up with the latest tips by subscribing to our newsletter
         </p>
 
-        <form onSubmit={handleSubmit} className="">
-          <div className="form-control flex max-w-full flex-row items-center justify-between gap-4">
+        <form onSubmit={handleSubmit} className="mx-4 mt-20 md:mt-0 lg:mx-0">
+          <div className="form-control max-w-full flex-col items-center justify-between gap-4 md:flex-row">
             <div className="form-control">
               <input
                 type="text"
@@ -136,7 +136,7 @@ export const NewsletterSection = () => {
               />
             </div>
           </div>
-          <div className="font-raleway text-2xl form-control relative mt-6 box-border flex max-h-[65px] max-w-[464px] justify-center rounded-[12px] px-1 py-3 font-semibold text-white [background:linear-gradient(180deg,_#ff8500,_#995000)]">
+          <div className="font-raleway text-2xl form-control relative  mt-6 box-border flex max-h-[65px] max-w-[464px] justify-center rounded-[12px] px-1 py-3 font-semibold text-white [background:linear-gradient(180deg,_#ff8500,_#995000)] ">
             <button type="submit" className="text-center text-lg text-white">
               {isLoading ? "...Sending" : "Subscribe"}
             </button>
@@ -144,17 +144,6 @@ export const NewsletterSection = () => {
 
           <ToastContainer />
         </form>
-        {/*  <Link href="/contact">
-          <div
-            className={`font-raleway relative box-border flex min-h-[60px] w-[250px] min-w-[100px] flex-row items-center justify-center gap-2 rounded-[88px] p-[10px] text-lg leading-6 tracking-[-2%] text-white [background:linear-gradient(180deg,_#407BFF,_#08318D)]`}
-          >
-            <button
-              className={`text-center font-['Raleway'] text-base font-semibold leading-[21px] tracking-[-2%]`}
-            >
-              Get a quote
-            </button>
-          </div>
-        </Link> */}
       </div>
     </div>
   );
