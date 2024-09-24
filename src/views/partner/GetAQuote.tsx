@@ -15,7 +15,11 @@ export const GetAQuote = () => {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="mb-20 lg:mb-0">
-          <ContactForm />
+          <ContactForm
+            title="Get a custom quote"
+            bgFrom="#407BFF"
+            bgTo="#08318D"
+          />
         </div>
 
         <div className="relative flex items-center">

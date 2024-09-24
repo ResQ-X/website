@@ -18,7 +18,7 @@ export const CareerContact = () => {
           />
         </div>
         <div className="lg:w-1/2">
-          <ContactForm />
+          <ContactForm title="We love to hear from you!" />
         </div>
       </div>
     </div>

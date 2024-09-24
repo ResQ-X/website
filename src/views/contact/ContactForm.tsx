@@ -8,7 +8,19 @@ import { useState } from "react";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export const ContactForm = () => {
+interface IProps {
+  title?: string;
+  textSize?: string;
+  bgFrom?: string;
+  bgTo?: string;
+}
+
+export const ContactForm = ({
+  title = "We love to hear from you!",
+  textSize = "text-[32px]",
+  bgFrom = "#ff8500",
+  bgTo = "#995000",
+}: IProps) => {
   const defaultData: ContactMessageModel = {
     firstName: "",
     lastName: "",
@@ -112,8 +124,8 @@ export const ContactForm = () => {
   return (
     <div className="card w-full shrink-0 bg-white shadow-2xl">
       <div className="card-body">
-        <p className="mb-6 text-center font-['Raleway'] text-[28px] font-extrabold leading-[37.57px] tracking-[-2%] text-[#303A42] lg:text-start lg:text-[32px]">
-          We love to hear from you!
+        <p className={`mb-6 text-center font-['Raleway'] ${textSize} font-extrabold leading-[37.57px] tracking-[-2%] text-[#303A42] lg:text-start lg:text-[32px]`}>
+          {title}
         </p>
         <form onSubmit={handleSubmit}>
           <div className="form-control flex max-w-full flex-row items-center justify-between gap-4">
@@ -194,8 +206,10 @@ export const ContactForm = () => {
             ></textarea>
           </div>
 
-          <div className="font-raleway text-2xl form-control relative mt-6 box-border flex max-h-[65px] max-w-[464px] justify-center rounded-[12px] px-1 py-3 font-semibold text-white [background:linear-gradient(180deg,_#ff8500,_#995000)]">
-            <button type="submit" className="text-center text-lg text-white">
+          <div
+            className={`font-raleway text-2xl form-control relative mt-6 box-border flex max-h-[65px]  justify-center rounded-[12px] px-1 py-3 font-semibold text-white [background:linear-gradient(180deg,_${bgFrom},_${bgTo})]`}
+          >
+            <button type="submit" className={`text-center text-lg text-white`}>
               {isLoading ? "...Sending" : "Submit"}
             </button>
           </div>
