@@ -36,13 +36,14 @@ export const AboutOverview = () => {
               Our Company Overview
             </p>
             <p className="mb-6 text-base font-normal leading-[21.13px] tracking-[-2%] text-[#A89887]">
-              Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos. Yorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Nunc vulputate libero et velit interdum, ac
-              aliquet odio mattis. Class aptent taciti sociosqu ad litora
-              torquent per conubia nostra, per inceptos himenaeos.
+              ResQ-x is more than just a roadside assistance service; we are
+              your trusted partner in ensuring safety and reliability on Lagos
+              roads. Founded in December 2023 by Nosa Okoroji and Tomachi Ajoku,
+              ResQ-x was born out of the need to bring structure and
+              dependability to Nigeria's vehicle breakdown industry. Our
+              services go beyond basic assistance, offering a seamless,
+              customer-centric experience that guarantees peace of mind for
+              vehicle owners.
             </p>
             <div className="mb-12">
               <Link href="/contact">
@@ -58,13 +59,17 @@ export const AboutOverview = () => {
               </Link>
             </div>
             <p className="mb-6 text-base font-normal leading-[21.13px] tracking-[-2%] text-[#A89887]">
-              Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti sociosqu ad litora torquent per conubia nostra, per
-              inceptos himenaeos. Yorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Nunc vulputate libero et velit interdum, ac
-              aliquet odio mattis. Class aptent taciti sociosqu ad litora
-              torquent per conubia nostra, per inceptos himenaeos.
+              ResQ-x is a Lagos-based breakdown cover service that aims to
+              redefine the roadside assistance experience in Nigeria. Since our
+              inception, we’ve built a reputation for being reliable,
+              affordable, and fast—attributes that are often missing in the
+              local market. We provide comprehensive solutions, from towing to
+              key replacements, for individual motorists and businesses with
+              vehicle fleets. Leveraging technology and a network of trained
+              professionals, our services are designed to get drivers back on
+              the road quickly, safely, and with as little stress as possible.
+              We continue to set new standards in vehicle emergency care, with a
+              focus on accessibility, innovation, and community-driven service.
             </p>
           </div>
         </div>
