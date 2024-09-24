@@ -4,6 +4,7 @@ import { AboutHero } from "@/views/about/AboutHero";
 import { AboutCoreValues } from "@/views/about/AboutCoreValues";
 import { AboutTeam } from "@/views/about/AboutTeam";
 import { Metadata } from "next";
+import { NewsletterSection } from "@/views/about/NewsletterSection";
 
 export const metadata: Metadata = {
   title:
@@ -19,6 +20,7 @@ export default function Page() {
       <AboutCoreValues />
       <AboutTeam />
       <Faqs />
+      <NewsletterSection />
     </div>
   );
 }

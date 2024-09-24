@@ -1,4 +1,3 @@
-import { FlatRightIconButton } from "@/components/buttons/FlatRightIconButton";
 import Link from "next/link";
 
 export const PartnerCta = () => {

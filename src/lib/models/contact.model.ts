@@ -6,3 +6,8 @@ export interface ContactMessageModel {
   phone?: string;
   message: string;
 }
+
+export interface NewsletterModel {
+  firstName: string;
+  email: string;
+}

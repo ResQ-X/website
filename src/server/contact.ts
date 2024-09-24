@@ -1,6 +1,6 @@
 "use server"
 
-import { ContactMessageModel } from "@/lib/models/contact.model";
+import { ContactMessageModel, NewsletterModel } from "@/lib/models/contact.model";
 //import { now } from "lodash";
 import { createContact, sendAdminMessage, sendUserMessage } from "./email";
 
@@ -25,6 +25,39 @@ export const handleContactMessage = async (data: ContactMessageModel) => {
         status: 'error',
         statusCode: 400,
         message: 'Message Not Sent',
+        timestamp: now,
+      }
+      return result;
+    }
+  } catch (error) {
+    const result = {
+      status: 'error',
+      statusCode: 500,
+      message: 'Internal Server Error',
+      timestamp: now,
+    }
+    return result;
+  }
+}
+
+
+export const handleNewsletterSignup = async (data: NewsletterModel) => {
+  try {
+    const { success: contactSuccess, error: contactError } = await createContact(data.email, data.firstName);
+   
+    if (contactSuccess) {
+      const result = {
+        status: 'success',
+        statusCode: 201,
+        message: 'SIgned Up Successfully',
+        timestamp: now,
+      }
+      return result;
+    } else {
+      const result = {
+        status: 'error',
+        statusCode: 400,
+        message: 'Error: Signup Not Successful',
         timestamp: now,
       }
       return result;
