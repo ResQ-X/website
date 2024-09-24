@@ -64,6 +64,27 @@ export const Team = () => {
             </div>
             {/* Left side - Display selected team member details */}
             <div className="flex flex-col items-center justify-center rounded-lg bg-[#ff8500] px-10 py-[50px] text-white lg:w-1/2">
+              <p className="mb-6 text-center text-[30px] font-bold leading-[46.96px]">
+                {selectedMember.role}
+              </p>
+              <div className="mb-10 w-[300px] rounded-lg bg-white p-4">
+                <p className="text-center text-[22px] font-semibold leading-[37.57px] text-[#736250]">
+                  {selectedMember.name}
+                </p>
+              </div>
+              <p className="mb-6 text-center text-[16px] font-bold leading-[37.57px]">
+                {selectedMember.bio}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* 
+ <div className="flex flex-col items-center justify-center rounded-lg bg-[#ff8500] px-10 py-[50px] text-white lg:w-1/2">
               <p className="mb-6 text-center text-[40px] font-bold leading-[46.96px]">
                 {selectedMember.role}
               </p>
@@ -75,10 +96,4 @@ export const Team = () => {
               <p className="mb-6 text-center text-[32px] font-bold leading-[37.57px]">
                 {selectedMember.bio}
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+            </div> */
