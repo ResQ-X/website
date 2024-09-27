@@ -13,7 +13,7 @@ export const CareerContact = () => {
             height={1200}
             width={1200}
             alt="Contact Image"
-            src={"/images/careers/career_contact_image.png"}
+            src="/images/careers/career_contact_image.png"
             className="w-full object-cover"
           />
         </div>

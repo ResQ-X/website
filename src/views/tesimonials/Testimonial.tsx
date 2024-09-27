@@ -18,7 +18,7 @@ export const Testimonial = ({ heading }: { heading: string[] }) => {
             width={1200}
             alt="Customer Phone Image"
             src="/images/testimonial/testimonial_people_group.png"
-            className="h-auto w-[358px] max-w-[200px] object-cover"
+            className="h-auto w-[328px] max-w-[600px] object-cover md:w-[500px]"
           />
         </div>
       </div>
