@@ -32,7 +32,7 @@ export const HomeGetAppTabServiceProvider = () => {
             <div className="grid grid-cols-1 gap-y-[44px] md:grid-cols-2 ">
               <HomeGetAppCard
                 image="/images/home/50+_partners.png"
-                text="50+ Partners"
+                text="8+ Partners"
               />
               <HomeGetAppCard
                 image="/images/home/weekly_earnings.png"
@@ -44,7 +44,7 @@ export const HomeGetAppTabServiceProvider = () => {
               />
               <HomeGetAppCard
                 image="/images/home/500+_service_providers.png"
-                text="500+ Service providers"
+                text="85+ Service providers"
               />
             </div>
             <div className="mt-5 flex flex-col items-start justify-start gap-10 md:flex-row md:gap-x-6 lg:mt-0">

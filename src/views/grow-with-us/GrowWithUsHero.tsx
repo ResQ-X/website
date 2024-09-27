@@ -16,7 +16,7 @@ export const GrowWithUsHero = () => {
                 <span className="bg-gradient-to-b from-[#ff8500] to-[#995000] bg-clip-text text-transparent">
                   Earn
                 </span>
-                <span>With ResQ-X, Expand Your Reach</span>
+                <span> With ResQ-X, Expand Your Reach</span>
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-5 lg:justify-start">

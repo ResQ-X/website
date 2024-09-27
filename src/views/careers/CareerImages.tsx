@@ -7,7 +7,7 @@ export const CareerImages = () => {
         <Image
           height={1200}
           width={1200}
-          alt="Contact Image"
+          alt="Career Image"
           src={"/images/careers/1.png"}
           className="w-full object-cover"
         />
@@ -17,7 +17,7 @@ export const CareerImages = () => {
           <Image
             height={1200}
             width={1200}
-            alt="Contact Image"
+            alt="Career Image"
             src={"/images/careers/2.png"}
             className="w-full object-cover"
           />
@@ -26,7 +26,7 @@ export const CareerImages = () => {
           <Image
             height={1200}
             width={1200}
-            alt="Contact Image"
+            alt="Career Image"
             src={"/images/careers/3.png"}
             className="w-full object-cover"
           />
@@ -37,7 +37,7 @@ export const CareerImages = () => {
         <Image
           height={1200}
           width={1200}
-          alt="Contact Image"
+          alt="Career Image"
           src={"/images/careers/4.png"}
           className="w-full object-cover"
         />
@@ -47,7 +47,7 @@ export const CareerImages = () => {
           <Image
             height={1200}
             width={1200}
-            alt="Contact Image"
+            alt="Career Image"
             src={"/images/careers/5.png"}
             className="w-full object-cover"
           />
@@ -56,7 +56,7 @@ export const CareerImages = () => {
           <Image
             height={1200}
             width={1200}
-            alt="Contact Image"
+            alt="Career Image"
             src={"/images/careers/6.png"}
             className="w-full object-cover"
           />

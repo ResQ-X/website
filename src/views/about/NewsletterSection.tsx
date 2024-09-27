@@ -136,7 +136,7 @@ export const NewsletterSection = () => {
               />
             </div>
           </div>
-          <div className="font-raleway text-2xl form-control relative  mt-6 box-border flex max-h-[65px] max-w-[464px] justify-center rounded-[12px] px-1 py-3 font-semibold text-white [background:linear-gradient(180deg,_#ff8500,_#995000)] ">
+          <div className="font-raleway text-2xl form-control relative mx-auto  mt-6 box-border flex max-h-[65px] max-w-[464px] justify-center rounded-[12px] px-1 py-3 font-semibold text-white [background:linear-gradient(180deg,_#ff8500,_#995000)] ">
             <button type="submit" className="text-center text-lg text-white">
               {isLoading ? "...Sending" : "Subscribe"}
             </button>

@@ -4,22 +4,24 @@ export const HomeFacts = () => {
       <div className="flex flex-col items-center justify-center gap-6 md:flex-row lg:gap-[64px]">
         <div className="flex flex-col items-center justify-center">
           <p className="font-poppins text-3xl font-bold leading-[34px] text-[#6E7DDB]">
-            1200+
+            3500+
           </p>
-          <p className="text-xl leading-[34px] text-[#333333]">Active users</p>
+          <p className="text-xl leading-[34px] text-[#333333]">
+            Waitlist Users
+          </p>
         </div>
         <div className="flex flex-col items-center justify-center">
           <p className="font-poppins text-3xl font-bold leading-[34px] text-[#6E7DDB]">
-            5+
+            8+
           </p>
           <p className="text-xl leading-[34px] text-[#333333]">Partners</p>
         </div>
         <div className="flex flex-col items-center justify-center">
           <p className="font-poppins text-3xl font-bold leading-[34px] text-[#6E7DDB]">
-            50+
+            85+
           </p>
           <p className="text-xl leading-[34px] text-[#333333]">
-            Service providers
+            Service Providers
           </p>
         </div>
       </div>

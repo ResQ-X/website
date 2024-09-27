@@ -24,10 +24,10 @@ export const HomeGetAppTabCustomer = () => {
               the ResQ-X app and drive with confidence!
             </p>
 
-            <div className="grid grid-cols-1 gap-y-[44px] md:grid-cols-2 ">
+            <div className="grid grid-cols-1 gap-x-2 gap-y-[44px] md:grid-cols-2 ">
               <HomeGetAppCard
                 image="/images/home/3000+_users.png"
-                text="3000+ Users"
+                text="3500+ Waitlist Users    "
               />
               <HomeGetAppCard
                 image="/images/home/easy_to_use.png"

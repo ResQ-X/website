@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const AboutCoreValueCard = (value: ICoreValue) => {
   return (
-    <div className="h-full min-w-[300px] rounded-lg border-[3px] border-[#332414] font-['Raleway'] tracking-[-2%] md:min-w-[450px]">
+    <div className="h-full min-w-[300px] rounded-lg border-[3px] border-[#332414] font-['Raleway'] tracking-[-2%] md:min-w-[300px]">
       <div className="">
         <Image
           height={2000}
@@ -14,7 +14,7 @@ export const AboutCoreValueCard = (value: ICoreValue) => {
         />
       </div>
       <div className="px-6 py-6">
-        <p className="text-28px mb-[17px] font-semibold leading-[32.87px]  text-black">
+        <p className="mb-[17px] text-[28px] font-semibold leading-[32.87px]  text-black">
           {value.title}
         </p>
         <p className="text-start text-lg font-normal leading-[21.13px]">
