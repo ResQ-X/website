@@ -40,10 +40,15 @@ export const NavBar = () => {
       <div className="z-10 text-base">
         <ul className="menu menu-horizontal hidden px-1 lg:flex">
           <li>
-            <a>
+            <a
+              href="tel:2348140647017"
+              rel="noopener noreferrer"
+              className="no-underline"
+              target="_blank"
+            >
               <div className="flex flex-row">
                 <p className="pr-1 font-roboto text-lg font-semibold text-[#736250]">
-                  091-234-13450
+                  0814-064-7017
                 </p>
                 <Image
                   height={24}

@@ -29,8 +29,28 @@ export const Footer = () => {
               <FooterSocialIcon icon="/icons/youtube.png" link="" />
               <FooterSocialIcon icon="/icons/instagram.png" link="" />
             </div>
-            <p className="mb-3 text-lg text-white">Contact: 091-234-13450</p>
-            <p className="mb-11 text-lg text-white">Email: info@resqx.com</p>
+            <p className="mb-3 text-lg text-white">
+              Contact:{" "}
+              <a
+                href="tel:2348140647017"
+                rel="noopener noreferrer"
+                className="no-underline"
+                target="_blank"
+              >
+                0814-064-7017
+              </a>
+            </p>
+            <p className="mb-11 text-lg text-white">
+              Email:{" "}
+              <a
+                href="mailto:hello@resqx.com"
+                rel="noopener noreferrer"
+                className="no-underline"
+                target="_blank"
+              >
+                hello@resqx.com
+              </a>
+            </p>
             <button className="btn w-48 rounded-[20px] bg-white px-[26px] text-center font-roboto text-base text-black lg:mr-20 ">
               Download app
             </button>
@@ -69,11 +89,14 @@ export const Footer = () => {
             <p className="pb-4 font-roboto text-sm text-white">
               Third Mainland Bridge
             </p>
-            <p className="pb-4 font-roboto text-sm text-white">Ikoyi</p>
-            <p className="pb-4 font-roboto text-sm text-white">Lekki</p>
             <p className="pb-4 font-roboto text-sm text-white">
-              Victoria Island
+              V.G.C (Victoria Garden City)
             </p>
+            <p className="pb-4 font-roboto text-sm text-white">Ikoyi</p>
+            <p className="pb-4 font-roboto text-sm text-white">
+              V.I (Victoria Island)
+            </p>
+            <p className="pb-4 font-roboto text-sm text-white">Lekki</p>
           </div>
         </div>
       </div>

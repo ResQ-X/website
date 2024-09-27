@@ -12,7 +12,7 @@ export const CareerContact = () => {
           <Image
             height={1200}
             width={1200}
-            alt="Career Contact Image"
+            alt="Contact Image"
             src={"/images/careers/career_contact_image.png"}
             className="w-full object-cover"
           />
