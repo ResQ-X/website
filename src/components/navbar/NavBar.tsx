@@ -8,7 +8,7 @@ import { MobileNav } from "./MobileNav";
 
 export const NavBar = () => {
   return (
-    <div className="navbar z-10 flex items-center justify-between bg-white px-1 py-4 font-['Raleway'] text-base text-[#332414] md:px-8">
+    <div className="left navbar fixed top-0 z-50 flex items-center justify-between bg-white px-1 py-4 font-['Raleway'] text-base text-[#332414] md:px-8">
       <div className=" px-0">
         {/* MOBILE MENU ICON */}
         <MobileNav />
