@@ -5,6 +5,7 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { NavBar } from "@/components/navbar/NavBar";
 import { Footer } from "@/components/footer/Footer";
+import { TawkMessenger } from "@/components/tawk/TawkMessenger";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head></head>
       <body
         className={cn(
           "min-h-screen bg-white font-sans antialiased",
@@ -34,6 +36,7 @@ export default function RootLayout({
       >
         <NavBar />
         {children}
+        {/* <TawkMessenger /> */}
         <Footer />
       </body>
     </html>

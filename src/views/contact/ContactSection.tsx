@@ -22,7 +22,7 @@ export const ContactSection = () => {
             />
           </a>
           <a
-            href="tel:2348140647017"
+            href="https://tawk.to/chat/662590be1ec1082f04e54b94/1hs1bqqvc"
             rel="noopener noreferrer"
             className="no-underline"
             target="_blank"
