@@ -6,6 +6,7 @@ import 'dotenv/config';
 
 const SibApiV3Sdk = require('sib-api-v3-typescript');
 const sender: string | undefined = process.env.EMAILSENDER;
+const receiver: string | undefined = process.env.EMAILRECEIVER;
 
 const transporter = nodemailer.createTransport({
   host:process.env.SMTP_HOST,
@@ -52,7 +53,7 @@ export const sendAdminMessage = async (data: ContactMessageModel) => {
   //console.log('==== \n\n sendAdminMessage CALLED !!! \n\n ====');
   try {
     const msg = {
-    to: sender,
+    to: receiver,
     from: `"ResQ-X Website" <${sender}>`, 
     subject: 'Website Contact Message',
     html: await getAdminMessage(data),

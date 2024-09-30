@@ -25,7 +25,7 @@ export const AdditionalServices = () => {
         </p>
       </div>
       <div className="mt-6">
-        <div className="grid gap-x-3 gap-y-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-3 gap-y-4 md:grid-cols-2 lg:grid-cols-3">
           {additionalServiceList.map((value, index) => (
             <div
               key={index}
