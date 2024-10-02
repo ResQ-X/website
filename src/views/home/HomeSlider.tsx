@@ -23,6 +23,22 @@ export const HomeSlider = () => {
             text={slide.text}
           />
         ))}
+        {/* Clone the slides to ensure a smooth loop */}
+        {homeSlideList.map((slide, index) => (
+          <HomeSliderCard
+            key={`clone2-${index}`}
+            number={slide.number}
+            text={slide.text}
+          />
+        ))}
+        {/* Clone the slides to ensure a smooth loop */}
+        {homeSlideList.map((slide, index) => (
+          <HomeSliderCard
+            key={`clone3-${index}`}
+            number={slide.number}
+            text={slide.text}
+          />
+        ))}
       </div>
     </div>
   );

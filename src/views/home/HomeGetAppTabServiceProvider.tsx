@@ -29,7 +29,7 @@ export const HomeGetAppTabServiceProvider = () => {
               the ResQ-X app and drive with confidence!
             </p>
 
-            <div className="grid grid-cols-1 gap-y-[44px] md:grid-cols-2 ">
+            <div className="grid grid-cols-1 gap-y-[44px] md:grid-cols-2 md:gap-x-[60px] ">
               <HomeGetAppCard
                 image="/images/home/50+_partners.png"
                 text="8+ Partners"

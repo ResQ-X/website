@@ -4,9 +4,10 @@ import { useState } from "react";
 import { TabButton } from "@/components/buttons/TabButton";
 import { AnnualPlanTab } from "./AnnualPlanTab";
 import { QuarterPlanTab } from "./QuarterPlanTab";
+import { HalfYearPlanTab } from "./HalfYearPlanTab";
 
 export const MembershipPlans = () => {
-  const [selectedTab, setSelectedTab] = useState("Quaterly"); // track selected tab
+  const [selectedTab, setSelectedTab] = useState("HalfYear"); // track selected tab
 
   return (
     <div className="mb-[120px]">
@@ -15,10 +16,10 @@ export const MembershipPlans = () => {
       </p>
       <div className="flex justify-center">
         <div className="font-raleway relative box-border inline-flex max-h-[65px] items-center justify-center gap-2 rounded-[88px] bg-[#faf8f5] px-4 py-3">
-          <div onClick={() => setSelectedTab("Quaterly")}>
+          <div onClick={() => setSelectedTab("HalfYear")}>
             <TabButton
-              text="Quaterly"
-              isSelected={selectedTab === "Quaterly"}
+              text="HalfYear"
+              isSelected={selectedTab === "HalfYear"}
             />
           </div>
 
@@ -33,7 +34,7 @@ export const MembershipPlans = () => {
 
       {/* Conditional Rendering of Tab Content */}
       <div className="mt-6">
-        {selectedTab === "Quaterly" ? <QuarterPlanTab /> : <AnnualPlanTab />}
+        {selectedTab === "HalfYear" ? <HalfYearPlanTab /> : <AnnualPlanTab />}
       </div>
     </div>
   );

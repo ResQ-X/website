@@ -41,6 +41,46 @@ export const PartnerBrands = () => {
               />
             </div>
           ))}
+          {/* Clone the slides to ensure a smooth loop */}
+          {logos.map((logo, index) => (
+            <div key={`clone2-${index}`} className="logo-card mx-5 flex-none">
+              <img
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                className="h-20 w-auto"
+              />
+            </div>
+          ))}
+          {/* Clone the slides to ensure a smooth loop */}
+          {logos.map((logo, index) => (
+            <div key={`clone3-${index}`} className="logo-card mx-5 flex-none">
+              <img
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                className="h-20 w-auto"
+              />
+            </div>
+          ))}
+          {/* Clone the slides to ensure a smooth loop */}
+          {logos.map((logo, index) => (
+            <div key={`clone4-${index}`} className="logo-card mx-5 flex-none">
+              <img
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                className="h-20 w-auto"
+              />
+            </div>
+          ))}
+          {/* Clone the slides to ensure a smooth loop */}
+          {logos.map((logo, index) => (
+            <div key={`clone5-${index}`} className="logo-card mx-5 flex-none">
+              <img
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                className="h-20 w-auto"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
