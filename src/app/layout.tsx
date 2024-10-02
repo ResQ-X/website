@@ -36,7 +36,7 @@ export default function RootLayout({
       >
         <NavBar />
         {children}
-        {/* <TawkMessenger /> */}
+        <TawkMessenger />
         <Footer />
       </body>
     </html>
