@@ -1,14 +1,29 @@
+"use client";
 import { customerAppStoreLink, customerPlayStoreLink } from "@/lib/constants";
 import Image from "next/image";
 
-export const NavButton = () => {
+export const NavButton = ({
+  keyValue,
+  onSummaryClick,
+  onClick,
+}: {
+  keyValue: string;
+  onSummaryClick: (e: any) => void;
+  onClick: (e: any) => void;
+}) => {
   return (
     <li className="font-raleway relative box-border flex max-h-12 w-[132px] items-center justify-center  gap-2 rounded-[88px] px-1 py-3 text-left text-base text-white [background:linear-gradient(180deg,_#ff8500,_#995000)]">
-      <details>
-        <summary className="flex items-center justify-center text-base">
+      <details data-key={keyValue}>
+        <summary
+          onClick={onSummaryClick}
+          className="flex items-center justify-center text-base"
+        >
           Get app
         </summary>
-        <ul className="flex w-40 flex-col items-center bg-white  text-[#332414]">
+        <ul
+          className="flex w-40 flex-col items-center bg-white  text-[#332414]"
+          onClick={onClick}
+        >
           <li>
             <a
               href={customerAppStoreLink}

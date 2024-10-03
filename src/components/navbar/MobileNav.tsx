@@ -6,20 +6,37 @@ import { NavItem } from "./NavItem";
 
 export const MobileNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     console.log(isMenuOpen);
   };
 
-  const toggleDropdown = (dropdown: string) => {
-    setOpenDropdown((prev) => (prev === dropdown ? null : dropdown));
-  };
+  function setDropdown(event: any) {
+    const target = event.target as HTMLElement;
+    const detailsElement = target.closest("details");
+    if (detailsElement) {
+      if (detailsElement.hasAttribute("open")) {
+        detailsElement.removeAttribute("open");
+      } else {
+        detailsElement.setAttribute("open", "true");
+      }
+    }
+  }
 
-  const handleOptionClick = () => {
-    setOpenDropdown(null);
-  };
+  function handleActiveDetails(keyValue: string, event: any) {
+    const detailsElementList = Array.from(document.querySelectorAll("details"));
+    if (detailsElementList.length !== 0) {
+      detailsElementList.forEach((details, index) => {
+        const keyAttr = details.getAttribute("data-key");
+        console.log("keyAttr:", keyAttr);
+
+        if (keyAttr !== keyValue && details.hasAttribute("open")) {
+          details.removeAttribute("open");
+        }
+      });
+    }
+  }
 
   return (
     <div className="dropdown lg:hidden">
@@ -51,43 +68,25 @@ export const MobileNav = () => {
           tabIndex={0}
           className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-white p-2 shadow"
         >
-          <NavItem name={"Home"} path={"/"} onClick={handleOptionClick} />
+          <NavItem name={"Home"} path={"/"} />
           <li>
-            <details
-              open={openDropdown === "discover"}
-              onClick={() => toggleDropdown("discover")}
-            >
-              <summary>Discover Us</summary>
-              <ul className="flex flex-col items-start bg-white p-1.5 text-xs">
-                <NavItem
-                  name={"About"}
-                  path={"/about"}
-                  onClick={handleOptionClick}
-                />
-                <NavItem
-                  name={"Services"}
-                  path={"/services"}
-                  onClick={handleOptionClick}
-                />
-                <NavItem
-                  name={"Careers"}
-                  path={"/careers"}
-                  onClick={handleOptionClick}
-                />
-                <NavItem
-                  name={"Membership"}
-                  path={"/membership"}
-                  onClick={handleOptionClick}
-                />
+            <details data-key="discover">
+              <summary onClick={(e) => handleActiveDetails("discover", e)}>
+                Discover Us
+              </summary>
+              <ul
+                className="flex flex-col items-start bg-white p-1.5 text-xs"
+                onClick={(e) => setDropdown(e)}
+              >
+                <NavItem name={"About"} path={"/about"} />
+                <NavItem name={"Services"} path={"/services"} />
+                <NavItem name={"Careers"} path={"/careers"} />
+                <NavItem name={"Membership"} path={"/membership"} />
               </ul>
             </details>
           </li>
-          <NavItem name={"Blog"} path={"/blog"} onClick={handleOptionClick} />
-          <NavItem
-            name={"Get in touch"}
-            path={"/contact"}
-            onClick={handleOptionClick}
-          />
+          <NavItem name={"Blog"} path={"/blog"} />
+          <NavItem name={"Get in touch"} path={"/contact"} />
           <li>
             <a
               href="tel:2348140647017"
@@ -110,22 +109,16 @@ export const MobileNav = () => {
             </a>
           </li>
           <li>
-            <details
-              open={openDropdown === "partner"}
-              onClick={() => toggleDropdown("partner")}
-            >
-              <summary>Partner</summary>
-              <ul className="bg-white p-2 text-xs">
-                <NavItem
-                  name={"Earn with ResQ-X"}
-                  path={"/grow-with-us"}
-                  onClick={handleOptionClick}
-                />
-                <NavItem
-                  name={"Partner with ResQ-X"}
-                  path={"/partner"}
-                  onClick={handleOptionClick}
-                />
+            <details data-key="partner">
+              <summary onClick={(e) => handleActiveDetails("partner", e)}>
+                Partner
+              </summary>
+              <ul
+                className="bg-white p-2 text-xs"
+                onClick={(e) => setDropdown(e)}
+              >
+                <NavItem name={"Earn with ResQ-X"} path={"/grow-with-us"} />
+                <NavItem name={"Partner with ResQ-X"} path={"/partner"} />
               </ul>
             </details>
           </li>

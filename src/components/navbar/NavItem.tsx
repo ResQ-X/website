@@ -4,15 +4,7 @@ import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-export const NavItem = ({
-  name,
-  path,
-  onClick,
-}: {
-  name: string;
-  path: string;
-  onClick: () => void;
-}) => {
+export const NavItem = ({ name, path }: { name: string; path: string }) => {
   const router = useRouter();
   const pathName = usePathname();
 
