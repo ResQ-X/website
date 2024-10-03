@@ -15,10 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div>
-      <PageHero
-        image="/images/services/service_hero_image.jpeg"
-        title="Terms Of Use"
-      />
+      <PageHero image="/images/heroes/terms_of_use.jpeg" title="Terms Of Use" />
       <MarkdownComponent filePath="/src/files/terms-of-use.md" />
     </div>
   );

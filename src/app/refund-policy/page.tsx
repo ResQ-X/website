@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <div>
       <PageHero
-        image="/images/services/service_hero_image.jpeg"
+        image="/images/heroes/refund_policy.jpeg"
         title="Refund Policy"
       />
       <MarkdownComponent filePath="/src/files/refund-policy.md" />

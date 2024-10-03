@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <div>
       <PageHero
-        image="/images/services/service_hero_image.jpeg"
+        image="/images/heroes/privacy_policy.jpeg"
         title="Privacy Policy"
       />
       <MarkdownComponent filePath="/src/files/privacy-policy.md" />

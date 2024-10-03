@@ -7,7 +7,7 @@ export const PageHero = ({ image, title }: IProps) => {
   return (
     <div
       className={`relative flex min-h-[463px] w-full items-center justify-center bg-cover bg-center`}
-      style={{ backgroundImage: `${image}` }}
+      style={{ backgroundImage: `url(${image})` }}
     >
       <div className="absolute inset-0 bg-[url('/images/services/service_hero_overlay.png')] bg-cover bg-center opacity-90"></div>
       <div className="relative z-10 text-center">
