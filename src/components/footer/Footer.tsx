@@ -92,10 +92,10 @@ export const Footer = () => {
             <p className="pb-4 font-roboto text-sm text-white">
               V.G.C (Victoria Garden City)
             </p>
-            <p className="pb-4 font-roboto text-sm text-white">Ikoyi</p>
             <p className="pb-4 font-roboto text-sm text-white">
               V.I (Victoria Island)
             </p>
+            <p className="pb-4 font-roboto text-sm text-white">Ikoyi</p>
             <p className="pb-4 font-roboto text-sm text-white">Lekki</p>
           </div>
         </div>

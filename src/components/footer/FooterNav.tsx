@@ -10,9 +10,9 @@ export const FooterNav = () => {
         <ul className="menu menu-horizontal items-center justify-center px-1 lg:items-end lg:justify-end ">
           <NavItem name="Privacy Policy" path="/privacy-policy" />
           <NavItem name="Terms of Use" path="/terms-of-use" />
-          <NavItem name="Refunds" path="/refunds" />
-          <NavItem name="Legal" path="/lega" />
-          <NavItem name="Site Map" path="/site-map" />
+          <NavItem name="Refund Policy" path="/refund-policy" />
+          <NavItem name="Legal" path="/legal" />
+          <NavItem name="Site Map" path="/sitemap" />
         </ul>
       </div>
     </div>

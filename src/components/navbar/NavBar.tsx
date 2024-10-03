@@ -26,8 +26,6 @@ export const NavBar = () => {
     if (detailsElementList.length !== 0) {
       detailsElementList.forEach((details, index) => {
         const keyAttr = details.getAttribute("data-key");
-        console.log("keyAttr:", keyAttr);
-
         if (keyAttr !== keyValue && details.hasAttribute("open")) {
           details.removeAttribute("open");
         }
