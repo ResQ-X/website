@@ -1,7 +1,3 @@
-import { ServiceHero } from "@/views/services/ServiceHero";
-import { ServiceList } from "@/views/services/ServiceList";
-import Faqs from "../faqs/page";
-import { HomeCtaSection } from "@/views/home/HomeCtaSection";
 import { Metadata } from "next";
 import { MarkdownComponent } from "@/components/MarkdownComponent";
 import { PageHero } from "@/components/PageHero";

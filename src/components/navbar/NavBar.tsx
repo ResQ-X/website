@@ -7,6 +7,7 @@ import Image from "next/image";
 import { NavItem } from "./NavItem";
 import { NavButton } from "./NavButton";
 import { MobileNav } from "./MobileNav";
+//import { useRouter } from "next/router";
 
 export const NavBar = () => {
   function setDropdown(event: any) {

@@ -5,11 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const NavItem = ({ name, path }: { name: string; path: string }) => {
-  const router = useRouter();
   const pathName = usePathname();
 
+  const closeDropdowns = () => {
+    const openDetails = document.querySelectorAll("details[open]");
+    openDetails.forEach((details) => details.removeAttribute("open"));
+  };
+
   return (
-    <li>
+    <li onClick={closeDropdowns}>
       <Link
         href={path}
         className={`relative ${pathName === path ? " pb-4" : ""}`}
