@@ -1,8 +1,6 @@
-import { ServiceHero } from "@/views/services/ServiceHero";
 import { ServiceList } from "@/views/services/ServiceList";
-import Faqs from "../faqs/page";
-import { HomeCtaSection } from "@/views/home/HomeCtaSection";
 import { Metadata } from "next";
+import { PageHero } from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title:
@@ -13,10 +11,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div>
-      <ServiceHero />
+      <PageHero
+        image="/images/services/service_hero_image.jpeg"
+        title="Privacy Policy"
+      />
       <ServiceList />
-      <HomeCtaSection />
-      <Faqs />
     </div>
   );
 }

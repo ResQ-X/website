@@ -48,7 +48,7 @@ export const teamList: ITeam[] = [
     id: 6,
     name: "Ige Fadele",
     role: "Lead Software Engineer",
-    bio: "A versatile Software Engineer, Engineering Lead, and Product Manager with experience cutting across technical, analytical and managerial positions, obtaining a Bachelor's degree in Mathematics and an MBA, and having over a decade years of experience in building and managing enterprise-grade solutions.",
+    bio: "A versatile Software Engineer, Engineering Lead, and Product Manager with experience cutting across technical, analytical and managerial positions, obtaining a Bachelor's degree in Mathematics and an MBA, and having over a decade of experience in building and managing enterprise-grade solutions.",
     image: "/images/about/team/ige.jpg",
   },
   {
