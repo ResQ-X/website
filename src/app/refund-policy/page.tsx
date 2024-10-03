@@ -1,8 +1,6 @@
-import { ServiceHero } from "@/views/services/ServiceHero";
-import { ServiceList } from "@/views/services/ServiceList";
-import Faqs from "../faqs/page";
-import { HomeCtaSection } from "@/views/home/HomeCtaSection";
 import { Metadata } from "next";
+import { MarkdownComponent } from "@/components/MarkdownComponent";
+import { PageHero } from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title:
@@ -13,10 +11,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div>
-      <ServiceHero />
-      <ServiceList />
-      <HomeCtaSection />
-      <Faqs />
+      <PageHero
+        image="/images/services/service_hero_image.jpeg"
+        title="Refund Policy"
+      />
+      <MarkdownComponent filePath="/src/files/refund-policy.md" />
     </div>
   );
 }

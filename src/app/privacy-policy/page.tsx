@@ -1,6 +1,6 @@
-import { ServiceList } from "@/views/services/ServiceList";
 import { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
+import { MarkdownComponent } from "@/components/MarkdownComponent";
 
 export const metadata: Metadata = {
   title:
@@ -15,7 +15,7 @@ export default function Page() {
         image="/images/services/service_hero_image.jpeg"
         title="Privacy Policy"
       />
-      <ServiceList />
+      <MarkdownComponent filePath="/src/files/privacy-policy.md" />
     </div>
   );
 }

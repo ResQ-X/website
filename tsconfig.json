@@ -27,7 +27,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts", "src/views/home", ".DEVDOCS/embla", ".DEVDOCS/EmblaCarouselAutoUpdated.tsx",
+    ".next/types/**/*.ts",
   ],
   "exclude": ["node_modules"]
 }
