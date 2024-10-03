@@ -4,9 +4,9 @@ import Image from "next/image";
 export const FaqsAccordion = (faq: FaqModel) => {
   return (
     <div className="">
-      <div className="collapse collapse-plus bg-white py-1">
+      <div className="collapse collapse-plus bg-white py-1 hover:text-xl">
         <input type="radio" name="my-accordion-3" />
-        <h6 className="collapse-title mx-0 px-0 text-left text-lg font-medium text-black">
+        <h6 className="collapse-title mx-0 px-0 text-left text-lg font-medium text-black ">
           {faq.question}
         </h6>
         <div className="collapse-content mx-0 px-0 text-sm text-black">

@@ -1,6 +1,6 @@
 # ResQ-X Legal
 
-Last updated: [Current Date]
+Last updated: 3rd October, 2024
 
 
 ## Legal Disclaimer

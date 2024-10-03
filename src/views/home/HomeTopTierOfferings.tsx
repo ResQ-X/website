@@ -24,25 +24,27 @@ export const HomeTopTierOfferings = () => {
       <div className="mt-20">
         <div className="grid gap-x-[175px] gap-y-[68px] md:grid-cols-2 lg:grid-cols-3">
           {offeringList.map((offering, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center md:items-start md:justify-start"
-            >
-              <div className="p-2">
-                <Image
-                  height={2000}
-                  width={2000}
-                  alt={offering.title}
-                  src={offering.image}
-                  className="h-[61px] max-w-[110px] object-cover"
-                />
+            <div className="hover:card hover:shadow-2xl">
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center hover:card-body md:items-start md:justify-start"
+              >
+                <div className="p-2">
+                  <Image
+                    height={2000}
+                    width={2000}
+                    alt={offering.title}
+                    src={offering.image}
+                    className="h-[61px] max-w-[110px] object-cover"
+                  />
+                </div>
+                <p className="text-25px mb-[17px] font-semibold leading-[29px] text-black">
+                  {offering.title}
+                </p>
+                <p className="text-center text-base font-normal leading-[24px] md:text-start">
+                  {offering.description}
+                </p>
               </div>
-              <p className="text-25px mb-[17px] font-semibold leading-[29px] text-black">
-                {offering.title}
-              </p>
-              <p className="text-center text-base font-normal leading-[24px] md:text-start">
-                {offering.description}
-              </p>
             </div>
           ))}
         </div>

@@ -1,6 +1,6 @@
 # ResQ-X Refund Policy
 
-Last updated: [Current Date]
+Last updated: 3rd October, 2024
 
 ## Refund Policy
 
