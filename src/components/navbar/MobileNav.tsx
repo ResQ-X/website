@@ -76,7 +76,7 @@ export const MobileNav = () => {
               </summary>
               <ul
                 className="flex flex-col items-start bg-white p-1.5 text-xs"
-                onClick={(e) => setDropdown(e)}
+                /* onClick={(e) => setDropdown(e)} */
               >
                 <NavItem name={"About"} path={"/about"} />
                 <NavItem name={"Services"} path={"/services"} />
@@ -115,7 +115,7 @@ export const MobileNav = () => {
               </summary>
               <ul
                 className="bg-white p-2 text-xs"
-                onClick={(e) => setDropdown(e)}
+                /* onClick={(e) => setDropdown(e)} */
               >
                 <NavItem name={"Earn with ResQ-X"} path={"/grow-with-us"} />
                 <NavItem name={"Partner with ResQ-X"} path={"/partner"} />

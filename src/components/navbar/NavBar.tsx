@@ -54,7 +54,7 @@ export const NavBar = () => {
               </summary>
               <ul
                 className="flex flex-col items-center bg-white p-1.5 text-xs"
-                onClick={(e) => setDropdown(e)}
+                /* onClick={(e) => setDropdown(e)} */
               >
                 <NavItem name={"About"} path={"/about"} />
                 <NavItem name={"Services"} path={"/services"} />
@@ -102,7 +102,7 @@ export const NavBar = () => {
               </summary>
               <ul
                 className="flex w-48 flex-col items-center bg-white p-1.5 text-xs"
-                onClick={(e) => setDropdown(e)}
+                /* onClick={(e) => setDropdown(e)} */
               >
                 <NavItem name={"Earn with ResQ-X"} path={"/grow-with-us"} />
                 <NavItem name={"Partner with ResQ-X"} path={"/partner"} />
