@@ -18,3 +18,19 @@ module.exports = {
     ];
   },
 };
+
+
+/* module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/blog',
+        destination: 'https://blog.resqx.net',
+      },
+      {
+        source: '/blog/:slug*',
+        destination: 'https://blog.resqx.net/:slug*',
+      },
+    ];
+  },
+}; */
