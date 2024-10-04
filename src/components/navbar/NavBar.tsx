@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-
 import { ResqxLogo } from "../ResxqLogo";
 import Image from "next/image";
 import { NavItem } from "./NavItem";
 import { NavButton } from "./NavButton";
 import { MobileNav } from "./MobileNav";
 import { fetchPosts } from "@/server/blog";
+
+const blogUrl: string = process.env.NEXT_PUBLIC_BLOG_URL as string;
 
 export const NavBar = () => {
   const [posts, setPosts] = useState<any[]>([]);
@@ -16,7 +17,7 @@ export const NavBar = () => {
   /*   const fetchPosts = async () => {
     try {
       const response = await fetch(
-        "http://blog.resqx.net/wp-json/wp/v2/posts?per_page=6",
+        "${blogUrl}/wp-json/wp/v2/posts?per_page=6",
       );
       if (!response.ok) {
         throw new Error("Failed to fetch posts");

@@ -66,7 +66,7 @@ export const HomeFactsCard = ({
 
   useEffect(() => {
     runCounter();
-  }, [number]);
+  });
 
   return (
     <div className="flex flex-col items-center justify-center">

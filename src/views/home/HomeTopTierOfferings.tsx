@@ -24,11 +24,8 @@ export const HomeTopTierOfferings = () => {
       <div className="mt-20">
         <div className="grid gap-x-[175px] gap-y-[68px] md:grid-cols-2 lg:grid-cols-3">
           {offeringList.map((offering, index) => (
-            <div className="hover:card hover:shadow-2xl">
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center hover:card-body md:items-start md:justify-start"
-              >
+            <div key={index} className="hover:card hover:shadow-2xl">
+              <div className="flex flex-col items-center justify-center hover:card-body md:items-start md:justify-start">
                 <div className="p-2">
                   <Image
                     height={2000}
