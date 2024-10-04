@@ -21,7 +21,7 @@ export const additionalServiceList: IAdditionalService[] = [
     title: 'Onward travel',
     description: "If your vehicle can’t be repaired immediately, we provide alternative travel arrangements or accommodations, so you can continue your trip with minimal disruption."
   },
-  {
+  /* {
     image: '/images/services/additional/vehicle_recovery.png',
     title: 'Vehicle Recovery',
     description: "With this plan, we’ll transport your vehicle to any location within the state, ensuring you’re never left stranded no matter where you are."
@@ -30,6 +30,6 @@ export const additionalServiceList: IAdditionalService[] = [
     image: '/images/services/additional/home_assistance.png',
     title: 'At Home Assistance',
     description: "If your car won’t start in the morning, or you notice an issue while parked at home, our At Home assistance ensures that we’ll come directly to your location and resolve the issue."
-  },
+  }, */
   
 ]
