@@ -7,9 +7,37 @@ import Image from "next/image";
 import { NavItem } from "./NavItem";
 import { NavButton } from "./NavButton";
 import { MobileNav } from "./MobileNav";
-//import { useRouter } from "next/router";
+import { fetchPosts } from "@/server/blog";
 
 export const NavBar = () => {
+  const [posts, setPosts] = useState<any[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  /*   const fetchPosts = async () => {
+    try {
+      const response = await fetch(
+        "http://blog.resqx.net/wp-json/wp/v2/posts?per_page=6",
+      );
+      if (!response.ok) {
+        throw new Error("Failed to fetch posts");
+      }
+      const data = await response.json();
+      setPosts(data);
+      console.log("DATA FECTHED: ", data);
+    } catch (error: any) {
+      setError(error.message);
+      console.error("Error fetching posts:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  if (error) {
+    return <p>{error}</p>;
+  } */
+
   function setDropdown(event: any) {
     const target = event.target as HTMLElement;
     const detailsElement = target.closest("details");
