@@ -2,6 +2,7 @@
 const nextConfig = {};
 
 module.exports = nextConfig;
+const BLOG_URL = process.env.NEXT_PUBLIC_BLOG_URL;
 
 module.exports = {
   async headers() {
@@ -17,20 +18,26 @@ module.exports = {
       },
     ];
   },
-};
-
-
-/* module.exports = {
   async rewrites() {
-    return [
-      {
-        source: '/blog',
-        destination: 'https://blog.resqx.net',
-      },
-      {
-        source: '/blog/:slug*',
-        destination: 'https://blog.resqx.net/:slug*',
-      },
-    ];
+    return {
+      beforeFiles: [
+        // For: domain/blog
+        {
+          source: '/blog',
+          destination: `${BLOG_URL}/`,
+        },
+        // E.g: domain/blog/hello-wolrd
+        {
+          source: '/blog/:slug',
+          destination: `${BLOG_URL}/:slug/`,
+        },
+        // E.g: domain/blog/hello-wolrd/hello-where
+        {
+          source: '/blog/:slug*',
+          destination: `${BLOG_URL}/:slug*/`,
+        },
+        
+      ]
+    };
   },
-}; */
+};
