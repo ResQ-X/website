@@ -26,11 +26,18 @@ function NavDesktop({ allNavLinks }: IProps) {
       {/* Action Button Section / Right Section */}
       <div className={styles.navbar__action_button_section}>
         {/* Waitlist Button */}
-        <PrimaryButton
-          placeholder="Join Waitlist"
-          onClick={() => (window.location.href = "/#waitlist")}
+        <div className="flex gap-3">
+          <PrimaryButton
+            placeholder="Join Waitlist"
+            onClick={() => (window.location.href = "/#waitlist")}
+            className={styles.waitlist_button_wrapper}
+          />
+          <PrimaryButton
+          placeholder="Join Beta"
+          onClick={() => (window.location.href = "/beta")}
           className={styles.waitlist_button_wrapper}
         />
+        </div>
       </div>
     </section>
   );
