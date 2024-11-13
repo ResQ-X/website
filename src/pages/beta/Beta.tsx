@@ -1,4 +1,5 @@
-import { BetaSignupView } from "./component/BetaSignupView";
+import { BetaSignupView } from "./components/BetaSignupView";
+
 
 function BetaSignup() {
   return (
