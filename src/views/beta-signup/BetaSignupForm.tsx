@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FlatButton } from "@/components/buttons/FlatButton";
 import { handleNewsletterSignup } from "@/server/contact";
 import { Mail, Phone, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/moving-border";
 
 interface BetaSignupData {
   email: string;
@@ -41,32 +42,34 @@ export const BetaSignupForm = () => {
       return;
     }
 
-    try {
-      const response = await handleNewsletterSignup({
-        email: formData.email,
-        firstName: formData.whatsapp // Store WhatsApp in firstName field temporarily
-      });
+    setFormData(prev => ({...prev, submitted: true, error: ""}));
 
-      if (response.status === "success") {
-        setFormData(prev => ({...prev, submitted: true, error: ""}));
-      } else {
-        setFormData(prev => ({...prev, error: response.message}));
-      }
-    } catch (error) {
-      setFormData(prev => ({...prev, error: "Something went wrong. Please try again."}));
-    }
+    // try {
+    //   const response = await handleNewsletterSignup({
+    //     email: formData.email,
+    //     firstName: formData.whatsapp // Store WhatsApp in firstName field temporarily
+    //   });
+    //   if (response.status === "success") {
+    //     setFormData(prev => ({...prev, submitted: true, error: ""}));
+    //   } else {
+    //     setFormData(prev => ({...prev, error: response.message}));
+    //   }
+    // } catch (error) {
+    //   console.log(error)
+    //   setFormData(prev => ({...prev, error: "Something went wrong. Please try again."}));
+    // }
   };
 
   if (formData.submitted) {
     return (
       <div className="text-center space-y-4 p-8 bg-green-50 rounded-lg">
         <div className="rounded-full bg-green-100 p-3 inline-block mx-auto">
-          <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="text-xl font-semibold">Thanks for joining!</h2>
-        <p className="text-gray-600">
+        <h2 className="text-3xl font-semibold">Thanks for joining!</h2>
+        <p className="text-gray-600 text-[1rem]">
           We'll add you to our WhatsApp group soon. Look out for a message from our team!
         </p>
       </div>
@@ -109,7 +112,7 @@ export const BetaSignupForm = () => {
         </div>
       </div>
 
-      <button className="w-full p-5 pl-12 border bg-[#FF8500] rounded-lg focus:ring-2 focus:ring-[#FF8500] ring-offset-2 transition-all duration-300 outline-none text-white font-bold placeholder-slate-400 hover:bg-[#FF6500]">
+      <button className="w-full p-5 pl-12 border bg-[#FF8500] rounded-xl focus:ring-2 focus:ring-[#FF8500] ring-offset-2 transition-all duration-300 outline-none text-white font-bold placeholder-slate-400 hover:bg-[#FF6500]">
           <div className="flex items-center justify-center gap-2">
             Join Beta Program
             <ArrowRight className="h-5 w-5" />
