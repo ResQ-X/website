@@ -1,0 +1,114 @@
+import { useState } from "react";
+import { FlatButton } from "@/components/buttons/FlatButton";
+import { handleNewsletterSignup } from "@/server/contact";
+
+interface BetaSignupData {
+  email: string;
+  whatsapp: string;
+}
+
+interface FormState extends BetaSignupData {
+  submitted: boolean;
+  error: string;
+}
+
+export const BetaSignupForm = () => {
+  const [formData, setFormData] = useState<FormState>({
+    email: "",
+    whatsapp: "",
+    submitted: false,
+    error: "",
+  });
+
+  const validateWhatsApp = (number: string): boolean => {
+    const nigerianPhoneRegex = /^(\+234|0)[789][01]\d{8}$/;
+    return nigerianPhoneRegex.test(number);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.email || !formData.whatsapp) {
+      setFormData(prev => ({...prev, error: "Please fill in all fields"}));
+      return;
+    }
+
+    if (!validateWhatsApp(formData.whatsapp)) {
+      setFormData(prev => ({...prev, error: "Please enter a valid Nigerian phone number"}));
+      return;
+    }
+
+    try {
+      const response = await handleNewsletterSignup({
+        email: formData.email,
+        firstName: formData.whatsapp // Store WhatsApp in firstName field temporarily
+      });
+
+      if (response.status === "success") {
+        setFormData(prev => ({...prev, submitted: true, error: ""}));
+      } else {
+        setFormData(prev => ({...prev, error: response.message}));
+      }
+    } catch (error) {
+      setFormData(prev => ({...prev, error: "Something went wrong. Please try again."}));
+    }
+  };
+
+  if (formData.submitted) {
+    return (
+      <div className="text-center space-y-4 p-8 bg-green-50 rounded-lg">
+        <div className="rounded-full bg-green-100 p-3 inline-block mx-auto">
+          <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 className="text-xl font-semibold">Thanks for joining!</h2>
+        <p className="text-gray-600">
+          We'll add you to our WhatsApp group soon. Look out for a message from our team!
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      {formData.error && (
+        <div className="p-4 bg-red-50 text-red-600 rounded-lg text-sm">
+          {formData.error}
+        </div>
+      )}
+      
+      <div className="space-y-2">
+        <label className={`labelStyle`}>Email Address</label>
+        <input
+          type="email"
+          value={formData.email}
+          onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
+          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <label className={`labelStyle`}>WhatsApp Number</label>
+        <input
+          type="tel"
+          value={formData.whatsapp}
+          onChange={(e) => setFormData(prev => ({...prev, whatsapp: e.target.value}))}
+          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+          placeholder="+2348012345678"
+        />
+      </div>
+
+      <FlatButton
+        text="Join Beta Program"
+        color="bg-blue-600 hover:bg-blue-700"
+        textColor="text-white"
+      />
+
+      <p className="text-sm text-gray-500 text-center">
+        We'll add you to our WhatsApp group for exclusive beta access and updates.
+      </p>
+    </form>
+  );
+};
