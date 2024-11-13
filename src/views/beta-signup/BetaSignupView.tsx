@@ -57,7 +57,7 @@ export const BetaSignupView = ({
                 </div>
                 <div className="p-4">
                   <h3 className="font-semibold text-lg mb-2">Exclusive Updates</h3>
-                  <p className="text-gray-600 text-sm">Get direct updates via WhatsApp</p>
+                  g                  <p className="text-gray-600 text-sm">Get direct updates via WhatsApp</p>
                 </div>
                 <div className="p-4">
                   <h3 className="font-semibold text-lg mb-2">Shape the Product</h3>
