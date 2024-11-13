@@ -70,11 +70,18 @@ function HeroSection() {
               transition={transition1WithDelay(0.1)}
               className={styles.waitlist_button_container}
             >
+              <div className="flex gap-3">
               <PrimaryButton
                 placeholder="Join Waitlist"
                 onClick={() => (window.location.href = "/#waitlist")}
                 className={styles.waitlist_button_wrapper}
               />
+              <PrimaryButton
+                placeholder="Join beta"
+                onClick={() => (window.location.href = "/beta")}
+                className={`${styles.waitlist_button_wrapper} placeholder-white`}
+              />
+              </div>
             </motion.div>
           </div>
         </div>
