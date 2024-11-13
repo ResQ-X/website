@@ -38,6 +38,17 @@ export const HomeHero = () => {
               alt="App store icon"
             />
           </a>
+          <a
+            href="/beta"
+            rel="noopener noreferrer"
+            className="no-underline"
+          >
+            <LeftIconButton
+              text="Join Beta"
+              icon="/icons/email.png"
+              alt="Play store icon"
+            />
+          </a>
         </div>
       </div>
     </div>
