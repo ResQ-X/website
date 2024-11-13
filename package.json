@@ -59,6 +59,7 @@
     "@swc/core": "^1.5.3",
     "@types/leaflet": "^1.9.12",
     "@types/leaflet-routing-machine": "^3.2.8",
+    "@types/node": "^22.9.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@types/react-mailchimp-subscribe": "^2.1.4",
