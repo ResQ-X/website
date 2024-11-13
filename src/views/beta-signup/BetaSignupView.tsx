@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import Lottie from 'lottie-react';
 import animationData from '../../../public/images/lottie.json';
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 interface IProps {
   title?: string;
@@ -11,6 +12,34 @@ interface IProps {
   bgFrom?: string;
   bgTo?: string;
 }
+
+export const featureBoxes = [
+  {
+    id: 1,
+    title: "Early Access",
+    description: "Be the first to try new features",
+    icon: "https://cdn-icons-png.flaticon.com/512/1534/1534938.png",
+    link: "https://netflix.com",
+    delay: 0.2
+  },
+  {
+    id: 2,
+    title: "Exclusive Updates",
+    description: "Get direct updates via WhatsApp",
+    icon: "https://cdn-icons-png.flaticon.com/512/2645/2645890.png",
+    link: "https://netflix.com",
+    delay: 0.4
+  },
+  {
+    id: 3,
+    title: "Shape the Product",
+    description: "Your feedback matters to us",
+    icon: "https://cdn-icons-png.flaticon.com/512/1534/1534939.png",
+    link: "https://netflix.com",
+    delay: 0.6
+  }
+];
+
 
 export const BetaSignupView = ({ 
   title = "Join Our Beta Waitlist",
@@ -49,23 +78,12 @@ export const BetaSignupView = ({
               <div className="bg-white scale-[0.9] rounded-2xl p-8">
                 <BetaSignupForm />
               </div>
-
-              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">Early Access</h3>
-                  <p className="text-gray-600 text-sm">Be the first to try new features</p>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">Exclusive Updates</h3>
-                  g                  <p className="text-gray-600 text-sm">Get direct updates via WhatsApp</p>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">Shape the Product</h3>
-                  <p className="text-gray-600 text-sm">Your feedback matters to us</p>
-                </div>
-              </div>
             </div>
           </div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-8">
+                <HoverEffect items={featureBoxes} />
         </div>
       </div>
     </section>
