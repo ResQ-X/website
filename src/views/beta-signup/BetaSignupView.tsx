@@ -19,7 +19,7 @@ export const featureBoxes = [
     title: "Early Access",
     description: "Be the first to try new features",
     icon: "https://cdn-icons-png.flaticon.com/512/1534/1534938.png",
-    link: "https://netflix.com",
+    link: "#",
     delay: 0.2
   },
   {
@@ -27,7 +27,7 @@ export const featureBoxes = [
     title: "Exclusive Updates",
     description: "Get direct updates via WhatsApp",
     icon: "https://cdn-icons-png.flaticon.com/512/2645/2645890.png",
-    link: "https://netflix.com",
+    link: "#",
     delay: 0.4
   },
   {
@@ -35,14 +35,14 @@ export const featureBoxes = [
     title: "Shape the Product",
     description: "Your feedback matters to us",
     icon: "https://cdn-icons-png.flaticon.com/512/1534/1534939.png",
-    link: "https://netflix.com",
+    link: "#",
     delay: 0.6
   }
 ];
 
 
 export const BetaSignupView = ({ 
-  title = "Join Our Beta Waitlist",
+  title = "Join RESQ-X Beta",
   textSize = "text-7xl",
   bgFrom = "from-blue-50",
   bgTo = "to-white"
@@ -66,23 +66,23 @@ export const BetaSignupView = ({
           </div>
 
           {/* Form Section */}
-          <div className="w-full scale-[0.85] lg:w-1/2">
-            <div className="max-w-xl mx-auto">
-              <h1 className={`text-[3rem] whitespace-nowrap text-[#FF8500] text-opacity-90 text-center font-bold mb-4`}>
+          <div className="w-full lg:scale-[0.85] lg:w-1/2">
+            <div className="max-w-3xl mx-auto">
+              <h1 className={`text-[3rem] lg:whitespace-nowrap text-[#FF8500] text-opacity-90 text-center font-bold mb-4`}>
                 {title}
               </h1>
               <p className="text-gray-600 text-center text-sm mb-8">
                 Be among the first to experience our revolutionary platform
               </p>
 
-              <div className="bg-white scale-[0.9] rounded-2xl p-8">
+              <div className="bg-white lg:scale-[0.9] rounded-2xl p-2 lg:p-8">
                 <BetaSignupForm />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-8">
+        <div className="max-w-5xl mx-auto px-2 lg:px-8">
                 <HoverEffect items={featureBoxes} />
         </div>
       </div>
