@@ -5,6 +5,7 @@ import Lottie from 'lottie-react';
 import animationData from '@/assets/images/others/lottie.json';
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
+
 interface IProps {
   title?: string;
   textSize?: string;
