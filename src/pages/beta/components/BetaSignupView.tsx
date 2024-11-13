@@ -65,7 +65,7 @@ export const BetaSignupView = ({
           </div>
 
           {/* Form Section */}
-          <div className="w-full lg:scale-[0.85] lg:w-1/2">
+          <div className="w-full lg:w-1/2">
             <div className="max-w-3xl mx-auto">
               <h1 className={`text-[3rem] lg:whitespace-nowrap text-[#FF8500] text-opacity-90 text-center font-bold mb-4`}>
                 {title}
@@ -74,14 +74,14 @@ export const BetaSignupView = ({
                 Be among the first to experience our revolutionary platform
               </p>
 
-              <div className="bg-white lg:scale-[0.9] rounded-2xl p-2 lg:p-8">
+              <div className="bg-white rounded-2xl p-2 lg:p-8">
                 <BetaSignupForm />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-2 lg:px-8">
+        <div className="max-w-6xl mx-auto px-2 lg:px-8">
           <HoverEffect items={featureBoxes} />
         </div>
       </div>

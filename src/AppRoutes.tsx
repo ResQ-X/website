@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Pricing from "./pages/pricing/Pricing";
 import Blogs from "./pages/blog/Blogs";
+import BetaSignup from "./pages/beta/Beta";
 import BlogPreview from "./pages/blog/blog-preview/BlogPreview";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
@@ -30,6 +31,7 @@ function AppRoutes() {
           path="/blog/:id"
           element={<Layout children={<BlogPreview />} />}
         />
+        <Route path="/beta" element={<Layout children={<BetaSignup />} />} />
       </Routes>
     </AnimatePresence>
   );
