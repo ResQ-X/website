@@ -1,6 +1,9 @@
+"use client";
+
 import { useState } from "react";
 import { FlatButton } from "@/components/buttons/FlatButton";
 import { handleNewsletterSignup } from "@/server/contact";
+import { Mail, Phone, ArrowRight } from "lucide-react";
 
 interface BetaSignupData {
   email: string;
@@ -79,32 +82,39 @@ export const BetaSignupForm = () => {
       )}
       
       <div className="space-y-2">
-        <label className={`labelStyle`}>Email Address</label>
-        <input
-          type="email"
-          value={formData.email}
-          onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
-          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-          placeholder="Enter your email"
-        />
+        <label className={`labelStyle text-[1rem] font-semibold text-gray-900`}>Email Address</label>
+        <div className="relative">
+          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black h-5 w-5" />
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
+            className="w-full p-4 pl-12 border bg-transparent rounded-lg focus:ring-2 focus:ring-blue-500 outline-none placeholder-slate-500"
+            placeholder="Enter your email"
+          />
+        </div>
       </div>
 
       <div className="space-y-2">
-        <label className={`labelStyle`}>WhatsApp Number</label>
-        <input
-          type="tel"
-          value={formData.whatsapp}
-          onChange={(e) => setFormData(prev => ({...prev, whatsapp: e.target.value}))}
-          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-          placeholder="+2348012345678"
-        />
+        <label className={`labelStyle text-[1rem] font-semibold text-gray-900`}>WhatsApp Number</label>
+        <div className="relative">
+          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black h-5 w-5" />
+          <input
+            type="tel"
+            value={formData.whatsapp}
+            onChange={(e) => setFormData(prev => ({...prev, whatsapp: e.target.value}))}
+            className="w-full p-4 pl-12 border bg-transparent rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-black placeholder-slate-400"
+            placeholder="+2348012345678"
+          />
+        </div>
       </div>
 
-      <FlatButton
-        text="Join Beta Program"
-        color="bg-blue-600 hover:bg-blue-700"
-        textColor="text-white"
-      />
+      <button className="w-full p-5 pl-12 border bg-[#FF8500] rounded-lg focus:ring-2 focus:ring-[#FF8500] ring-offset-2 transition-all duration-300 outline-none text-white font-bold placeholder-slate-400 hover:bg-[#FF6500]">
+          <div className="flex items-center justify-center gap-2">
+            Join Beta Program
+            <ArrowRight className="h-5 w-5" />
+          </div>
+      </button>
 
       <p className="text-sm text-gray-500 text-center">
         We'll add you to our WhatsApp group for exclusive beta access and updates.
