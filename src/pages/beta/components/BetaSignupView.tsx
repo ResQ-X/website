@@ -1,8 +1,9 @@
 
 import { BetaSignupForm } from "./BetaSignupForm";
-import { useRef } from "react";
-import Lottie from 'lottie-react';
-import animationData from '@/assets/images/others/lottie.json';
+// import { useRef } from "react";
+// import Lottie from 'lottie-react';
+// import animationData from '@/assets/images/others/lottie.json';
+import betaImg from "@/assets/images/others/beta.png";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 
@@ -42,12 +43,12 @@ export const featureBoxes = [
 
 export const BetaSignupView = ({
   title = "Join RESQ-X Beta",
-  textSize = "text-7xl",
-  bgFrom = "from-blue-50",
-  bgTo = "to-white"
+  // textSize = "text-7xl",
+  // bgFrom = "from-blue-50",
+  // bgTo = "to-white"
 }: IProps) => {
 
-  const animationRef = useRef(null);
+  // const animationRef = useRef(null);
 
   return (
     <section className={`w-full py-20`}>
@@ -56,11 +57,7 @@ export const BetaSignupView = ({
           {/* Lottie Animation Section */}
           <div className="w-full lg:w-1/2">
             <div className="relative w-full h-[300px] lg:h-[350px]">
-              <Lottie
-                lottieRef={animationRef}
-                animationData={animationData}
-                className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-              />
+              <img src={betaImg} alt="" className="w-full h-full object-cover" />
             </div>
           </div>
 
@@ -81,7 +78,7 @@ export const BetaSignupView = ({
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-2 lg:px-8">
+        <div className="max-w-6xl mx-auto mt-9 px-2 lg:px-8">
           <HoverEffect items={featureBoxes} />
         </div>
       </div>
