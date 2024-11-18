@@ -28,17 +28,20 @@ export const BetaSignupForm = () => {
   });
 
   const validateWhatsApp = (number: string): boolean => {
-    // Normalize the number by removing spaces and adding +234 if not present
-    const normalizedNumber = number.replace(/\s/g, '');
-    const formattedNumber = normalizedNumber.startsWith('+')
-      ? normalizedNumber
-      : normalizedNumber.startsWith('0')
-      ? `+234${normalizedNumber.slice(1)}`
-      : `+234${normalizedNumber}`;
+    // If already starts with +234, validate directly
+    if (number.startsWith('+234')) {
+      return /^(\+234)[789]\d{9}$/.test(number);
+    }
   
-    // Regex to validate Nigerian phone numbers
-    const nigerianPhoneRegex = /^(\+234)[789]\d{9}$/;
-    return nigerianPhoneRegex.test(formattedNumber);
+    // For numbers starting with 0, replace with +234
+    if (number.startsWith('0')) {
+      const formattedNumber = `+234${number.slice(1)}`;
+      return /^(\+234)[789]\d{9}$/.test(formattedNumber);
+    }
+  
+    // For bare numbers, prepend +234
+    const formattedNumber = `+234${number}`;
+    return /^(\+234)[789]\d{9}$/.test(formattedNumber);
   };
 
   const sendToBrevo = async (data: BetaSignupData) => {
@@ -97,15 +100,22 @@ export const BetaSignupForm = () => {
 
     setFormData((prev) => ({ ...prev, loading: true, error: "" }));
 
+    const normalizedWhatsapp = formData.whatsapp.startsWith('+')
+    ? formData.whatsapp
+    : formData.whatsapp.startsWith('0')
+    ? `+234${formData.whatsapp.slice(1)}`
+    : `+234${formData.whatsapp}`;
+
     try {
       await sendToBrevo({
         email: formData.email,
-        whatsapp: formData.whatsapp,
+        whatsapp: normalizedWhatsapp,
         mobileOs: formData.mobileOs,
       });
 
       setFormData((prev) => ({
         ...prev,
+        whatsapp: normalizedWhatsapp,
         submitted: true,
         loading: false,
         error: "",
