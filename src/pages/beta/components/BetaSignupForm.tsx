@@ -5,6 +5,7 @@ import axios from "axios";
 interface BetaSignupData {
   email: string;
   whatsapp: string;
+  mobileOs: string;
 }
 
 interface FormState extends BetaSignupData {
@@ -16,23 +17,28 @@ interface FormState extends BetaSignupData {
 const BREVO_API_KEY = import.meta.env.VITE_BREVO_API_KEY;
 const BREVO_LIST_ID = parseInt(import.meta.env.VITE_BREVO_LIST_ID || "0");
 
-// For development testing - remove in production
-if (!BREVO_API_KEY) {
-  console.warn("VITE_BREVO_API_KEY is not set in environment variables");
-}
-
 export const BetaSignupForm = () => {
   const [formData, setFormData] = useState<FormState>({
     email: "",
     whatsapp: "",
+    mobileOs: "",
     submitted: false,
     error: "",
     loading: false,
   });
 
   const validateWhatsApp = (number: string): boolean => {
-    const nigerianPhoneRegex = /^(\+234|0)[789][01]\d{8}$/;
-    return nigerianPhoneRegex.test(number);
+    // Normalize the number by removing spaces and adding +234 if not present
+    const normalizedNumber = number.replace(/\s/g, '');
+    const formattedNumber = normalizedNumber.startsWith('+')
+      ? normalizedNumber
+      : normalizedNumber.startsWith('0')
+      ? `+234${normalizedNumber.slice(1)}`
+      : `+234${normalizedNumber}`;
+  
+    // Regex to validate Nigerian phone numbers
+    const nigerianPhoneRegex = /^(\+234)[789]\d{9}$/;
+    return nigerianPhoneRegex.test(formattedNumber);
   };
 
   const sendToBrevo = async (data: BetaSignupData) => {
@@ -55,6 +61,7 @@ export const BetaSignupForm = () => {
           attributes: {
             SMS: data.whatsapp,
             WA_NUMBER: data.whatsapp,
+            MOBILE_OS: data.mobileOs,
             SIGNUP_DATE: new Date().toISOString(),
           },
           listIds: [BREVO_LIST_ID],
@@ -75,7 +82,7 @@ export const BetaSignupForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.email || !formData.whatsapp) {
+    if (!formData.email || !formData.whatsapp || !formData.mobileOs) {
       setFormData((prev) => ({ ...prev, error: "Please fill in all fields" }));
       return;
     }
@@ -94,6 +101,7 @@ export const BetaSignupForm = () => {
       await sendToBrevo({
         email: formData.email,
         whatsapp: formData.whatsapp,
+        mobileOs: formData.mobileOs,
       });
 
       setFormData((prev) => ({
@@ -195,8 +203,10 @@ export const BetaSignupForm = () => {
             <label className="flex items-center">
               <input
                 type="radio"
-                name="accountType"
-                value="Current"
+                name="mobileOs"
+                value="Android"
+                checked={formData.mobileOs === "Android"}
+                onChange={() => setFormData((prev) => ({ ...prev, mobileOs: "Android" }))}
                 className="mr-2 accent-[#5C636D]  w-[24px] h-[24px]"
               />{" "}
               Android
@@ -206,8 +216,10 @@ export const BetaSignupForm = () => {
             <label className="flex items-center">
               <input
                 type="radio"
-                name="accountType"
-                value="Savings"
+                name="mobileOs"
+                value="iOS"
+                checked={formData.mobileOs === "iOS"}
+                onChange={() => setFormData((prev) => ({ ...prev, mobileOs: "iOS" }))}
                 className="mr-2 accent-[#5C636D] w-[24px] h-[24px]"
               />{" "}
               IOS
