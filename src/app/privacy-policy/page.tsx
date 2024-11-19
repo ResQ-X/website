@@ -16,7 +16,7 @@ export default function Page() {
         image="/images/heroes/privacy_policy.jpeg"
         title="Privacy Policy"
       /> 
-      <MarkdownComponent filePath="/src/files/privacy-policy.md" />
+      <MarkdownComponent filePath="/files/privacy-policy.md" />
     </div>
   );
 }
