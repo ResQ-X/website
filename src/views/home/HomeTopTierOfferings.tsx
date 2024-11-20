@@ -1,13 +1,68 @@
+"use client"
+
 import { offeringList } from "@/lib/values/offerings.values";
 import Image from "next/image";
+import { Button } from "@/components/ui/moving-border";
+import { motion } from 'framer-motion'
+
+const containerVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 3,
+      staggerChildren: 0.4
+    },
+  },
+}
+
+const itemVariants = {
+  initial: {
+    y: 50,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    },
+  },
+}
+
+const textVariants = {
+  initial: {
+    opacity: 0,
+    y: 20
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1
+    }
+  }
+}
 
 export const HomeTopTierOfferings = () => {
   return (
     <div className="mx-[20px] mb-[120px] font-['Raleway'] md:mx-[58px]">
-      <div className="flex flex-col items-center justify-center font-['Raleway']">
-        <p className="text-center text-[50px] font-semibold leading-[75px] text-[#332414] md:text-[64px]">
+      <motion.div 
+        variants={containerVariants} 
+        initial="initial" 
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="flex flex-col items-center justify-center font-['Raleway']"
+      >
+        <motion.p 
+          variants={textVariants}
+          className="text-center text-[50px] font-semibold leading-[75px] text-[#332414] md:text-[64px]"
+        >
           Our Top-Tier Offerings
-        </p>
+        </motion.p>
         <div className="rounded-full p-2">
           <Image
             height={2000}
@@ -17,15 +72,29 @@ export const HomeTopTierOfferings = () => {
             className="h-[37px] w-[223px] object-cover"
           />
         </div>
-        <p className=" text-center text-lg font-normal text-[#333333]">
+        <motion.p 
+          variants={textVariants}
+          className="text-center text-lg font-normal text-[#333333]"
+        >
           We provide your vehicle roadside assistance safely and efficiently
-        </p>
-      </div>
-      <div className="mt-20">
+        </motion.p>
+      </motion.div>
+      
+      <motion.div 
+        variants={containerVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="mt-20"
+      >
         <div className="grid gap-x-[175px] gap-y-[68px] md:grid-cols-2 lg:grid-cols-3">
           {offeringList.map((offering, index) => (
-            <div key={index} className="hover:card hover:shadow-2xl">
-              <div className="flex flex-col items-center justify-center hover:card-body md:items-start md:justify-start">
+            <motion.div 
+              key={index} 
+              variants={itemVariants}
+              className="transition-all duration-200 rounded-xl hover:border-2 hover:border-[#FF8500]"
+            >
+              <div className="flex flex-col items-center justify-center p-9 md:items-start md:justify-start">
                 <div className="p-2">
                   <Image
                     height={2000}
@@ -42,10 +111,10 @@ export const HomeTopTierOfferings = () => {
                   {offering.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
