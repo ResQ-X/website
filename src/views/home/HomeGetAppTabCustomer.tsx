@@ -14,7 +14,7 @@ export const HomeGetAppTabCustomer = () => {
               width={2000}
               alt="Customer Phone Image"
               src={"/images/home/customer_app_image.png"}
-              className="w-auto object-cover md:h-[763px]"
+              className="w-auto brightness-[0.91] contrast-125 object-cover md:h-[763px]"
             />
           </div>
           <div className="lg flex flex-col items-center justify-center pt-[32px] lg:items-start">

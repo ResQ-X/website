@@ -15,7 +15,7 @@ export const HomeGetAppCard = ({
           width={1200}
           alt="Customer Phone Image"
           src={image}
-          className="h-[144px] w-auto max-w-[200px] object-cover"
+          className="h-[144px] contrast-200 brightness-200 w-auto max-w-[200px] object-cover"
         />
         <p className="text-center font-['Raleway'] text-[24px] font-semibold leading-[28.18px] tracking-[-2%] text-[#FAF8F5]">
           {text}
