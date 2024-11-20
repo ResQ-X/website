@@ -5,7 +5,7 @@ interface IProps {
 
 export const HomeSliderCard = ({ number, text }: IProps) => {
   return (
-    <div className="inline-flex flex-row gap-4 rounded-2xl bg-[#ff8500] py-20 pl-10 pr-10 shadow-xl">
+    <div className="inline-flex flex-row gap-4 rounded-2xl bg-[#fff] py-20 pl-10 pr-10 shadow-xl">
       <div className="flex h-12 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-[#fddbb5] text-[28px] font-semibold leading-[33px] tracking-[-2%]">
         <p className="bg-gradient-to-b from-[#ff8500] to-[#995000] bg-clip-text text-center text-transparent">
           {number}
