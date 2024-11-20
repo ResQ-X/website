@@ -72,5 +72,10 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .bg-gif {
+    image-rendering: auto; /* Smoothens the GIF */
+    image-rendering: crisp-edges; /* Makes it sharper */
+  }
 }
 
