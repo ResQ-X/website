@@ -9,7 +9,7 @@ export const HomeDualPhone = () => {
           width={3000}
           alt="Contact Image"
           src={"/images/home/home_dual_phone_image.png"}
-          className="w-[472.14px] object-cover"
+          className="w-[472.14px] object-cover contrast-125 brightness-[91%]"
         />
       </div>
     </div>

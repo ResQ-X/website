@@ -12,6 +12,8 @@ import { Testimonial } from "@/views/tesimonials/Testimonial";
 import Faqs from "../faqs/page";
 import { HomeCtaSection } from "@/views/home/HomeCtaSection";
 
+
+
 export default function Home() {
   return (
     <main>
