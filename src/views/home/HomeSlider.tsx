@@ -10,7 +10,7 @@ export const HomeSlider = () => {
     <div className="mb-[120px] flex h-[309px] items-center overflow-hidden bg-[#FAF8F5] font-['Raleway']">
       <div
         className="slider-row relative flex gap-x-10"
-        style={{ animationDuration: "40s" }}
+        style={{ animationDuration: "120s" }}
       >
         {homeSlideList.map((slide, index) => (
           <HomeSliderCard key={index} number={slide.number} text={slide.text} />
@@ -33,6 +33,30 @@ export const HomeSlider = () => {
         ))}
         {/* Clone the slides to ensure a smooth loop */}
         {homeSlideList.map((slide, index) => (
+          <HomeSliderCard
+            key={`clone3-${index}`}
+            number={slide.number}
+            text={slide.text}
+          />
+        ))}
+         {/* Clone the slides to ensure a smooth loop */}
+         {homeSlideList.map((slide, index) => (
+          <HomeSliderCard
+            key={`clone3-${index}`}
+            number={slide.number}
+            text={slide.text}
+          />
+        ))}
+         {/* Clone the slides to ensure a smooth loop */}
+         {homeSlideList.map((slide, index) => (
+          <HomeSliderCard
+            key={`clone3-${index}`}
+            number={slide.number}
+            text={slide.text}
+          />
+        ))}
+         {/* Clone the slides to ensure a smooth loop */}
+         {homeSlideList.map((slide, index) => (
           <HomeSliderCard
             key={`clone3-${index}`}
             number={slide.number}
