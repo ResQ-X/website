@@ -14,11 +14,11 @@ export const Testimonial = ({ heading }: { heading: string[] }) => {
         </p>
         <div>
           <Image
-            height={1200}
-            width={1200}
+            height={4000}
+            width={4000}
             alt="Customer Phone Image"
             src="/images/testimonial/testimonial_people_group.png"
-            className="h-auto w-[328px] max-w-[600px] object-cover md:w-[500px]"
+            className="h-auto w-[328px] contrast-125 brightness-100 max-w-[600px] object-cover md:w-[500px]"
           />
         </div>
       </div>
