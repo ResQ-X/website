@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="w-full px-4 py-20">
       <DeleteAccountForm />
     </div>
   );

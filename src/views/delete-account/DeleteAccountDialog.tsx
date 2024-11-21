@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import {
   AlertDialog,
@@ -20,7 +22,7 @@ export const DeleteAccountDialog: React.FC<DeleteAccountDialogProps> = ({ email,
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <button className="btn btn-destructive w-full">Delete Account</button>
+        <button className="w-full p-4 border bg-red-600 rounded-xl focus:ring-2 focus:ring-[#FF0000] ring-offset-2 transition-all duration-300 outline-none text-white font-bold placeholder-slate-400 hover:bg-[#FF0000]">Delete Account</button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>

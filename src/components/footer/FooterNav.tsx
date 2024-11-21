@@ -13,6 +13,7 @@ export const FooterNav = () => {
           <NavItem name="Refund Policy" path="/refund-policy" />
           <NavItem name="Legal" path="/legal" />
           <NavItem name="Site Map" path="/sitemap" />
+          <NavItem name="Delete Account" path="/delete-account" />
         </ul>
       </div>
     </div>

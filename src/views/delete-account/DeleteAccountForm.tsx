@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, ChangeEvent } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -5,6 +7,7 @@ import { Alert } from "@/components/ui/alert";
 import { Mail, Lock, AlertCircle } from "lucide-react";
 import { DeleteAccountDialog } from "./DeleteAccountDialog";
 import { DeleteAccountSuccess } from "./DeleteAccountSuccess";
+import Link from "next/link";
 
 interface FormData {
   email: string;
@@ -57,9 +60,9 @@ export const DeleteAccountForm: React.FC = () => {
   if (showSuccess) return <DeleteAccountSuccess />;
 
   return (
-    <div className="space-y-6 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold">Delete Account</h2>
-      <p className="text-gray-500">
+    <div className="space-y-6 max-w-md mx-auto w-full py-32">
+      <h2 className="text-6xl text-red-600 font-bold">Delete Account</h2>
+      <p className="text-sm leading-6 font-normal">
         For security purposes, verify your identity by entering your email and password.
       </p>
 
@@ -70,38 +73,52 @@ export const DeleteAccountForm: React.FC = () => {
         </Alert>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-6">
         <div>
-          <label className="block text-sm font-medium mb-2">Email</label>
-          <div className="relative">
-            <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-            <Input
+          <label className="block text-[14px] font-medium mb-2">Confirm Your Email Address</label>
+          <div className="relative h-12">
+            <Mail className="absolute left-3 top-4 h-4 w-4 text-gray-400" />
+            <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="pl-10 w-full"
+              className="pl-10 w-full h-full border bg-transparent rounded-lg focus:ring-2 focus:ring-[#FF6500] outline-none placeholder-slate-500"
               placeholder="name@example.com"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Password</label>
-          <div className="relative">
-            <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-            <Input
+          <label className="block text-[14px] font-medium mb-2">Enter Your Password</label>
+          <div className="relative h-12">
+            <Lock className="absolute left-3 top-4 h-4 w-4 text-gray-400" />
+            <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleInputChange}
-              className="pl-10 w-full"
-              placeholder="Enter your password"
+              className="pl-10 w-full h-full border bg-transparent rounded-lg focus:ring-2 focus:ring-[#FF6500] outline-none placeholder-slate-500"
+              placeholder="password122@##^%"
             />
           </div>
         </div>
 
         <DeleteAccountDialog email={formData.email} onConfirm={handleDelete} />
+        <div className="text-sm px-2">
+          <h3 className="font-semibold text-[1rem] mb-2">What happens when you delete your account?</h3>
+          <ul className="list-disc pl-6 space-y-2 text-slate-800">
+            <li>All your personal information will be permanently deleted</li>
+            <li>Your profile and activity history will be removed</li>
+            <li>You'll be logged out of all devices</li>
+            <li>Any active subscriptions will be cancelled</li>
+            <li>All saved locations and preferences will be removed</li>
+            <li>Access to ResQ-X services will be terminated</li>
+          </ul>
+
+          <p className="py-7 px-4">Need help? <Link href={"/contact"} className="text-blue-500 font-bold">Contact Support</Link></p>
+        </div>
+
       </div>
     </div>
   );
