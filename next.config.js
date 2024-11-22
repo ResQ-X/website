@@ -18,29 +18,29 @@ module.exports = {
       },
     ];
   },
-  async rewrites() {
-    return {
-      beforeFiles: [
-        // For: domain/blog
-        {
-          source: '/blog',
-          // destination: `${BLOG_URL}/`,
-          destination: `https://blog.yongwoo.dev/`,
-        },
-        // E.g: domain/blog/hello-wolrd
-        {
-          source: '/blog/:slug',
-          // destination: `${BLOG_URL}/:slug/`,
-          destination: `https://blog.yongwoo.dev/:slug/`,
-        },
-        // E.g: domain/blog/hello-wolrd/hello-where
-        {
-          source: '/blog/:slug*',
-          // destination: `${BLOG_URL}/:slug*/`,
-          destination: `https://blog.yongwoo.dev/:slug*/`,
-        },
+  // async rewrites() {
+  //   return {
+  //     beforeFiles: [
+  //       // For: domain/blog
+  //       // {
+  //       //   source: '/blog',
+  //       //   // destination: `${BLOG_URL}/`,
+  //       //   destination: `https://blog.yongwoo.dev/`,
+  //       // },
+  //       // // E.g: domain/blog/hello-wolrd
+  //       // {
+  //       //   source: '/blog/:slug',
+  //       //   // destination: `${BLOG_URL}/:slug/`,
+  //       //   destination: `https://blog.yongwoo.dev/:slug/`,
+  //       // },
+  //       // // E.g: domain/blog/hello-wolrd/hello-where
+  //       // {
+  //       //   source: '/blog/:slug*',
+  //       //   // destination: `${BLOG_URL}/:slug*/`,
+  //       //   destination: `https://blog.yongwoo.dev/:slug*/`,
+  //       // },
         
-      ]
-    };
-  },
+  //     ]
+  //   };
+  // },
 };
