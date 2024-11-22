@@ -1,4 +1,6 @@
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Eye } from 'lucide-react';
 
@@ -37,6 +39,14 @@ const BLOG_LIST = [
 ];
 
 export default function BlogList() {
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = () => {
+    // Add subscription logic here
+    console.log('Subscribing:', email);
+  };
+
+
   return (
     <div className="container mx-auto px-[2.6rem] mt-[-12rem]">
       <div className="space-y-6">
@@ -67,6 +77,45 @@ export default function BlogList() {
           </div>
         ))}
       </div>
+
+      <div className="relative w-full rounded-3xl overflow-hidden my-12">
+      {/* Background Image */}
+      <Image 
+        src="/images/home/blog/carImg2.jpeg" 
+        alt="Newsletter Background" 
+        layout="fill" 
+        objectFit="cover" 
+        className="absolute inset-0 z-0"
+      />
+      
+      {/* Black Overlay */}
+      <div className="absolute inset-0 bg-black opacity-20 z-10"></div>
+      
+      {/* Content */}
+      <div className="relative z-20 text-center py-16 px-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+          Keep up with the latest tips by subscribing to our newsletter
+        </h2>
+        
+        <div className="max-w-xl mx-auto relative">
+          <div className="relative">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-4 pr-32 text-white bg-white/20 border border-white/30 rounded-full focus:outline-none focus:ring-2 focus:ring-white/50"
+            />
+            <button 
+              onClick={handleSubscribe}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   );
 }
