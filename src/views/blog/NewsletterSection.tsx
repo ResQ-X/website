@@ -78,44 +78,46 @@ export default function BlogList() {
         ))}
       </div>
 
-      <div className="relative w-full rounded-3xl overflow-hidden my-12">
+      <div className="w-full overflow-hidden bg-full my-12 relative rounded-[40px] bg-cover bg-center h-[407px] flex items-center justify-center">
       {/* Background Image */}
-      <Image 
-        src="/images/home/blog/carImg2.jpeg" 
-        alt="Newsletter Background" 
-        layout="fill" 
-        objectFit="cover" 
-        className="absolute inset-0 z-0"
-      />
+      <div className="absolute inset-0 z-0">
+          <Image 
+            src="/images/home/blog/carImg.jpeg" 
+            alt="Newsletter Background" 
+            fill
+            className="object-cover"
+          />
+        </div>
+    
+    {/* Black Overlay */}
+    <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
+    
+    {/* Content */}
+    <div className="relative z-20 text-center py-16 px-4">
+      <h2 className="text-[50px] scale-[2] font-serif md:text-5xl font-bold text-white mb-10 w-[604px]">
+        Keep up with the latest tips by subscribing to our newsletter
+      </h2>
       
-      {/* Black Overlay */}
-      <div className="absolute inset-0 bg-black opacity-20 z-10"></div>
-      
-      {/* Content */}
-      <div className="relative z-20 text-center py-16 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-          Keep up with the latest tips by subscribing to our newsletter
-        </h2>
-        
-        <div className="max-w-xl mx-auto relative">
-          <div className="relative">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-4 pr-32 text-white bg-white/20 border border-white/30 rounded-full focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <button 
-              onClick={handleSubscribe}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition"
-            >
-              Subscribe
-            </button>
-          </div>
+      <div className="max-w-xl mx-auto relative">
+        <div className="relative">
+          <input 
+            type="email" 
+            placeholder="Enter your email" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-4 py-4 pr-32 bg-white/70 border border-white/30 rounded-full focus:outline-none focus:ring-2 focus:ring-white/50"
+          />
+          <button 
+            onClick={handleSubscribe}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition"
+          >
+            Subscribe
+          </button>
         </div>
       </div>
     </div>
+  </div>
+
     </div>
   );
 }
