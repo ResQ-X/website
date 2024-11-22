@@ -3,8 +3,40 @@
 import { useState } from "react";
 import { Eye, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-// Placeholder blog tabs and content
+const containerVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 2,
+      staggerChildren: 0.4
+    },
+  }
+}
+
+const containerVariants2 = {
+  initial: { opacity: 0, x: -200 },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.5
+    },
+  }
+}
+
+const textVariants = {
+  initial: { opacity: 0, y: 80 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1 }
+  }
+}
+
 const BLOG_TABS = [
   "Top Picks", "Maintenance", "Safety", "Travel", "Stories", "News", "How-to"
 ];
@@ -14,110 +46,162 @@ const FEATURED_BLOGS = {
     {
       title: "Navigating the Rainy Season: Flood-Prone Areas in Lagos You Need to Know",
       date: "August 12, 2024",
-      image: "/api/placeholder/400/300"
+      image: "/images/home/blog/carImg2.jpeg"
     },
     {
       title: "The Smart Car Owner Checklist: Roadside Emergency Tips",
       date: "August 12, 2024",
-      image: "/api/placeholder/400/300"
+      image: "/images/home/blog/carImg3.jpeg"
     },
     {
       title: "Urban Driving Survival Guide",
       date: "August 12, 2024",
-      image: "/api/placeholder/400/300"
+      image: "/images/home/blog/carImg.jpeg"
     }
   ],
-  // Add placeholders for other tabs similarly
+  "Maintenance": [
+    {
+      title: "Essential Car Maintenance Tips for Longevity",
+      date: "July 15, 2024",
+      image: "/images/home/blog/maintenance1.jpeg"
+    },
+    {
+      title: "DIY Car Maintenance: What You Can Do at Home",
+      date: "July 15, 2024",
+      image: "/images/home/blog/maintenance2.jpeg"
+    },
+    {
+      title: "When to Service Your Vehicle: A Comprehensive Guide",
+      date: "July 15, 2024",
+      image: "/images/home/blog/maintenance3.jpeg"
+    }
+  ],
+  "Safety": [
+    {
+      title: "Top Safety Features to Look for in a New Car",
+      date: "June 20, 2024",
+      image: "/images/home/blog/safety1.jpeg"
+    },
+    {
+      title: "Defensive Driving Techniques Every Driver Should Know",
+      date: "June 20, 2024",
+      image: "/images/home/blog/safety2.jpeg"
+    },
+    {
+      title: "Emergency Preparedness on the Road",
+      date: "June 20, 2024",
+      image: "/images/home/blog/safety3.jpeg"
+    }
+  ]
 };
-
-const BLOG_LIST = [
-  {
-    title: "Lorem Ipsum Blog Title",
-    description: "Qorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    time: "3 min ago",
-    views: 432,
-    image: "/api/placeholder/300/200"
-  },
-  // Add more placeholder blog entries
-];
 
 export default function FeaturedStories() {
   const [activeTab, setActiveTab] = useState("Top Picks");
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold mb-8">Featured Stories</h2>
+    <div className="container mx-auto">
+      <motion.div 
+        variants={containerVariants2} 
+        initial="initial" 
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="flex flex-col items-center justify-center font-['Raleway'] pb-9"
+      >
+        <motion.p 
+          variants={textVariants}
+          className="text-center text-[50px] font-semibold leading-[75px] text-[#332414] md:text-[64px]"
+        >
+          Featured Stories
+        </motion.p>
+        <div className="rounded-full p-2">
+          <Image
+            height={2000}
+            width={2000}
+            alt="Underline Image"
+            src={"/images/underline_image.png"}
+            className="h-[37px] w-[223px] object-cover"
+          />
+        </div>
+      </motion.div>
       
       {/* Tabs */}
-      <div className="flex flex-wrap gap-4 mb-8">
+      <div className="flex w-full items-center justify-center flex-wrap gap-4 mb-20">
         {BLOG_TABS.map(tab => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 rounded-lg transition ${
+            className={`flex items-center justify-center whitespace-nowrap px-4 text-black rounded-[30px] text-[15px] tracking-tighter w-[100px] h-[37px] transition ${
               activeTab === tab 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'border border-[#FF8500]' 
+                : ''
             }`}
           >
             {tab}
           </button>
         ))}
       </div>
-      
-      {/* Featured Blog Posts */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        {FEATURED_BLOGS[activeTab as keyof typeof FEATURED_BLOGS]?.map((blog, index) => (
+      {/* Featured Blog Posts Grid */}
+      <motion.div 
+          variants={containerVariants} 
+          initial="initial" 
+          whileInView="animate"
+          viewport={{ once: false }}
+          className="flex gap-6">
+        <div className="w-[45%] h-[760px]">
           <div 
-            key={index} 
-            className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition"
+            className="h-[445px] relative rounded-[40px] bg-cover bg-center"
+            style={{ backgroundImage: `url('${FEATURED_BLOGS[activeTab as keyof typeof FEATURED_BLOGS][0].image}')` }}
           >
-            <Image 
-              src={blog.image} 
-              alt={blog.title} 
-              width={400} 
-              height={300} 
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-4">{blog.title}</h3>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-500">{blog.date}</span>
-                <button className="flex items-center text-blue-600 hover:text-blue-800">
-                  Read More <ArrowRight className="ml-2 w-5 h-5" />
-                </button>
+            <div className="absolute inset-0 rounded-[40px] bg-black opacity-10"></div>
+            <div className="relative z-10 flex flex-col h-full p-6">
+              <div className="flex flex-col pt-[3rem] gap-[10rem]  h-full">
+                <div className="text-white">
+                  <p className="mb-3 font-raleway text-[20px] md:text-[24px] font-semibold leading-tight tracking-tighter max-h-[180px] overflow-hidden">
+                    {FEATURED_BLOGS[activeTab as keyof typeof FEATURED_BLOGS][0].title}
+                  </p>
+                  <p className="mb-4 font-raleway text-base font-semibold tracking-tighter">
+                    {FEATURED_BLOGS[activeTab as keyof typeof FEATURED_BLOGS][0].date}
+                  </p>
+                </div>
+                <div>
+                  <button className="flex items-center text-white">
+                    Read More <ArrowRight className="ml-2 w-5 h-5" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-      
-      {/* Blog List */}
-      <div className="space-y-6">
-        {BLOG_LIST.map((blog, index) => (
-          <div 
-            key={index} 
-            className="flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition"
-          >
-            <div className="flex-1 mb-4 md:mb-0 md:mr-6">
-              <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
-              <p className="text-gray-600 mb-4">{blog.description}</p>
-              <div className="flex items-center text-gray-500">
-                <span className="mr-4">{blog.time}</span>
-                <Eye className="mr-2 w-5 h-5" />
-                <span>{blog.views}</span>
+        </div>
+        
+        <div className="w-[50%] flex gap-6">
+          {FEATURED_BLOGS[activeTab as keyof typeof FEATURED_BLOGS].slice(1, 3).map((blog, index) => (
+            <div 
+              key={index}
+              className="flex-1 h-[445px] relative rounded-[40px] bg-cover bg-center"
+              style={{ backgroundImage: `url('${blog.image}')` }}
+            >
+              <div className="absolute inset-0 rounded-[40px] bg-black opacity-10"></div>
+              <div className="relative z-10 flex flex-col h-full p-6">
+                <div className="flex flex-col pt-[3rem] gap-[10rem] h-full">
+                  <div className="text-white">
+                    <p className="mb-3 font-raleway text-[20px] md:text-[24px] font-semibold leading-tight tracking-tighter max-h-[180px] overflow-hidden">
+                      {blog.title}
+                    </p>
+                    <p className="mb-4 font-raleway text-base font-semibold tracking-tighter">
+                      {blog.date}
+                    </p>
+                  </div>
+                  <div>
+                    <button className="flex items-center text-white">
+                      Read More <ArrowRight className="ml-2 w-5 h-5" />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-            <Image 
-              src={blog.image} 
-              alt={blog.title} 
-              width={300} 
-              height={200} 
-              className="w-full md:w-64 h-48 object-cover rounded-lg"
-            />
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 }

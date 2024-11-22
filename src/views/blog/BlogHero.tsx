@@ -21,7 +21,7 @@ export default function BlogHero() {
           src="/images/hero-blog.png" 
           alt="Blog Hero" 
           fill 
-          className="object-contain h-full brightness-[.95] contrast-125"
+          className="object-contain h-full brightness-[1.05] contrast-125"
         />
       </div>
     </div>
