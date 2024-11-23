@@ -63,3 +63,38 @@ export interface Category {
       return [];
     }
   }
+
+
+  export async function getPostById(id: number): Promise<BlogPost> {
+    try {
+      const response = await fetch(`${BASE_URL}/posts/${id}/`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch post');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching post:', error);
+      throw error;
+    }
+  }
+  
+  export async function incrementPostViews(id: number): Promise<{ status: string; views: number }> {
+    try {
+      const response = await fetch(
+        `${BASE_URL}/posts/${id}/increment_views/`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error('Failed to increment views');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error incrementing views:', error);
+      throw error;
+    }
+  }
