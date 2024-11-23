@@ -77,5 +77,9 @@
     image-rendering: auto; /* Smoothens the GIF */
     image-rendering: crisp-edges; /* Makes it sharper */
   }
+
+  .smooth {
+    image-rendering: high-quality;
+  }
 }
 

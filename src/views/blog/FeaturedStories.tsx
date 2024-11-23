@@ -12,9 +12,10 @@ interface FeaturedStoriesProps {
 }
 
 const containerVariants = {
-  initial: { opacity: 0 },
+  initial: { opacity: 0, y: 0 },
   animate: {
     opacity: 1,
+    y: 50,
     transition: {
       duration: 2,
       staggerChildren: 0.4
@@ -123,7 +124,7 @@ export default function FeaturedStories({ activeCategory, onCategoryChange }: Fe
           <button
             key={category.id}
             onClick={() => handleTabChange(category)}
-            className={`flex items-center justify-center whitespace-nowrap px-4 text-black rounded-[30px] text-[15px] tracking-tighter w-[100px] h-[37px] transition ${
+            className={`flex items-center capitalize justify-center whitespace-nowrap px-4 text-black rounded-[30px] text-[15px] tracking-tighter w-[100px] h-[37px] transition ${
               activeCategory?.id === category.id 
                 ? 'border border-[#FF8500]' 
                 : ''
