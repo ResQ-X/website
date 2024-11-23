@@ -1,46 +1,28 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = nextConfig;
-const BLOG_URL = process.env.NEXT_PUBLIC_BLOG_URL;
-
-module.exports = {
+const nextConfig = {
+  images: {
+    domains: ['res.cloudinary.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/dwlggtcty/image/upload/**',
+      },
+    ],
+  },
   async headers() {
     return [
       {
-        source: "/sitemap.xml",
+        source: '/sitemap.xml',
         headers: [
           {
-            key: "Content-Type",
-            value: "application/xml",
+            key: 'Content-Type',
+            value: 'application/xml',
           },
         ],
       },
     ];
   },
-  // async rewrites() {
-  //   return {
-  //     beforeFiles: [
-  //       // For: domain/blog
-  //       // {
-  //       //   source: '/blog',
-  //       //   // destination: `${BLOG_URL}/`,
-  //       //   destination: `https://blog.yongwoo.dev/`,
-  //       // },
-  //       // // E.g: domain/blog/hello-wolrd
-  //       // {
-  //       //   source: '/blog/:slug',
-  //       //   // destination: `${BLOG_URL}/:slug/`,
-  //       //   destination: `https://blog.yongwoo.dev/:slug/`,
-  //       // },
-  //       // // E.g: domain/blog/hello-wolrd/hello-where
-  //       // {
-  //       //   source: '/blog/:slug*',
-  //       //   // destination: `${BLOG_URL}/:slug*/`,
-  //       //   destination: `https://blog.yongwoo.dev/:slug*/`,
-  //       // },
-        
-  //     ]
-  //   };
-  // },
 };
+
+module.exports = nextConfig;
