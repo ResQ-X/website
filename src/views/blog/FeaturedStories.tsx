@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { getCategories, getPostsByCategory, Category, BlogPost } from "@/server/blog";
 
@@ -144,10 +145,8 @@ export default function FeaturedStories({ activeCategory, onCategoryChange }: Fe
       >
         <div className="w-full lg:w-[45%]">
           {posts[0] && (
-            <div 
-              className="h-[445px] relative rounded-[40px] bg-cover bg-center"
-              style={{ backgroundImage: `url('${posts[0].featured_image_urls?.original || DEFAULT_IMAGE}')` }}
-            >
+            <Link href={`/blog/${posts[0].id}`} className="block h-[445px] relative rounded-[40px] bg-cover bg-center hover:opacity-95 transition-opacity"
+              style={{ backgroundImage: `url('${posts[0].featured_image_urls?.original || DEFAULT_IMAGE}')` }}>
               <div className="absolute inset-0 rounded-[40px] bg-black opacity-10"></div>
               <div className="relative z-10 flex flex-col h-full p-6">
                 <div className="flex flex-col pt-[3rem] gap-[10rem] h-full">
@@ -164,22 +163,23 @@ export default function FeaturedStories({ activeCategory, onCategoryChange }: Fe
                     </p>
                   </div>
                   <div>
-                    <button className="flex items-center text-white group">
+                    <span className="flex items-center text-white group cursor-pointer">
                       Read More 
                       <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    </span>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           )}
         </div>
         
         <div className="w-full lg:w-[55%] flex flex-col lg:flex-row gap-6">
           {posts.slice(1, 3).map((post) => (
-            <div 
+            <Link
               key={post.id}
-              className="flex-1 h-[445px] relative rounded-[40px] bg-cover bg-center"
+              href={`/blog/${post.id}`}
+              className="flex-1 h-[445px] relative rounded-[40px] bg-cover bg-center hover:opacity-95 transition-opacity"
               style={{ backgroundImage: `url('${post.featured_image_urls?.original || DEFAULT_IMAGE}')` }}
             >
               <div className="absolute inset-0 rounded-[40px] bg-black opacity-10"></div>
@@ -198,14 +198,14 @@ export default function FeaturedStories({ activeCategory, onCategoryChange }: Fe
                     </p>
                   </div>
                   <div>
-                    <button className="flex items-center text-white group">
+                    <span className="flex items-center text-white group cursor-pointer">
                       Read More 
                       <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    </span>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </motion.div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getPostsByCategory, BlogPost, Category } from '@/server/blog';
@@ -41,43 +42,47 @@ const RelatedPostCard = ({ post }: RelatedPostCardProps) => {
   });
 
   return (
-    <motion.div 
-      variants={cardVariants}
-      className="flex flex-col border rounded-lg overflow-hidden shadow-md mb-6 hover:shadow-lg transition-shadow duration-300"
-    >
-      <div className="relative h-64">
-        <Image 
-          src={post.featured_image_urls?.original || '/images/home/blog/carImg.jpeg'}
-          alt={post.title}
-          fill
-          className="object-cover"
-        />
-      </div>
-      <div className="p-4 flex flex-col justify-between h-64">
-        <div>
-          <h3 className="text-xl text-[#292219] font-bold mb-2 line-clamp-2">{post.title}</h3>
-          <p className="mb-4 text-[#292219] line-clamp-3">{post.description}</p>
+    <Link href={`/blog/${post.id}`}>
+      <motion.div 
+        variants={cardVariants}
+        className="group flex flex-col border rounded-lg overflow-hidden shadow-md mb-6 hover:shadow-lg transition-all duration-300 hover:border-[#FF8500] cursor-pointer"
+      >
+        <div className="relative h-64 overflow-hidden">
+          <Image 
+            src={post.featured_image_urls?.original || '/images/home/blog/carImg.jpeg'}
+            alt={post.title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
         </div>
-        <div className="flex items-center justify-end text-[#94908C]">
-          <Calendar size={16} className="mr-2" />
-          <span className="text-sm">{formattedDate}</span>
+        <div className="p-4 flex flex-col justify-between h-64 bg-white">
+          <div>
+            <h3 className="text-xl text-[#292219] font-bold mb-2 line-clamp-2 group-hover:text-[#FF8500] transition-colors duration-300">
+              {post.title}
+            </h3>
+            <p className="mb-4 text-[#292219] line-clamp-3">
+              {post.description}
+            </p>
+          </div>
+          <div className="flex items-center justify-end text-[#94908C]">
+            <Calendar size={16} className="mr-2" />
+            <span className="text-sm">{formattedDate}</span>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };
 
 const getRelatedCategoryId = (currentCategoryId: number): number => {
-  // If no category is selected, default to category 1
   if (!currentCategoryId) return 1;
-
-  // Logic for determining related category
+  
   if (currentCategoryId >= 6) {
-    return 1; // Loop back to start for high category numbers
+    return 1;
   } else if (currentCategoryId % 2 === 0) {
-    return currentCategoryId + 1; // For even numbers, show next category
+    return currentCategoryId + 1;
   } else {
-    return currentCategoryId + 1; // For odd numbers, show next category
+    return currentCategoryId + 1;
   }
 };
 
@@ -94,34 +99,24 @@ export default function RelatedPostsSection({ activeCategory }: RelatedPostsSect
 
         if (!activeCategory) return;
 
-        // First attempt: Try to get posts from the related category
-        const relatedCategoryId = getRelatedCategoryId(activeCategory.id);
-        let fetchedPosts = await getPostsByCategory(relatedCategoryId);
+        let fetchedPosts = await getPostsByCategory(getRelatedCategoryId(activeCategory.id));
         
-        // If no posts found in related category, try category 1
         if (!fetchedPosts || fetchedPosts.length === 0) {
-          console.log(`No posts found in category ${relatedCategoryId}, falling back to category 1`);
           fetchedPosts = await getPostsByCategory(1);
           
-          // If still no posts, try all available categories sequentially
           if (!fetchedPosts || fetchedPosts.length === 0) {
             for (let i = 2; i <= 6; i++) {
-              console.log(`Attempting to fetch posts from category ${i}`);
               fetchedPosts = await getPostsByCategory(i);
-              if (fetchedPosts && fetchedPosts.length > 0) {
-                break;
-              }
+              if (fetchedPosts && fetchedPosts.length > 0) break;
             }
           }
         }
 
-        // Final check - if we still have no posts, show an error
         if (!fetchedPosts || fetchedPosts.length === 0) {
           setError('No posts available at this time');
           return;
         }
 
-        // Limit to 4 posts
         setPosts(fetchedPosts.slice(0, 4));
       } catch (err) {
         setError('Failed to load related posts');

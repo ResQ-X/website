@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Eye } from "lucide-react";
 import { getPostsByCategory, BlogPost, Category } from "@/server/blog";
 import { motion } from "framer-motion";
@@ -44,13 +45,11 @@ export default function NewsletterSection({ activeCategory }: NewsletterSectionP
         return;
       }
 
-      console.log("Active category:", activeCategory);
       try {
         setIsLoading(true);
         const data = await getPostsByCategory(activeCategory.id || 1);
-        console.log("Fetched data:", data);
         setPosts(data.slice(3)); // Show posts from the 4th onward
-        setError(null); // Reset any previous errors
+        setError(null);
       } catch (err) {
         console.error("Failed to fetch posts:", err);
         setError("Failed to load blog posts");
@@ -62,7 +61,8 @@ export default function NewsletterSection({ activeCategory }: NewsletterSectionP
     fetchPosts();
   }, [activeCategory]);
 
-  const handleSubscribe = () => {
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
     if (!email.trim()) return;
     console.log("Subscribing:", email);
     setEmail("");
@@ -121,30 +121,37 @@ export default function NewsletterSection({ activeCategory }: NewsletterSectionP
             <motion.div
               key={post.id}
               variants={itemVariants}
-              className="flex items-center bg-white border hover:border-[#FF8500] rounded-lg p-6 transition"
+              className="group"
             >
-              <div className="flex-1 mr-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-800 hover:text-[#FF8500] transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">{post.description}</p>
-                <div className="flex items-center text-gray-500">
-                  <span className="mr-4 text-sm">{post.time_since_post}</span>
-                  <span className="mx-2">•</span>
-                  <div className="flex items-center">
-                    <Eye className="mr-2 w-4 h-4" />
-                    <span className="text-sm">{post.formatted_views}</span>
+              <Link 
+                href={`/blog/${post.id}`}
+                className="block bg-white border group-hover:border-[#FF8500] rounded-lg p-6 transition-all duration-300"
+              >
+                <div className="flex items-center">
+                  <div className="flex-1 mr-6">
+                    <h3 className="text-xl font-semibold mb-2 text-gray-800 group-hover:text-[#FF8500] transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-2">{post.description}</p>
+                    <div className="flex items-center text-gray-500">
+                      <span className="mr-4 text-sm">{post.time_since_post}</span>
+                      <span className="mx-2">•</span>
+                      <div className="flex items-center">
+                        <Eye className="mr-2 w-4 h-4" />
+                        <span className="text-sm">{post.formatted_views}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative min-w-[256px] h-48 overflow-hidden rounded-lg">
+                    <Image
+                      src={post.featured_image_urls?.original || "/images/home/blog/carImg2.jpeg"}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
                 </div>
-              </div>
-              <div className="relative min-w-[256px] h-48">
-                <Image
-                  src={post.featured_image_urls?.original || "/images/home/blog/carImg2.jpeg"}
-                  alt={post.title}
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -170,7 +177,7 @@ export default function NewsletterSection({ activeCategory }: NewsletterSectionP
               Keep up with the latest tips by subscribing to our newsletter
             </h2>
 
-            <div className="max-w-xl mx-auto relative">
+            <form onSubmit={handleSubscribe} className="max-w-xl mx-auto relative">
               <div className="relative">
                 <input
                   type="email"
@@ -180,13 +187,13 @@ export default function NewsletterSection({ activeCategory }: NewsletterSectionP
                   className="w-full px-6 py-4 pr-32 bg-white/70 backdrop-blur-sm border border-white/30 rounded-full focus:outline-none focus:ring-2 focus:ring-white/50 placeholder:text-gray-600"
                 />
                 <button
-                  onClick={handleSubscribe}
+                  type="submit"
                   className="absolute right-2 top-1/2 -translate-y-1/2 bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors duration-300"
                 >
                   Subscribe
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         </motion.div>
       </div>

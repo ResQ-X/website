@@ -78,20 +78,24 @@ export interface Category {
     }
   }
   
-  export async function incrementPostViews(id: number): Promise<{ status: string; views: number }> {
+  export async function incrementPostViews(id: number, title: string, description: string, categoryId: number): Promise<{ status: string; views: number }> {
     try {
-      const response = await fetch(
-        `${BASE_URL}/posts/${id}/increment_views/`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      const response = await fetch(`${BASE_URL}/posts/${id}/increment_views/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title,
+          description,
+          category_id: categoryId, // You can pass this dynamically based on the post
+        }),
+      });
+  
       if (!response.ok) {
         throw new Error('Failed to increment views');
       }
+  
       return await response.json();
     } catch (error) {
       console.error('Error incrementing views:', error);
