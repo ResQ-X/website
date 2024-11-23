@@ -20,7 +20,7 @@ export default function BlogPageClient() {
       <NewsletterSection 
         activeCategory={activeCategory} 
       />
-      <RelatedPostsSection />
+      <RelatedPostsSection activeCategory={activeCategory} />
     </div>
   );
 }

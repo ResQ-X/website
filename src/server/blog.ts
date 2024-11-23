@@ -25,7 +25,7 @@ export interface Category {
     } | null;
   }
   
-  const BASE_URL = 'http://localhost:8000/api';
+  const BASE_URL = 'https://resqx-blog.onrender.com/api';
   
   // API Helper Functions
   export async function getCategories(): Promise<Category[]> {
