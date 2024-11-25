@@ -112,7 +112,7 @@ const BlogDetailsClient = ({ id }: BlogDetailsClientProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="px-4 pt-[7rem] min-h-screen"
+            className="px-4 pt-[7rem] overflow-hidden min-h-screen"
             >
             {/* Full-width background image with height of 733px */}
             <div
@@ -148,14 +148,14 @@ const BlogDetailsClient = ({ id }: BlogDetailsClientProps) => {
             </div>
 
             {/* Content Layout */}
-            <div className="px-[90px] pt-[30px] pb-[100px] mx-auto">
+            <div className="lg:px-[90px] pt-[30px] pb-[100px] lg:mx-auto">
                 {/* Category */}
-                <div className="text-[18px] tracking-tighter text-[#FF8500] font-[600] mb-4 capitalize">{post.category.name}</div>
+                <div className="text-[18px] text-center lg:text-left tracking-tighter text-[#FF8500] font-[600] mb-4 capitalize">{post.category.name}</div>
 
                 {/* Description and Aside */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Description */}
-                <div className="prose w-[800px] font-[400] text-[18px] tracking-tighter leading-[35.13px] text-[#444]">
+                <div className="prose w-full text-center lg:w-[800px] font-[400] text-[18px] tracking-tighter leading-[35.13px] text-[#444]">
                     <p>{post.description}</p>
                 </div>
 

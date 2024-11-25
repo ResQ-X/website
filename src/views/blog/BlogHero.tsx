@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function BlogHero() {
   return (
-    <div className="relative flex flex-col md:flex-row items-center justify-between px-4 md:px-20 pt-[35%] lg:pt-12 pb-12 smooth">
+    <div className="relative flex flex-col md:flex-row items-center justify-between px-4 md:px-20 pt-[35%] lg:pt-1 lg:-mt-32 pb-12 smooth">
       <div className="z-10 w-full md:w-[30%] space-y-[6rem] lg:space-y-6">
         <h1 className="text-[68px] text-center lg:text-left lg:text-[68px] lg:w-[532px] leading-[78px] h-[144px] font-bold lg:leading-[72px] tracking-[-4%] text-[#332414]">
           Your Daily Dose of <span className="bg-gradient-to-b from-[#ff8500] to-[#995000] bg-clip-text text-transparent">Insight</span>
