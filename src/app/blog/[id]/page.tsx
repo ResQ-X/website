@@ -23,7 +23,7 @@ const BlogDetailsPage = async ({ params }: Props) => {
   }
 
   // Pass post data and id as props to the client-side component
-  return <BlogDetailsClient post={post} id={id} />;
+  return <BlogDetailsClient id={id} />;
 };
 
 export default BlogDetailsPage;

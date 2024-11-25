@@ -6,7 +6,7 @@ import Image from "next/image";
 import { NavItem } from "./NavItem";
 import { NavButton } from "./NavButton";
 import { MobileNav } from "./MobileNav";
-import { fetchPosts } from "@/server/blog";
+// import { fetchPosts } from "@/server/blog";
 
 const blogUrl: string = process.env.NEXT_PUBLIC_BLOG_URL as string;
 
