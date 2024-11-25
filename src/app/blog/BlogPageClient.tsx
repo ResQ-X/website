@@ -11,7 +11,7 @@ export default function BlogPageClient() {
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen overflow-hidden">
       <BlogHero />
       <FeaturedStories 
         activeCategory={activeCategory} 
