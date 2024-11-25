@@ -121,12 +121,12 @@ export default function NewsletterSection({ activeCategory }: NewsletterSectionP
             <motion.div
               key={post.id}
               variants={itemVariants}
-              className="flex items-center bg-white border hover:border-[#FF8500] rounded-lg px-6 py-2 transition"
+              className="flex items-center flex-col lg:flex-row gap-3 bg-white border hover:border-[#FF8500] rounded-lg px-6 lg:py-2 py-9 transition"
             >
               <div className="flex-1 mr-6">
-              <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-              <p className="text-gray-600 mb-4 line-clamp-2">{post.description}</p>
-              <div className="flex items-center text-gray">
+              <h3 className="text-xl text-center lg:text-left font-semibold mb-5 lg:mb-2">{post.title}</h3>
+              <p className="text-gray-600 mb-4 line-clamp-2 text-center lg:text-left">{post.description}</p>
+              <div className="flex items-center justify-center lg:justify-start text-gray mb-3 lg:mb-0">
                 <span className="mr-4">{post.time_since_post}</span>
                 <span className="mx-2">•</span>
                 <div className="flex items-center">
