@@ -81,5 +81,19 @@
   .smooth {
     image-rendering: high-quality;
   }
+
 }
 
+.gradient-text {
+  --text-gradient: linear-gradient(180deg, #555, #000);
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #0000;
+}
+
+.gradient-text2 {
+  --text-gradient: linear-gradient(180deg, #ff8500, #995000);
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #0000;
+}

@@ -13,7 +13,7 @@ export function TypewriterEffectSmoothDemo() {
     },
     {
       text: "Anywhere.",
-      className: "bg-gradient-to-b from-[#ff8500] to-[#995000] bg-clip-text text-transparent",
+      className: "bg-gradient-to-b gradient-text2 from-[#ff8500] to-[#995000] bg-clip-text text-transparent",
     },
   ];
   return (

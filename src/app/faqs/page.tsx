@@ -20,7 +20,7 @@ export default function Faqs() {
             width={214}
             alt="FAQs Image"
             src={"/images/faqs_section_image.png"}
-            className="relative max-h-full w-full overflow-hidden object-cover"
+            className="relative h-[500px] w-[500px] overflow-hidden object-contain"
           />
         </div>
         <div className="h-full w-full text-left lg:max-h-[600px] lg:w-3/5">

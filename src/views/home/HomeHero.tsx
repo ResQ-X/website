@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import AOS from "aos"
 import { TypewriterEffectSmoothDemo } from "@/components/Typewritter";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export const HomeHero = () => {
   useEffect(() => {
@@ -13,14 +14,17 @@ export const HomeHero = () => {
   }, [])
 
   return (
+    <AuroraBackground className="dark:bg-grid-white/[0.2] bg-grid-black/[0.02]">
     <div className="mt-[9vh] relative h-[792px] w-full overflow-hidden">
-      {/* Background Image with improved sharpness and tint */}
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-transparent [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+
+      {/* Background Image with improved sharpness and tint 
       <Image
         layout="fill" 
         src="/images/home/home_hero_image.gif" 
         alt="Hero background" 
         className="absolute inset-0 w-full h-full object-fill object-center brightness-[100%] contrast-[1.2] select-none pointer-events-none z-0"
-      />
+      /> */}
       
       {/* Content Overlay - Positioned on top of the background */}
       <div className="relative z-10 h-full">
@@ -74,5 +78,6 @@ export const HomeHero = () => {
         </div>
       </div>
     </div>
+    </AuroraBackground>
   );
 };
