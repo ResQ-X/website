@@ -94,6 +94,7 @@ export const NavBar = () => {
           </li>
           <NavItem name={"Blog"} path={"/blog"} />
           <NavItem name={"Get in touch"} path={"/contact"} />
+          <NavItem name={"Rescue me"} path={"/emergency"} />
         </ul>
       </div>
 
