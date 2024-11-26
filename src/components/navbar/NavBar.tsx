@@ -64,7 +64,7 @@ export const NavBar = () => {
   }
 
   return (
-    <div className="left navbar fixed top-0 z-50 flex items-center justify-between bg-white px-1 py-4 font-['Raleway'] text-base text-[#332414] md:px-8">
+    <div className="left navbar fixed top-0 z-50 flex items-center justify-between bg-white/20 backdrop-blur-sm px-1 py-4 font-['Raleway'] text-base text-[#332414] md:px-8">
       <div className=" px-0">
         {/* MOBILE MENU ICON */}
         <MobileNav />
