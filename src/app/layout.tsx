@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { NavBar } from "@/components/navbar/NavBar";
 import { Footer } from "@/components/footer/Footer";
 import { TawkMessenger } from "@/components/tawk/TawkMessenger";
+import 'primeicons/primeicons.css';
 
 const fontSans = FontSans({
   subsets: ["latin"],
