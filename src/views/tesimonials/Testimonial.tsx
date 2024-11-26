@@ -4,7 +4,16 @@ import { testimonialList } from "@/lib/values/testimonial.values";
 
 export const Testimonial = ({ heading }: { heading: string[] }) => {
   return (
-    <div className="mb-20 mt-20">
+    <div className="mb-20 mt-20 relative">
+
+      <Image
+        height={2000}
+        width={2000}
+        alt="Customer Phone Image"
+        src="/images/testimonial/globe.png"
+        className="absolute object-cover h-[460px] w-[336px] rotate-45 bottom-0 scale-[1.5] -left-[150px] brightness-[0.1]"
+      />
+
       <div className="flex flex-col items-center justify-center gap-6 px-[20px] md:px-[100px] lg:px-[200px]">
         <p className="text-center text-[40px] font-semibold leading-[75.14px] text-[#121212] md:text-[64px]">
           {heading[0]}
