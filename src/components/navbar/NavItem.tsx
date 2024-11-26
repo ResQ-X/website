@@ -1,8 +1,9 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
+import Image from "next/image"
 import Link from "next/link";
+import { AlertTriangle } from "lucide-react"; // Import the emergency icon
 
 export const NavItem = ({ name, path }: { name: string; path: string }) => {
   const pathName = usePathname();
@@ -16,13 +17,27 @@ export const NavItem = ({ name, path }: { name: string; path: string }) => {
     <li onClick={closeDropdowns}>
       <Link
         href={path}
-        className={`relative ${pathName === path ? " pb-4" : ""}`}
+        className={`relative flex items-center ${
+          pathName === path ? "pb-4" : ""
+        }`}
       >
-        {name}
+        {name === "Rescue me" && (
+          <AlertTriangle
+            size={20}
+            className="mr-2 text-red-500" // Icon styling
+          />
+        )}
+        <span
+          className={`${
+            name === "Rescue me" ? "text-red-500 font-bold" : ""
+          }`}
+        >
+          {name}
+        </span>
         {pathName === path && (
           <span className="absolute bottom-0 left-0 h-1 w-full pb-3">
-            <Image src="/icons/menu_active.png" alt="underline" layout="fill" />
-          </span>
+          <Image src="/icons/menu_active.png" alt="underline" className="w-[30px] h-[10px]" height={100} width={100} />
+        </span>
         )}
       </Link>
     </li>
