@@ -3,7 +3,9 @@ import { Tabs } from "@/components/ui/tabs";
 import { Metadata } from "next";
 import HeroSection from "@/views/emergency/HeroSection";
 import TabsSection from "@/views/emergency/TabSection";
+import WhyResQX from "@/views/emergency/WhyUS";
 import DummyContent from "@/views/emergency/DummyContext";
+import { ResQXFeatures } from "@/views/emergency/ResQXFeatures";
 // import { AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -20,6 +22,8 @@ export default function RescueMe() {
       <HeroSection />
       {/* Tabs Section */}
       <TabsSection />
+      <WhyResQX />
+      <ResQXFeatures />
     </div>
   );
 }

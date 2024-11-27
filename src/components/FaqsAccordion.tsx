@@ -12,14 +12,14 @@ export const FaqsAccordion = (faq: FaqModel) => {
         <div className="collapse-content mx-0 px-0 text-sm text-black">
           <p>{faq.answer}</p>
         </div>
-        <div className="">
-          <Image
+        <div className="border-b w-full rounded-b-xl border-b-orange-200">
+          {/* <Image
             height={214}
             width={214}
             alt="Logo"
             src={"/images/divider.png"}
             className="relative h-full w-full overflow-hidden object-cover"
-          />
+          /> */}
         </div>
       </div>
     </div>
