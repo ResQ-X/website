@@ -20,16 +20,16 @@ const DummyContent: React.FC<DummyContentProps> = ({
   image,
 }) => {
   return (
-    <div className="relative w-[90%] text-white p-6 rounded-lg">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-[2.3rem] font-extrabold">{title}</h2>
-        <span className="bg-green-100 text-green-700 px-3 py-1 rounded-lg text-sm font-medium">
+    <div className="relative w-full lg:w-[90%] text-white p-6 rounded-lg">
+      <div className="flex lg:flex-row flex-col justify-between items-center mb-4">
+        <h2 className="text-[1.5rem] lg:text-[2.3rem] font-extrabold mb-2 lg:mb-0">{title}</h2>
+        <span className="bg-green-100 text-green-700 px-3 py-1 text-center rounded-lg text-[10px] font-medium">
           {arrival}
         </span>
       </div>
-      <p className="text-slate-100 font-semibold mb-4">{description}</p>
+      <p className="text-slate-100 text-[13px] lg:text-lg font-semibold mb-4">{description}</p>
       <div className="pt-1">
-        <div className="flex justify-between items-center">
+        <div className="flex lg:flex-row flex-col gap-3 justify-between items-center">
             <div className="flex justify-between items-center gap-2">
                 <span className="font-bold text-lg">Price</span>
                 <span className="text-xl font-semibold">{price}</span>
