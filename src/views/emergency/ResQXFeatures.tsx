@@ -55,7 +55,7 @@ export function ResQXFeatures() {
         <StickyScroll content={content} />
         </div>
         <div className="max-w-7xl my-12">
-        <h2 className="text-[3.1rem] gradient-text font-bold mb-7">Answered Questions!</h2>
+        <h2 className="text-[3.1rem] lg:text-left text-center gradient-text font-bold mb-7">Answered Questions!</h2>
         <div className="overflow-y-auto border p-10 rounded-[15px] no-visible-scrollbar lg:max-h-[400px]">
             {faqsList.map((faq, index) => (
               <div key={index}>

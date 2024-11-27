@@ -17,7 +17,7 @@ export default function RescueMe() {
 
 
   return (
-    <div className="min-h-screen px-8 py-32 w-full flex flex-col items-center justify-center">
+    <div className="min-h-screen lg:px-8 py-32 w-full flex flex-col items-center justify-center">
       {/* Hero Section */}
       <HeroSection />
       {/* Tabs Section */}

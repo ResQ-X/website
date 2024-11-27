@@ -2,8 +2,8 @@ import React from "react";
 
 const WhyResQX = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-black py-16 text-center rounded-[50px] mt-[10rem] text-white">
-      <h2 className="text-8xl font-bold mb-32">Why ResQX?</h2>
+    <div className="bg-gradient-to-b from-gray-900 to-black py-16 text-center lg:rounded-[50px] mt-[10rem] text-white">
+      <h2 className="text-[3rem] lg:text-8xl font-bold mb-32">Why ResQX?</h2>
       <div className="flex flex-col md:flex-row justify-center items-center gap-10 px-6">
         <div className="max-w-sm">
           <h3 className="text-xl font-semibold mb-4">24/7 Support on WhatsApp</h3>

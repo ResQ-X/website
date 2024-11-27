@@ -89,7 +89,7 @@ const TabsSection = () => {
   
 
   return (
-    <div className="mt-20 flex flex-col justify-center items-center w-full">
+    <div className="mt-20 px-2 flex flex-col justify-center items-center w-full">
       <div className="h-[28rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-7xl mx-auto w-full items-center justify-center">
         <Tabs tabs={tabs} />
       </div>
