@@ -14,12 +14,12 @@ const HeroSection = () => {
           className="w-[150px] h-[150px] object-cover"
         />
       </div>
-      <h1 className="text-4xl md:text-[5rem] leading-[60px] font-extrabold mb-6">
+      <h1 className="text-[2.5rem] md:text-[5rem] leading-[60px] font-extrabold mb-6">
         Stranded? <span className="gradient-text2">Stay calm.</span> Let{" "}
         <span className="gradient-text2">ResQX</span> handle it!
       </h1>
 
-      <p className="text-xl md:text-2xl font-[400] text-gray-300 my-10">
+      <p className="text-[14px] md:text-2xl font-[400] text-gray-300 my-10">
         Low on fuel? Flat tire? Dead battery? No worries. ResQX is here to save the day and get
         you back on track in no time!
       </p>
