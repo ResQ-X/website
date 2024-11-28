@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main>
+    <main className="py-12">
       <div>
         <MembershipHero />
         <MembershipPlans />

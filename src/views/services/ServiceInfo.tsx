@@ -9,7 +9,7 @@ export const ServiceInfo = ({
   description: string;
 }) => {
   return (
-    <div className="w-full font-['Raleway'] hover:card-body hover:shadow-2xl lg:px-6">
+    <div className="w-full font-['Raleway'] transition-all duration-200 rounded-xl hover:border-2 hover:border-[#FF8500] lg:py-12 lg:px-6">
       <p className="mb-3 text-[40px] font-bold leading-[46.96px] tracking-[-2%]  text-[#1F1F1F]">
         {title}
       </p>

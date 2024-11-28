@@ -58,7 +58,7 @@ export const AboutHero = () => {
             width={3000}
             alt="Contact Image"
             src={"/images/about/about_hero_image.png"}
-            className="w-full object-cover"
+            className="w-full object-cover contrast-150 brightness-90"
           />
         </div>
       </div>

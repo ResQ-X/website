@@ -87,11 +87,11 @@ const HeroSection = () => {
       >
         <span>Stranded? </span>
         <span className="gradient-text2">Stay calm.</span> Let{" "}
-        <span className="gradient-text2">ResQX</span> handle it!
+        <span className="gradient-text2">ResQ-X</span> handle it!
       </h1>
 
       <p className="text-[14px] md:text-2xl font-[400] text-gray-300 my-10 hero-description">
-        Low on fuel? Flat tire? Dead battery? No worries. ResQX is here to save the day and get you
+        Low on fuel? Flat tire? Dead battery? No worries. ResQ-X is here to save the day and get you
         back on track in no time!
       </p>
       <a

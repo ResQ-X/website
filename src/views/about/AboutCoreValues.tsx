@@ -23,8 +23,25 @@ export const AboutCoreValues = () => {
       <div className="mt-6 overflow-hidden">
         <div
           className={`slider-row flex gap-x-10 md:gap-y-10`}
-          style={{ animationDuration: "10s" }} // Adjust speed
+          style={{ animationDuration: "20s" }} // Adjust speed
         >
+          {coreValueList.map((value, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center md:items-start md:justify-start"
+            >
+              <AboutCoreValueCard {...value} />
+            </div>
+          ))}
+          {/* Clone the slides to ensure a smooth loop */}
+          {coreValueList.map((value, index) => (
+            <div
+              key={`clone-${index}`}
+              className="flex flex-col items-center justify-center md:items-start md:justify-start"
+            >
+              <AboutCoreValueCard {...value} />
+            </div>
+          ))}
           {coreValueList.map((value, index) => (
             <div
               key={index}

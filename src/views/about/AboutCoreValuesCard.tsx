@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const AboutCoreValueCard = (value: ICoreValue) => {
   return (
-    <div className="h-full min-w-[300px] rounded-lg border-[3px] border-[#332414] font-['Raleway'] tracking-[-2%] md:min-w-[300px]">
+    <div className="h-full min-w-[300px] rounded-lg border-[.5px] border-[#332414] font-['Raleway'] tracking-[-2%] md:min-w-[400px]">
       <div className="">
         <Image
           height={2000}

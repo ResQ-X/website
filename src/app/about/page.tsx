@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div>
+    <div className="py-16 lg:py-32 overflow-x-hidden">
       <AboutHero />
       <AboutOverview />
       <AboutCoreValues />

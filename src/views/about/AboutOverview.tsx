@@ -12,7 +12,7 @@ export const AboutOverview = () => {
             height={2000}
             width={2000}
             alt="About Overview Image"
-            src={"/images/about/about_overview.png"}
+            src={"/images/about/service.png"}
             className="relative max-h-full w-full overflow-hidden object-cover"
           />
         </div>
