@@ -16,7 +16,7 @@ import { HomeCtaSection } from "@/views/home/HomeCtaSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <div>
         <HomeHero />
         <HomeFacts />

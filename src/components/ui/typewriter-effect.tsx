@@ -126,7 +126,7 @@ export const TypewriterEffectSmooth = ({
               {word.text.map((char, index) => (
                 <span
                   key={`char-${index}`}
-                  className={cn(`text-center font-['Raleway'] text-[50px] font-bold leading-[72px] tracking-[-4%] md:text-[68px] gradient-text`, word.className)}
+                  className={cn(`text-center font-['Raleway'] text-[50px] font-bold leading-[72px] tracking-[-4%] md:text-[68px] bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400`, word.className)}
                 >
                   {char}
                 </span>
@@ -156,10 +156,7 @@ export const TypewriterEffectSmooth = ({
         }}
       >
         <div
-          className="text-xs sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
-          style={{
-            whiteSpace: "nowrap",
-          }}
+          className="text-xs text-center px-1 sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold whitespace-normal lg:whitespace-normal"
         >
           {renderWords()}{" "}
         </div>{" "}

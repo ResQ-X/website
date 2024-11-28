@@ -18,7 +18,7 @@ export function TypewriterEffectSmoothDemo() {
   ];
   return (
     <div className="flex flex-col items-center justify-center">
-      <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base  ">
+      <p className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 font-bold text-xs sm:text-base  ">
         The road to freedom starts from here
       </p>
       <TypewriterEffectSmooth words={words} />
