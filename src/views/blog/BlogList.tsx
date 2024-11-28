@@ -132,7 +132,7 @@ export default function NewsletterSection({ activeCategory }: NewsletterSectionP
                     <h3 className="text-xl font-semibold mb-2 text-gray-800 group-hover:text-[#FF8500] transition-colors duration-300">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2">{post.description}</p>
+                    <p className="text-gray-600 mb-4 line-clamp-2" dangerouslySetInnerHTML={{ __html: post.description }}></p>
                     <div className="flex items-center text-gray-500">
                       <span className="mr-4 text-sm">{post.time_since_post}</span>
                       <span className="mx-2">•</span>

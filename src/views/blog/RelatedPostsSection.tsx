@@ -60,8 +60,8 @@ const RelatedPostCard = ({ post }: RelatedPostCardProps) => {
             <h3 className="text-xl text-[#292219] font-bold mb-2 line-clamp-2 group-hover:text-[#FF8500] transition-colors duration-300">
               {post.title}
             </h3>
-            <p className="mb-4 text-[#292219] line-clamp-3">
-              {post.description}
+            <p className="mb-4 text-[#292219] line-clamp-3" dangerouslySetInnerHTML={{ __html: post.description }}>
+              {/* {post.description} */}
             </p>
           </div>
           <div className="flex items-center justify-end text-[#94908C]">

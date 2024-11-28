@@ -156,7 +156,7 @@ const BlogDetailsClient = ({ id }: BlogDetailsClientProps) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Description */}
                 <div className="prose w-full text-center lg:w-[800px] font-[400] text-[18px] tracking-tighter leading-[35.13px] text-[#444]">
-                    <p>{post.description}</p>
+                    <p dangerouslySetInnerHTML={{ __html: post.description }}></p>
                 </div>
 
                 {/* Aside: Share Post, People Also Read, Related Posts */}
