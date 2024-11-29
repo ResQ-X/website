@@ -36,7 +36,7 @@ export const NavItem = ({ name, path }: { name: string; path: string }) => {
         </span>
         {pathName === path && (
           <span className="absolute bottom-0 left-0 h-1 w-full pb-3">
-          <Image src="/icons/menu_active.png" alt="underline" className="" height={100} width={100} />
+          <Image src="/images/underline_image.png" alt="underline" className="" height={100} width={100} />
         </span>
         )}
       </Link>
