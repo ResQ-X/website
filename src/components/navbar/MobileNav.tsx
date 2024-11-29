@@ -87,6 +87,7 @@ export const MobileNav = () => {
           </li>
           <NavItem name={"Blog"} path={"/blog"} />
           <NavItem name={"Get in touch"} path={"/contact"} />
+          <NavItem name={"Rescue me"} path={"/emergency"} />
           <li>
             <a
               href="tel:2348140647017"

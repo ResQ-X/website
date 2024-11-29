@@ -23,12 +23,12 @@ export const GetAQuote = () => {
         </div>
 
         <div className="relative flex items-center">
-          <div className="absolute inset-0 grid grid-cols-2 ">
+          <div className="absolute inset-0 hidden lg:grid grid-cols-2 ">
             <div className="h-full w-full bg-white"></div>
             <div className="h-full w-full rounded-s-[8px] bg-[#407BFF]"></div>
           </div>
 
-          <div className="relative my-10 mr-10 w-full bg-[#031846] px-5 py-20 font-['Raleway'] lg:py-[100px] lg:pl-[70px] lg:pr-[170px]">
+          <div className="relative my-10 lg:mr-10 rounded-md w-full bg-[#031846] px-5 py-20 font-['Raleway'] lg:py-[100px] lg:pl-[70px] lg:pr-[170px]">
             <p className="mb-[40px] text-center text-[40px] font-bold leading-[46.96px] text-[#FAF8F5] md:text-start ">
               Info
             </p>

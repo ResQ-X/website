@@ -120,7 +120,7 @@ export default function FeaturedStories({ activeCategory, onCategoryChange }: Fe
         </div>
       </motion.div>
       
-      <div className="flex w-full items-center justify-center flex-wrap gap-4 mb-20">
+      <div className="flex w-full items-center justify-center flex-norwap overflow-x-scroll py-3 pl-[20rem] gap-4 mb-20">
         {categories.map(category => (
           <button
             key={category.id}

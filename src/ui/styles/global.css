@@ -107,3 +107,10 @@
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+
+.ul ul, .ol ol {
+  list-style: initial; /* Restore default bullet points and numbers */
+  padding-left: 1.5rem; /* Restore default padding */
+  text-align: left;
+}

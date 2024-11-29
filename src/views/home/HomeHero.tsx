@@ -78,7 +78,7 @@ export const HomeHero = () => {
               <a
                 href="/beta"
                 rel="noopener noreferrer"
-                className="no-underline"
+                className="no-underline hidden lg:flex"
               >
                 <LeftIconButton
                   text="Join Beta"

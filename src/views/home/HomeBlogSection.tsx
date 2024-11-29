@@ -19,7 +19,7 @@ export const HomeBlogSection = () => {
         />
         
         {/* Two Half-Width Cards */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-6">
           <HomeBlogSectionCard 
             backgroundImage="/images/home/blog/carImg3.jpeg"
             title="Urban Gardening Tips for Small Spaces"
@@ -38,7 +38,7 @@ export const HomeBlogSection = () => {
       {/* Second Half */}
       <div className="grid grid-cols-1 gap-6">
         {/* Two Half-Width Cards on First Row */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-6">
           <HomeBlogSectionCard 
             backgroundImage="/images/home/blog/carImg3.jpeg"
             title="Smart Home Technology Trends"

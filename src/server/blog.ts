@@ -23,6 +23,8 @@ export interface Category {
       medium: string;
       large: string;
     } | null;
+    meta_keywords?: string;
+    meta_description?: string;
   }
   
   const BASE_URL = 'https://resqx-blog.onrender.com/api';

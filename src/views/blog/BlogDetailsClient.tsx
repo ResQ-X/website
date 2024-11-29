@@ -150,13 +150,13 @@ const BlogDetailsClient = ({ id }: BlogDetailsClientProps) => {
             {/* Content Layout */}
             <div className="lg:px-[90px] pt-[30px] pb-[100px] lg:mx-auto">
                 {/* Category */}
-                <div className="text-[18px] text-center lg:text-left tracking-tighter text-[#FF8500] font-[600] mb-4 capitalize">{post.category.name}</div>
+                <div className="text-[18px] tracking-tighter text-[#FF8500] font-[600] mb-4 capitalize">{post.category.name}</div>
 
                 {/* Description and Aside */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Description */}
-                <div className="prose w-full lg:text-left text-center lg:w-[800px] text-[#444]">
-                    <p dangerouslySetInnerHTML={{ __html: post.description }}></p>
+                <div className="prose w-full lg:w-[800px] text-[#444]">
+                    <p className='ul ol' dangerouslySetInnerHTML={{ __html: post.description }}></p>
                 </div>
 
                 {/* Aside: Share Post, People Also Read, Related Posts */}
