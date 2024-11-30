@@ -23,7 +23,7 @@ export const AboutCoreValues = () => {
       <div className="mt-6 overflow-hidden">
         <div
           className={`slider-row flex gap-x-10 md:gap-y-10`}
-          style={{ animationDuration: "20s" }} // Adjust speed
+          style={{ animationDuration: "10s" }} // Adjust speed
         >
           {coreValueList.map((value, index) => (
             <div

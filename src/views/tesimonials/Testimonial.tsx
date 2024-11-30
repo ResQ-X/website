@@ -11,7 +11,7 @@ export const Testimonial = ({ heading }: { heading: string[] }) => {
         width={2000}
         alt="Customer Phone Image"
         src="/images/testimonial/globe.png"
-        className="absolute object-cover h-[460px] w-[336px] rotate-45 bottom-0 scale-[1.5] -left-[150px] brightness-[0.1]"
+        className="absolute object-cover h-[460px] w-[336px] rotate-45 lg:bottom-0 scale-[1.5] lg:-left-[150px] -left-[200px] brightness-[0.1]"
       />
 
       <div className="flex flex-col items-center justify-center gap-6 px-[20px] md:px-[100px] lg:px-[200px]">

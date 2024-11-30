@@ -38,8 +38,7 @@ export const AboutOverview = () => {
             <p className="mb-6 text-base font-normal leading-[21.13px] tracking-[-2%] text-[#A89887]">
               ResQ-x is more than just a roadside assistance service; we are
               your trusted partner in ensuring safety and reliability on Lagos
-              roads. Founded in December 2023 by Nosa Okoroji and Tomachi Ajoku,
-              ResQ-x was born out of the need to bring structure and
+              roads. ResQ-x was born out of the need to bring structure and
               dependability to Nigeria's vehicle breakdown industry. Our
               services go beyond basic assistance, offering a seamless,
               customer-centric experience that guarantees peace of mind for

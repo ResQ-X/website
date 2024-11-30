@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import { ImagesSlider } from "@/components/ui/images-slider";
 import AOS from "aos"
 import { TypewriterEffectSmoothDemo } from "@/components/Typewritter";
-import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export const HomeHero = () => {
   useEffect(() => {
@@ -50,7 +49,7 @@ export const HomeHero = () => {
             <TypewriterEffectSmoothDemo />
           </div>
           <div>
-            <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 pb-[468px] md:flex-row">
+            <div className="mt-10 flex w-full items-center justify-center gap-4 pb-[468px] md:flex-row px-3">
               <a
                 href={customerPlayStoreLink}
                 rel="noopener noreferrer"

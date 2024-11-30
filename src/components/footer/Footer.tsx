@@ -48,7 +48,7 @@ export const Footer = () => {
                 className="no-underline"
                 target="_blank"
               >
-                hello@resqx.com
+                hello@resqx.net
               </a>
             </p>
             <button className="btn w-48 rounded-[20px] bg-white px-[26px] text-center font-roboto text-base text-black lg:mr-20 ">

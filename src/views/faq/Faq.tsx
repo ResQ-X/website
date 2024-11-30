@@ -21,10 +21,10 @@ const Faq = () => {
                 src={"/images/faqs_section_image.png"}
                 className="relative h-[500px] w-[500px] overflow-hidden object-contain"
             /> */}
-            <Lottie animationData={animationData} className="relative h-[500px] w-[500px] overflow-hidden object-contain" />
+            <Lottie animationData={animationData} className="relative w-full lg:h-[500px] lg:w-[500px] object-contain" />
             </div>
             <div className="h-full w-full text-left lg:max-h-[600px] lg:w-3/5">
-            <p className="font-['Inter'] text-[32px] font-bold text-black">
+            <p className="font-['Inter'] text-[28px] mb-3 lg:text-[32px] font-bold text-black">
                 Frequently Asked Questions
             </p>
             <div className="overflow-y-auto lg:max-h-[400px]">
