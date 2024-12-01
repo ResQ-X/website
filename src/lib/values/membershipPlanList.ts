@@ -86,18 +86,18 @@ export const halfYearPlanList: IMembershipPlan[] = [
       "5km recovery within Lagos",
       "At home",
     ],
-  },
-  {
-    price: '₦24,000',
-    type: 'Everyday',
-    url: '',
-    customClassName: "bg-[#541204FF]",
-    benefitList: [
-      "2 callouts per quarter",
-      "24/7 roadside assistance",
-      "At home",
-    ],
   }
+  // {
+  //   price: '₦24,000',
+  //   type: 'Everyday',
+  //   url: '',
+  //   customClassName: "bg-[#541204FF]",
+  //   benefitList: [
+  //     "2 callouts per quarter",
+  //     "24/7 roadside assistance",
+  //     "At home",
+  //   ],
+  // }
 ]
 
 
@@ -144,17 +144,17 @@ export const annualPlanList: IMembershipPlan[] = [
       "At home",
     ],
   },
-  {
-    price: '₦36,000',
-    type: 'Everyday',
-    url: '',
-    customClassName: "bg-[#541204FF]",
-    benefitList: [
-      "2 callouts per quarter",
-      "24/7 roadside assistance",
-      "At home",
-    ],
-  }
+  // {
+  //   price: '₦36,000',
+  //   type: 'Everyday',
+  //   url: '',
+  //   customClassName: "bg-[#541204FF]",
+  //   benefitList: [
+  //     "2 callouts per quarter",
+  //     "24/7 roadside assistance",
+  //     "At home",
+  //   ],
+  // }
 ]
 
 

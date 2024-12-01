@@ -34,3 +34,34 @@ export const testimonialList: IUserReview[] = [
     location: 'Lekki Lagos',
   },
 ]
+
+export const testimonials = [
+  {
+    quote:
+      "ResQ-X saved my day! I got a flat tire on my way to work in Lekki, and their team arrived within 30 minutes to help me out. The technician was friendly, professional, and had me back on the road in no time. I highly recommend their services!",
+    name: "Kelvin",
+    designation: "Business manager at TechFlow",
+    src: "/images/testimonial.jpeg",
+  },
+  {
+    quote:
+      "As a frequent traveler on the Lekki-Epe Expressway, I feel much safer knowing that ResQ-X has my back. I had a dead battery last month, and their technician arrived quickly and got my car started in minutes. Their service is top-notch, and I recommend them to all my friends in Lekki.",
+    name: "Cletus",
+    designation: "CTO at InnovateSphere",
+    src: "/images/testimonial1.jpeg",
+  },
+  {
+    quote:
+      "I recently used ResQ-X's pay-per-use service when I ran out of fuel on my way home to Ikate. The dispatcher was very understanding and sent a technician with fuel within 20 minutes. The technician was courteous and professional, and the price was reasonable. I'll definitely be using their services again!",
+    name: "Mary",
+    designation: "Operations Director at CloudScale",
+    src: "/images/testimonial2.jpeg",
+  },
+  {
+    quote:
+      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+    name: "Tomachi",
+    designation: "Engineering Lead at DataPro",
+    src: "/images/testimonial3.jpeg",
+  }
+];

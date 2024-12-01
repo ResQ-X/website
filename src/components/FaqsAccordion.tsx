@@ -1,27 +1,30 @@
 import { FaqModel } from "@/lib/models/faq.model";
-import Image from "next/image";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 
 export const FaqsAccordion = (faq: FaqModel) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleAccordion = () => setIsOpen(!isOpen);
+
   return (
-    <div className="">
-      <div className="collapse collapse-plus bg-white py-1 hover:text-xl">
-        <input type="radio" name="my-accordion-3" />
-        <h6 className="collapse-title mx-0 px-0 text-left text-lg font-medium text-black ">
-          {faq.question}
-        </h6>
-        <div className="collapse-content mx-0 px-0 text-sm text-black">
+    <div className="border-b border-orange-200">
+      <div
+        className="flex justify-between items-center bg-white py-6 cursor-pointer"
+        onClick={toggleAccordion}
+      >
+        <h6 className="text-lg font-medium text-black">{faq.question}</h6>
+        {isOpen ? (
+          <ChevronUp className="text-black transform transition-transform duration-300" />
+        ) : (
+          <ChevronDown className="text-black transform transition-transform duration-300" />
+        )}
+      </div>
+      {isOpen && (
+        <div className="py-4 text-sm text-black">
           <p>{faq.answer}</p>
         </div>
-        <div className="border-b w-full rounded-b-xl border-b-orange-200">
-          {/* <Image
-            height={214}
-            width={214}
-            alt="Logo"
-            src={"/images/divider.png"}
-            className="relative h-full w-full overflow-hidden object-cover"
-          /> */}
-        </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -30,7 +30,7 @@ export const HomeHowItWorks = () => {
         <dialog id="video_popup" className="modal">
           <div className="modal-box">
             <video controls width="500">
-              <source src={"/videos/how_it_works.mp4"} type="video/mp4" />
+              <source src={"/videos/howItWorks.mp4"} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

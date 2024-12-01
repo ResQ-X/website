@@ -1,6 +1,7 @@
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import Image from "next/image";
 import { UserReview } from "./UserReview";
-import { testimonialList } from "@/lib/values/testimonial.values";
+import { testimonialList, testimonials } from "@/lib/values/testimonial.values";
 
 export const Testimonial = ({ heading }: { heading: string[] }) => {
   return (
@@ -31,10 +32,12 @@ export const Testimonial = ({ heading }: { heading: string[] }) => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-3 px-4 md:grid-cols-2 md:px-10 lg:grid-cols-3">
-        {testimonialList.map((value, index) => (
+      {/* <div className="grid grid-cols-1 gap-3 px-4 md:grid-cols-2 md:px-10 lg:grid-cols-3"> */}
+      <div className="w-full flex items-center justify-center">
+        {/* {testimonialList.map((value, index) => (
           <UserReview key={index} {...value} />
-        ))}
+        ))} */}
+         <AnimatedTestimonials testimonials={testimonials} />
       </div>
     </div>
   );

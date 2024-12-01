@@ -2,7 +2,7 @@ import { ICoreValue } from "../models";
 
 export const coreValueList: ICoreValue[] = [
   {
-    image: '/images/about/corevalues/safety.png',
+    image: '/images/about/corevalues/vehicle-saftey-.png',
     title: 'Safety',
     description: "We prioritize the well-being of the community at large by ensuring that every service is performed with the utmost care and attention to detail."
   },

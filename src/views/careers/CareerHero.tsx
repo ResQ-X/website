@@ -15,9 +15,6 @@ export const CareerHero = () => {
           then you’ve come to the right place. Drive your future forward with
           ResQ-X and be part of something bigger!
         </p>
-        <div className="flex items-center justify-center">
-          <Button className="mb-12 w-[200px]" text="Join Us" url="/contact" />
-        </div>
       </div>
     </div>
   );
