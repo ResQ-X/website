@@ -7,77 +7,90 @@ import { NavItem } from "./NavItem";
 export const MobileNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    console.log(isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const handleActiveDetails = (keyValue: string) => {
+    const detailsList = Array.from(document.querySelectorAll("details"));
+    detailsList.forEach((details) => {
+      const keyAttr = details.getAttribute("data-key");
+      if (keyAttr !== keyValue && details.hasAttribute("open")) {
+        details.removeAttribute("open");
+      }
+    });
   };
 
-  function setDropdown(event: any) {
-    const target = event.target as HTMLElement;
-    const detailsElement = target.closest("details");
-    if (detailsElement) {
-      if (detailsElement.hasAttribute("open")) {
-        detailsElement.removeAttribute("open");
-      } else {
-        detailsElement.setAttribute("open", "true");
-      }
-    }
-  }
-
-  function handleActiveDetails(keyValue: string, event: any) {
-    const detailsElementList = Array.from(document.querySelectorAll("details"));
-    if (detailsElementList.length !== 0) {
-      detailsElementList.forEach((details, index) => {
-        const keyAttr = details.getAttribute("data-key");
-        console.log("keyAttr:", keyAttr);
-
-        if (keyAttr !== keyValue && details.hasAttribute("open")) {
-          details.removeAttribute("open");
-        }
-      });
-    }
-  }
-
   return (
-    <div className="dropdown lg:hidden">
-      <div
-        tabIndex={0}
-        role="button"
-        className="btn btn-ghost lg:hidden"
-        onClick={toggleMenu}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+    <>
+      {/* Menu Toggle Button */}
+      <div className="lg:hidden">
+        <button
+          onClick={toggleMenu}
+          className="btn btn-ghost focus:outline-none"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h8m-8 6h16"
-          />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </button>
       </div>
 
-      {/* Dropdown Menu */}
+      {/* Overlay */}
       {isMenuOpen && (
-        <ul
-          tabIndex={0}
-          className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-white p-2 shadow"
+        <div
+          className="fixed h-screen inset-0 z-40 bg-black bg-opacity-50"
+          onClick={closeMenu}
+        />
+      )}
+
+      {/* Sidebar */}
+      <div
+        className={`fixed right-0 top-0 z-50 h-screen w-2/3 max-w-sm bg-white p-6 shadow-lg transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <button
+          onClick={closeMenu}
+          className="absolute right-4 top-4 text-black focus:outline-none"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        {/* Navigation Items */}
+        <ul className="mt-8 space-y-4">
           <NavItem name={"Home"} path={"/"} />
           <li>
             <details data-key="discover">
-              <summary onClick={(e) => handleActiveDetails("discover", e)}>
+              <summary
+                onClick={() => handleActiveDetails("discover")}
+                className="cursor-pointer"
+              >
                 Discover Us
               </summary>
-              <ul
-                className="flex flex-col items-start bg-white p-1.5 text-xs"
-                /* onClick={(e) => setDropdown(e)} */
-              >
+              <ul className="ml-4 mt-2 space-y-2 text-sm">
                 <NavItem name={"About"} path={"/about"} />
                 <NavItem name={"Services"} path={"/services"} />
                 <NavItem name={"Careers"} path={"/careers"} />
@@ -91,40 +104,35 @@ export const MobileNav = () => {
           <li>
             <a
               href="tel:2348140647017"
-              rel="noopener noreferrer"
-              className="no-underline"
+              className="flex items-center space-x-2 text-lg font-semibold text-[#736250]"
               target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className="flex flex-row">
-                <p className="pr-1 font-roboto text-lg font-semibold text-[#736250]">
-                  0814-064-7017
-                </p>
-                <Image
-                  height={24}
-                  width={24}
-                  alt="Call Icon"
-                  src={"/icons/call_calling_dark.png"}
-                  className="relative h-[24px]  max-w-full overflow-hidden object-cover text-[#736250]"
-                />
-              </div>
+              <span>0814-064-7017</span>
+              <Image
+                height={24}
+                width={24}
+                alt="Call Icon"
+                src={"/icons/call_calling_dark.png"}
+              />
             </a>
           </li>
           <li>
             <details data-key="partner">
-              <summary onClick={(e) => handleActiveDetails("partner", e)}>
+              <summary
+                onClick={() => handleActiveDetails("partner")}
+                className="cursor-pointer"
+              >
                 Partner
               </summary>
-              <ul
-                className="bg-white p-2 text-xs"
-                /* onClick={(e) => setDropdown(e)} */
-              >
+              <ul className="ml-4 mt-2 space-y-2 text-sm">
                 <NavItem name={"Earn with ResQ-X"} path={"/grow-with-us"} />
                 <NavItem name={"Partner with ResQ-X"} path={"/partner"} />
               </ul>
             </details>
           </li>
         </ul>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
