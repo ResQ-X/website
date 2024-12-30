@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-raleway), Arial, Helvetica, sans-serif;
+  @apply bg-[#262422] text-white;
+}
+
+/* For Webkit browsers (Chrome, Safari, newer versions of Opera) */
+body::-webkit-scrollbar {
+  width: 10px;  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #262422;  /* color of the tracking area */
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #FF8500;  /* color of the scroll thumb */
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #cc6a00;  /* slightly darker shade on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;  /* "auto" or "thin" */
+  scrollbar-color: #FF8500 #262422;  /* thumb and track color */
+}
+
+@layer base {
+  .h1 {
+    @apply font-raleway font-bold text-[64px] leading-none tracking-[-2%];
+  }
+
+  .h2 {
+    @apply font-raleway font-bold text-[40px] leading-none tracking-normal;
+  }
+
+  .h3 {
+    @apply font-raleway font-semibold text-[32px] leading-none tracking-normal;
+  }
+
+  .h4 {
+    @apply font-raleway font-semibold text-[28px] leading-none tracking-normal;
+  }
+
+  .h5 {
+    @apply font-raleway font-semibold text-[24px] leading-none tracking-normal;
+  }
+
+  .h6 {
+    @apply font-raleway font-semibold text-[20px] leading-none tracking-normal;
+  }
+
+  .body-text {
+    @apply font-raleway font-normal text-[18px] leading-none tracking-normal;
+  }
+
+  .btn {
+    @apply w-[132pxx] h-[48px] rounded-[88px] p-[12px_24px_12px_24px] flex items-center justify-center gap-[8px];
+    background: linear-gradient(180deg, #FF8500 0%, #995000 100%);
+  }
+  .blurr {
+    filter: blur(600px);
+  }
+
+  .blur2 {
+    filter: blur(400px)
+
+  }
+  .gradd {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) -6.69%, rgba(0, 0, 0, 0.81) 101.35%),
+linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(0, 0, 0, 0.53) 100%);
+  }
+
+  .grad {
+    background: linear-gradient(to right, rgba(255, 235, 214, 1), rgba(255, 232, 207, 1), rgba(255, 236, 216, 1));
+  }
+  .grad1 {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) -6.69%, rgba(0, 0, 0, 0.9) 101.35%),
+linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(0, 0, 0, 0.53) 100%);
+
+  }
+  .shadows {
+    box-shadow: 0px 4px 4px 0px #0000000D;
+
+  }
+
+  .gradientText {
+    overflow: hidden;
+    background: linear-gradient(76deg, rgba(68, 52, 190, 0.1), #e0e7ff, #e0f9ff, #fffae9, #e8eaff, rgba(150, 0, 33, 0.1), #daf1ff, rgba(68, 52, 190, 0.1), #e0e7ff, #e0f9ff, #fffae9, #e8eaff, rgba(150, 0, 33, 0.1), #daf1ff, rgba(68, 52, 190, 0.1), #e0e7ff, #e0f9ff, #fffae9, #e8eaff, rgba(150,0,33,0.1), #daf1ff);
+    background-size: 500% 500%;
+    animation: slime 45s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+	}
+
+
+	@keyframes slime {
+	    0% {
+	        background-position: 0% 50%
+	    }
+
+	    50% {
+	        background-position: 100% 50%
+	    }
+
+	    to {
+	        background-position: 0% 50%
+	    }
+	}
+}
