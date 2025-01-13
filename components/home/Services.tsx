@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
-import arrow from "@/public/icons/arrow.png"
-
+import arrow from "@/public/icons/arrow.png";
+import Link from 'next/link';
 
 interface Service {
   title: string;
@@ -63,35 +63,91 @@ const services: Service[] = [
 const Services: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const cardsPerPage = 3;
-  const maxIndex = services.length - cardsPerPage;
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const cardsPerPage = isMobile ? 1 : 3;
+  // Modified maxIndex calculation to limit desktop scrolling to 1 click
+  const maxIndex = isMobile ? services.length - 1 : Math.min(1, services.length - cardsPerPage);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (currentIndex > maxIndex) {
+        setCurrentIndex(maxIndex);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [maxIndex, currentIndex]);
 
   const slideServices = (direction: 'left' | 'right') => {
     if (!containerRef.current) return;
 
-    let newIndex = currentIndex;
-    if (direction === 'left') {
-      newIndex = Math.max(0, currentIndex - 1);
-    } else {
-      newIndex = Math.min(maxIndex, currentIndex + 1);
-    }
+    const newIndex = direction === 'left' 
+      ? Math.max(0, currentIndex - 1)
+      : Math.min(maxIndex, currentIndex + 1);
 
+    const slidePercentage = isMobile ? 100 : 33.333;
+    
     gsap.to(containerRef.current, {
-      x: `${-newIndex * 33.333}%`,
-      duration: 0.5,
-      ease: "power2.inOut"
+      x: `${-newIndex * slidePercentage}%`,
+      duration: 0.3,
+      ease: "power2.out"
     });
 
     setCurrentIndex(newIndex);
   };
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX - (containerRef.current?.offsetLeft || 0));
+    setScrollLeft(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - (containerRef.current.offsetLeft || 0);
+    const walk = (x - startX) * 2;
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!containerRef.current) return;
+    const touch = e.touches[0];
+    const difference = startX - touch.clientX;
+    
+    if (Math.abs(difference) > 50) {
+      if (difference > 0 && currentIndex < maxIndex) {
+        slideServices('right');
+        setStartX(touch.clientX);
+      } else if (difference < 0 && currentIndex > 0) {
+        slideServices('left');
+        setStartX(touch.clientX);
+      }
+    }
+  };
+
   return (
-    <section className="py-40 px-4 md:px-8  mx-auto relative">
+    <section className="py-40 px-4 md:px-8 mx-auto relative overflow-hidden">
       <div className="absolute top-0 right-0 bg-orange bg-opacity-50 blur-[225px] w-[283px] h-[283px] z-[-1]"></div>
-      {/* Header */}
+      
       <div className="flex justify-between items-center mb-12">
-        <h2 className="h1 font-[600] text-white">OUR SERVICES</h2>
-        <div className="flex gap-4">
+        <h2 className="h1-responsive lg:h1 font-[600] text-white">OUR SERVICES</h2>
+        <div className="hidden md:flex gap-4">
           <button 
             onClick={() => slideServices('left')}
             className="p-2 w-[50px] h-[50px] flex items-center justify-center rounded-full bg-dark hover:bg-orange transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
@@ -109,60 +165,70 @@ const Services: React.FC = () => {
         </div>
       </div>
 
-      {/* Services Carousel */}
-      <div className="relative overflow-hidden">
+      <div className="overflow-hidden touch-pan-y">
         <div 
           ref={containerRef}
-          className="flex transition-transform duration-500 ease-in-out gap-[32px]"
+          className="flex gap-2 lg:gap-8 transition-transform duration-300 ease-out will-change-transform"
           style={{ 
-            width: `${(100 * services.length) / 7}%`,
-            transform: `translateX(${-currentIndex * 33.333}%)`
+            width: isMobile ? '100%' : `${(100 * services.length) / cardsPerPage}%`,
           }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
         >
           {services.map((service, index) => (
             <div 
               key={index}
-              className="w-full md:w-[424px] min-h-[364px] flex flex-col items-center justify-between px-2 grad md:px-5 grad rounded-[12px] py-5"
-              style={{ flex: `0 0 ${100 / cardsPerPage}%` }}
+              className={`
+                w-full md:w-[426px] 
+                min-h-[364px] flex-shrink-0
+                flex flex-col items-center justify-between 
+                px-6 py-8 grad rounded-[12px]
+                transform transition-transform duration-300
+                ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}
+              `}
             >
-              <div className="text-center flex flex-col gap-2">
-                <h3 className="h3 text-black font-bold">{service.title}</h3>
-                <h4 className="h3 text-black font-bold">{service.subtitle}</h4>
+              <div className="text-center space-y-2 w-full">
+                <h3 className="text-2xl md:text-3xl text-black font-bold">{service.title}</h3>
+                <h4 className="text-xl md:text-2xl text-black font-bold">{service.subtitle}</h4>
               </div>
               
-              <div className="flex items-center justify-center py-4">
-                <div className={`relative w-[181px] h-[103px] ${index === 0 ? "transform scale-x-[-1]" : ""}`}>
+              <div className="flex items-center justify-center py-6">
+                <div className={`relative w-[181px] h-[103px] ${index === 0 ? "scale-x-[-1]" : ""}`}>
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-contain w-full h-full scale-[1.3]"
+                    className="object-contain"
+                    priority={index <= 2}
                   />
                 </div>
               </div>
 
-              <div className="text-center w-full">
-                <p className="h6 text-[22px] text-[#333] md:w-[367px] mx-auto font-[500] leading-[25.83px]">{service.description}</p>
-              </div>
+              <p className="text-lg md:text-xl text-[#333] text-center font-medium leading-snug">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Mobile Navigation Dots */}
       <div className="flex justify-center gap-2 mt-6 md:hidden">
-        {Array.from({ length: services.length }, (_, i) => (
+        {Array.from({ length: services.length - (isMobile ? 0 : 2) }, (_, i) => (
           <button
             key={i}
-            className={`w-2 h-2 rounded-full ${
+            className={`w-2 h-2 rounded-full transition-colors duration-200 ${
               i === currentIndex ? 'bg-orange' : 'bg-gray-300'
             }`}
             onClick={() => {
               if (containerRef.current) {
                 gsap.to(containerRef.current, {
-                  x: `${-i * 100}%`,
-                  duration: 0.5,
-                  ease: "power2.inOut"
+                  x: `${-i * (isMobile ? 100 : 33.333)}%`,
+                  duration: 0.3,
+                  ease: "power2.out"
                 });
                 setCurrentIndex(i);
               }
@@ -170,20 +236,21 @@ const Services: React.FC = () => {
           />
         ))}
       </div>
-      <div className="w-full flex items-center justify-center my-9">
-      <button className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
-                <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-                <span className="relative z-10 text-white transition-colors duration-300">Rescue Me!</span>
-                <Image 
-                  src={arrow} 
-                  alt="Arrow" 
-                  className="relative z-10 duration-300"
-                />
-              </button>
-      </div>
+
+      <Link href="/rescue" className="w-full flex items-center justify-center my-9">
+        <button className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
+          <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+          <span className="relative z-10 text-white transition-colors duration-300">Rescue Me!</span>
+          <Image 
+            src={arrow} 
+            alt="Arrow" 
+            className="relative z-10 duration-300"
+            priority
+          />
+        </button>
+      </Link>
 
       <div className="absolute bottom-0 left-0 bg-orange bg-opacity-50 blur-[225px] w-[300px] h-[300px] z-[-1]"></div>
-
     </section>
   );
 };

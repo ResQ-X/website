@@ -6,9 +6,55 @@ import FAQSection from '@/components/home/FAQSection'
 
 
 export const metadata: Metadata = {
-  title: 'Resqx',
-  description: 'Your site description goes here',
-  keywords: ['keyword1', 'keyword2'],
+  title: 'Key Replacement Service - ResQ-X 24/7 Emergency Key Assistance',
+  description: 'Lost or damaged your car keys? ResQ-X provides 24/7 emergency key replacement services to get you back on the road quickly. Call us now for fast and reliable key assistance!',
+  keywords: [
+    'key replacement service',
+    'emergency key replacement',
+    '24/7 key replacement',
+    'car key replacement',
+    'roadside key replacement',
+    'ResQ-X key replacement',
+    'emergency key assistance',
+    'get a key replacement',
+    'key replacement help',
+    'ResQ-X roadside assistance',
+  ],
+  openGraph: {
+    title: 'Key Replacement Service - ResQ-X 24/7 Emergency Key Assistance',
+    description: 'Lost or damaged your car keys? ResQ-X provides 24/7 emergency key replacement services to get you back on the road quickly. Call us now for fast and reliable key assistance!',
+    url: 'https://res-q-x.vercel.app/key-replacement',
+    siteName: 'ResQ-X',
+    type: 'website',
+    images: [
+      {
+        url: '/key-replacement-og-image.jpg', // Replace with your actual OG image for the Key Replacement page
+        width: 1200,
+        height: 630,
+        alt: 'Key Replacement Service - ResQ-X',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Key Replacement Service - ResQ-X 24/7 Emergency Key Assistance',
+    description: 'Lost or damaged your car keys? ResQ-X provides 24/7 emergency key replacement services to get you back on the road quickly. Call us now for fast and reliable key assistance!',
+    images: ['/key-replacement-twitter-image.jpg'], // Replace with your actual Twitter image for the Key Replacement page
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://res-q-x.vercel.app/key-replacement',
+  },
 };
 
 export default function Home() {

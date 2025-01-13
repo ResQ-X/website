@@ -148,6 +148,7 @@ export default function NewsletterSection({ activeCategory }: NewsletterSectionP
                       alt={post.title}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      priority
                     />
                   </div>
                 </div>
@@ -167,6 +168,7 @@ export default function NewsletterSection({ activeCategory }: NewsletterSectionP
               alt="Newsletter Background"
               fill
               className="object-cover"
+              priority
             />
           </div>
 

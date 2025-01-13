@@ -5,7 +5,7 @@ const GetAQuoteSection = () => {
     <section className="w-full min-h-screen px-4 py-16 relative">
       {/* Hero Text */}
       <div className="text-center mb-12">
-        <h2 className="text-[64px] font-semibold mb-4">GET A QUOTE</h2>
+        <h2 className="text-[46px] lg:text-[64px] font-semibold mb-4">GET A QUOTE</h2>
         <p className="h5 text-[20px] text-lightest">
           Reach out to us for a personalized quote that meets your unique business needs.
         </p>
@@ -128,7 +128,7 @@ const GetAQuoteSection = () => {
                     </svg>
                   </div>
                   <span className="font-semibold text-[20px]">Contact -</span>
-                  <span>091-234-13450</span>
+                  <span>0814-064-7017</span>
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -148,7 +148,7 @@ const GetAQuoteSection = () => {
                     </svg>
                   </div>
                   <span className="font-semibold text-[20px]">Email -</span>
-                  <span>info@resqx.com</span>
+                  <span>hello@resqx.com</span>
                 </div>
 
                 <div className="flex items-center gap-4">

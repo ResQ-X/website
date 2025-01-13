@@ -23,7 +23,7 @@ const BlurredHeading = ({ text = "WHY RESQ-X?" }) => {
         {/* Text container */}
         <div className="relative">
           <h2 
-            className="text-6xl md:text-[150px] font-bold text-orange tracking-wider text-center"
+            className="text-6xl md:text-[150px] z-10 font-bold text-orange tracking-wider text-center"
             style={{ 
               mixBlendMode: 'difference',
               textShadow: '0 0 30px rgba(0,0,0,0.5)'

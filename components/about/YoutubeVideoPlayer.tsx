@@ -1,20 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Logo from "@/public/images/logo2.png";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const YouTubeVideoPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
 
   const handlePlay = () => {
     setIsPlaying(true);
   };
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Zoom-in animation
+    gsap.from(videoRef.current, {
+      scale: 0.8, // Start smaller
+      opacity: 0, // Start invisible
+      duration: 1, // Animation duration
+      ease: "power3.out", // Smooth easing
+      scrollTrigger: {
+        trigger: videoRef.current, // Trigger animation when the video player comes into view
+        start: "top 80%", // Start animation when the top of the video player is 80% in view
+        end: "bottom 20%", // End animation when the bottom of the video player is 20% in view
+        toggleActions: "play none none none" // Play animation once
+      }
+    });
+  }, []);
+
   return (
-    <div className="relative max-w-[1320px] h-[594px] mx-auto rounded-lg overflow-hidden shadow-lg mb-32">
+    <div 
+      ref={videoRef} // Add ref for animation
+      className="relative max-w-[1320px] mx-1 h-[594px] lg:mx-auto rounded-lg overflow-hidden shadow-lg mb-32"
+    >
       {/* YouTube Video */}
-      <Image src={Logo} alt="Logo" className="w-[214px] h-[83px] absolute z-10 object-cover" />
+      <Image src={Logo} alt="Logo" className="w-[214px] h-[83px] absolute z-10 object-cover" priority />
       {isPlaying ? (
         <iframe
           className="w-full h-full"
@@ -32,6 +56,7 @@ const YouTubeVideoPlayer = () => {
             alt="YouTube Thumbnail"
             fill
             className="w-full h-full object-cover"
+            priority
           />
           {/* Overlay */}
           <div

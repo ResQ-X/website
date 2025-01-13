@@ -6,9 +6,55 @@ import FAQSection from '@/components/home/FAQSection'
 
 
 export const metadata: Metadata = {
-  title: 'Resqx',
-  description: 'Your site description goes here',
-  keywords: ['keyword1', 'keyword2'],
+  title: 'Jump Start Service - ResQ-X 24/7 Emergency Battery Assistance',
+  description: 'Need a jump start? ResQ-X provides 24/7 emergency jump start services to get your vehicle running again. Call us now for fast and reliable battery assistance!',
+  keywords: [
+    'jump start service',
+    'emergency jump start',
+    '24/7 jump start',
+    'car battery jump start',
+    'roadside jump start',
+    'ResQ-X jump start',
+    'emergency battery assistance',
+    'get a jump start',
+    'jump start help',
+    'ResQ-X roadside assistance',
+  ],
+  openGraph: {
+    title: 'Jump Start Service - ResQ-X 24/7 Emergency Battery Assistance',
+    description: 'Need a jump start? ResQ-X provides 24/7 emergency jump start services to get your vehicle running again. Call us now for fast and reliable battery assistance!',
+    url: 'https://res-q-x.vercel.app/jump-start',
+    siteName: 'ResQ-X',
+    type: 'website',
+    images: [
+      {
+        url: '/jump-start-og-image.jpg', // Replace with your actual OG image for the Jump Start page
+        width: 1200,
+        height: 630,
+        alt: 'Jump Start Service - ResQ-X',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jump Start Service - ResQ-X 24/7 Emergency Battery Assistance',
+    description: 'Need a jump start? ResQ-X provides 24/7 emergency jump start services to get your vehicle running again. Call us now for fast and reliable battery assistance!',
+    images: ['/jump-start-twitter-image.jpg'], // Replace with your actual Twitter image for the Jump Start page
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://res-q-x.vercel.app/jump-start',
+  },
 };
 
 export default function Home() {

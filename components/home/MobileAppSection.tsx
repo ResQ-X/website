@@ -1,62 +1,119 @@
-"use client"
+"use client";
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion'; // Import Framer Motion
+
+// Animation Variants
+const slideInLeft = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3, // Stagger effect for children
+    },
+  },
+};
 
 const MobileAppSection = () => {
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <div className="w-full max-w-[1440px] h-full px-4 md:px-8 flex items-center justify-between gap-8">
+    <div className="w-full min-h-screen flex items-center justify-center py-8 md:py-0">
+      <div className="w-full max-w-[1440px] h-full px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Left side - Image */}
-        <div className="flex-1 relative h-[600px] hidden md:block">
+        <motion.div
+          className="flex-1 relative h-[300px] md:h-[600px] w-full md:w-auto"
+          variants={slideInLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the element is in view
+        >
           <Image
             src="/images/mobile-app.png"
             alt="Mobile app showcase"
             fill
             className="object-contain"
+            priority
           />
-        </div>
+        </motion.div>
 
         {/* Right side - Content */}
-        <div className="flex-1 flex flex-col gap-8 max-w-[600px]">
-          <div className="flex flex-col gap-6">
-            <h2 className="h1 tracking-[-2%] leading-[75.13px] font-bold text-white">
+        <motion.div
+          className="flex-1 flex flex-col gap-8 max-w-[600px] w-full md:w-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the element is in view
+        >
+          {/* Text Content */}
+          <motion.div
+            className="flex flex-col gap-6 text-center md:text-left"
+            variants={slideInRight}
+          >
+            <motion.h2
+              className="h1-responsive leading-[50px] md:leading-[60px] lg:h1 tracking-[-2%] lg:leading-[75.13px] font-bold text-white"
+              variants={slideInRight}
+            >
               Your Roadside Companion in Your Pocket.
-            </h2>
-            
-            <p className="h5 text-lightest leading-[23.48px]">
+            </motion.h2>
+            <motion.p
+              className="h5 text-lightest leading-[23.48px]"
+              variants={slideInRight}
+            >
               With the ResQ-X mobile app, help is just a tap away. Request assistance, 
               track your service provider, and access all our features anytime, anywhere. 
               Convenience and safety are now at your fingertips.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Download App Section */}
-          <div className="w-full max-w-[551px] h-[112px] flex items-center gap-[37px]">
-            <div className="flex-1 max-w-[351px] h-full rounded-[6px] p-[12px] flex items-center gap-[8px] bg-dark">
+          <motion.div
+            className="w-full max-w-[551px] h-auto md:h-[112px] flex flex-col md:flex-row items-center gap-6 md:gap-[37px]"
+            variants={containerVariants}
+          >
+            <motion.div
+              className="w-full md:flex-1 max-w-[351px] h-[112px] rounded-[6px] p-[12px] flex items-center gap-[8px] bg-dark"
+              variants={slideInRight}
+            >
               <Image 
                 src="/images/QR Code.png" 
                 alt="Scan qr code" 
                 width={88}
                 height={88}
+                priority
               />
               <p className="text-[20px] font-raleway text-white leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
                 Scan to Download App
               </p>
-            </div>
-            <button className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
-              <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-              <span className="relative z-10 text-white transition-colors duration-300">Get Assistance</span>
-              <Image 
-                src="/icons/arrow.png" 
-                alt="Arrow" 
-                width={24}
-                height={24}
-                className="relative z-10 group-hover:[filter:brightness(0)] transition-[filter] duration-300"
-              />
-            </button>
-          </div>
-        </div>
+            </motion.div>
+            <motion.div
+              variants={slideInRight}
+            >
+              <Link href="/contact" className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group flex items-center justify-center relative">
+                <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+                <span className="relative z-10 text-white transition-colors mr-5 duration-300">Get Assistance</span>
+                <Image 
+                  src="/icons/arrow.png" 
+                  alt="Arrow" 
+                  width={24}
+                  height={24}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 z-10 group-hover:[filter:brightness(0)] transition-[filter] duration-300"
+                  priority
+                />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

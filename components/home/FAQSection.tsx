@@ -47,9 +47,9 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-screen flex justify-center py-8">
+    <div className="w-full h-auto lg:h-screen flex justify-center py-8">
       <div className="w-full max-w-[1090px] px-4">
-        <h2 className="h1 text-white mb-6 text-center">
+        <h2 className="text-4xl font-bold lg:h1 text-white mb-6 text-center">
           Frequently Asked Questions
         </h2>
         

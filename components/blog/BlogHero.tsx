@@ -27,6 +27,7 @@ export default function BlogHero() {
           alt="Blog Hero" 
           fill 
           className="object-contain h-full brightness-[1.05] contrast-[1.05] saturate-[1.05]"
+          priority
         />
       </div>
     </div>

@@ -31,7 +31,7 @@ const TrustedBy: React.FC = () => {
   } satisfies CounterRefs;
 
   const counterTargets: CounterTargets = {
-    users: 1200,
+    users: 300,
     partners: 5,
     providers: 50
   };
@@ -134,13 +134,13 @@ const TrustedBy: React.FC = () => {
 
       <div className="w-full md:w-[75%] space-y-8">
         <div className="space-y-4">
-          <h2 className="h1 text-dark-brown whitespace-nowrap w-[702px] animate-heading">
+          <h2 className="h1-responsive lg:h1 text-dark-brown lg:whitespace-nowrap animate-heading">
             TRUSTED BY THOUSANDS
           </h2>
-          <h3 className="h1 text-dark-brown whitespace-nowrap w-[702px] animate-heading">
+          <h3 className="h1-responsive lg:h1 text-dark-brown lg:whitespace-nowrap animate-heading">
             POWERED BY EXCELLENCE
           </h3>
-          <p className="h6 leading-[25.48px] text-[#736250] animate-text">
+          <p className="h6 text-center lg:text-left leading-[25.48px] text-[#736250] animate-text">
             At ResQ-X, we&apos;ve built a strong community of happy customers, supported by dedicated 
             service providers and trusted by industry-leading partners. Our mission is simple: 
             to ensure you&apos;re never stranded when it matters most.

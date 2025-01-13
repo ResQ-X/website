@@ -109,6 +109,7 @@ const Inquiry: React.FC = () => {
                     src={arrow} 
                     alt="Arrow" 
                     className="relative z-10 [filter:brightness(0)] transition-[filter] duration-300"
+                    priority
                     />
                 </button>
             </div>

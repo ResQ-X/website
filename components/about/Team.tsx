@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
@@ -46,11 +46,27 @@ const Team = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Animate text (fade up)
+    gsap.from(".team-text", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top center+=100",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Animate team cards (staggered bounce)
     gsap.from(".team-card", {
       y: 100,
       opacity: 0,
       duration: 1,
       stagger: 0.2,
+      ease: "bounce.out",
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top center+=100",
@@ -62,16 +78,22 @@ const Team = () => {
   return (
     <section ref={sectionRef} className="py-24 px-4 md:px-16">
       <div className="max-w-7xl mx-auto">
+        {/* Text Content */}
         <div className="text-center mb-16">
-          <h2 className="h1 text-white uppercase mb-4">Our Team, Your Trusted Partners</h2>
-          <p className="h5 text-[20px] text-lightest">Exceptional minds delivering exceptional results</p>
+          <h2 className="h1-responsive lg:h1 text-white uppercase mb-4 team-text">
+            Our Team, Your Trusted Partners
+          </h2>
+          <p className="h5 text-[20px] text-lightest team-text">
+            Exceptional minds delivering exceptional results
+          </p>
         </div>
 
+        {/* Team Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-7 max-w-[1200px] mx-auto">
           {teamMembers.map((member) => (
             <div 
               key={member.name}
-              className={`relative w-[282px] h-[613px] ${
+              className={`relative lg:w-[282px] h-[613px] team-card ${
                 member.position === 'down' ? 'md:mt-16' : ''
               }`}
             >
@@ -82,6 +104,7 @@ const Team = () => {
                     alt={member.name}
                     fill
                     className="object-cover"
+                    priority
                   />
                 </div>
                 <div className="py-6">

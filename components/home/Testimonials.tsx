@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import gsap from 'gsap';
-import user1 from "@/public/images/user1.jpeg"
-import user2 from "@/public/images/user2.jpeg"
-import user3 from "@/public/images/user3.jpeg"
+import { motion } from 'framer-motion';
+import user1 from "@/public/images/user1.jpeg";
+import user2 from "@/public/images/user2.jpeg";
+import user3 from "@/public/images/user3.jpeg";
 
 interface Testimonial {
   comment: string;
@@ -54,29 +55,95 @@ const testimonials: Testimonial[] = [
   }
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const slideIn = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
 const Testimonials: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const cardsPerPage = 3;
-  const maxIndex = testimonials.length - cardsPerPage;
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const cardsPerPage = isMobile ? 1 : 3;
+  // Modified maxIndex calculation to limit desktop scrolling to 2 clicks
+  const maxIndex = isMobile ? testimonials.length - 1 : Math.min(1, testimonials.length - cardsPerPage);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (currentIndex > maxIndex) {
+        setCurrentIndex(maxIndex);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [maxIndex, currentIndex]);
 
   const slideTestimonials = (direction: 'left' | 'right') => {
     if (!containerRef.current) return;
 
-    let newIndex = currentIndex;
-    if (direction === 'left') {
-      newIndex = Math.max(0, currentIndex - 1);
-    } else {
-      newIndex = Math.min(maxIndex, currentIndex + 1);
-    }
+    const newIndex = direction === 'left' 
+      ? Math.max(0, currentIndex - 1)
+      : Math.min(maxIndex, currentIndex + 1);
 
+    const slidePercentage = isMobile ? 100 : 33.333;
+    
     gsap.to(containerRef.current, {
-      x: `${-newIndex * 33.333}%`,
-      duration: 0.5,
-      ease: "power2.inOut"
+      x: `${-newIndex * slidePercentage}%`,
+      duration: 0.3,
+      ease: "power2.out"
     });
 
     setCurrentIndex(newIndex);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX - (containerRef.current?.offsetLeft || 0));
+    setScrollLeft(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - (containerRef.current.offsetLeft || 0);
+    const walk = (x - startX) * 2;
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!containerRef.current) return;
+    const touch = e.touches[0];
+    const difference = startX - touch.clientX;
+    
+    if (Math.abs(difference) > 50) {
+      if (difference > 0 && currentIndex < maxIndex) {
+        slideTestimonials('right');
+        setStartX(touch.clientX);
+      } else if (difference < 0 && currentIndex > 0) {
+        slideTestimonials('left');
+        setStartX(touch.clientX);
+      }
+    }
   };
 
   const renderStars = (rating: number) => {
@@ -92,10 +159,17 @@ const Testimonials: React.FC = () => {
     <section className="py-40 px-4 mx-auto relative">
       <div className="absolute top-0 right-0 bg-orange bg-opacity-50 blur-[225px] w-[283px] h-[283px] z-[-1]"></div>
       
-      {/* Header */}
       <div className="flex justify-between items-center mb-12">
-        <h2 className="h1 font-[600] text-lightest">TRUSTED BY YOU</h2>
-        <div className="flex gap-4">
+        <motion.h2
+          className="h1 font-[600] text-lightest"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          TRUSTED BY YOU
+        </motion.h2>
+        <div className="hidden md:flex gap-4">
           <button 
             onClick={() => slideTestimonials('left')}
             className="p-2 w-[50px] h-[50px] flex items-center justify-center rounded-full bg-dark hover:bg-orange transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
@@ -113,39 +187,48 @@ const Testimonials: React.FC = () => {
         </div>
       </div>
 
-      {/* Testimonials Carousel */}
-      <div className="relative overflow-hidden">
-        <div 
+      <div className="relative overflow-hidden touch-pan-y">
+        <motion.div 
           ref={containerRef}
-          className="flex transition-transform duration-500 ease-in-out gap-[32px]"
+          className="flex gap-2 lg:gap-8 transition-transform duration-300 ease-out will-change-transform"
           style={{ 
-            width: `${(100 * testimonials.length) / 6}%`,
-            transform: `translateX(${-currentIndex * 33.333}%)`
+            width: isMobile ? '90%' : `${(100 * testimonials.length) / cardsPerPage}%`,
           }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          variants={slideIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
           {testimonials.map((testimonial, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="w-full md:w-[424px] min-h-[364px] flex flex-col items-start justify-between p-6 rounded-[12px] relative overflow-hidden"
-              style={{ flex: `0 0 ${100 / cardsPerPage}%` }}
+              className={`
+                w-full md:w-[424px] 
+                min-h-[364px] flex-shrink-0
+                flex flex-col items-start justify-between 
+                p-6 rounded-[12px] relative overflow-hidden
+                ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}
+              `}
+              variants={slideIn}
             >
-              {/* Background Pattern */}
               <div className="absolute inset-0 opacity-95">
                 <div className="absolute inset-0 bg-[url('/images/rough.png')] opacity-10" />
               </div>
               
-              {/* Quote Icon */}
               <div className="font-serif top-9 left-3 text-white absolute text-6xl">&quot;</div>
               
-              {/* Comment */}
               <p className="relative text-white text-lg my-14">{testimonial.comment}</p>
               
-              {/* Rating */}
               <div className="relative flex mb-4">
                 {renderStars(testimonial.rating)}
               </div>
               
-              {/* User Info */}
               <div className="relative flex items-center gap-4 w-full">
                 <div className="w-12 h-12 rounded-full overflow-hidden">
                   <Image
@@ -154,6 +237,7 @@ const Testimonials: React.FC = () => {
                     width={48}
                     height={48}
                     className="object-cover"
+                    priority
                   />
                 </div>
                 <div>
@@ -161,25 +245,24 @@ const Testimonials: React.FC = () => {
                   <p className="text-white text-opacity-50">{testimonial.occupation}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Mobile Navigation Dots */}
       <div className="flex justify-center gap-2 mt-6 md:hidden">
         {Array.from({ length: testimonials.length }, (_, i) => (
           <button
             key={i}
-            className={`w-2 h-2 rounded-full ${
+            className={`w-2 h-2 rounded-full transition-colors duration-200 ${
               i === currentIndex ? 'bg-orange' : 'bg-gray-300'
             }`}
             onClick={() => {
               if (containerRef.current) {
                 gsap.to(containerRef.current, {
-                  x: `${-i * 100}%`,
-                  duration: 0.5,
-                  ease: "power2.inOut"
+                  x: `${-i * (isMobile ? 100 : 33.333)}%`,
+                  duration: 0.3,
+                  ease: "power2.out"
                 });
                 setCurrentIndex(i);
               }

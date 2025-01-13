@@ -6,9 +6,55 @@ import FAQSection from '@/components/home/FAQSection'
 
 
 export const metadata: Metadata = {
-  title: 'Resqx',
-  description: 'Your site description goes here',
-  keywords: ['keyword1', 'keyword2'],
+  title: 'Tow Truck Service - ResQ-X | Fast, Reliable, and Affordable Towing Near You',
+  description: 'Need a tow truck? ResQ-X provides 24/7 fast, reliable, and affordable towing services. Whether it’s a breakdown or an accident, we’re here to help. Call us now!',
+  keywords: [
+    'tow truck service',
+    'emergency towing',
+    '24/7 towing service',
+    'car towing near me',
+    'roadside towing',
+    'ResQ-X towing services',
+    'breakdown towing',
+    'accident towing',
+    'affordable towing',
+    'ResQ-X tow truck',
+  ],
+  openGraph: {
+    title: 'Tow Truck Service - ResQ-X | Fast, Reliable, and Affordable Towing Near You',
+    description: 'Need a tow truck? ResQ-X provides 24/7 fast, reliable, and affordable towing services. Whether it’s a breakdown or an accident, we’re here to help. Call us now!',
+    url: 'https://res-q-x.vercel.app/tow-truck',
+    siteName: 'ResQ-X',
+    type: 'website',
+    images: [
+      {
+        url: '/tow-truck-og-image.jpg', // Replace with your actual OG image for the Tow Truck page
+        width: 1200,
+        height: 630,
+        alt: 'Tow Truck Service - ResQ-X',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tow Truck Service - ResQ-X | Fast, Reliable, and Affordable Towing Near You',
+    description: 'Need a tow truck? ResQ-X provides 24/7 fast, reliable, and affordable towing services. Whether it’s a breakdown or an accident, we’re here to help. Call us now!',
+    images: ['/tow-truck-twitter-image.jpg'], // Replace with your actual Twitter image for the Tow Truck page
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://res-q-x.vercel.app/tow-truck',
+  },
 };
 
 export default function Home() {

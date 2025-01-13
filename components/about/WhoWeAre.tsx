@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
 const WhoWeAre = () => {
   const sectionRef = useRef(null);
@@ -40,7 +41,7 @@ const WhoWeAre = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 px-4 md:px-16 text-white">
+    <section ref={sectionRef} className="py-16 px-2 md:px-16 text-white">
       <div className="max-w-7xl mx-auto">
         {/* Grid Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -64,6 +65,7 @@ const WhoWeAre = () => {
                 alt="Yellow and blue service truck"
                 fill
                 className="object-cover rounded-b-3xl"
+                priority
               />
             </div>
           </div>
@@ -76,22 +78,23 @@ const WhoWeAre = () => {
                 alt="Professional mechanic"
                 fill
                 className="object-cover rounded-tr-3xl"
+                priority
               />
             </div>
             <div className="-translate-y-8 bg-[#262422] p-8 rounded-3xl -mt-24 z-10">
               <h3 className="text-3xl font-bold mb-6">
                 OUR GOAL
               </h3>
-              <p className="text-lg leading-relaxed text-gray-300">
+              <p className="text-lg pb-6 leading-relaxed text-gray-300">
                 At ResQ-X, our goal is to redefine roadside assistance by creating a service 
                 that drivers can rely on in moments of need. We aim to deliver not just exceptional 
                 support but also peace of mind, knowing that help is always just a call or a tap away. 
                 We strive to build a community of drivers and professionals united by trust and efficiency, 
                 ensuring that no one ever feels stranded or unsupported.
               </p>
-              <button className="mt-8 border-2 border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition-colors duration-300">
+              <Link href="/careers" className="mt-12 border-2 border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition-colors duration-300">
                 Work With Us →
-              </button>
+              </Link>
             </div>
           </div>
         </div>

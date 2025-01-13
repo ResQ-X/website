@@ -9,9 +9,12 @@ import FAQSection from '@/components/home/FAQSection'
 
 
 export const metadata: Metadata = {
-  title: 'Resqx',
-  description: 'Your site description goes here',
-  keywords: ['keyword1', 'keyword2'],
+  title: {
+    template: 'About | ResQ-X - 24/7 Roadside Assistance',
+    default: 'About - ResQ-X - Fast & Reliable Roadside Assistance Services'
+  },
+  description: 'ResQ-X provides 24/7 emergency roadside assistance including jump starts, fuel delivery, flat tire changes, and towing services. Get immediate help with our mobile app.',
+  keywords: ['roadside assistance', 'towing service', 'jump start', 'fuel delivery', 'flat tire', 'emergency car service'],
 };
 
 export default function Home() {

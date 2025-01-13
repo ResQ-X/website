@@ -20,6 +20,9 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = 'unset';
     }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [isMobileMenuOpen]);
 
   const mainLinks: NavigationLink[] = [
@@ -47,18 +50,20 @@ const Navbar = () => {
   ];
 
   const secondaryLinks: NavigationLink[] = [
-    { text: '091-234-13450', href: 'tel:091-234-13450', icon: PhoneOutgoing },
+    { text: '0814-064-7017', href: 'tel:+2348140647017', icon: PhoneOutgoing },
     {
       text: 'Discover',
       href: '/membership',
       dropdownItems: ['Membership', 'Grow With ResQ-X', 'Partner', 'Careers'],
     },
-    { text: 'Get app', href: '/app' },
+    { text: 'Coming soon!', href: '#' },
   ];
+
+  //https://play.google.com/store/apps/details?id=com.resqx.customer
 
   return (
     <>
-      <nav className="bg-transparent sticky top-0 z-50 flex items-center w-full h-[100px] p-4 lg:p-[26px_56px_26px_61px] justify-between">
+      <nav className="bg-transparent backdrop-blur-[100px] fixed top-0 z-40 flex items-center w-full h-[100px] p-4 lg:p-[26px_56px_26px_61px] justify-between">
         <div className="flex items-center w-full lg:w-[60%] lg:h-[30px]">
           <div className="relative w-[120px] lg:w-[140px] h-[26.25px] mr-8">
             <Image
@@ -99,11 +104,11 @@ const Navbar = () => {
                     className={`flex items-center gap-2 hover:text-orange ${
                       link.text === '091-234-13450' ? 'font-[600] text-[18px]' : ''
                     } ${
-                      link.text === 'Get app' ? 'btn text-white hover:text-white' : ''
+                      link.text === 'Coming soon!' ? 'btn text-white hover:text-white' : ''
                     }`}
                   >
                     {link.text}
-                    {link.text === '091-234-13450' && <PhoneOutgoing size={20} />}
+                    {link.text === '0814-064-7017' && <PhoneOutgoing size={20} />}
                     {link.text === 'Discover' && <ChevronDown size={16} />}
                     {link.text === 'Get app' && <ChevronDown size={16} />}
                   </span>
@@ -117,7 +122,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white hover:text-orange"
+          className="lg:hidden text-white hover:text-orange z-50"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <Menu size={24} />

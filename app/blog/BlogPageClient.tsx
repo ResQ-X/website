@@ -25,7 +25,6 @@ export default function BlogPageClient() {
       <NewsletterSection 
         activeCategory={activeCategory} 
       />
-      <RelatedPostsSection activeCategory={activeCategory} />
     </div>
   );
 }

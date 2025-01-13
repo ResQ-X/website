@@ -1,4 +1,23 @@
+"use client";
+
 import Image from 'next/image';
+import { motion } from 'framer-motion'; // Import Framer Motion
+
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3, // Stagger effect for children
+    },
+  },
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 interface PartnerCard {
   title: string;
@@ -33,13 +52,31 @@ const WhyPartnerWithUs = () => {
   return (
     <section className="text-white py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-[64px] tracking-[-2%] font-bold text-center mb-12">
+        {/* Heading */}
+        <motion.h2 
+          className="text-[46px] lg:text-[64px] tracking-[-2%] font-bold text-center mb-12"
+          variants={fadeUpVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the element is in view
+        >
           WHY PARTNER WITH US?
-        </h2>
+        </motion.h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        {/* Partner Cards */}
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-4 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% of the element is in view
+        >
           {partnerData.map((card, index) => (
-            <div key={index} className="relative h-[512px] group overflow-hidden rounded-lg">
+            <motion.div 
+              key={index} 
+              className="relative h-[512px] group overflow-hidden rounded-lg"
+              variants={fadeUpVariants}
+            >
               <div className="absolute inset-0">
                 <Image
                   src={card.image}
@@ -47,6 +84,7 @@ const WhyPartnerWithUs = () => {
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 25vw"
+                  priority
                 />
               </div>
               
@@ -58,9 +96,9 @@ const WhyPartnerWithUs = () => {
                 <h3 className="text-[20px] font-bold mb-3 whitespace-nowrap">{card.title}</h3>
                 <p className="text-[16px] font-semibold text-lightest">{card.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

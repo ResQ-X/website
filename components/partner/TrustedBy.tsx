@@ -37,6 +37,7 @@ const TrustedBy = () => {
                   alt={`Brand Logo ${index + 1}`}
                   fill
                   className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+                  priority
                 />
               </div>
             ))}

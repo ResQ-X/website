@@ -1,5 +1,24 @@
+"use client";
+
 import Image from 'next/image';
 import React from 'react';
+import { motion } from 'framer-motion'; // Import Framer Motion
+
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3, // Stagger effect for children
+    },
+  },
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 interface StepCardProps {
   number: string;
@@ -9,7 +28,10 @@ interface StepCardProps {
 }
 
 const StepCard: React.FC<StepCardProps> = ({ number, title, description, imageUrl }) => (
-  <div className="relative w-[424px]">
+  <motion.div 
+    className="relative w-[424px]"
+    variants={fadeUpVariants}
+  >
     {/* Image container */}
     <div className="relative w-full h-[296px]">
       <Image
@@ -17,6 +39,7 @@ const StepCard: React.FC<StepCardProps> = ({ number, title, description, imageUr
         alt={title}
         fill
         className="object-cover rounded-lg"
+        priority
       />
     </div>
     
@@ -31,7 +54,7 @@ const StepCard: React.FC<StepCardProps> = ({ number, title, description, imageUr
       <h3 className="text-white text-[20px] font-semibold mt-12 mb-4">{title}</h3>
       <p className="text-lightest font-normal text-sm">{description}</p>
     </div>
-  </div>
+  </motion.div>
 );
 
 const HowItWorks: React.FC = () => {
@@ -60,15 +83,27 @@ const HowItWorks: React.FC = () => {
     <section className="w-full pt-16 pb-96 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          variants={fadeUpVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the element is in view
+        >
           <h2 className="text-[64px] tracking-[-2%] font-bold mb-2">HOW IT WORKS</h2>
           <p className="text-lg max-w-[622px] mx-auto font-semibold text-lightest">
             Streamline your operations and enhance customer satisfaction with our quick and efficient roadside assistance services, tailored to meet the needs of your business.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 justify-items-center">
+        <motion.div 
+          className="grid lg:grid-cols-3 space-y-[300px] lg:space-y-0 gap-8 md:grid-cols-2 grid-cols-1 justify-items-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% of the element is in view
+        >
           {steps.map((step) => (
             <StepCard
               key={step.number}
@@ -78,7 +113,7 @@ const HowItWorks: React.FC = () => {
               imageUrl={step.imageUrl}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

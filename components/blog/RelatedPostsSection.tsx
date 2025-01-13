@@ -45,7 +45,7 @@ const RelatedPostCard = ({ post }: RelatedPostCardProps) => {
     <Link href={`/blog/${post.id}`}>
       <motion.div 
         variants={cardVariants}
-        className="group flex flex-col border rounded-lg overflow-hidden shadow-md mb-6 hover:shadow-lg transition-all duration-300 hover:border-[#FF8500] cursor-pointer"
+        className="group bg-dark flex flex-col rounded-lg overflow-hidden shadow-md mb-6 hover:shadow-lg transition-all duration-300 cursor-pointer"
       >
         <div className="relative h-64 overflow-hidden">
           <Image 
@@ -53,14 +53,15 @@ const RelatedPostCard = ({ post }: RelatedPostCardProps) => {
             alt={post.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
+            priority
           />
         </div>
-        <div className="p-4 flex flex-col justify-between h-64 bg-white">
+        <div className="p-4 flex flex-col justify-between h-64">
           <div>
-            <h3 className="text-xl text-[#292219] font-bold mb-2 line-clamp-2 group-hover:text-[#FF8500] transition-colors duration-300">
+            <h3 className="text-xl text-white font-bold mb-2 line-clamp-2 group-hover:text-[#FF8500] transition-colors duration-300">
               {post.title}
             </h3>
-            <p className="mb-4 text-[#292219] line-clamp-3" dangerouslySetInnerHTML={{ __html: post.description }}>
+            <p className="mb-4 text-lightest line-clamp-3" dangerouslySetInnerHTML={{ __html: post.description }}>
               {/* {post.description} */}
             </p>
           </div>
@@ -137,7 +138,7 @@ export default function RelatedPostsSection({ activeCategory }: RelatedPostsSect
           animate={{ opacity: 1 }}
           className="text-center"
         >
-          <p className="text-2xl text-gray-600">Loading related posts...</p>
+          <p className="text-2xl text-white">Loading related posts...</p>
         </motion.div>
       </div>
     );
@@ -161,7 +162,7 @@ export default function RelatedPostsSection({ activeCategory }: RelatedPostsSect
     >
       <motion.h2 
         variants={cardVariants}
-        className="font-semibold mb-[96px] text-center text-[#332414] w-full text-[64px]"
+        className="font-semibold mb-[96px] text-center text-white uppercase w-full text-[30px] lg:text-[64px]"
       >
         You might like
       </motion.h2>

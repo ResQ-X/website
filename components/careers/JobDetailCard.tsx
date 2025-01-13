@@ -61,6 +61,7 @@ export default function JobDetailCard({ jobDetail }: { jobDetail: JobDetail }) {
                   src={Vector1}
                   alt={jobDetail.location}
                   className="w-[31.3px] h-[40px]"
+                  priority
                 />
                 <div className="h5 text-[16px] text-[#A89887] tracking-[-2%]">
                   <p className="">Location</p>
@@ -72,6 +73,7 @@ export default function JobDetailCard({ jobDetail }: { jobDetail: JobDetail }) {
                   src={Vector}
                   alt={jobDetail.location}
                   className="w-[31.3px] h-[40px]"
+                  priority
                 />
                 <div className="h5 text-[16px] text-[#A89887] tracking-[-2%]">
                   <p className="">Job Type</p>
@@ -83,6 +85,7 @@ export default function JobDetailCard({ jobDetail }: { jobDetail: JobDetail }) {
                   src={Vector6}
                   alt={jobDetail.location}
                   className="w-[31.3px] h-[40px]"
+                  priority
                 />
                 <div className="h5 text-[16px] text-[#A89887] tracking-[-2%]">
                   <p className="">Date Posted</p>
@@ -94,6 +97,7 @@ export default function JobDetailCard({ jobDetail }: { jobDetail: JobDetail }) {
                   src={Vector5}
                   alt={jobDetail.location}
                   className="w-[31.3px] h-[40px]"
+                  priority
                 />
                 <div className="h5 text-[16px] text-[#A89887] tracking-[-2%]">
                   <p className="">Experience</p>
@@ -105,6 +109,7 @@ export default function JobDetailCard({ jobDetail }: { jobDetail: JobDetail }) {
                   src={Vector4}
                   alt={jobDetail.location}
                   className="w-[31.3px] h-[40px]"
+                  priority
                 />
                 <div className="h5 text-[16px] text-[#A89887] tracking-[-2%]">
                   <p className="">Working Hours</p>
@@ -116,6 +121,7 @@ export default function JobDetailCard({ jobDetail }: { jobDetail: JobDetail }) {
                   src={Vector3}
                   alt={jobDetail.location}
                   className="w-[31.3px] h-[40px]"
+                  priority
                 />
                 <div className="h5 text-[16px] text-[#A89887] tracking-[-2%]">
                   <p className="">Working Days</p>
@@ -128,6 +134,7 @@ export default function JobDetailCard({ jobDetail }: { jobDetail: JobDetail }) {
                   src={Vector2}
                   alt={jobDetail.location}
                   className="w-[31.3px] h-[40px]"
+                  priority
                 />
                 <div className="h5 text-[16px] text-[#A89887] tracking-[-2%]">
                   <p className="">Vacancy</p>
@@ -141,10 +148,10 @@ export default function JobDetailCard({ jobDetail }: { jobDetail: JobDetail }) {
             <p className="mb-3">Share this:</p>
 
             <div className="w-[257px] h-[54px] flex items-center gap-[12px]">
-              <Image src={Instagram} alt="Instagram" />
-              <Image src={Facebook} alt="Facebook" />
-              <Image src={Twitter} alt="Twitter" />
-              <Image src={LinkedIn} alt="LinkedIn" />
+              <Image src={Instagram} alt="Instagram" priority />
+              <Image src={Facebook} alt="Facebook" priority />
+              <Image src={Twitter} alt="Twitter" priority />
+              <Image src={LinkedIn} alt="LinkedIn" priority />
             </div>
           </div>
         </div>
