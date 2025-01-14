@@ -6,7 +6,7 @@ import qrcode from "@/public/images/QR Code.png";
 import arrow from "@/public/icons/arrow.png";
 import Link from 'next/link';
 import { motion } from 'framer-motion'; // Import Framer Motion
-import { FacebookPixel } from '@/utils/facebookPixels';
+// import { FacebookPixel } from '@/utils/facebookPixels';
 
 // Animation Variants
 const containerVariants = {
@@ -75,9 +75,9 @@ const services = [
 
 
 const Hero = () => {
-  useEffect(() => {
-    FacebookPixel.pageView()
-  }, [])
+  // useEffect(() => {
+  //   FacebookPixel.pageView()
+  // }, [])
 
 
   return (

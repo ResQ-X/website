@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import "./globals.css";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { FacebookPixel } from "@/utils/facebookPixels";
+// import { FacebookPixel } from "@/utils/facebookPixels";
 
 // Components
 const Navbar = dynamic(() => import("@/components/navbar/Navbar"), {
