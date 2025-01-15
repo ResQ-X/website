@@ -126,14 +126,14 @@ const Hero = () => {
             variants={slideInLeftVariants}
           >
             <div className="flex-1 max-w-[351px] h-full rounded-[6px] p-[12px] flex items-center gap-[8px] bg-dark">
-              <Image src={qrcode} alt="Scan qr code" className='w-[88px] h-[88px]' priority />
+              <Image src={qrcode} alt="Scan qr code" className='w-[88px] blur-sm h-[88px]' priority />
               <p className="text-[20px] font-raleway text-white leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
                 Scan to Download App
               </p>
             </div>
-            <Link href="https://play.google.com/store/apps/details?id=com.resqx.customer" className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
+            <Link href="#" className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
               <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-              <span className="relative z-10 text-white transition-colors duration-300">Get Assistance</span>
+              <span className="relative z-10 text-white transition-colors duration-300">Coming Soon</span>
               <Image 
                 src={arrow} 
                 alt="Arrow" 

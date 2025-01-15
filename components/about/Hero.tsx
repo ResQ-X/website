@@ -8,7 +8,7 @@ const AboutHero = () => {
   const statsRef = useRef(null);
   const headingRef = useRef(null);
   const statsData = [
-    { value: 1200, label: 'Active Users', suffix: '+' },
+    { value: 300, label: 'Active Users', suffix: '+' },
     { value: 5, label: 'Partners', suffix: '+' },
     { value: 50, label: 'Service Providers', suffix: '+' }
   ];
