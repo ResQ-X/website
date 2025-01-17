@@ -12,7 +12,7 @@ const fadeUpVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative h-screen">
+    <section className="relative h-auto pt-52">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image

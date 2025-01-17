@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Partner with ResQ-X - Grow Your Business with Us',
     description: 'Join ResQ-X as a partner and expand your business. Connect with more customers, increase your job opportunities, and deliver top-notch roadside assistance services. Partner with us today!',
-    url: 'https://res-q-x.vercel.app/partner',
+    url: 'https://resqx.net/partner',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app/partner',
+    canonical: 'https://resqx.net/partner',
   },
 };
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Hero />
       <TrustedBy />
       <WhyPartnerWithUs />

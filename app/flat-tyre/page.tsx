@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Flat Tyre Assistance - ResQ-X 24/7 Emergency Help',
     description: 'Get immediate flat tyre assistance from ResQ-X. Our 24/7 emergency service ensures you’re back on the road quickly and safely. Call us now for help!',
-    url: 'https://res-q-x.vercel.app/flat-tyre',
+    url: 'https://resqx.net/flat-tyre',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app/flat-tyre',
+    canonical: 'https://resqx.net/flat-tyre',
   },
 };
 

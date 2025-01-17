@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ResQ-X | Fast, Reliable, and Affordable Roadside Assistance Near You',
     description: 'ResQ-X provides 24/7 roadside assistance services, including jump starts, fuel delivery, flat tyre changes, and towing. Get fast, reliable, and affordable help when you need it most.',
-    url: 'https://res-q-x.vercel.app',
+    url: 'https://resqx.net',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app',
+    canonical: 'https://resqx.net',
   },
 };
 

@@ -23,7 +23,7 @@ const slideInRightVariants = {
 export default function WhyResqX() {
   return (
     <>
-      <div className="w-full h-32 relative -py-20" style={{
+      <div className="w-full overflow-x-hidden h-32 relative -py-20" style={{
         background: 'radial-gradient(circle at 50% 50%, rgba(38, 36, 34, 1) 0%, rgba(38, 36, 34, 1) 70%, rgba(38, 36, 34, 1) 100%)',
         filter: 'blur(60px)',
         transform: 'scale(1.9)'
@@ -68,7 +68,7 @@ export default function WhyResqX() {
                   Steady Stream of Work, Transparent Earnings
                 </motion.h2>
                 <motion.p 
-                  className="h5 w-full md:w-[685px] font-normal text-[14px] md:text-[16px] text-[#333333] leading-[1.5] md:leading-[23.48px]"
+                  className="h5 w-full md:w-[660px] font-normal text-[14px] md:text-[16px] text-[#333333] leading-[1.5] md:leading-[23.48px]"
                   variants={fadeUpVariants}
                 >
                   Access a constant flow of service requests to keep your business busy and profitable. Easily track your earnings through the app and receive payments promptly.
@@ -84,6 +84,7 @@ export default function WhyResqX() {
                   <Image 
                     src="/images/QR Code.png" 
                     alt="Scan qr code" 
+                    className="blur-sm"
                     width={88}
                     height={88}
                     priority
@@ -92,7 +93,7 @@ export default function WhyResqX() {
                     Scan to Download App
                   </p>
                 </div>
-                <button className="w-full md:w-[183px] h-[52px] relative flex items-center justify-center gap-3 rounded-[8px] border-[2px] hover:border-orange border-orange overflow-hidden group">
+                <button className="w-full md:w-[183px] h-[52px] relative flex items-center justify-center gap-3 rounded-[8px] border-[2px] hover:border-orange border-orange overflow-hidden group" disabled={true}>
                   <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                   <span className="relative z-10 text-dark-brown transition-colors duration-300">Learn More</span>
                   <Image 

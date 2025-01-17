@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Key Replacement Service - ResQ-X 24/7 Emergency Key Assistance',
     description: 'Lost or damaged your car keys? ResQ-X provides 24/7 emergency key replacement services to get you back on the road quickly. Call us now for fast and reliable key assistance!',
-    url: 'https://res-q-x.vercel.app/key-replacement',
+    url: 'https://resqx.net/key-replacement',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app/key-replacement',
+    canonical: 'https://resqx.net/key-replacement',
   },
 };
 

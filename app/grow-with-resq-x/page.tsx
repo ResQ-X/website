@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Grow with ResQ-X - Expand Your Service Business',
     description: 'Join ResQ-X and elevate your service business. Connect with more customers, increase your job opportunities, and deliver top-notch roadside assistance services. Sign up today!',
-    url: 'https://res-q-x.vercel.app/grow-with-resq-x',
+    url: 'https://resqx.net/grow-with-resq-x',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app/grow-with-resq-x',
+    canonical: 'https://resqx.net/grow-with-resq-x',
   },
 };
 

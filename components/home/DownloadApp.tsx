@@ -3,6 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import arrow from "@/public/icons/arrow.png";
+import Playstore from "@/public/icons/Frame 1686552962.svg";
+import AppleStore from "@/public/icons/Frame 1686552963.svg";
 import Link from 'next/link';
 import { motion } from 'framer-motion'; // Import Framer Motion
 
@@ -64,7 +66,7 @@ const DownloadSection = () => {
             >
               {/* QR Code section */}
               <motion.div
-                className="w-full sm:min-w-[201px] h-[112px] rounded-[6px] p-[12px] flex items-center gap-[8px] bg-white"
+                className="w-full sm:min-w-[201px] h-[112px] rounded-[6px] p-[12px] hidden lg:flex items-center gap-[8px] bg-white"
                 variants={slideInLeft}
               >
                 <Image 
@@ -72,17 +74,25 @@ const DownloadSection = () => {
                   alt="Scan qr code" 
                   width={88}
                   height={88}
-                  className="object-contain"
+                  className="object-contain blur-sm"
                   priority
                 />
                 <p className="text-[14px] md:text-[16px] font-raleway text-dark-brown leading-[20px] md:leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
                   Scan to Download App
                 </p>
               </motion.div>
+              <div className="lg:hidden grid grid-cols-2 gap-4">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                  <Image src={Playstore} alt="Play Store" className="w-full" priority />
+                </a>
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                  <Image src={AppleStore} alt="App Store" className="w-full" priority />
+                </a>
+              </div>
 
               {/* Get Assistance button */}
               <motion.div variants={slideInLeft}>
-                <Link href="/contact" className="relative flex items-center justify-center gap-3 w-[150px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
+                <button href="/contact" className="relative flex items-center justify-center gap-3 w-[150px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group" disabled={true}>
                   <span className="absolute inset-0 w-full h-full bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                   <span className="relative whitespace-nowrap text-sm z-10 text-dark transition-colors duration-300">Get Assistance</span>
                   <Image 
@@ -91,7 +101,7 @@ const DownloadSection = () => {
                     className="relative z-10 group-hover:[filter:brightness(0)] transition-[filter] duration-300"
                     priority
                   />
-                </Link>
+                </button>
               </motion.div>
             </motion.div>
           </motion.div>

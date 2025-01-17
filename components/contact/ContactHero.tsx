@@ -16,7 +16,7 @@ const staggerVariants = {
 
 const ContactHero = () => {
   return (
-    <div className="relative min-h-screen pt-[170px] mt-[100px] lg:mt-0 lg:h-[600px] w-full">
+    <div className="relative min-h-screen pt-[250px] mt-[100px] lg:h-[600px] w-full">
       {/* Background Image Container */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

@@ -33,7 +33,7 @@ const raleway = Raleway({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL('https://res-q-x.vercel.app'),
+  metadataBase: new URL('https://resqx.net'),
   title: {
     template: '%s | ResQ-X - 24/7 Roadside Assistance',
     default: 'ResQ-X - Fast & Reliable Roadside Assistance Services'
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ResQ-X - 24/7 Roadside Assistance',
     description: 'Get immediate roadside assistance with ResQ-X. Available 24/7 for jump starts, fuel delivery, tire changes & more.',
-    url: 'https://res-q-x.vercel.app',
+    url: 'https://resqx.net',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: '2y-F1BcRMBbF7tum2kv_EJqBbh6uXHbELzjR9Dt11ho',
   },
   alternates: {
     canonical: 'https://new.resqx.net',

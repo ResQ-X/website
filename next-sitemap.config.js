@@ -1,5 +1,15 @@
+/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://res-q-x.vercel.app',
-    // siteUrl: 'https://new.resqx.net',
-    generateRobotsTxt: true,
-  };
+  siteUrl: 'https://resqx.net/',
+  exclude: ['/icon.svg', '/apple-icon.png', '/manifest.webmanifest', '/tags/*'],
+  generateRobotsTxt: true,
+  generateIndexSitemap: false,
+  robotsTxtOptions: {
+      policies: [
+          {
+              userAgent: '*',
+              allow: '/',
+          }
+      ]
+  }
+}

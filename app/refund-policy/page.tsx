@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Refund Policy - ResQ-X | Fast, Reliable, and Affordable Roadside Assistance',
     description: 'Read ResQ-X’s Refund Policy to understand our terms and conditions for refunds. We aim to provide fair and transparent refund processes for our customers.',
-    url: 'https://res-q-x.vercel.app/refund-policy',
+    url: 'https://resqx.net/refund-policy',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app/refund-policy',
+    canonical: 'https://resqx.net/refund-policy',
   },
 };
 

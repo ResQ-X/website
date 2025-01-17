@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion'; // Import Framer Motion
+import Playstore from "@/public/icons/Frame 1686552962.svg";
+import AppleStore from "@/public/icons/Frame 1686552963.svg";
 
 // Animation Variants
 const slideInRight = {
@@ -77,7 +79,7 @@ const BusinessSection = () => {
 
           {/* Download App Section */}
           <motion.div
-            className="w-full max-w-[551px] h-auto md:h-[112px] flex flex-col md:flex-row items-center gap-6 md:gap-[37px]"
+            className="w-full max-w-[551px] h-auto md:h-[112px] hidden lg:flex flex-col md:flex-row items-center gap-6 md:gap-[37px]"
             variants={containerVariants}
           >
             <motion.div
@@ -87,6 +89,7 @@ const BusinessSection = () => {
               <Image 
                 src="/images/QR Code.png" 
                 alt="Scan qr code" 
+                className='blur-sm'
                 width={88}
                 height={88}
                 priority
@@ -95,10 +98,19 @@ const BusinessSection = () => {
                 Scan to Download App
               </p>
             </motion.div>
+            <div className="lg:hidden grid grid-cols-2 gap-4">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                  <Image src={Playstore} alt="Play Store" className="w-full" priority />
+                </a>
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                  <Image src={AppleStore} alt="App Store" className="w-full" priority />
+                </a>
+              </div>
+
             <motion.div
               variants={slideInLeft}
             >
-              <Link href="/about" className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-orange border-orange overflow-hidden flex items-center justify-center group relative">
+              <button /*href="/about"*/ className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-orange border-orange overflow-hidden flex items-center justify-center group relative" disabled={true}>
                 <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                 <span className="relative z-10 text-dark-brown transition-colors duration-300">Learn More</span>
                 <Image 
@@ -109,7 +121,7 @@ const BusinessSection = () => {
                   className="absolute right-3 top-1/2 -translate-y-1/2 z-10 [filter:brightness(0)] transition-[filter] duration-300"
                   priority
                 />
-              </Link>
+              </button>
             </motion.div>
           </motion.div>
         </motion.div>

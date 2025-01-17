@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tow Truck Service - ResQ-X | Fast, Reliable, and Affordable Towing Near You',
     description: 'Need a tow truck? ResQ-X provides 24/7 fast, reliable, and affordable towing services. Whether it’s a breakdown or an accident, we’re here to help. Call us now!',
-    url: 'https://res-q-x.vercel.app/tow-truck',
+    url: 'https://resqx.net/tow-truck',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app/tow-truck',
+    canonical: 'https://resqx.net/tow-truck',
   },
 };
 

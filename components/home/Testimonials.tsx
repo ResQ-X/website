@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import user1 from "@/public/images/user1.jpeg";
 import user2 from "@/public/images/user2.jpeg";
 import user3 from "@/public/images/user3.jpeg";
+import user4 from "@/public/images/man5.jpeg"
 
 interface Testimonial {
   comment: string;
@@ -19,40 +20,40 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    comment: "Incredible service! I was stranded in the middle of nowhere, and ResQ-X came to the rescue in no time. Super quick and professional. Highly recommend!",
-    name: "Ada. O",
-    occupation: "Lead designer",
+    comment: "I had a flat tire on Third Mainland Bridge and didn’t know what to do. ResQx came quickly and handled everything so well. They were so calm and professional—I felt safe. I’m so glad I can rely on them anytime!",
+    name: "Amake O.",
+    occupation: "Small Business Owner",
     image: user1,
     rating: 5
   },
   {
-    comment: "I had a flat tyre on a busy road, and I thought I'd be stuck for hours. ResQ-X had someone there in 20 minutes! Such a lifesaver.",
-    name: "James. E",
-    occupation: "CEO palmpay",
+    comment: "I’m always on the road for my business, so breakdowns used to stress me out a lot. Since I started using ResQx, I feel so much more relaxed. They’re fast, affordable, and always so helpful. I don’t know how I managed before!",
+    name: " Oluwafemi A.",
+    occupation: "Banker",
     image: user2,
     rating: 4
   },
   {
-    comment: "ResQ-X helped me with a jump start late at night. The technician was friendly, and the app made everything so easy. Definitely my go-to for roadside assistance.",
-    name: "Tolu. M",
-    occupation: "Tech Bro",
+    comment: "One morning, my car just wouldn’t start. I called ResQx, and they came to jump-start it in no time. They even checked everything to make sure it wouldn’t happen again. The service was so smooth, I’ve already told my friends about them!",
+    name: "Chidi E.",
+    occupation: "IT Consultant",
     image: user3,
     rating: 5
   },
   {
-    comment: "I ran out of fuel during rush hour and wasn't sure what to do. ResQ-X delivered fuel within 30 minutes. Amazing service that saved me a ton of stress!",
-    name: "Chris. D",
-    occupation: "CEO palmpay",
-    image: user1,
+    comment: "I manage a fleet of vehicles, and breakdowns used to be a nightmare. Since we started using ResQx, everything has been so much easier. They’re reliable and quick, and their team always goes the extra mile. It’s a huge relief knowing they’ve got us covered.",
+    name: "Tobi S.",
+    occupation: "Fleet Manager",
+    image: user4,
     rating: 4
   },
-  {
-    comment: "Locked my keys in the car, and ResQ-X came to the rescue fast. I couldn't believe how efficient they were. Great customer service all around!",
-    name: "Sara. O",
-    occupation: "Lead designer",
-    image: user2,
-    rating: 5
-  }
+  // {
+  //   comment: "Locked my keys in the car, and ResQ-X came to the rescue fast. I couldn't believe how efficient they were. Great customer service all around!",
+  //   name: "Sara. O",
+  //   occupation: "Lead designer",
+  //   image: user2,
+  //   rating: 5
+  // }
 ];
 
 const fadeUp = {

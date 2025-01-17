@@ -69,7 +69,7 @@ const HeroSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="text-center flex w-full items-center justify-center flex-col h-screen relative"
+      className="text-center pt-[200px] flex w-full items-center justify-center flex-col h-screen relative"
     >
       {/* Background Image Container */}
       <div 
@@ -90,8 +90,8 @@ const HeroSection = () => {
         <h1 className="text-[32px] sm:text-[48px] lg:text-[64px] lg:whitespace-nowrap lg:w-[768px] leading-[40px] sm:leading-[60px] lg:leading-[75.12px] uppercase font-bold mb-6">
           <span className="inline-block text-part-1">Stranded? </span> {" "}
           <span className="inline-block gradient-text2 text-part-2">Stay calm.</span>{" "}
-          <span className="inline-block text-part-3">Let </span>
           <br />
+          <span className="inline-block text-part-3">Let </span>
           <span className="inline-block gradient-text2 text-part-4">ResQ-X</span>{" "}
           <span className="inline-block text-part-4">handle it!</span>
         </h1>

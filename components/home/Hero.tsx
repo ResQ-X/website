@@ -1,10 +1,12 @@
 "use client"
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from "next/image";
 import qrcode from "@/public/images/QR Code.png";
 import arrow from "@/public/icons/arrow.png";
 import Link from 'next/link';
+import Playstore from "@/public/icons/Frame 1686552962.svg";
+import AppleStore from "@/public/icons/Frame 1686552963.svg";
 import { motion } from 'framer-motion'; // Import Framer Motion
 // import { FacebookPixel } from '@/utils/facebookPixels';
 
@@ -113,7 +115,7 @@ const Hero = () => {
             className="h1-responsive leading-[60px] lg:h1 uppercase lg:whitespace-nowrap lg:leading-[85.14px]"
             variants={fadeUpVariants}
           >
-            On-the-Go Assistance, <br className="hidden md:block" /> Anytime You Need It.
+             Roadside Assistance, <br className="hidden md:block" /> Whenever You Need It.
           </motion.h1>
           <motion.p
             className="text-base md:text-xl lg:h4 text-lightest leading-normal lg:leading-[31.18px]"
@@ -125,12 +127,20 @@ const Hero = () => {
             className="w-full max-w-[551px] flex flex-col lg:flex-row items-center gap-[37px]"
             variants={slideInLeftVariants}
           >
-            <div className="flex-1 max-w-[351px] h-full rounded-[6px] p-[12px] flex items-center gap-[8px] bg-dark">
+            <div className="flex-1 hidden max-w-[351px] h-full rounded-[6px] p-[12px] lg:flex items-center gap-[8px] bg-dark">
               <Image src={qrcode} alt="Scan qr code" className='w-[88px] blur-sm h-[88px]' priority />
               <p className="text-[20px] font-raleway text-white leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
                 Scan to Download App
               </p>
             </div>
+            <div className="lg:hidden grid grid-cols-2 gap-4">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                  <Image src={Playstore} alt="Play Store" className="w-full" priority />
+                </a>
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                  <Image src={AppleStore} alt="App Store" className="w-full" priority />
+                </a>
+              </div>
             <Link href="#" className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
               <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
               <span className="relative z-10 text-white transition-colors duration-300">Coming Soon</span>

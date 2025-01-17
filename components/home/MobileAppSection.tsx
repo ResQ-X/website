@@ -2,8 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { motion } from 'framer-motion'; // Import Framer Motion
+import Playstore from "@/public/icons/Frame 1686552962.svg";
+import AppleStore from "@/public/icons/Frame 1686552963.svg";
 
 // Animation Variants
 const slideInLeft = {
@@ -82,12 +84,13 @@ const MobileAppSection = () => {
             variants={containerVariants}
           >
             <motion.div
-              className="w-full md:flex-1 max-w-[351px] h-[112px] rounded-[6px] p-[12px] flex items-center gap-[8px] bg-dark"
+              className="w-full hidden md:flex-1 max-w-[351px] h-[112px] rounded-[6px] p-[12px] lg:flex items-center gap-[8px] bg-dark"
               variants={slideInRight}
             >
               <Image 
                 src="/images/QR Code.png" 
                 alt="Scan qr code" 
+                className='blur-sm'
                 width={88}
                 height={88}
                 priority
@@ -96,10 +99,18 @@ const MobileAppSection = () => {
                 Scan to Download App
               </p>
             </motion.div>
+            <div className="lg:hidden grid grid-cols-2 gap-4">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                  <Image src={Playstore} alt="Play Store" className="w-full" priority />
+                </a>
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                  <Image src={AppleStore} alt="App Store" className="w-full" priority />
+                </a>
+              </div>
             <motion.div
               variants={slideInRight}
             >
-              <Link href="/contact" className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group flex items-center justify-center relative">
+              <button /*href="/contact"*/ className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group flex items-center justify-center relative" disabled={true}>
                 <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                 <span className="relative z-10 text-white transition-colors mr-5 duration-300">Get Assistance</span>
                 <Image 
@@ -110,7 +121,7 @@ const MobileAppSection = () => {
                   className="absolute right-3 top-1/2 -translate-y-1/2 z-10 group-hover:[filter:brightness(0)] transition-[filter] duration-300"
                   priority
                 />
-              </Link>
+              </button>
             </motion.div>
           </motion.div>
         </motion.div>

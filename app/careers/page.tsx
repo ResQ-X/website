@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Careers at ResQ-X - Join Our Roadside Assistance Team',
     description: 'Explore exciting career opportunities at ResQ-X. Join our team of professionals dedicated to providing 24/7 roadside assistance services. Apply now!',
-    url: 'https://res-q-x.vercel.app/careers',
+    url: 'https://resqx.net/careers',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app/careers',
+    canonical: 'https://resqx.net/careers',
   },
 };
 

@@ -141,9 +141,9 @@ const TrustedBy: React.FC = () => {
             POWERED BY EXCELLENCE
           </h3>
           <p className="h6 text-center lg:text-left leading-[25.48px] text-[#736250] animate-text">
-            At ResQ-X, we&apos;ve built a strong community of happy customers, supported by dedicated 
-            service providers and trusted by industry-leading partners. Our mission is simple: 
-            to ensure you&apos;re never stranded when it matters most.
+          At ResQ-X, we&apos;ve built a strong community of happy customers, supported by dedicated service providers and trusted by industry-leading partners. 
+Our goal is simple: to ensure you&apos;re never stranded when it matters most.
+
           </p>
         </div>
 

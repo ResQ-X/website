@@ -112,7 +112,7 @@ const BlogDetailsClient = ({ id }: BlogDetailsClientProps) => {
       </div>
 
       <div className="mx-auto relative">
-        <div className="prose leading-[32px] prose-lg text-lightest w-full">
+        <div className="prose leading-[52px] prose-lg text-white w-full">
           <div dangerouslySetInnerHTML={{ __html: post.description }} />
         </div>
         <div className="absolute top-0 right-0 bg-orange bg-opacity-50 blur-[225px] w-[283px] h-[283px] z-[-1]"></div>

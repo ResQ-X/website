@@ -8,6 +8,8 @@ import Resqx from "@/public/icons/resqx.png";
 import Blurr from "@/public/grad/Rectangle 28.png";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import Playstore from "@/public/icons/Frame 1686552962.svg";
+import AppleStore from "@/public/icons/Frame 1686552963.svg";
 
 interface HeroProps {
   title: string;
@@ -64,12 +66,12 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate }) => {
             </p>
             
             {/* QR Code Section */}
-            <div className="flex justify-center lg:justify-start items-center gap-6">
+            <div className="hidden lg:flex justify-center lg:justify-start items-center gap-6">
               <div className="bg-[#3B3835] rounded-lg p-4 flex items-center gap-4">
                 <Image 
                   src={qrcode} 
                   alt="QR Code" 
-                  className="w-20 h-20 sm:w-24 sm:h-24"
+                  className="w-20 blur-sm h-20 sm:w-24 sm:h-24"
                   priority
                 />
                 <span className="text-base sm:text-lg font-semibold">
@@ -77,6 +79,14 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate }) => {
                 </span>
               </div>
             </div>
+            <div className="lg:hidden grid grid-cols-2 gap-4">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                  <Image src={Playstore} alt="Play Store" className="w-full" priority />
+                </a>
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                  <Image src={AppleStore} alt="App Store" className="w-full" priority />
+                </a>
+              </div>
           </div>
 
           {/* Right Content - Phone Image */}

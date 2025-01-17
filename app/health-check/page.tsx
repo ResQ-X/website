@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Vehicle Health Check - ResQ-X Comprehensive Diagnostics',
     description: 'Ensure your vehicle is in top condition with ResQ-X’s comprehensive vehicle health check services. Our expert diagnostics help you avoid breakdowns and maintain peak performance. Schedule now!',
-    url: 'https://res-q-x.vercel.app/health-check',
+    url: 'https://resqx.net/health-check',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app/health-check',
+    canonical: 'https://resqx.net/health-check',
   },
 };
 

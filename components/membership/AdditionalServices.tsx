@@ -25,22 +25,22 @@ const AdditionalServices = () => {
     {
       icon: "/images/jumpstart.png",
       title: "Battery replacement",
-      description: "Service description goes here. Replace with your actual service description text."
+      description: "We’ll replace your dead battery and get your car running again."
     },
     {
       icon: "/images/tyre.png",
       title: "Tyre replacement",
-      description: "Service description goes here. Replace with your actual service description text."
+      description: "Flat or damaged tyre? We’ll swap it out on the spot."
     },
     {
       icon: "/images/keys.png",
       title: "Key replacement",
-      description: "Service description goes here. Replace with your actual service description text."
+      description: "Lost or broken car key? We’ll arrange a quick replacement to get you moving."
     },
     {
       icon: "/images/driver.png",
       title: "Onward travel",
-      description: "Service description goes here. Replace with your actual service description text."
+      description: "Stranded? We’ll help you continue your journey hassle-free."
     }
   ];
 

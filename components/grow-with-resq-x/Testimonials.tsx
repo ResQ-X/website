@@ -4,9 +4,11 @@ import React, { useRef, useState, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import gsap from 'gsap';
-import user1 from "@/public/images/user1.jpeg"
-import user2 from "@/public/images/user2.jpeg"
-import user3 from "@/public/images/user3.jpeg"
+import user1 from "@/public/images/man6.jpg"
+import user2 from "@/public/images/woman3.jpg"
+import user3 from "@/public/images/man8.jpg"
+import user4 from "@/public/images/woman5.jpeg"
+import user5 from "@/public/images/man7.jpg"
 import arrow from "@/public/icons/arrow.png"
 import Link from "next/link"
 
@@ -20,38 +22,38 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    comment: "ResQ X has made it so much easier to connect with customers. I get more jobs, and the process is quick and efficient. It's truly helped me grow in my work.",
-    name: "John. O",
-    occupation: "Tow Truck Provider",
+    comment: "Working with ResQx has been such a rewarding experience. They really care about both their customers and us, the service providers. The app makes it easy to find jobs, and I always feel valued for the work I do. It’s great to be part of a team that’s making a real difference.",
+    name: "Ibrahim A.",
+    occupation: "Towing Specialist",
     image: user1,
     rating: 5
   },
   {
-    comment: "Since joining ResQ X, I've been able to respond faster and assist more people in need. The platform is easy to use, and it has helped my service efficiency.",
-    name: "Emeka. E",
-    occupation: "First Responder",
+    comment: "I love how organized ResQx is. Every request I get through them is clear, and their support team is always there if I need help. It feels good to know I’m helping people in emergencies, and ResQx makes the whole process so smooth for us.",
+    name: "Blessing O",
+    occupation: "Key Replacement Technician",
     image: user2,
     rating: 4
   },
   {
-    comment: "ResQ X has really helped me expand my reach. I get more visibility, and it's made assisting clients much more manageable and rewarding.",
-    name: "Tolu. M",
-    occupation: "Tow Truck Provider",
+    comment: "Before I joined ResQx, it was hard to find consistent jobs. Now, I’m busy all the time, and I don’t have to stress about finding clients. ResQx really takes care of the service providers, and it feels like a family. I’m proud to be part of this!",
+    name: "Tunde E.",
+    occupation: "Tire Repair Specialist",
     image: user3,
     rating: 5
   },
   {
-    comment: "I ran out of fuel during rush hour and wasn't sure what to do. ResQ-X delivered fuel within 30 minutes. Amazing service that saved me a ton of stress!",
-    name: "Chris. D",
-    occupation: "CEO palmpay",
-    image: user1,
+    comment: "The best thing about working with ResQx is how easy they make everything for us. Their system is simple, the jobs are reliable, and they always treat me with respect. It’s amazing to see how much they value their team and the customers we serve.",
+    name: "Chinaza K.",
+    occupation: "Vehicle Health Inspector",
+    image: user4,
     rating: 4
   },
   {
-    comment: "Locked my keys in the car, and ResQ-X came to the rescue fast. I couldn't believe how efficient they were. Great customer service all around!",
-    name: "Sara. O",
-    occupation: "Lead designer",
-    image: user2,
+    comment: "Being a part of ResQx has been a game-changer for me. I get steady work, and the customers are always grateful for what we do. It feels good to know I’m helping people get back on the road, and ResQx makes it all possible.",
+    name: "Segun M.",
+    occupation: "Fuel Delivery Specialist",
+    image: user5,
     rating: 5
   }
 ];

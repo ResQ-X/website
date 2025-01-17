@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Jump Start Service - ResQ-X 24/7 Emergency Battery Assistance',
     description: 'Need a jump start? ResQ-X provides 24/7 emergency jump start services to get your vehicle running again. Call us now for fast and reliable battery assistance!',
-    url: 'https://res-q-x.vercel.app/jump-start',
+    url: 'https://resqx.net/jump-start',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://res-q-x.vercel.app/jump-start',
+    canonical: 'https://resqx.net/jump-start',
   },
 };
 
