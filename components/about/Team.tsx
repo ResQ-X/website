@@ -16,28 +16,28 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "ResQ-X",
-    role: "Founded & CEO",
-    image: "/images/team/robert.jpeg",
-    position: "up"
-  },
-  {
-    name: "Amanda Amaka",
     role: "Founder & CEO",
-    image: "/images/team/amanda.jpeg",
-    position: "down"
-  },
-  {
-    name: "Kylan Drew",
-    role: "Project Manager",
-    image: "/images/team/kylian.jpeg",
+    image: "/images/nosa.jpeg",
     position: "up"
   },
-  {
-    name: "Robert Billy",
-    role: "Co-Founder & Operations Manager",
-    image: "/images/team/robert.jpeg",
-    position: "down"
-  }
+  // {
+  //   name: "Amanda Amaka",
+  //   role: "Founder & CEO",
+  //   image: "/images/team/amanda.jpeg",
+  //   position: "down"
+  // },
+  // {
+  //   name: "Kylan Drew",
+  //   role: "Project Manager",
+  //   image: "/images/team/kylian.jpeg",
+  //   position: "up"
+  // },
+  // {
+  //   name: "Robert Billy",
+  //   role: "Co-Founder & Operations Manager",
+  //   image: "/images/team/robert.jpeg",
+  //   position: "down"
+  // }
 ];
 
 const Team = () => {

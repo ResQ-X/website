@@ -78,7 +78,7 @@ const TabsSection = () => {
   const generateWhatsAppLink = (service: { title: string, description: string }) => {
     const message = `Hi ResQx. I need ${service.title} service. ${service.description}`;
     const encodedMessage = encodeURIComponent(message);
-    return `https://wa.me/+2347010363424?text=${encodedMessage}`;
+    return `https://wa.me/+2348111173779?text=${encodedMessage}`;
   };
 
   return (

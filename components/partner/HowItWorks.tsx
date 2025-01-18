@@ -62,19 +62,19 @@ const HowItWorks: React.FC = () => {
     {
       number: "01",
       title: "GET IN TOUCH",
-      description: "Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+      description: "Connect with our team to discuss your business needs. We'll understand your fleet size, operational requirements, and specific challenges to create a tailored roadside assistance solution that aligns with your goals and budget.",
       imageUrl: "/images/woman.jpeg"
     },
     {
       number: "02",
       title: "FIND YOUR IDEAL PLAN",
-      description: "Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+      description: "Our experts will design a customized service package that perfectly matches your business requirements. From 24/7 emergency response to preventive maintenance schedules, we ensure comprehensive coverage that keeps your fleet running efficiently.",
       imageUrl: "/images/pcmna.jpeg"
     },
     {
       number: "03",
       title: "OPERATE WORRY-FREE",
-      description: "Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+      description: "Once your plan is activated, enjoy peace of mind knowing that professional assistance is just a call away. Our nationwide network of skilled technicians and advanced dispatch system ensures rapid response times and minimal downtime for your fleet operations.",
       imageUrl: "/images/steering.jpeg"
     }
   ];

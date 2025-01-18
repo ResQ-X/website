@@ -24,13 +24,13 @@ interface ServicesProps {
 const partnerData: PartnerCard[] = [
   {
     title: 'Fast Response Time',
-    image: '/images/confusedman.jpeg',
+    image: '/images/time.jpg',
     description: 'We understand that time is of the essence during a breakdown. That’s why ResQ-X ensures a quick response to get help to you as soon as possible, no matter where you are.',
     icon: <Clock size={48} className="text-white" />,
   },
   {
     title: 'Professional Service',
-    image: '/images/seriouslady.jpeg',
+    image: '/images/pro-service2.jpg',
     description: 'Our team of skilled and experienced professionals is trained to handle your vehicle with care and precision. With ResQ-X, you can rest assured that your car is in safe hands.',
     icon: <Wrench size={48} className="text-white" />,
   },
@@ -97,7 +97,7 @@ const Services: React.FC<ServicesProps> = ({ title }) => {
                     src={card.image}
                     alt={card.title}
                     fill
-                    className="object-cover transition-opacity duration-300"
+                    className="object-contain transition-opacity duration-300"
                     style={{ opacity: hoveredIndex === index ? 0 : 1 }}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     quality={100}
@@ -112,7 +112,7 @@ const Services: React.FC<ServicesProps> = ({ title }) => {
                 <div className="relative items-center w-full h-full py-6 px-4 flex flex-col justify-end z-10">
                   {/* Title (visible when not hovered) */}
                   <h3 
-                    className="text-[20px] lg:text-[36px] text-center text-white uppercase font-bold mb-3 w-[249px] transition-opacity duration-300"
+                    className="text-[20px] lg:text-[36px] text-center text-white uppercase font-bold mt-3 w-[249px] transition-opacity duration-300"
                     style={{ opacity: hoveredIndex === index ? 0 : 1 }}
                   >
                     {card.title}
