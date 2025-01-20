@@ -27,10 +27,10 @@ const APIIntegrationSection = () => {
               Instantly synchronize your fleet management data with ResQ-X for up-to-date information on all roadside assistance activities.
             </p>
             
-            <button className="relative flex items-center justify-center gap-2 px-6 md:px-8 py-2 md:py-3 rounded-lg border-2 border-[#FF6B00] overflow-hidden group mx-auto md:mx-0">
+            <button className="relative flex items-center justify-center gap-2 px-6 md:px-8 py-2 md:py-3 rounded-lg border-2 border-[#FF6B00] overflow-hidden group mx-auto md:mx-0" disabled>
               <span className="absolute inset-0 w-full h-full bg-[#FF6B00] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
               <span className="relative z-10 font-medium transition-colors text-black duration-300 group-hover:text-white">
-                Explore
+                Coming Soon!
               </span>
               <svg 
                 className="relative z-10 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"

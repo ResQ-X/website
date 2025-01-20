@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import gsap from 'gsap';
 import { motion } from 'framer-motion';
 import user1 from "@/public/images/user1.jpeg";
-import user2 from "@/public/images/user2.jpeg";
+import user2 from "@/public/images/oluwafemi.jpeg";
 import user3 from "@/public/images/user3.jpeg";
 import user4 from "@/public/images/man5.jpeg"
 

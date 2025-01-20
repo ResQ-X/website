@@ -26,7 +26,7 @@ const Hero = () => {
           viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the element is in view
         >
           PROTECT WHAT MATTERS MOST:<br />
-          YOUR GOALS, YOUR MONEY, YOUR FUTURE
+          YOUR FAMILY, YOUR CAR, YOUR TIME
         </motion.h1>
 
         {/* Paragraph */}

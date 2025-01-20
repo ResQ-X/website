@@ -16,7 +16,8 @@ export default function BlogPageClient() {
       <Hero 
         title="Tips, Insights, and Roadside Stories."
         description='Explore expert advice, driving tips, and stories that keep you informed and prepared for every journey'
-        rotate={true}
+        rotate={false}
+        image="/images/blog-hero.svg"
         />
       <FeaturedStories 
         activeCategory={activeCategory} 

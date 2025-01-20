@@ -15,9 +15,10 @@ interface HeroProps {
   title: string;
   description: string;
   rotate?: boolean;
+  image?: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ title, description, rotate }) => {
+const Hero: React.FC<HeroProps> = ({ title, description, rotate, image }) => {
   const textRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -95,10 +96,10 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate }) => {
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[250px] sm:w-[400px] sm:h-[350px] lg:w-[600px] lg:h-[500px] bg-orange opacity-20 rounded-full blur-[50px] sm:blur-[75px] lg:blur-[100px]" />
             
             {/* Phone Container with Blur Effect */}
-            <div className={`relative lg:translate-x-16 z-10 w-[250px] h-[314px] sm:w-[350px] sm:h-[440px] lg:w-[496.46px] lg:h-[624.14px] ${rotate ? '-rotate-[10deg]' : ''}`}>
+            <div className={`relative lg:-translate-x-16 z-10 w-[250px] h-[314px] sm:w-[350px] sm:h-[440px] lg:w-[496.46px] lg:h-[624.14px] ${rotate ? '-rotate-[10deg]' : ''}`}>
               {/* Phone Image */}
               <Image
-                src={Phone}
+                src={image ? image : Phone}
                 alt="ResQ-X App"
                 fill
                 className="object-contain"
@@ -106,6 +107,7 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate }) => {
               />
               
               {/* ResQ-X Logo Overlay */}
+              {!image && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <Image
                   src={Resqx}
@@ -116,8 +118,10 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate }) => {
                   priority
                 />
               </div>
+              )}
 
               {/* Blur Effects Container */}
+              {!image && (
               <div className="absolute -bottom-16 sm:-bottom-32 -left-5 sm:-left-10 right-0">
                 {/* Center Blur */}
                 <Image
@@ -146,7 +150,7 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate }) => {
                     priority
                   />
                 </div>
-              </div>
+              </div> )}
             </div>
           </div>
         </div>

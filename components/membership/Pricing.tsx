@@ -62,7 +62,7 @@ const pricingData: PricingPlan[] = [
 ];
 
 const Pricing = () => {
-  const [billingCycle, setBillingCycle] = useState<'Half a year' | 'annually'>('Half a year');
+  const [billingCycle, setBillingCycle] = useState<'Half a year' | 'annually'>('Bi-annual');
 
   return (
     <div className="py-16 px-4">
@@ -71,11 +71,11 @@ const Pricing = () => {
         <div className="bg-gray-200 rounded-full p-1">
           <button
             className={`px-6 py-2 rounded-full ${
-              billingCycle === 'Half a year' ? 'bg-orange text-white' : 'text-black'
+              billingCycle === 'Bi-annual' ? 'bg-orange text-white' : 'text-black'
             }`}
             onClick={() => setBillingCycle('Half a year')}
           >
-            Quarterly
+            Bi-annual
           </button>
           <button
             className={`px-6 py-2 rounded-full ${
@@ -117,8 +117,8 @@ const Pricing = () => {
                     ? plan.price.quarterly.toLocaleString()
                     : plan.price.annually.toLocaleString()}
                 <span className={`${
-                  plan.isPopular ? 'md:text-[32px]' : ''
-                } text-[24px] text-[#636363] font-normal`}>/{billingCycle === 'Half a year' ? 'Half' : 'Year'}</span>
+                  plan.isPopular ? 'md:text-[22px]' : ''
+                } text-[20px] whitespace-nowrap text-[#636363] font-normal`}>/{billingCycle === 'Bi-annual' ? 'Bi-annual' : 'Year'}</span>
               </div>
               <ul className="space-y-4 w-full mt-8 md:mt-16">
                 {plan.features.map((feature, index) => (

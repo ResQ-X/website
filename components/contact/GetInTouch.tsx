@@ -126,7 +126,7 @@ const GetInTouch = () => {
           <svg
             className="w-10 h-10 text-green-600"
             fill="none"
-            stroke="currentColor"a
+            stroke="currentColor"
             viewBox="0 0 24 24"
           >
             <path
@@ -153,23 +153,31 @@ const GetInTouch = () => {
           <h2 className="text-[36px] lg:text-[48px] uppercase font-bold leading-[48px] tracking-[-2%] text-dark-brown mb-4">Get in Touch</h2>
           <div className="flex items-center gap-[12px]">
             <Image src={Sms} alt="Location" priority />
-            <p className="font-medium text-[20px] leading-[24.2px] text-[#736250]">hello@resqx.com</p>
+            <p className="font-medium text-[20px] leading-[24.2px] text-[#736250]">hello@resqx.net</p>
           </div>
           <div className="flex items-center gap-[12px]">
             <Image src={Location} alt="Location" priority />
-            <p className="font-medium text-[20px] leading-[24.2px] text-[#736250]">Admiralty Way, Lekki, Lagos</p>
+            <p className="font-medium text-[20px] leading-[24.2px] text-[#736250]">3 Billi Okoya Street off Mobil road Ajah
+            </p>
           </div>
           <div className="flex items-center gap-[12px]">
             <Image src={Phone} alt="Location" priority />
-            <p className="font-medium text-[20px] leading-[24.2px] text-[#736250]">+234-814-064-7017</p>
+            <p className="font-medium text-[20px] leading-[24.2px] text-[#736250]">+234-811-117-3779</p>
           </div>
 
           <div className="flex items-center gap-[24px] pt-8">
+          <a href="https://facebook.com/profile.php?id=61559440915973" target="_blank" rel="noopener noreferrer">
             <Image src={Facebook} alt="Facebook" priority />
-            <Image src={Twitter} alt="Twitter" priority />
-            <Image src={LinkedIn} alt="LinkedIn" priority />
-            <Image src={Instagram} alt="Instagram" priority />
-            <Image src={Youtube} alt="Youtube" priority />
+          </a>
+          <a href="https://www.instagram.com/resqx?igsh=MTU1N3FqZmJkMzZxbQ==" target="_blank" rel="noopener noreferrer">
+            <Image src={Instagram} alt="Twitter" priority />
+          </a>
+          <a href="https://x.com/ResQ_Xng?t=NciMAbDfxisxI7VZz4xUuw&s=09" target="_blank" rel="noopener noreferrer">
+            <Image src={Twitter} alt="LinkedIn" priority />
+          </a>
+          <a href="https://www.linkedin.com/company/resq-x/" target="_blank" rel="noopener noreferrer">
+            <Image src={LinkedIn} alt="Instagram" priority />
+          </a>
           </div>
         </div>
 

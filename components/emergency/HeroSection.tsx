@@ -91,7 +91,7 @@ const HeroSection = () => {
           <span className="inline-block text-part-1">Stranded? </span> {" "}
           <span className="inline-block gradient-text2 text-part-2">Stay calm.</span>{" "}
           <br />
-          <span className="inline-block text-part-3">Let </span>
+          <span className="inline-block text-part-3">Let </span>{" "}
           <span className="inline-block gradient-text2 text-part-4">ResQ-X</span>{" "}
           <span className="inline-block text-part-4">handle it!</span>
         </h1>

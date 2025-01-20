@@ -184,7 +184,7 @@ const Footer = () => {
                   <Mail className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
                 </a>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="hidden grid-cols-2 gap-4">
                 <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
                   <Image src={Playstore} alt="Play Store" className="w-full" priority />
                 </a>

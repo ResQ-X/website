@@ -8,6 +8,7 @@ import { HomeBlogSection } from '@/components/home/HomeBlogSection'
 import Testimonials from '@/components/home/Testimonials'
 import DownloadApp from '@/components/home/DownloadApp';
 import FAQSection from '@/components/home/FAQSection'
+import FeaturedIn from '@/components/home/FeaturedIn';
 
 export const metadata: Metadata = {
   title: 'ResQ-X | Fast, Reliable, and Affordable Roadside Assistance Near You',
@@ -69,6 +70,7 @@ export default function Home() {
       <Services />
       <MobileAppSection />
       <BusinessSection />
+      <FeaturedIn />
       <HomeBlogSection />
       <Testimonials />
       <DownloadApp />

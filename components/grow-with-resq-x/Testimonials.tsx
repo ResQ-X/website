@@ -5,9 +5,9 @@ import Image, { StaticImageData } from 'next/image';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import gsap from 'gsap';
 import user1 from "@/public/images/man6.jpg"
-import user2 from "@/public/images/woman3.jpg"
+import user2 from "@/public/images/service2.jpeg"
 import user3 from "@/public/images/man8.jpg"
-import user4 from "@/public/images/woman5.jpeg"
+import user4 from "@/public/images/man3.jpeg"
 import user5 from "@/public/images/man7.jpg"
 import arrow from "@/public/icons/arrow.png"
 import Link from "next/link"
@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
   },
   {
     comment: "I love how organized ResQx is. Every request I get through them is clear, and their support team is always there if I need help. It feels good to know I’m helping people in emergencies, and ResQx makes the whole process so smooth for us.",
-    name: "Blessing O",
+    name: "Kelvin O.",
     occupation: "Key Replacement Technician",
     image: user2,
     rating: 4
@@ -44,7 +44,7 @@ const testimonials: Testimonial[] = [
   },
   {
     comment: "The best thing about working with ResQx is how easy they make everything for us. Their system is simple, the jobs are reliable, and they always treat me with respect. It’s amazing to see how much they value their team and the customers we serve.",
-    name: "Chinaza K.",
+    name: "Bolaji K.",
     occupation: "Vehicle Health Inspector",
     image: user4,
     rating: 4

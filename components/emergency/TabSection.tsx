@@ -71,6 +71,15 @@ const TabsSection = () => {
       price: '₦7,000',
       additionalInfo: 'Price includes up to 10 km of towing.',
       image: '/images/Towing_Payallup.jpg',
+    },
+    {
+      id: 'broken_down',
+      title: 'Vehicle Broken Down',
+      description: 'Car trouble? We will fix it as soon as possible.',
+      arrival: 'Arrives within 30 mins',
+      price: '₦10,000',
+      additionalInfo: 'T&C apply.',
+      image: '/images/broken-car.jpg',
     }
   ];
 

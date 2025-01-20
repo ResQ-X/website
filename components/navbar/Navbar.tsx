@@ -7,6 +7,7 @@ import type { NavigationLink } from '@/types/navigation';
 import NavLink from './NavLink';
 import DropdownMenu from './DropdownMenu';
 import MobileNav from './MobileNav';
+import { cn } from '@/lib/utils';
 
 import LogoImage from '@/public/images/logo.png';
 
@@ -101,11 +102,11 @@ const Navbar = () => {
               <div className="relative group">
                 <NavLink href={link.href}>
                   <span
-                    className={`flex items-center gap-2 hover:text-orange ${
+                    className={cn(`flex items-center gap-2 hover:text-orange ${
                       link.text === '091-234-13450' ? 'font-[600] text-[18px]' : ''
                     } ${
                       link.text === 'Coming soon!' ? 'btn text-white hover:text-white' : ''
-                    }`}
+                    }`)}
                   >
                     {link.text}
                     {link.text === '0814-064-7017' && <PhoneOutgoing size={20} />}
