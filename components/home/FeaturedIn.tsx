@@ -3,22 +3,30 @@
 import React from 'react';
 import Image from 'next/image';
 
-const MEDIA_LOGOS = [
-  "/icons/channels-tv.jpg",     // Nigerian news channel
-  "/icons/Punch_logo.svg",        // Punch Newspaper
-  "/icons/Guardian_logo.png",     // The Guardian Nigeria
-  "/icons/tvc-news.jpg",        // TVC News
-  "/icons/BusinessDay.png",     // BusinessDay
-  "/icons/vanguard.png",     // Vanguard Nigeria
-  "/icons/tribune.jpg",         // Nigerian Tribune
-  "/icons/channels-tv.jpg",     // Nigerian news channel
-  "/icons/Punch_logo.svg",        // Punch Newspaper
-  "/icons/Guardian_logo.png",     // The Guardian Nigeria
-  "/icons/tvc-news.jpg",        // TVC News
-  "/icons/BusinessDay.png",     // BusinessDay
-  "/icons/vanguard.png",     // Vanguard Nigeria
-  "/icons/tribune.jpg",         // Nigerian Tribune
-];
+const MEDIA_LOGOS = Array(100).fill([
+  { src: "/icons/channels-tv.jpg" },
+  { src: "/icons/techcabal.png", link: "https://techcabal.com/2024/11/20/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
+  { src: "/icons/techpoint.png", link: "https://techpoint.africa/2024/11/21/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
+  { src: "/icons/the-independent.png", link: "https://independent.ng/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
+  { src: "/icons/The-Nation.jpg", link: "https://thenationonlineng.net/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
+  { src: "/icons/Punch_logo.svg" },
+  { src: "/icons/Guardian_logo.png" },
+  { src: "/icons/tvc-news.jpg" },
+  { src: "/icons/BusinessDay.png" },
+  { src: "/icons/vanguard.png" },
+  { src: "/icons/tribune.jpg" },
+  { src: "/icons/channels-tv.jpg" },
+  { src: "/icons/techcabal.png", link: "https://techcabal.com/2024/11/20/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
+  { src: "/icons/techpoint.png", link: "https://techpoint.africa/2024/11/21/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
+  { src: "/icons/the-independent.png", link: "https://independent.ng/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
+  { src: "/icons/The-Nation.jpg", link: "https://thenationonlineng.net/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
+  { src: "/icons/Punch_logo.svg" },
+  { src: "/icons/Guardian_logo.png" },
+  { src: "/icons/tvc-news.jpg" },
+  { src: "/icons/BusinessDay.png" },
+  { src: "/icons/vanguard.png" },
+  { src: "/icons/tribune.jpg" },
+]).flat();
 
 const FeaturedIn = () => {
   return (
@@ -35,15 +43,27 @@ const FeaturedIn = () => {
             {[...MEDIA_LOGOS, ...MEDIA_LOGOS].map((logo, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 w-40 h-24 mx-8 relative grayscale hover:grayscale-0 transition-all duration-300"
+                className="flex-shrink-0 w-52 h-32 mx-8 relative grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"
               >
-                <Image
-                  src={logo}
-                  alt={`Media Logo ${index + 1}`}
-                  fill
-                  className="object-contain opacity-80 hover:opacity-100 transition-opacity"
-                  priority
-                />
+                {logo.link ? (
+                  <a href={logo.link} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src={logo.src}
+                      alt={`Media Logo ${index + 1}`}
+                      fill
+                      className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+                      priority
+                    />
+                  </a>
+                ) : (
+                  <Image
+                    src={logo.src}
+                    alt={`Media Logo ${index + 1}`}
+                    fill
+                    className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+                    priority
+                  />
+                )}
               </div>
             ))}
           </div>

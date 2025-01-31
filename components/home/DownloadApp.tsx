@@ -40,7 +40,7 @@ const DownloadSection = () => {
       <div className="w-full max-w-[1090px] px-4 md:px-8">
         {/* Main content container */}
         <motion.div
-          className="w-full h-screen md:h-[477px] flex flex-col md:flex-row items-center rounded-2xl bg-gradient-to-r to-[#FFB84D] from-[#FF8500] overflow-hidden pr-0 md:pr-2 relative"
+          className="w-full h-[477px] flex flex-col md:flex-row items-center rounded-2xl bg-gradient-to-r to-[#FFB84D] from-[#FF8500] overflow-hidden pr-0 md:pr-2 relative"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -81,7 +81,7 @@ const DownloadSection = () => {
                   Scan to Download App
                 </p>
               </motion.div>
-              <div className="lg:hidden grid grid-cols-2 gap-4">
+              <div className="hidden grid-cols-2 gap-4">
                 <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
                   <Image src={Playstore} alt="Play Store" className="w-full" priority />
                 </a>

@@ -8,49 +8,25 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 const YoutubeVideoPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(null);
-  const [hasInteracted, setHasInteracted] = useState(false);
   const videoRef = useRef(null);
   const containerRef = useRef(null);
-  const [isInView, setIsInView] = useState(false);
-
-  const handleVideoError = (e) => {
-    const errorMessage = `Video Error: ${e.target.error?.message || 'Unknown error'}`;
-    console.error(errorMessage);
-    setError(errorMessage);
-  };
 
   const handlePlay = () => {
     if (!videoRef.current) return;
-
-    // Set hasInteracted when user explicitly clicks play
-    setHasInteracted(true);
-    
-    const playPromise = videoRef.current.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          console.log('Video started playing successfully');
-          setIsPlaying(true);
-          setError(null);
-        })
-        .catch(error => {
-          // Only show errors that aren't related to autoplay
-          if (!error.message.includes("play() failed because the user didn't interact")) {
-            const errorMessage = `Error playing video: ${error.message}`;
-            console.error(errorMessage);
-            setError(errorMessage);
-          }
-          setIsPlaying(false);
-        });
-    }
+    videoRef.current.play()
+      .then(() => {
+        setIsPlaying(true);
+      })
+      .catch((error) => {
+        console.error("Play error:", error);
+        setIsPlaying(false);
+      });
   };
 
   const handlePause = () => {
     if (videoRef.current) {
       videoRef.current.pause();
       setIsPlaying(false);
-      console.log('Video paused');
     }
   };
 
@@ -65,36 +41,11 @@ const YoutubeVideoPlayer = () => {
   };
 
   const handleLoadedData = () => {
-    console.log('Video loaded successfully');
     setIsLoaded(true);
-    setError(null);
   };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsInView(entry.isIntersecting);
-          console.log(`Video visibility changed: ${entry.isIntersecting}`);
-          
-          // Only attempt autoplay if user has interacted
-          if (entry.isIntersecting && !isPlaying && videoRef.current && hasInteracted) {
-            handlePlay();
-          } else if (!entry.isIntersecting && isPlaying && videoRef.current) {
-            handlePause();
-          }
-        });
-      },
-      {
-        threshold: 0.6,
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
 
     gsap.from(containerRef.current, {
       scale: 0.8,
@@ -109,23 +60,19 @@ const YoutubeVideoPlayer = () => {
       }
     });
 
-    // Cleanup function
     return () => {
       if (videoRef.current) {
         videoRef.current.pause();
         videoRef.current.src = "";
         videoRef.current.load();
       }
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
     };
-  }, [isPlaying, hasInteracted]);
+  }, []);
 
   return (
     <div 
       ref={containerRef}
-      className="relative max-w-[1320px] mx-1 h-[594px] lg:mx-auto rounded-lg overflow-hidden shadow-lg mb-32"
+      className="relative max-w-[1320px] mx-1 h-[594px] lg:mx-auto rounded-lg overflow-hidden shadow-lg mb-32 ring-2 ring-orange"
     >
       <Image 
         src={Logo} 
@@ -139,18 +86,16 @@ const YoutubeVideoPlayer = () => {
           ref={videoRef}
           className="w-full h-full object-cover"
           playsInline
-          preload="auto"
+          controls
+          preload="metadata"
           onLoadedData={handleLoadedData}
           onClick={handleVideoClick}
-          onError={handleVideoError}
-          controls={true}
         >
-          <source src="videos/howItWorks.mp4" type="video/mp4" />
+          <source src="/videos/howItWorks.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
-        {/* Play button overlay - only show when video is loaded but not playing */}
-        {!isPlaying && isLoaded && !error && (
+        {!isPlaying && isLoaded && (
           <div
             className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center cursor-pointer transition-opacity duration-300 hover:bg-opacity-40"
             onClick={handlePlay}
@@ -170,29 +115,6 @@ const YoutubeVideoPlayer = () => {
                   d="M5.25 5.75v12.5l13-6.25-13-6.25z"
                 />
               </svg>
-            </div>
-          </div>
-        )}
-
-        {/* Thumbnail
-        {!isLoaded && !error && (
-          <div className="absolute inset-0 bg-black">
-            <Image
-              src="/images/truck.jpeg"
-              alt="Video Thumbnail"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        )} */}
-
-        {/* Error display - only show serious errors */}
-        {error && !error.includes("play() failed because the user didn't interact") && (
-          <div className="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center text-white p-4">
-            <div className="text-center">
-              <p className="text-red-500 font-bold mb-2">Error Loading Video</p>
-              <p>{error}</p>
             </div>
           </div>
         )}

@@ -102,7 +102,7 @@ const HeroSection = () => {
         </p>
 
         <a
-          href="https://wa.me/+2347010363424?text=Hi%20ResQx.%20I%20Want%20to%20order%20emergency%20service"
+          href="https://wa.me/+2348111173779?text=Hi%20ResQx.%20I%20Want%20to%20order%20emergency%20service"
           target="_blank"
           rel="noopener noreferrer"
           className="relative flex items-center justify-center gap-3 w-[150px] sm:w-[183px] h-[40px] sm:h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group hero-button"

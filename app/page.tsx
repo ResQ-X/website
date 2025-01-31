@@ -69,7 +69,9 @@ export default function Home() {
       <TrustedBy />
       <Services />
       <MobileAppSection />
-      <BusinessSection />
+      <div className="px-2 lg:px-0">
+        <BusinessSection />
+      </div>
       <FeaturedIn />
       <HomeBlogSection />
       <Testimonials />

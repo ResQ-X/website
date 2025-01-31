@@ -10,13 +10,11 @@ import Link from "next/link";
 import axios from 'axios';
 
 const Footer = () => {
-  // State for email input and submission status
   const [email, setEmail] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   const [submitted, setSubmitted] = useState<boolean>(false);
 
-  // Footer links
   const pages = [
     { name: 'Home', path: '/' },
     { name: 'Tow Truck', path: '/tow-truck' },
@@ -41,7 +39,6 @@ const Footer = () => {
     { name: 'Health Check', path: '/health-check' },
   ];
 
-  // Handle email submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -97,7 +94,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-[#3B3835] text-white py-12 px-6 md:px-20">
+    <footer className="w-full z-[10] bg-[#3B3835] text-white py-12 px-6 md:px-20">
       {/* Top section with logo and email input */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
         <Image src={Logo} alt="ResQ-X Logo" className="w-[250px] h-[46.88px] object-contain" priority />
@@ -123,21 +120,22 @@ const Footer = () => {
       {/* Divider */}
       <div className="h-px bg-[#C1C7CD] mb-12" />
 
-      {/* Main grid section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-        {/* Pages Column */}
-        <div>
-          <h3 className="font-semibold text-white text-lg mb-4">PAGES</h3>
-          <ul className="space-y-3">
-            {pages.map((page) => (
-              <li key={page.name} className="text-white font-[500] hover:text-orange transition-colors">
-                <Link href={page.path}>{page.name}</Link>
-              </li>
-            ))}
-          </ul>
+      {/* Main grid section - Modified for better mobile layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        {/* Pages and Services columns grouped for mobile */}
+        <div className="space-y-8 sm:space-y-0">
+          <div className="mb-8">
+            <h3 className="font-semibold text-white text-lg mb-4">PAGES</h3>
+            <ul className="space-y-3">
+              {pages.map((page) => (
+                <li key={page.name} className="text-white font-[500] hover:text-orange transition-colors">
+                  <Link href={page.path}>{page.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Services Column */}
         <div>
           <h3 className="font-semibold text-lg mb-4">SERVICES</h3>
           <ul className="space-y-3">
@@ -149,7 +147,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Partner Column */}
+        {/* Partner and Connect columns grouped for mobile */}
         <div>
           <h3 className="font-semibold text-lg mb-4">PARTNER</h3>
           <ul className="space-y-3">
@@ -161,7 +159,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Connect Column */}
         <div>
           <h3 className="font-semibold text-lg mb-4">CONNECT WITH US</h3>
           <div className="space-y-6">
@@ -200,15 +197,13 @@ const Footer = () => {
       {/* Bottom divider */}
       <div className="h-px bg-[#C1C7CD] mb-6" />
 
-      {/* Bottom section with copyright and links */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* Copyright text */}
+      {/* Bottom section - Modified for better mobile layout */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="text-[14px] text-white font-semibold">
           ResQ-X @ 2024. All rights reserved.
         </div>
 
-        {/* Links */}
-        <div className="flex gap-6">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <Link href="/refund-policy" className="text-white hover:text-orange transition-colors text-[14px] font-semibold">
             Refund Policy
           </Link>
@@ -224,7 +219,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Error message */}
       {error && (
         <div className="mt-4 text-center text-red-500">
           {error}

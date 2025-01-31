@@ -99,7 +99,7 @@ const MobileAppSection = () => {
                 Scan to Download App
               </p>
             </motion.div>
-            <div className="lg:hidden grid grid-cols-2 gap-4">
+            <div className="hidden grid-cols-2 gap-4">
                 <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
                   <Image src={Playstore} alt="Play Store" className="w-full" priority />
                 </a>
