@@ -157,7 +157,7 @@ const TabsSection = () => {
               className="w-full mt-4 flex gap-4 items-center justify-center px-4 py-4 grad text-dark-brown text-[20px] rounded-3xl shadow-lg font-semibold hover:bg-green-600 transition"
               variants={fadeUpVariants}
             >
-              <Image src="/icons/whatsapp.svg" alt="arrow-right" width={32} height={32} priority />
+              <Image src="/icons/whatsapp.svg" alt="arrow-right" width={30} height={30} priority />
               Get ResQ
             </motion.a>
           </motion.div>

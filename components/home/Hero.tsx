@@ -83,7 +83,7 @@ const Hero = () => {
 
 
   return (
-    <div className="relative min-h-screen overflow-hidden h-auto pb-96 lg:h-[1005px] mt-[100px] w-full">
+    <div className="relative min-h-screen overflow-hidden h-auto lg:pb-96 lg:h-[1005px] mt-[100px] w-full">
       {/* Background Image Container */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

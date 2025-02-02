@@ -24,7 +24,9 @@ export default function Home() {
       <WhoWeAre />
       <Services />
       <Team />
-      <YouTubeVideoPlayer />
+      <div className="px-3 lg:px-0">
+        <YouTubeVideoPlayer />
+      </div>
       <DownloadApp />
       <FAQSection />
     </main>

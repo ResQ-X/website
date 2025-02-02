@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion'; // Import Framer Motion
 import arrow from "@/public/icons/arrow.png";
+// create a navugate function using useRouter
+import Link from "next/link"
 
 // Animation Variants
 const fadeUpVariants = {
@@ -12,7 +14,7 @@ const fadeUpVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative h-auto pt-52">
+    <section className="relative h-auto py-52">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
@@ -63,7 +65,7 @@ export default function Hero() {
             className="w-full max-w-[551px] h-auto sm:h-[112px] flex flex-col sm:flex-row items-center gap-4 sm:gap-[37px] justify-center"
             variants={fadeUpVariants}
           >
-            <button className="relative flex items-center justify-center gap-3 w-[150px] sm:w-[183px] h-[40px] sm:h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
+            <Link href="/membership" className="relative flex items-center justify-center gap-3 w-[150px] sm:w-[183px] h-[40px] sm:h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
               <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
               <span className="relative z-10 text-white transition-colors duration-300 text-sm sm:text-base">
                 Get Quote
@@ -74,7 +76,7 @@ export default function Hero() {
                 className="relative z-10 group-hover:[filter:brightness(0)] transition-[filter] duration-300 w-4 h-4 sm:w-6 sm:h-6"
                 priority
               />
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

@@ -128,7 +128,7 @@ const GetAQuoteSection = () => {
                     </svg>
                   </div>
                   <span className="font-semibold text-[20px]">Contact -</span>
-                  <span>0814-064-7017</span>
+                  <span>+234-811-1173-779</span>
                 </div>
 
                 <div className="flex items-center gap-4">

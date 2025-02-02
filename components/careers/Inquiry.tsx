@@ -131,7 +131,7 @@ const Inquiry: React.FC = () => {
 
   if (formData.submitted) {
     return (
-      <div className="w-full max-w-6xl mx-auto p-8">
+      <div className="w-full max-w-6xl mx-auto p-3 lg:p-8">
         <div className="text-center space-y-4 p-8 bg-orange rounded-lg">
           <div className="rounded-full bg-green-100 p-3 inline-block mx-auto">
             <svg
@@ -158,7 +158,7 @@ const Inquiry: React.FC = () => {
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-8">
+    <div className="w-full max-w-6xl mx-auto p-3 lg:p-8">
       <h1 className="text-4xl font-bold text-center mb-8">HAVE ANY INQUIRY?</h1>
 
       <div className="flex flex-col md:flex-row gap-8">

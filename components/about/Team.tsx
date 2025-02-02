@@ -60,7 +60,7 @@ const Team = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 px-4 md:px-16">
+    <section ref={sectionRef} className="py-24 px-2 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="h1-responsive lg:h1 text-white uppercase mb-4 team-text">

@@ -26,7 +26,7 @@ export default function BlogHero() {
           src="/images/hero-blog.png" 
           alt="Blog Hero" 
           fill 
-          className="object-contain h-full brightness-[1.05] contrast-[1.05] saturate-[1.05]"
+          className="object-contain scale-[1.1] lg:scale-[1] h-full brightness-[1.05] contrast-[1.05] saturate-[1.05]"
           priority
         />
       </div>

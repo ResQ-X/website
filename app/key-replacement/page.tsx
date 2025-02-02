@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero 
-        title="Lost Your Keys? ResQ-X Has You Covered!"
+        title="Lost Your Keys? ResQ-X Have You Covered!"
         description="Lost or broken car keys don’t have to ruin your plans. ResQ-X provides fast and reliable key replacement services, helping you regain access to your vehicle without stress. Call us, and we’ll have you back on track in no time!"
         />
       <Services title={"Unlock Peace of Mind with ResQ-X"} />

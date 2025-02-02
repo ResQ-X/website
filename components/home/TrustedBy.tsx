@@ -127,7 +127,7 @@ const TrustedBy: React.FC = () => {
         <Image 
           src={Blackcar} 
           alt="car" 
-          className="w-full scale-[1.5] translate-x-[15rem] max-w-[867px] h-[380px] object-contain"
+          className="w-full scale-[1.5] translate-x-[8rem] lg:translate-x-[15rem] max-w-[867px] h-[380px] object-contain"
           priority
         />
       </div>

@@ -33,7 +33,7 @@ const MobileNav = ({
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-[85%] sm:w-[60%] bg-black/95 transform transition-transform duration-300 ease-in-out lg:hidden z-50 overflow-y-auto ${
+        className={`fixed top-0 right-0 h-full w-[85%] sm:w-[60%] bg-black/50 backdrop-blur-3xl transform transition-transform duration-300 ease-in-out lg:hidden z-50 overflow-y-auto ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -47,7 +47,7 @@ const MobileNav = ({
         {/* Links Container */}
         <div className="px-6 py-4">
           {/* Main Links */}
-          <div className="space-y-4">
+          <div className="space-y-7">
             {mainLinks.map((link, index) => (
               <div key={`mobile-main-${link.text}-${index}`} className="relative">
                 {link.dropdownItems ? (

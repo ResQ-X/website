@@ -19,7 +19,7 @@ const Footer = () => {
     { name: 'Home', path: '/' },
     { name: 'Tow Truck', path: '/tow-truck' },
     { name: 'Grow With ResQ-X', path: '/grow-with-resq-x' },
-    { name: 'Join Us', path: '/join-us' },
+    { name: 'Join Us', path: '/partner' },
     { name: 'About', path: '/about' },
   ];
 
@@ -94,7 +94,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full z-[10] bg-[#3B3835] text-white py-12 px-6 md:px-20">
+    <footer className="w-full overflow-x-hidden z-[10] bg-[#3B3835] text-white py-12 px-6 md:px-20">
       {/* Top section with logo and email input */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
         <Image src={Logo} alt="ResQ-X Logo" className="w-[250px] h-[46.88px] object-contain" priority />
@@ -105,7 +105,7 @@ const Footer = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={loading || submitted}
-            className="p-4 w-[345px] outline-none h-full bg-white text-[#697077] font-[400] text-[16px]"
+            className="p-4 w-[345px] text-[12px] outline-none h-full bg-white text-[#697077] font-[400] lg:text-[16px]"
           />
           <button 
             type="submit"
@@ -121,7 +121,7 @@ const Footer = () => {
       <div className="h-px bg-[#C1C7CD] mb-12" />
 
       {/* Main grid section - Modified for better mobile layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 mb-12">
         {/* Pages and Services columns grouped for mobile */}
         <div className="space-y-8 sm:space-y-0">
           <div className="mb-8">
@@ -164,7 +164,7 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <p className="">Join Us</p>
-              <div className="flex gap-4">
+              <div className="flex gap-2 lg:gap-4">
                 <a href="https://facebook.com/profile.php?id=61559440915973" target="_blank" rel="noopener noreferrer">
                   <Facebook className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
                 </a>
@@ -200,7 +200,7 @@ const Footer = () => {
       {/* Bottom section - Modified for better mobile layout */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="text-[14px] text-white font-semibold">
-          ResQ-X @ 2024. All rights reserved.
+          ResQ-X @ 2024 - {new Date().getFullYear()}. All rights reserved.
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">

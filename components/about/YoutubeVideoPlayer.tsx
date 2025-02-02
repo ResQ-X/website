@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import Logo from "@/public/images/logo2.png";
+import Logo from "@/public/images/logo.png";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -77,7 +77,7 @@ const YoutubeVideoPlayer = () => {
       <Image 
         src={Logo} 
         alt="Logo" 
-        className="w-[214px] h-[83px] absolute z-10 object-cover left-4 top-4" 
+        className="w-[214px] h-[83px] absolute z-10 object-contain left-4 top-4" 
         priority 
       />
       
