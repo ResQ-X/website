@@ -70,7 +70,7 @@ const Services: React.FC = () => {
 
   const cardsPerPage = isMobile ? 1 : 3;
   // Modified maxIndex calculation to limit desktop scrolling to 1 click
-  const maxIndex = isMobile ? services.length - 1 : Math.min(1, services.length - cardsPerPage);
+  const maxIndex = isMobile ? services.length - 2 : Math.min(2, services.length - cardsPerPage);
 
   useEffect(() => {
     const handleResize = () => {

@@ -42,8 +42,8 @@ const MobileNav = ({
           <button onClick={onClose} className="text-white hover:text-orange">
             <X size={24} />
           </button>
-        </div>
-
+        </div> 
+         
         {/* Links Container */}
         <div className="px-6 py-4">
           {/* Main Links */}

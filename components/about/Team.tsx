@@ -64,10 +64,10 @@ const Team = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="h1-responsive lg:h1 text-white uppercase mb-4 team-text">
-            The Team, Your Trusted Partners
+            Meet the CEO
           </h2>
           <p className="h5 text-[20px] text-lightest team-text">
-            Exceptional minds delivering exceptional results
+            An exceptional mind delivering exceptional results
           </p>
         </div>
 
