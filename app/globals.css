@@ -176,7 +176,7 @@ linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(
 
 @layer base {
   * {
-    @apply border-border cursor-none;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;

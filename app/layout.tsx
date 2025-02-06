@@ -162,7 +162,7 @@ export default function RootLayout({
           <Suspense
             fallback={<div className="h-[100px] bg-white animate-pulse" />}
           >
-            <CustomCursor />
+            {/* <CustomCursor /> */}
           </Suspense>
         </ErrorBoundary>
         <ErrorBoundary

@@ -4,28 +4,22 @@ import React from 'react';
 import Image from 'next/image';
 
 const MEDIA_LOGOS = Array(100).fill([
-  { src: "/icons/channels-tv.jpg" },
   { src: "/icons/techcabal.png", link: "https://techcabal.com/2024/11/20/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
   { src: "/icons/techpoint.png", link: "https://techpoint.africa/2024/11/21/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
   { src: "/icons/the-independent.png", link: "https://independent.ng/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
   { src: "/icons/The-Nation.jpg", link: "https://thenationonlineng.net/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
-  { src: "/icons/Punch_logo.svg" },
-  { src: "/icons/Guardian_logo.png" },
-  { src: "/icons/tvc-news.jpg" },
-  { src: "/icons/BusinessDay.png" },
-  { src: "/icons/vanguard.png" },
-  { src: "/icons/tribune.jpg" },
-  { src: "/icons/channels-tv.jpg" },
   { src: "/icons/techcabal.png", link: "https://techcabal.com/2024/11/20/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
   { src: "/icons/techpoint.png", link: "https://techpoint.africa/2024/11/21/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
   { src: "/icons/the-independent.png", link: "https://independent.ng/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
   { src: "/icons/The-Nation.jpg", link: "https://thenationonlineng.net/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
-  { src: "/icons/Punch_logo.svg" },
-  { src: "/icons/Guardian_logo.png" },
-  { src: "/icons/tvc-news.jpg" },
-  { src: "/icons/BusinessDay.png" },
-  { src: "/icons/vanguard.png" },
-  { src: "/icons/tribune.jpg" },
+  { src: "/icons/techcabal.png", link: "https://techcabal.com/2024/11/20/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
+  { src: "/icons/techpoint.png", link: "https://techpoint.africa/2024/11/21/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
+  { src: "/icons/the-independent.png", link: "https://independent.ng/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
+  { src: "/icons/The-Nation.jpg", link: "https://thenationonlineng.net/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
+  { src: "/icons/techcabal.png", link: "https://techcabal.com/2024/11/20/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
+  { src: "/icons/techpoint.png", link: "https://techpoint.africa/2024/11/21/resq-x-announces-beta-testing-program-to-refine-roadside-assistance-services-ahead-of-its-official-launch/" },
+  { src: "/icons/the-independent.png", link: "https://independent.ng/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
+  { src: "/icons/The-Nation.jpg", link: "https://thenationonlineng.net/resq-x-set-to-launch-15-minute-roadside-assistance-service-in-lagos/" },
 ]).flat();
 
 const FeaturedIn = () => {
@@ -43,7 +37,7 @@ const FeaturedIn = () => {
             {[...MEDIA_LOGOS, ...MEDIA_LOGOS].map((logo, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0 w-52 h-32 mx-8 relative grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"
+                className="flex-shrink-0 w-52 h-32 mx-8 relative grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-110"
               >
                 {logo.link ? (
                   <a href={logo.link} target="_blank" rel="noopener noreferrer">
