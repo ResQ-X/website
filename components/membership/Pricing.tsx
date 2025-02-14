@@ -1,87 +1,117 @@
-"use client";
+"use client"
 
-import React, { useState } from 'react';
+import { useState } from "react"
 
 interface PricingPlan {
-  type: 'Basic' | 'Premium' | 'Extra';
+  type: string
+  title: string
+  subtitle: string
   price: {
-    quarterly: number;
-    annually: number;
-  };
-  features: string[];
-  isPopular?: boolean;
-  isFirst?: boolean;
-  isLast?: boolean;
+    biAnnual: number
+    annual: number
+  }
+  features: Array<{
+    text: string
+    included: boolean
+  }>
+  tagline: string
+  isPopular?: boolean
 }
 
-// Pricing Data
 const pricingData: PricingPlan[] = [
   {
-    type: 'Basic',
+    type: "JAPA",
+    title: "(Essential)",
+    subtitle: "BEST FOR EVERYDAY DRIVERS",
     price: {
-      quarterly: 25000,
-      annually: 90000, // Example annual price
+      biAnnual: 30000,
+      annual: 54000,
     },
     features: [
-      'Roadside assistance 1/4 mile from your home',
-      'Free car health check',
-      '3 callouts per quarter',
-      '24/7 roadside assistance'
+      { text: "1 emergency callout per month", included: true },
+      { text: "Up to 5km free towing coverage", included: true },
+      { text: "Priority support", included: true },
+      { text: "Vehicle health checks", included: false },
     ],
-    isFirst: true
+    tagline: "BEST FOR EVERYDAY DRIVERS",
   },
   {
-    type: 'Premium',
+    type: "ODOGWU",
+    title: "(VIP)",
+    subtitle: "BEST FOR EXECUTIVES & VIPs",
     price: {
-      quarterly: 39500,
-      annually: 142200, // Example annual price
+      biAnnual: 120000,
+      annual: 216000,
     },
     features: [
-      'Roadside assistance 1/4 mile from your home',
-      'Free car health check',
-      '3 callouts per quarter',
-      '24/7 roadside assistance',
-      'Free recovery up to 5 miles to your prefered location'
+      { text: "Unlimited emergency callouts", included: true },
+      { text: "Up too 70km free towing coverage", included: true },
+      { text: "Instant priority support", included: true },
+      { text: "Vehicle health checks every 3 months + VIP perks", included: true },
     ],
-    isPopular: true
+    tagline: "BEST FOR EXECUTIVES & VIPs",
+    isPopular: true,
   },
   {
-    type: 'Extra',
+    type: "SORO SOKE",
+    title: "(Essential)",
+    subtitle: "BEST FOR FAMILIES & FREQUENT TRAVELERS",
     price: {
-      quarterly: 30000,
-      annually: 108000, // Example annual price
+      biAnnual: 50000,
+      annual: 90000,
     },
     features: [
-      'Roadside assistance 1/4 mile from your home',
-      'Free car health check',
-      '3 callouts per quarter',
-      '24/7 roadside assistance'
+      { text: "3 emergency callout per month", included: true },
+      { text: "Up to 20km free towing coverage", included: true },
+      { text: "Faster priority support", included: true },
+      { text: "Vehicle health checks every 3 months", included: true },
     ],
-    isLast: true
-  }
-];
+    tagline: "BEST FOR FAMILIES & FREQUENT TRAVELERS",
+  },
+]
 
-const Pricing = () => {
-  const [billingCycle, setBillingCycle] = useState<'Half a year' | 'annually'>('Bi-annual');
+const services = [
+  {
+    icon: "💳",
+    title: "Pay-Per-Use",
+    subtitle: "Roadside Assistance",
+    description: "For occasional drivers and visitors",
+  },
+  {
+    icon: "🔧",
+    title: "First Responder",
+    subtitle: "Service",
+    description: "Pricing varies based on location, urgency and time of request",
+  },
+  {
+    icon: "🚛",
+    title: "Towing Service",
+    subtitle: "Request",
+    description: "Get an instant quote before confirming your request",
+  },
+]
+
+export default function Pricing() {
+  const [billingCycle, setBillingCycle] = useState<"biAnnual" | "annual">("biAnnual")
 
   return (
-    <div className="py-16 px-4">
+    <div className="min-h-screen bg-[#1C1917] text-white py-16 px-4 overflow-hidden">
       {/* Billing Toggle */}
       <div className="flex justify-center mb-12">
-        <div className="bg-gray-200 rounded-full p-1">
+        <div className="bg-[#3B3835] rounded-full p-1">
           <button
-            className={`px-6 py-2 rounded-full ${
-              billingCycle === 'Bi-annual' ? 'bg-orange text-white' : 'text-black'
+            className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              billingCycle === "biAnnual" ? "bg-orange text-white" : "text-white"
             }`}
-            onClick={() => setBillingCycle('Half a year')}
+            onClick={() => setBillingCycle("biAnnual")}
           >
-            Bi-annual
+            Bi-Annually
           </button>
           <button
-            className={`px-6 py-2 rounded-full ${
-              billingCycle === 'annually' ? 'bg-orange text-white' : 'text-black'
+            className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              billingCycle === "annual" ? "bg-orange text-white" : "text-white"
             }`}
-            onClick={() => setBillingCycle('annually')}
+            onClick={() => setBillingCycle("annual")}
           >
             Annually
           </button>
@@ -89,63 +119,85 @@ const Pricing = () => {
       </div>
 
       {/* Pricing Cards */}
-      <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
-        {pricingData.map((plan) => (
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-8 max-w-[1400px] mx-auto">
+        {pricingData.map((plan, index) => (
           <div
             key={plan.type}
-            className={`w-full md:w-[381px] shadows ${
-              plan.isPopular
-                ? 'bg-white shadow-xl md:w-[550px] h-auto md:h-[564px] rounded-xl z-10'
-                : 'bg-white h-auto md:h-[440px] self-center'
-            } overflow-hidden relative ${
-              plan.isFirst ? 'md:rounded-l-lg' : ''
-            } ${
-              plan.isLast ? 'md:rounded-r-lg' : ''
-            }`}
+            className={`
+              relative group w-full 
+              ${plan.isPopular ? "lg:w-[513px] h-auto lg:h-[718px] z-20" : "lg:w-[380px] h-auto lg:h-[612px] z-10"}
+              rounded-[20px] overflow-hidden
+              animate-gradient-background
+            `}
           >
-            {plan.isPopular && (
-              <div className="bg-orange text-center py-4">
-                <p className="gradientText font-bold text-[24px]">Most popular ✨️</p>
+            {/* Animated border */}
+            <div className="absolute inset-0 rounded-[20px] animate-border-gradient" />
+
+            {/* Content container with glass effect */}
+            <div className="relative h-full backdrop-blur-[40px] bg-gradient-to-br from-white/40 to-white/10 p-8">
+              {plan.isPopular && (
+                <div className="bg-orange text-center py-4 absolute top-0 left-0 right-0">
+                  <p className="font-bold text-2xl animate-shimmer bg-gradient-to-r from-white via-white/50 to-white bg-clip-text text-transparent">
+                    Most popular ✨
+                  </p>
+                </div>
+              )}
+
+              <div className={`${plan.isPopular ? "pt-16" : "pt-4"}`}>
+                <h3 className="text-[32px] text-center font-bold mb-1">{plan.type}</h3>
+                <p className="text-[32px] font-semibold text-center mb-6">{plan.title}</p>
+                <div className="text-5xl font-bold mb-8">
+                  ₦
+                  {billingCycle === "biAnnual"
+                    ? plan.price.biAnnual.toLocaleString()
+                    : plan.price.annual.toLocaleString()}
+                  <span className="text-xl ml-2">/{billingCycle === "biAnnual" ? "6 Months" : "Year"}</span>
+                </div>
+
+                <ul className="space-y-6 mb-8">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className={feature.included ? "text-green-400" : "text-red-500"}>
+                        {feature.included ? "✅" : "❌"}
+                      </span>
+                      <span className="text-white/90">{feature.text}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-sm text-white/80 mb-6">{plan.tagline}</p>
+
+                <button className="w-full py-3 px-6 rounded-full bg-gradient-orange text-white font-semibold hover:bg-[#FF6B00]/90 transition-colors duration-300">
+                  Select Plan
+                </button>
               </div>
-            )}
-            <div className="p-8">
-              <h3 className="text-2xl text-[#323232] font-semibold mb-4">{plan.type}</h3>
-              <div className={`text-[48px] ${
-                plan.isPopular ? 'md:text-[80px] text-dark-brown' : ''
-              } text-[#332414] font-bold mb-6`}>
-                ₦{billingCycle === 'Half a year' 
-                    ? plan.price.quarterly.toLocaleString()
-                    : plan.price.annually.toLocaleString()}
-                <span className={`${
-                  plan.isPopular ? 'md:text-[22px]' : ''
-                } text-[20px] whitespace-nowrap text-[#636363] font-normal`}>/{billingCycle === 'Bi-annual' ? 'Bi-annual' : 'Year'}</span>
-              </div>
-              <ul className="space-y-4 w-full mt-8 md:mt-16">
-                {plan.features.map((feature, index) => (
-                  <li key={index} className="flex items-start text-[#736250]">
-                    <svg
-                      className="w-5 h-5 text-orange mr-2 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         ))}
       </div>
-    </div>
-  );
-};
 
-export default Pricing;
+      {/* No Subscription Section */}
+      <div className="mt-32 text-center max-w-[1200px] mx-auto">
+        <h2 className="text-4xl font-bold mb-2">NO SUBSCRIPTION?</h2>
+        <h3 className="text-3xl font-bold mb-16">GET HELP ON DEMAND 🚨</h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[60px] px-4">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="w-[307px] h-[271px] bg-white rounded-[12px] p-6 text-center flex flex-col items-center gap-[10px] hover:scale-105 transition-transform duration-300 mx-auto"
+            >
+              <div className="text-4xl mb-2">{service.icon}</div>
+              <h4 className="text-black font-bold text-xl">{service.title}</h4>
+              <p className="text-black font-semibold">{service.subtitle}</p>
+              <p className="text-gray-600 text-sm">{service.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-4xl font-bold mt-32 mb-16">ADDITIONAL SERVICES</h2>
+      </div>
+    </div>
+  )
+}
+
