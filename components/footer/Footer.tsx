@@ -35,7 +35,7 @@ const Footer = () => {
     { name: 'Get In Touch', path: '/get-in-touch' },
     { name: 'Jump Start', path: '/jump-start' },
     { name: 'Careers', path: '/careers' },
-    { name: 'Rescue Me!', path: '/rescue-me' },
+    { name: 'Rescue Me!', path: '/rescue' },
     { name: 'Health Check', path: '/health-check' },
   ];
 

@@ -58,9 +58,11 @@ export const metadata: Metadata = {
 
 export default function Membership() {
   return (
-    <div className='min-h-screen overflow-x-hidden'>
+    <div className='min-h-screen w-full no-scrollbar overflow-x-hidden'>
       <Hero />
-      <Pricing />
+      <div className="overflow-hidden pricing">
+        <Pricing />
+      </div>
       <AdditionalServices />
       <FAQSection />
     </div>

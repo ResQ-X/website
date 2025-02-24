@@ -15,7 +15,7 @@ const fadeUpVariants = {
 
 const Hero = () => {
   return (
-    <div className="relative text-white bg-black mt-[100px] w-full pt-[200px] h-[700px] lg:h-screen md:h-[896px] lg:pt-[200px] md:pt-40">
+    <div className="relative  text-white bg-black mt-[100px] w-full pt-[200px] h-[700px] lg:h-[160vh] md:h-[896px] lg:pt-[200px] overflow-x-hidden md:pt-40">
       <div className="w-full max-w-[956px] mx-auto px-4 text-center">
         {/* Heading */}
         <motion.h1 

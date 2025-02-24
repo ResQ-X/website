@@ -177,9 +177,16 @@ linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(
 @layer base {
   * {
     @apply border-border;
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; 
   }
   body {
     @apply bg-background text-foreground;
+    
+  }
+  .pricing * {
+    @ap;
+    
   }
 }
 
@@ -212,7 +219,7 @@ linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(
   }
   75% {
     background-position: 20% 90%;
-  }
+  } 
   100% {
     background-position: 0% 50%;
   }
@@ -228,16 +235,16 @@ linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(
 }
 
 .animate-gradient-background {
-  background: linear-gradient(126.59deg, rgba(255, 255, 255, 0.4) 12.11%, rgba(255, 255, 255, 0.1) 73.08%);
-  background-size: 200% 200%;
+  background: linear-gradient(126.59deg, rgba(255, 255, 255, 0.1) 12.11%, rgba(255, 255, 255, 0.12) 73.08%);
   animation: background-position 7s ease infinite;
+  backdrop-filter: 1000px;
 }
 
 .animate-border-gradient {
   border: 2px solid transparent;
   border-radius: 20px;
   background: linear-gradient(124.48deg, #ffffff 14.54%, #fcf5d5 38.19%, #f8eba8 54.86%, #f4df73 88.98%) border-box;
-  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(124.48deg, #ffffff 14.54%, #fcf5d5 38.19%, #f8eba8 54.86%, #f4df73 88.98%) padding-box, linear-gradient(124.48deg, #ffffff 14.54%, #fcf5d5 38.19%, #f8eba8 54.86%, #f4df73 88.98%);
   mask-composite: exclude;
-  animation: border-gradient 8s linear infinite;
+  /* animation: border-gradient 8s linear infinite; */
 }
