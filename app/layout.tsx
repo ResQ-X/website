@@ -8,6 +8,7 @@ import "./globals.css";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import CustomCursor from "@/components/CustomCursor";
 import DarkParticles from "@/components/FloatingParticles";
+import Script from "next/script";
 // import { FacebookPixel } from "@/utils/facebookPixels";
 
 // Components
@@ -43,7 +44,7 @@ const raleway = Raleway({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL("https://resqx.net"),
+  metadataBase: new URL("https://resqx.ng"),
   title: {
     template: "%s | ResQ-X - 24/7 Roadside Assistance",
     default: "ResQ-X - Fast & Reliable Roadside Assistance Services",
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
     title: "ResQ-X - 24/7 Roadside Assistance",
     description:
       "Get immediate roadside assistance with ResQ-X. Available 24/7 for jump starts, fuel delivery, tire changes & more.",
-    url: "https://resqx.net",
+    url: "https://resqx.ng",
     siteName: "ResQ-X",
     type: "website",
     images: [
@@ -95,9 +96,9 @@ export const metadata: Metadata = {
     google: "2y-F1BcRMBbF7tum2kv_EJqBbh6uXHbELzjR9Dt11ho",
   },
   alternates: {
-    canonical: "https://new.resqx.net",
+    canonical: "https://resqx.ng",
     languages: {
-      "en-NG": "https://new.resqx.net/",
+      "en-NG": "https://resqx.ng/",
     },
   },
 };
@@ -107,10 +108,10 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "ResQ-X",
-  url: "https://new.resqx.net",
+  url: "https://resqx.ng",
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://new.resqx.net/search?q={search_term_string}",
+    target: "https://resqx.ng/search?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };
@@ -144,6 +145,20 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-966TDL1C6V"
+          strategy="afterInteractive"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-966TDL1C6V');
+            `,
+          }}
         />
       </head>
 
