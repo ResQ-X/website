@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 
 
 export async function GET() {
-  // const baseUrl = 'https://new.resqx.net'
-  const baseUrl = 'https://localhost:3000'
+  const baseUrl = 'https://new.resqx.ng'
+  // const baseUrl = 'https://localhost:3000'
 
  
   const routes = [

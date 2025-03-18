@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact ResQ-X - Get in Touch for Roadside Assistance',
     description: 'Contact ResQ-X for 24/7 roadside assistance services. Reach out to us for jump starts, fuel delivery, flat tire changes, and more. We’re here to help!',
-    url: 'https://resqx.net/contact',
+    url: 'https://resqx.ng/contact',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://resqx.net/contact',
+    canonical: 'https://resqx.ng/contact',
   },
 };
 

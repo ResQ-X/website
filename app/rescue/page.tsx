@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rescue Me - ResQ-X | Fast, Reliable, and Affordable Roadside Assistance Near You',
     description: 'Need emergency roadside assistance? ResQ-X is here to help! Get fast, reliable, and affordable services like jump starts, fuel delivery, flat tyre changes, and more. Call us now!',
-    url: 'https://resqx.net/rescue',
+    url: 'https://resqx.ng/rescue',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://resqx.net/rescue',
+    canonical: 'https://resqx.ng/rescue',
   },
 };
 export default function RescueMe() {

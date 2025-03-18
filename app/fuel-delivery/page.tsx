@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fuel Delivery Service - ResQ-X 24/7 Emergency Fuel Assistance',
     description: 'Need fuel delivery? ResQ-X provides 24/7 emergency fuel delivery services to get you back on the road quickly. Call us now for fast and reliable fuel assistance!',
-    url: 'https://resqx.net/fuel-delivery',
+    url: 'https://resqx.ng/fuel-delivery',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://resqx.net/fuel-delivery',
+    canonical: 'https://resqx.ng/fuel-delivery',
   },
 };
 

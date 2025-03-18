@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy - ResQ-X | Fast, Reliable, and Affordable Roadside Assistance',
     description: 'Read ResQ-X’s Privacy Policy to understand how we collect, use, and protect your personal information. Your privacy is important to us.',
-    url: 'https://resqx.net/privacy-policy',
+    url: 'https://resqx.ng/privacy-policy',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://resqx.net/privacy-policy',
+    canonical: 'https://resqx.ng/privacy-policy',
   },
 };
 

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Partner with ResQ-X - Grow Your Business with Us',
     description: 'Join ResQ-X as a partner and expand your business. Connect with more customers, increase your job opportunities, and deliver top-notch roadside assistance services. Partner with us today!',
-    url: 'https://resqx.net/partner',
+    url: 'https://resqx.ng/partner',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://resqx.net/partner',
+    canonical: 'https://resqx.ng/partner',
   },
 };
 

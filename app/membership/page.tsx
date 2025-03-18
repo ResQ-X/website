@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Membership Plans - ResQ-X Roadside Assistance Subscription',
     description: 'Join ResQ-X membership plans for 24/7 roadside assistance coverage. Enjoy peace of mind with our affordable and reliable subscription services. Sign up today!',
-    url: 'https://resqx.net/membership',
+    url: 'https://resqx.ng/membership',
     siteName: 'ResQ-X',
     type: 'website',
     images: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://resqx.net/membership',
+    canonical: 'https://resqx.ng/membership',
   },
 };
 
