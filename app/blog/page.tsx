@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'jump start',
     'fuel delivery',
     'flat tire',
-    'emergency car service',
+    'emergency car service', 
   ],
   openGraph: {
     title: "Blog - ResQ-X | Roadside Assistance Insights",

@@ -143,4 +143,49 @@ export const jobDetailsData: Record<string, JobDetail> = {
       'Include the subject line "Growth Marketer Application - [Your Name]"',
     ],
   },
+  "personal-assistant-to-ceo": {
+    title: "PERSONAL ASSISTANT TO CEO",
+    jobType: "Full Time",
+    location: "Victoria Island, Lagos, Nigeria (Hybrid)",
+    datePosted: "posted today", // Based on current date (April 02, 2025)
+    experience: "Experience: 2 years",
+    workingHours: "Flexible",
+    workingDays: {
+      weekly: "5days",
+      weekend: "Saturday,Sunday",
+    },
+    vacancy: 1,
+    requirements: [
+      "Smart, proactive, and highly organized with excellent multitasking skills",
+      "Minimum of 2 years of experience as a Personal Assistant, Executive Assistant, or similar role",
+      "Strong communication skills (verbal and written)",
+      "Tech-savvy and proficient in Powerpoint, Microsoft Office, Google Workspace, scheduling and admin tools",
+      "Ability to work independently, handle pressure, and solve problems efficiently",
+    ],
+    responsibilities: [
+      "Act as the first point of contact for internal and external communications",
+      "Manage schedules, appointments, and meetings, ensuring efficient time management",
+      "Coordinate travel plans, including flights, accommodations, and itineraries (domestic & international)",
+      "Assist with business operations, including document preparation, research, and reporting",
+      "Oversee personal errands, shopping, and household-related tasks",
+      "Handle visa applications, passport renewals, and international travel arrangements",
+    ],
+    education: [
+      "Bachelor's degree preferred",
+    ],
+    salary: {
+      range: "Competitive salary",
+      review: "Yearly",
+    },
+    benefits: [
+      "Competitive salary",
+      "Hybrid work flexibility",
+      "Opportunity to work closely with the CEO on dynamic brands",
+      "Exposure to international travel and high-level business operations",
+    ],
+    applicationProcess: [
+      "Send your CV and a brief cover letter to careers@resqx.net",
+      'Include the subject line "Personal Assistant Application - [Your Name]"',
+    ],
+  },
 };
