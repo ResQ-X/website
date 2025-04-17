@@ -168,6 +168,9 @@ const Hero = () => {
               >
                 <Link
                   href={service.link} 
+                  onClick={() => {
+                    "goog_report_conversation ('tel:+2348111173799')"
+                  }}
                   className="flex flex-col items-center w-full h-[234px] gap-[21px] rounded-[8px] px-[32px] py-[40px] bg-dark bg-opacity-80 transition-all duration-300 hover:scale-[1.02]"
                 >
                   <div className="w-[136px] h-[76px] rounded-full flex items-center justify-center backdrop-blur-sm">
