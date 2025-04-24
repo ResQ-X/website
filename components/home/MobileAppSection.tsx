@@ -90,7 +90,7 @@ const MobileAppSection = () => {
               <Image 
                 src="/qrcode.svg" 
                 alt="Scan qr code" 
-                className='blur-sm'
+                className=''
                 width={88}
                 height={88}
                 priority

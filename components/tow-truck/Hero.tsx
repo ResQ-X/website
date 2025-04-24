@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate, image }) => {
                 <Image 
                   src={qrcode} 
                   alt="QR Code" 
-                  className="w-20 blur-sm h-20 sm:w-24 sm:h-24"
+                  className="w-20 h-20 sm:w-24 sm:h-24"
                   priority
                 />
                 <span className="text-base sm:text-lg font-semibold">

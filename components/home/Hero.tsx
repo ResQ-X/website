@@ -128,7 +128,7 @@ const Hero = () => {
             variants={slideInLeftVariants}
           >
             <div className="flex-1 hidden max-w-[351px] h-full rounded-[6px] p-[12px] lg:flex items-center gap-[8px] bg-dark">
-              <Image src={qrcode} alt="Scan qr code" className='w-[88px] blur-sm h-[88px]' priority />
+              <Image src={qrcode} alt="Scan qr code" className='w-[88px] h-[88px]' priority />
               <p className="text-[20px] font-raleway text-white leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
                 Scan to Download App
               </p>

@@ -70,11 +70,11 @@ const DownloadSection = () => {
                 variants={slideInLeft}
               >
                 <Image 
-                  src="/images/QR Code.png" 
+                  src="/qrcode.svg" 
                   alt="Scan qr code" 
                   width={88}
                   height={88}
-                  className="object-contain blur-sm"
+                  className="object-contain"
                   priority
                 />
                 <p className="text-[14px] md:text-[16px] font-raleway text-dark-brown leading-[20px] md:leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
