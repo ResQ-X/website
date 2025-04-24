@@ -110,7 +110,7 @@ const MobileAppSection = () => {
             <motion.div
               variants={slideInRight}
             >
-              <button /*href="/contact"*/ className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group flex items-center justify-center relative" disabled={true}>
+              <button onClick={() => window.location.href = '/contact'} /*href="/contact"*/ className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group flex items-center justify-center relative" disabled={true}>
                 <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                 <span className="relative z-10 text-white transition-colors mr-5 duration-300">Get Assistance</span>
                 <Image 

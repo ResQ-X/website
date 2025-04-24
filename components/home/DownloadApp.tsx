@@ -92,7 +92,7 @@ const DownloadSection = () => {
 
               {/* Get Assistance button */}
               <motion.div variants={slideInLeft}>
-                <button href="/contact" className="relative flex items-center justify-center gap-3 w-[150px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group" disabled={true}>
+                <button onClick={() => window.location.href = '/contact'} className="relative flex items-center justify-center gap-3 w-[150px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group" disabled={true}>
                   <span className="absolute inset-0 w-full h-full bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                   <span className="relative whitespace-nowrap text-sm z-10 text-dark transition-colors duration-300">Get Assistance</span>
                   <Image 
