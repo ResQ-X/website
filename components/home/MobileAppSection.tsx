@@ -100,10 +100,10 @@ const MobileAppSection = () => {
               </p>
             </motion.div>
             <div className="hidden grid-cols-2 gap-4">
-                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                <a href="https://play.google.com/store/apps/details?id=com.resqx.customer" target="_blank" rel="noopener noreferrer">
                   <Image src={Playstore} alt="Play Store" className="w-full" priority />
                 </a>
-                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/ng/app/resq-x/id6504094221" target="_blank" rel="noopener noreferrer">
                   <Image src={AppleStore} alt="App Store" className="w-full" priority />
                 </a>
               </div>
