@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion'; // Import Framer Motion
-import qrcode from "@/public/images/QR Code.png";
+import qrcode from "@/public/qrcode.svg";
 
 // Animation Variants
 const fadeUpVariants = {
@@ -65,7 +65,7 @@ export default function Hero() {
             variants={fadeUpVariants}
           >
             <div className="w-full sm:flex-1 max-w-[351px] h-[112px] rounded-[6px] p-[12px] flex items-center gap-[8px] bg-dark">
-              <Image src={qrcode} alt="Scan qr code" className='w-[64px] h-[64px] sm:w-[88px] sm:h-[88px] blur-sm mr-2' priority />
+              <Image src={qrcode} alt="Scan qr code" className='w-[64px] h-[64px] sm:w-[88px] sm:h-[88px] mr-2' priority />
               <p className="text-[16px] sm:text-[20px] font-raleway text-white leading-[20px] sm:leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
                 Scan to Download App
               </p>

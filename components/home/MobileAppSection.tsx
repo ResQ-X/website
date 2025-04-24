@@ -88,7 +88,7 @@ const MobileAppSection = () => {
               variants={slideInRight}
             >
               <Image 
-                src="/images/QR Code.png" 
+                src="/qrcode.svg" 
                 alt="Scan qr code" 
                 className='blur-sm'
                 width={88}

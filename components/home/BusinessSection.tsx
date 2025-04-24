@@ -87,9 +87,9 @@ const BusinessSection = () => {
               variants={slideInLeft}
             >
               <Image 
-                src="/images/QR Code.png" 
+                src="/qrcode.svg" 
                 alt="Scan qr code" 
-                className='blur-sm'
+                className=''
                 width={88}
                 height={88}
                 priority

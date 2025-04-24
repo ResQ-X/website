@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from "next/image";
-import qrcode from "@/public/images/QR Code.png";
+import qrcode from "@/public/qrcode.svg";
 import arrow from "@/public/icons/arrow.png";
 import Link from 'next/link';
 import Playstore from "@/public/icons/Frame 1686552962.svg";

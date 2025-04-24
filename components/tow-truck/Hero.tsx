@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import Image from "next/image";
-import qrcode from "@/public/images/QR Code.png";
+import qrcode from "@/public/qrcode.svg";
 import Phone from "@/public/grad/phone.svg";
 import Resqx from "@/public/icons/resqx.png";
 import Blurr from "@/public/grad/Rectangle 28.png";
