@@ -10,6 +10,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Playstore from "@/public/icons/Frame 1686552962.svg";
 import AppleStore from "@/public/icons/Frame 1686552963.svg";
+import { PhoneOutgoing } from 'lucide-react';
 
 interface HeroProps {
   title: string;
@@ -66,7 +67,7 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate, image }) => {
               {description}
             </p>
             
-            {/* QR Code Section */}
+            {/* QR Code and Hotline Section */}
             <div className="hidden lg:flex justify-center lg:justify-start items-center gap-6">
               <div className="bg-[#3B3835] rounded-lg p-4 flex items-center gap-4">
                 <Image 
@@ -79,7 +80,19 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate, image }) => {
                   Scan to Download App
                 </span>
               </div>
+              
+              <a 
+                href="tel:+2348111173779"
+                className="bg-[#3B3835] hover:bg-[#4B4845] transition-colors rounded-lg p-4 flex items-center gap-4"
+              >
+                <PhoneOutgoing size={32} className="text-orange" />
+                <div className="flex flex-col">
+                  <span className="text-sm text-gray-300">24/7 Hotline</span>
+                  <span className="text-base sm:text-lg font-semibold">0811-117-3779</span>
+                </div>
+              </a>
             </div>
+
             <div className="hidden grid-cols-2 gap-4">
                 <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
                   <Image src={Playstore} alt="Play Store" className="w-full" priority />

@@ -3,7 +3,7 @@ import AboutHero from '@/components/about/Hero';
 import WhoWeAre from '@/components/about/WhoWeAre';
 import Services from '@/components/home/Services';
 import Team from '@/components/about/Team';
-import YouTubeVideoPlayer from '@/components/about/YoutubeVideoPlayer';
+// import YouTubeVideoPlayer from '@/components/about/YoutubeVideoPlayer';
 import DownloadApp from '@/components/home/DownloadApp';
 import FAQSection from '@/components/home/FAQSection'
 
@@ -24,9 +24,9 @@ export default function Home() {
       <WhoWeAre />
       <Services />
       <Team />
-      <div className="px-3 lg:px-0">
+      {/* <div className="px-3 lg:px-0">
         <YouTubeVideoPlayer />
-      </div>
+      </div> */}
       <DownloadApp />
       <FAQSection />
     </main>

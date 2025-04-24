@@ -97,7 +97,7 @@ export default function Pricing() {
   return (
     <div className="min-h-screen no-scrollbar pricing z-[1000] overflow-x-hidden bg-[#1C1917] text-white py-16 px-4 w-full">
       {/* Billing Toggle */}
-      <div className="lg:absolute lg:-translate-y-[500px] no-scrollbar w-full z-[1001]">
+      <div className="no-scrollbar w-full z-[1001]">
         <div className="flex justify-center mb-12">
           <div className="bg-[#3B3835] rounded-full p-1">
             <button
