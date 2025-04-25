@@ -141,9 +141,17 @@ const Hero = () => {
                   <Image src={AppleStore} alt="App Store" className="w-full" priority />
                 </a>
               </div>
-            <Link href="#" className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
+            <Link 
+              href={typeof window !== 'undefined' && /Android/i.test(navigator.userAgent) 
+                ? "https://play.google.com/store/apps/details?id=com.resqx.customer"
+                : "https://apps.apple.com/ng/app/resq-x/id6504094221"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group"
+            >
               <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-              <span className="relative z-10 text-white transition-colors duration-300">Coming Soon</span>
+              <span className="relative z-10 text-white transition-colors duration-300">Download Now</span>
               <Image 
                 src={arrow} 
                 alt="Arrow" 
