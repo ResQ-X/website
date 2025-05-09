@@ -51,7 +51,7 @@ const Navbar = () => {
   ];
 
   const secondaryLinks: NavigationLink[] = [
-    { text: '0811-117-3779', href: 'tel:+2348111173779', icon: PhoneOutgoing },
+    { text: '0201-330-6062', href: 'tel:+2342013306062', icon: PhoneOutgoing },
     {
       text: 'Discover',
       href: '/membership',
