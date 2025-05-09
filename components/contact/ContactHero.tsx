@@ -60,7 +60,7 @@ const ContactHero = () => {
               viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the element is in view
             >
               <motion.a
-                href="tel:+2348111173779"
+                href="tel:+2342013306062"
                 className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white flex items-center justify-center text-white text-[16px] font-semibold tracking-wide transition-all duration-300 hover:bg-white hover:text-black"
                 variants={staggerVariants}
               >
