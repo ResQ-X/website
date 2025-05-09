@@ -109,7 +109,7 @@ const Navbar = () => {
                     }`)}
                   >
                     {link.text}
-                    {link.text === '0811-117-3779' && <PhoneOutgoing size={20} />}
+                    {link.text === '0201-330-6062' && <PhoneOutgoing size={20} />}
                     {link.text === 'Discover' && <ChevronDown size={16} />}
                     {link.text === 'Get app' && <ChevronDown size={16} />}
                   </span>
