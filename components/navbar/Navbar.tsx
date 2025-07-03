@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { ChevronDown, PhoneOutgoing, Menu } from 'lucide-react';
-import type { NavigationLink } from '@/types/navigation';
-import NavLink from './NavLink';
-import DropdownMenu from './DropdownMenu';
-import MobileNav from './MobileNav';
-import { cn } from '@/lib/utils';
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { ChevronDown, PhoneOutgoing, Menu } from "lucide-react";
+import type { NavigationLink } from "@/types/navigation";
+import NavLink from "./NavLink";
+import DropdownMenu from "./DropdownMenu";
+import MobileNav from "./MobileNav";
+import { cn } from "@/lib/utils";
 
-import LogoImage from '@/public/images/logo.png';
+import LogoImage from "@/public/images/logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,47 +17,48 @@ const Navbar = () => {
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
   const mainLinks: NavigationLink[] = [
-    { text: 'Home', href: '/' },
-    { text: 'About Us', href: '/about' },
+    { text: "Home", href: "/" },
+    { text: "About Us", href: "/about" },
     {
-      text: 'Services',
-      href: '/tow-truck',
+      text: "Services",
+      href: "/tow-truck",
       dropdownItems: [
-        'Tow Truck',
-        'Flat Tyre',
-        'Fuel Delivery',
-        'Jump Start',
-        'Health Check',
-        'Key Replacement',
+        "Tow Truck",
+        "Flat Tyre",
+        "Fuel Delivery",
+        "Jump Start",
+        "Health Check",
+        "Key Replacement",
       ],
     },
-    { text: 'Blog', href: '/blog' },
-    { text: 'Get in touch', href: '/contact' },
+    { text: "Blog", href: "/blog" },
+    { text: "Get in touch", href: "/contact" },
     {
-      text: 'Rescue Me!',
-      href: '/rescue',
-      className: 'text-red-500 font-bold',
+      text: "Rescue Me!",
+      href: "/rescue",
+      className: "text-red-500 font-bold",
     },
   ];
 
   const secondaryLinks: NavigationLink[] = [
-    { text: '0201-330-6062', href: 'tel:+2342013306062', icon: PhoneOutgoing },
+    { text: "0201-330-6062", href: "tel:+2342013306062", icon: PhoneOutgoing },
     {
-      text: 'Discover',
-      href: '/membership',
-      dropdownItems: ['Membership', 'Grow With ResQ-X', 'Partner', 'Careers'],
+      text: "Discover",
+      href: "/membership",
+      dropdownItems: ["Membership", "Grow With ResQ-X", "Partner", "Careers"],
     },
-    { text: 'Coming soon!', href: '#' },
+    // { text: "Coming soon!", href: "#" },
+    { text: "Download now!", href: "#" },
   ];
 
   //https://play.google.com/store/apps/details?id=com.resqx.customer
@@ -82,14 +83,16 @@ const Navbar = () => {
               <div
                 key={`main-${link.text}-${index}`}
                 className={`relative group h-[30px] flex items-center justify-center whitespace-nowrap ${
-                  link.dropdownItems ? 'cursor-pointer' : ''
+                  link.dropdownItems ? "cursor-pointer" : ""
                 }`}
               >
                 <NavLink href={link.href} className={link.className}>
-                  {link.text}{' '}
-                  {link.text === 'Services' && <ChevronDown size={16} />}
+                  {link.text}{" "}
+                  {link.text === "Services" && <ChevronDown size={16} />}
                 </NavLink>
-                {link.dropdownItems && <DropdownMenu items={link.dropdownItems} />}
+                {link.dropdownItems && (
+                  <DropdownMenu items={link.dropdownItems} />
+                )}
               </div>
             ))}
           </div>
@@ -102,19 +105,29 @@ const Navbar = () => {
               <div className="relative group">
                 <NavLink href={link.href}>
                   <span
-                    className={cn(`flex items-center gap-2 hover:text-orange ${
-                      link.text === '091-234-13450' ? 'font-[600] text-[18px]' : ''
-                    } ${
-                      link.text === 'Coming soon!' ? 'btn text-white hover:text-white' : ''
-                    }`)}
+                    className={cn(
+                      `flex items-center gap-2 hover:text-orange ${
+                        link.text === "091-234-13450"
+                          ? "font-[600] text-[18px]"
+                          : ""
+                      } ${
+                        link.text === "Download now!"
+                          ? "btn text-white hover:text-white"
+                          : ""
+                      }`
+                    )}
                   >
                     {link.text}
-                    {link.text === '0201-330-6062' && <PhoneOutgoing size={20} />}
-                    {link.text === 'Discover' && <ChevronDown size={16} />}
-                    {link.text === 'Get app' && <ChevronDown size={16} />}
+                    {link.text === "0201-330-6062" && (
+                      <PhoneOutgoing size={20} />
+                    )}
+                    {link.text === "Discover" && <ChevronDown size={16} />}
+                    {link.text === "Get app" && <ChevronDown size={16} />}
                   </span>
                 </NavLink>
-                {link.dropdownItems && <DropdownMenu items={link.dropdownItems} />}
+                {link.dropdownItems && (
+                  <DropdownMenu items={link.dropdownItems} />
+                )}
               </div>
               {index === 0 && <div className="h-[24px] w-[1px] bg-white/20" />}
             </React.Fragment>
