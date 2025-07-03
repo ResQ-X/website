@@ -82,9 +82,9 @@ export default function WhyResqX() {
               >
                 <div className="w-full md:flex-1 md:max-w-[351px] h-[112px] rounded-[6px] p-[12px] flex items-center gap-[8px] bg-dark">
                   <Image 
-                    src="/images/QR Code.png" 
+                    src="/qrcode.svg" 
                     alt="Scan qr code" 
-                    className="blur-sm"
+                    className=""
                     width={88}
                     height={88}
                     priority

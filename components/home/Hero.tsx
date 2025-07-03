@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from "next/image";
-import qrcode from "@/public/images/QR Code.png";
+import qrcode from "@/public/qrcode.svg";
 import arrow from "@/public/icons/arrow.png";
 import Link from 'next/link';
 import Playstore from "@/public/icons/Frame 1686552962.svg";
@@ -128,22 +128,30 @@ const Hero = () => {
             variants={slideInLeftVariants}
           >
             <div className="flex-1 hidden max-w-[351px] h-full rounded-[6px] p-[12px] lg:flex items-center gap-[8px] bg-dark">
-              <Image src={qrcode} alt="Scan qr code" className='w-[88px] blur-sm h-[88px]' priority />
+              <Image src={qrcode} alt="Scan qr code" className='w-[88px] h-[88px]' priority />
               <p className="text-[20px] font-raleway text-white leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
                 Scan to Download App
               </p>
             </div>
             <div className="hidden grid-cols-2 gap-4">
-                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                <a href="https://play.google.com/store/apps/details?id=com.resqx.customer" target="_blank" rel="noopener noreferrer">
                   <Image src={Playstore} alt="Play Store" className="w-full" priority />
                 </a>
-                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/ng/app/resq-x/id6504094221" target="_blank" rel="noopener noreferrer">
                   <Image src={AppleStore} alt="App Store" className="w-full" priority />
                 </a>
               </div>
-            <Link href="#" className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group">
+            <Link 
+              href={typeof window !== 'undefined' && /Android/i.test(navigator.userAgent) 
+                ? "https://play.google.com/store/apps/details?id=com.resqx.customer"
+                : "https://apps.apple.com/ng/app/resq-x/id6504094221"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group"
+            >
               <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-              <span className="relative z-10 text-white transition-colors duration-300">Coming Soon</span>
+              <span className="relative z-10 text-white transition-colors duration-300">Download Now</span>
               <Image 
                 src={arrow} 
                 alt="Arrow" 
@@ -168,6 +176,9 @@ const Hero = () => {
               >
                 <Link
                   href={service.link} 
+                  onClick={() => {
+                    "goog_report_conversation ('tel:+2348111173799')"
+                  }}
                   className="flex flex-col items-center w-full h-[234px] gap-[21px] rounded-[8px] px-[32px] py-[40px] bg-dark bg-opacity-80 transition-all duration-300 hover:scale-[1.02]"
                 >
                   <div className="w-[136px] h-[76px] rounded-full flex items-center justify-center backdrop-blur-sm">

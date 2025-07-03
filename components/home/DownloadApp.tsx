@@ -70,11 +70,11 @@ const DownloadSection = () => {
                 variants={slideInLeft}
               >
                 <Image 
-                  src="/images/QR Code.png" 
+                  src="/qrcode.svg" 
                   alt="Scan qr code" 
                   width={88}
                   height={88}
-                  className="object-contain blur-sm"
+                  className="object-contain"
                   priority
                 />
                 <p className="text-[14px] md:text-[16px] font-raleway text-dark-brown leading-[20px] md:leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
@@ -82,17 +82,17 @@ const DownloadSection = () => {
                 </p>
               </motion.div>
               <div className="hidden grid-cols-2 gap-4">
-                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                <a href="https://play.google.com/store/apps/details?id=com.resqx.customer" target="_blank" rel="noopener noreferrer">
                   <Image src={Playstore} alt="Play Store" className="w-full" priority />
                 </a>
-                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/ng/app/resq-x/id6504094221" target="_blank" rel="noopener noreferrer">
                   <Image src={AppleStore} alt="App Store" className="w-full" priority />
                 </a>
               </div>
 
               {/* Get Assistance button */}
               <motion.div variants={slideInLeft}>
-                <button href="/contact" className="relative flex items-center justify-center gap-3 w-[150px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group" disabled={true}>
+                <button onClick={() => window.location.href = '/contact'} className="relative flex items-center justify-center gap-3 w-[150px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group" disabled={true}>
                   <span className="absolute inset-0 w-full h-full bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                   <span className="relative whitespace-nowrap text-sm z-10 text-dark transition-colors duration-300">Get Assistance</span>
                   <Image 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.resqx.customer";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://apps.apple.com/ng/app/resq-x/id6504094221";
+      } else {
+        // Optional: fallback or desktop version
+        window.location.href = "https://resqx.ng"; // Update to your main site or leave as-is
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Taking you to the right place...</p>
+</body>
+</html>

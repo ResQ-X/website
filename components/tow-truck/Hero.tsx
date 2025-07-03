@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import Image from "next/image";
-import qrcode from "@/public/images/QR Code.png";
+import qrcode from "@/public/qrcode.svg";
 import Phone from "@/public/grad/phone.svg";
 import Resqx from "@/public/icons/resqx.png";
 import Blurr from "@/public/grad/Rectangle 28.png";
@@ -10,6 +10,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Playstore from "@/public/icons/Frame 1686552962.svg";
 import AppleStore from "@/public/icons/Frame 1686552963.svg";
+import { PhoneOutgoing } from 'lucide-react';
 
 interface HeroProps {
   title: string;
@@ -66,25 +67,37 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate, image }) => {
               {description}
             </p>
             
-            {/* QR Code Section */}
+            {/* QR Code and Hotline Section */}
             <div className="hidden lg:flex justify-center lg:justify-start items-center gap-6">
               <div className="bg-[#3B3835] rounded-lg p-4 flex items-center gap-4">
                 <Image 
                   src={qrcode} 
                   alt="QR Code" 
-                  className="w-20 blur-sm h-20 sm:w-24 sm:h-24"
+                  className="w-20 h-20 sm:w-24 sm:h-24"
                   priority
                 />
                 <span className="text-base sm:text-lg font-semibold">
                   Scan to Download App
                 </span>
               </div>
+              
+              <a 
+                href="tel:+2348111173779"
+                className="bg-[#3B3835] hover:bg-[#4B4845] transition-colors rounded-lg p-4 flex items-center gap-4"
+              >
+                <PhoneOutgoing size={32} className="text-orange" />
+                <div className="flex flex-col">
+                  <span className="text-sm text-gray-300">24/7 Hotline</span>
+                  <span className="text-base sm:text-lg font-semibold">0811-117-3779</span>
+                </div>
+              </a>
             </div>
+
             <div className="hidden grid-cols-2 gap-4">
-                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                <a href="https://play.google.com/store/apps/details?id=com.resqx.customer" target="_blank" rel="noopener noreferrer">
                   <Image src={Playstore} alt="Play Store" className="w-full" priority />
                 </a>
-                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/ng/app/resq-x/id6504094221" target="_blank" rel="noopener noreferrer">
                   <Image src={AppleStore} alt="App Store" className="w-full" priority />
                 </a>
               </div>

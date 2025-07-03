@@ -124,7 +124,7 @@ const MobileNav = ({
                     href={link.href}
                     onClick={onClose}
                     className={`block text-lg text-white hover:text-orange ${
-                      link.text === "091-234-13450" ? "font-semibold" : ""
+                      link.text === "0201-330-6062" ? "font-semibold" : ""
                     } ${
                       link.text === "Get app" ? "btn text-white hover:text-white" : ""
                     }`}

@@ -72,7 +72,7 @@ const BlogDetailsClient = ({ id }: BlogDetailsClientProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="px-4 lg:px-8 lg:pt-6 pb-12 pt-[100px] mt-[100px] min-h-screen mx-auto relative"
+      className="px-4 lg:px-8 lg:pt-6 pb-12 pt-[150px] mt-[200px] min-h-screen mx-auto relative"
     >
       <div className="flex items-center w-[213px] gap-[24px] mb-6">
         <button

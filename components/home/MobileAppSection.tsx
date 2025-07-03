@@ -88,9 +88,9 @@ const MobileAppSection = () => {
               variants={slideInRight}
             >
               <Image 
-                src="/images/QR Code.png" 
+                src="/qrcode.svg" 
                 alt="Scan qr code" 
-                className='blur-sm'
+                className=''
                 width={88}
                 height={88}
                 priority
@@ -100,17 +100,17 @@ const MobileAppSection = () => {
               </p>
             </motion.div>
             <div className="hidden grid-cols-2 gap-4">
-                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                <a href="https://play.google.com/store/apps/details?id=com.resqx.customer" target="_blank" rel="noopener noreferrer">
                   <Image src={Playstore} alt="Play Store" className="w-full" priority />
                 </a>
-                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/ng/app/resq-x/id6504094221" target="_blank" rel="noopener noreferrer">
                   <Image src={AppleStore} alt="App Store" className="w-full" priority />
                 </a>
               </div>
             <motion.div
               variants={slideInRight}
             >
-              <button /*href="/contact"*/ className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group flex items-center justify-center relative" disabled={true}>
+              <button onClick={() => window.location.href = '/contact'} /*href="/contact"*/ className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group flex items-center justify-center relative" disabled={true}>
                 <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                 <span className="relative z-10 text-white transition-colors mr-5 duration-300">Get Assistance</span>
                 <Image 

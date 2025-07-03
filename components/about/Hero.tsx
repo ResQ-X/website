@@ -8,9 +8,9 @@ const AboutHero = () => {
   const statsRef = useRef(null);
   const headingRef = useRef(null);
   const statsData = [
-    { value: 300, label: 'Active Users', suffix: '+' },
-    { value: 5, label: 'Partners', suffix: '+' },
-    { value: 50, label: 'Service Providers', suffix: '+' }
+    { value: 4000, label: 'Active Users', suffix: '+' },
+    { value: 30, label: 'Partners', suffix: '+' },
+    { value: 200, label: 'Service Providers', suffix: '+' }
   ];
 
   useEffect(() => {

@@ -31,9 +31,9 @@ const TrustedBy: React.FC = () => {
   } satisfies CounterRefs;
 
   const counterTargets: CounterTargets = {
-    users: 300,
-    partners: 5,
-    providers: 50
+    users: 4000,
+    partners: 30,
+    providers: 200
   };
 
   useEffect(() => {

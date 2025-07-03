@@ -25,14 +25,14 @@ const Footer = () => {
 
   const services = [
     { name: "Flat Tyre", path: "/flat-tyre" },
-    { name: "Become A Partner", path: "/become-a-partner" },
+    { name: "Become A Partner", path: "/partner" },
     { name: "Blog", path: "/blog" },
     { name: "Fuel Delivery", path: "/fuel-delivery" },
     { name: "Membership", path: "/membership" },
   ];
 
   const partner = [
-    { name: "Get In Touch", path: "/get-in-touch" },
+    { name: "Get In Touch", path: "/contact" },
     { name: "Jump Start", path: "/jump-start" },
     { name: "Careers", path: "/careers" },
     { name: "Rescue Me!", path: "/rescue" },
