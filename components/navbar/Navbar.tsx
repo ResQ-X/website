@@ -51,13 +51,14 @@ const Navbar = () => {
   ];
 
   const secondaryLinks: NavigationLink[] = [
-    { text: '0201-330-6062', href: 'tel:+2342013306062', icon: PhoneOutgoing },
+    { text: "0201-330-6062", href: "tel:+2342013306062", icon: PhoneOutgoing },
     {
       text: "Discover",
       href: "/membership",
       dropdownItems: ["Membership", "Grow With ResQ-X", "Partner", "Careers"],
     },
-    // { text: 'Coming soon!', href: '#' },
+    // { text: "Coming soon!", href: "#" },
+    { text: "Download now!", href: "#" },
   ];
 
   //https://play.google.com/store/apps/details?id=com.resqx.customer
@@ -110,24 +111,18 @@ const Navbar = () => {
                           ? "font-[600] text-[18px]"
                           : ""
                       } ${
-                        link.text === "Coming soon!"
+                        link.text === "Download now!"
                           ? "btn text-white hover:text-white"
                           : ""
                       }`
                     )}
                   >
                     {link.text}
-<<<<<<< HEAD
-                    {link.text === "0811-117-3779" && (
+                    {link.text === "0201-330-6062" && (
                       <PhoneOutgoing size={20} />
                     )}
                     {link.text === "Discover" && <ChevronDown size={16} />}
                     {link.text === "Get app" && <ChevronDown size={16} />}
-=======
-                    {link.text === '0201-330-6062' && <PhoneOutgoing size={20} />}
-                    {link.text === 'Discover' && <ChevronDown size={16} />}
-                    {link.text === 'Get app' && <ChevronDown size={16} />}
->>>>>>> origin/v2
                   </span>
                 </NavLink>
                 {link.dropdownItems && (

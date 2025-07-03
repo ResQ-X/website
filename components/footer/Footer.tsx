@@ -278,9 +278,12 @@ const Footer = () => {
           >
             Privacy Policy
           </Link>
-          {/* <Link href="/sitemap" className="text-white hover:text-orange transition-colors text-[14px] font-semibold">
+          <Link
+            href="/sitemap"
+            className="text-white hover:text-orange transition-colors text-[14px] font-semibold"
+          >
             Sitemap
-          </Link>*/}
+          </Link>
         </div>
       </div>
 
