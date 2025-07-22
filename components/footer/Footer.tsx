@@ -261,6 +261,12 @@ const Footer = () => {
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <Link
+            href="/term-of-use"
+            className="text-white hover:text-orange transition-colors text-[14px] font-semibold"
+          >
+            Terms Of Use
+          </Link>
+          <Link
             href="/refund-policy"
             className="text-white hover:text-orange transition-colors text-[14px] font-semibold"
           >
