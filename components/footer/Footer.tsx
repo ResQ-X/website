@@ -2,7 +2,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Mail, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
+import {
+  Mail,
+  Instagram,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Tiktok,
+  Youtube,
+} from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 import Logo from "@/public/images/logo.png";
 import Playstore from "@/public/icons/Frame 1686552962.svg";
 import AppleStore from "@/public/icons/Frame 1686552963.svg";
@@ -188,25 +197,42 @@ const Footer = () => {
               <p className="">Join Us</p>
               <div className="flex gap-2 lg:gap-4">
                 <a
-                  href="https://facebook.com/profile.php?id=61559440915973"
+                  // href="https://facebook.com/profile.php?id=61559440915973"
+                  href="https://web.facebook.com/resqx.ng"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Facebook className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
                 </a>
                 <a
-                  href="https://www.instagram.com/resqx?igsh=MTU1N3FqZmJkMzZxbQ=="
+                  // href="https://www.instagram.com/resqx?igsh=MTU1N3FqZmJkMzZxbQ=="
+                  href="https://instagram.com/myresqx"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Instagram className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
                 </a>
                 <a
-                  href="https://x.com/ResQ_Xng?t=NciMAbDfxisxI7VZz4xUuw&s=09"
+                  // href="https://x.com/ResQ_Xng?t=NciMAbDfxisxI7VZz4xUuw&s=09"
+                  href="https://x.com/myresqx"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Twitter className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
+                </a>
+                <a
+                  href="https://tiktok.com/@resq_xng"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaTiktok className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@myresqx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Youtube className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/resq-x/"
@@ -215,7 +241,7 @@ const Footer = () => {
                 >
                   <Linkedin className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
                 </a>
-                <a href="mailto:hello@resqx.net">
+                <a href="mailto:hello@resqx.ng">
                   <Mail className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
                 </a>
               </div>
