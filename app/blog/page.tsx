@@ -3,18 +3,23 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog - ResQ-X | Roadside Assistance Insights",
-  description: "Discover expert tips, stories, and insights about roadside assistance",
+  description:
+    "Discover expert tips, stories, and insights about roadside assistance",
   keywords: [
-    'roadside assistance',
-    'towing service',
-    'jump start',
-    'fuel delivery',
-    'flat tire',
-    'emergency car service', 
+    "roadside assistance",
+    "towing service",
+    "jump start",
+    "fuel delivery",
+    "flat tire",
+    "emergency car service",
+    "rescue",
+    "rescue company",
+    "rescue company in lagos",
   ],
   openGraph: {
     title: "Blog - ResQ-X | Roadside Assistance Insights",
-    description: "Discover expert tips, stories, and insights about roadside assistance",
+    description:
+      "Discover expert tips, stories, and insights about roadside assistance",
     url: "https://resqx.ng/blog", // Replace with the actual URL of your blog page
     siteName: "ResQ-X",
     type: "website",
@@ -30,7 +35,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blog - ResQ-X | Roadside Assistance Insights",
-    description: "Discover expert tips, stories, and insights about roadside assistance",
+    description:
+      "Discover expert tips, stories, and insights about roadside assistance",
     images: ["/blog-twitter-image.jpg"], // Replace with your actual Twitter image for the blog page
   },
   robots: {
@@ -39,9 +45,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   alternates: {

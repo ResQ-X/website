@@ -8,7 +8,21 @@ import FAQSection from '@/components/home/FAQSection'
 export const metadata: Metadata = {
   title: 'Resqx',
   description: 'Your site description goes here',
-  keywords: ['keyword1', 'keyword2'],
+  keywords: [
+    "tow truck service",
+    "emergency towing",
+    "24/7 towing service",
+    "car towing near me",
+    "roadside towing",
+    "ResQ-X towing services",
+    "breakdown towing",
+    "accident towing",
+    "affordable towing",
+    "ResQ-X tow truck",
+    "rescue",
+    "rescue company",
+    "rescue company in lagos",
+  ],,
 };
 
 export default function Home() {
