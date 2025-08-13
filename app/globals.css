@@ -7,6 +7,12 @@ body {
   @apply bg-[#262422] text-white;
 }
 
+
+.mask-gradient {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+}
+
 /* For Webkit browsers (Chrome, Safari, newer versions of Opera) */
 body::-webkit-scrollbar {
   width: 10px;  /* width of the entire scrollbar */
