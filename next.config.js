@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    ignoreBuildErrors: true, // Skip TypeScript errors during build
+    ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: true, // Skip ESLint errors during build
+    ignoreDuringBuilds: true,
   },
   images: {
     domains: ["res.cloudinary.com", "img.youtube.com"],
