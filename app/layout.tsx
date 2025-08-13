@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+// import Image from "next/image";
 import { Raleway } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -17,7 +18,7 @@ const raleway = Raleway({
     "system-ui",
     "-apple-system",
     "BlinkMacSystemFont",
-    "Segoe UI",
+    "Segui UI",
     "Roboto",
     "Arial",
     "sans-serif",
@@ -132,13 +133,25 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+      </head>
+
+      <body
+        className={`
+          antialiased 
+          overflow-x-hidden 
+          min-h-screen
+        `}
+      >
+        {children}
 
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-966TDL1C6V"
           strategy="afterInteractive"
         />
-        <script
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -154,7 +167,9 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=AW-16858022239"
           strategy="afterInteractive"
         />
-        <script
+        <Script
+          id="google-ads"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -164,18 +179,20 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
 
-      <body
-        className={`
-          antialiased 
-          overflow-x-hidden 
-          min-h-screen
-        `}
-      >
-        {children}
+        {/* Meta Pixel Code */}
+        <Script
+          id="meta-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '9948967765208268');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
 
-        {/* Performance monitoring */}
         {process.env.NODE_ENV === "production" && (
           <>
             <Analytics />
@@ -183,7 +200,6 @@ export default function RootLayout({
           </>
         )}
 
-        {/* Skip to main content link for accessibility */}
         <a
           href="#main-content"
           className="
