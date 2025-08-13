@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Raleway } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -6,10 +7,7 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import "./globals.css";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import CustomCursor from "@/components/CustomCursor";
-import DarkParticles from "@/components/FloatingParticles";
 import Script from "next/script";
-// import { FacebookPixel } from "@/utils/facebookPixels";
 
 // Components
 const Navbar = dynamic(() => import("@/components/navbar/Navbar"), {
@@ -121,11 +119,9 @@ const websiteSchema = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${raleway.variable}`} suppressHydrationWarning>
+    <html lang="en" className={raleway.variable} suppressHydrationWarning>
       <head>
         <meta
           name="viewport"
@@ -145,53 +141,67 @@ export default function RootLayout({
         />
 
         {/* JSON-LD Schema */}
-        <script
+        <Script
+          id="ld-json"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
 
-        {/* Google Analytics */}
+        {/* Load gtag once, configure both GA4 + Ads */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-966TDL1C6V"
           strategy="afterInteractive"
         />
-        <script
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-966TDL1C6V');
-            `,
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            // GA4
+            gtag('config', 'G-966TDL1C6V', { anonymize_ip: true });
+            // Google Ads (Conversion ID)
+            gtag('config', 'AW-16858022239');
+          `,
           }}
         />
 
-        {/* Google Ads Conversion Tracking */}
+        {/* Meta Pixel (Facebook) */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16858022239"
+          id="fb-pixel"
           strategy="afterInteractive"
-        />
-        <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-16858022239');
-            `,
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+            (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            try {
+              fbq('init', '9948967765208268');
+              fbq('track', 'PageView');
+            } catch (e) { console.error('FB Pixel init error', e); }
+          `,
           }}
         />
       </head>
 
-      <body
-        className={`
-          antialiased 
-          overflow-x-hidden 
-          min-h-screen 
-          flex 
-          flex-col
-        `}
-      >
+      <body className="antialiased overflow-x-hidden min-h-screen flex flex-col">
+        {/* Meta Pixel noscript fallback (must be in body) */}
+        <noscript>
+          <Image
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=9948967765208268&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+
+        {/* Top-level boundaries / effects */}
         <ErrorBoundary
           fallback={<div>Something went wrong with the navigation</div>}
         >
@@ -201,20 +211,18 @@ export default function RootLayout({
             {/* <CustomCursor /> */}
           </Suspense>
         </ErrorBoundary>
+
         <ErrorBoundary
           fallback={<div>Something went wrong with the navigation</div>}
         >
           <Suspense
             fallback={<div className="h-[100px] bg-white animate-pulse" />}
           >
-            {/* <DarkParticles
-  particleCount={500}  // 200-300 recommended
-  proximity={180}      // Mouse interaction range
-  baseSpeed={0.2}     // Slower, more elegant movement
-/> */}
+            {/* <DarkParticles /> */}
           </Suspense>
         </ErrorBoundary>
-        {/* Error Boundary for Navbar */}
+
+        {/* Navbar */}
         <ErrorBoundary
           fallback={<div>Something went wrong with the navigation</div>}
         >
@@ -226,7 +234,7 @@ export default function RootLayout({
         </ErrorBoundary>
 
         {/* Main content */}
-        <main className="flex-grow relative z-0 mt-[-100px]">
+        <main id="main-content" className="flex-grow relative z-0 mt-[-100px]">
           <ErrorBoundary
             fallback={<div>Something went wrong with the main content</div>}
           >
@@ -234,7 +242,7 @@ export default function RootLayout({
           </ErrorBoundary>
         </main>
 
-        {/* Error Boundary for Footer */}
+        {/* Footer */}
         <ErrorBoundary
           fallback={<div>Something went wrong with the footer</div>}
         >
@@ -245,7 +253,7 @@ export default function RootLayout({
           </Suspense>
         </ErrorBoundary>
 
-        {/* Performance monitoring */}
+        {/* Performance monitoring (prod only) */}
         {process.env.NODE_ENV === "production" && (
           <>
             <Analytics />
@@ -253,19 +261,10 @@ export default function RootLayout({
           </>
         )}
 
-        {/* Skip to main content link for accessibility */}
+        {/* Accessibility: Skip to main content */}
         <a
           href="#main-content"
-          className="
-            sr-only 
-            focus:not-sr-only 
-            focus:absolute 
-            focus:top-0 
-            focus:left-0 
-            focus:z-50 
-            focus:bg-white 
-            focus:p-4
-          "
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:bg-white focus:p-4"
         >
           Skip to main content
         </a>
@@ -273,5 +272,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// components/ErrorBoundary.tsx
