@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/membership/Hero";
 import Pricing from "@/components/membership/Pricing";
 import AdditionalServices from "@/components/membership/AdditionalServices";
-import FAQSection from "../../components/home/FAQSection";
+import FAQSection from "../../../components/home/FAQSection";
 
 export const metadata: Metadata = {
   title: "Membership Plans - ResQ-X Roadside Assistance Subscription",
