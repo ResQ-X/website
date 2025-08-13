@@ -9,18 +9,7 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import CustomCursor from "@/components/CustomCursor";
 import DarkParticles from "@/components/FloatingParticles";
 import Script from "next/script";
-// import { FacebookPixel } from "@/utils/facebookPixels";
-
-// Components
-const Navbar = dynamic(() => import("@/components/navbar/Navbar"), {
-  ssr: true,
-  loading: () => <div className="h-[100px] bg-white animate-pulse" />,
-});
-
-const Footer = dynamic(() => import("@/components/footer/Footer"), {
-  ssr: true,
-  loading: () => <div className="h-[200px] bg-gray-100 animate-pulse" />,
-});
+import { ConditionalLayout } from "@/components/ConditionalLayout";
 
 // Font optimization
 const raleway = Raleway({
@@ -58,6 +47,9 @@ export const metadata: Metadata = {
     "fuel delivery",
     "flat tire",
     "emergency car service",
+    "rescue",
+    "rescue company",
+    "rescue company in lagos",
   ],
   openGraph: {
     title: "ResQ-X - 24/7 Roadside Assistance",
@@ -146,7 +138,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-966TDL1C6V"
@@ -189,58 +181,7 @@ export default function RootLayout({
           flex-col
         `}
       >
-        <ErrorBoundary
-          fallback={<div>Something went wrong with the navigation</div>}
-        >
-          <Suspense
-            fallback={<div className="h-[100px] bg-white animate-pulse" />}
-          >
-            {/* <CustomCursor /> */}
-          </Suspense>
-        </ErrorBoundary>
-        <ErrorBoundary
-          fallback={<div>Something went wrong with the navigation</div>}
-        >
-          <Suspense
-            fallback={<div className="h-[100px] bg-white animate-pulse" />}
-          >
-            {/* <DarkParticles
-  particleCount={500}  // 200-300 recommended
-  proximity={180}      // Mouse interaction range
-  baseSpeed={0.2}     // Slower, more elegant movement
-/> */}
-          </Suspense>
-        </ErrorBoundary>
-        {/* Error Boundary for Navbar */}
-        <ErrorBoundary
-          fallback={<div>Something went wrong with the navigation</div>}
-        >
-          <Suspense
-            fallback={<div className="h-[100px] bg-white animate-pulse" />}
-          >
-            <Navbar />
-          </Suspense>
-        </ErrorBoundary>
-
-        {/* Main content */}
-        <main className="flex-grow relative z-0 mt-[-100px]">
-          <ErrorBoundary
-            fallback={<div>Something went wrong with the main content</div>}
-          >
-            {children}
-          </ErrorBoundary>
-        </main>
-
-        {/* Error Boundary for Footer */}
-        <ErrorBoundary
-          fallback={<div>Something went wrong with the footer</div>}
-        >
-          <Suspense
-            fallback={<div className="h-[200px] bg-gray-100 animate-pulse" />}
-          >
-            <Footer />
-          </Suspense>
-        </ErrorBoundary>
+        <ConditionalLayout>{children}</ConditionalLayout>
 
         {/* Performance monitoring */}
         {process.env.NODE_ENV === "production" && (
@@ -270,5 +211,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// components/ErrorBoundary.tsx
