@@ -11,6 +11,12 @@ export const careersData: Career[] = [
     experience: "3+ Years",
     deadline: "2025-06-30",
   },
+  {
+    id: "business-development-manager",
+    title: "Business Development Manager",
+    experience: "5+ Years",
+    deadline: "2025-08-31",
+  },
 ];
 
 export interface Career {
