@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import React from 'react';
+import React from "react";
 import Image from "next/image";
 import qrcode from "@/public/qrcode.svg";
 import arrow from "@/public/icons/arrow.png";
-import Link from 'next/link';
+import Link from "next/link";
 import Playstore from "@/public/icons/Frame 1686552962.svg";
 import AppleStore from "@/public/icons/Frame 1686552963.svg";
-import { motion } from 'framer-motion'; // Import Framer Motion
+import { motion } from "framer-motion"; // Import Framer Motion
 // import { FacebookPixel } from '@/utils/facebookPixels';
 
 // Animation Variants
@@ -41,63 +41,63 @@ const services = [
     id: 1,
     name: "Tow Truck",
     icon: "/images/tow.png",
-    link: "/tow-truck"
+    link: "/tow-truck",
   },
   {
     id: 2,
     name: "Flat Tyre",
     icon: "/images/tyre.png",
-    link: "/flat-tyre"
+    link: "/flat-tyre",
   },
   {
     id: 3,
     name: "Fuel Delivery",
     icon: "/images/fuel.png",
-    link: "/fuel-delivery"
+    link: "/fuel-delivery",
   },
   {
     id: 4,
     name: "Jump Start",
     icon: "/images/jumpstart.png",
-    link: "/jump-start"
+    link: "/jump-start",
   },
   {
     id: 5,
     name: "Health Check",
     icon: "/images/health.png",
-    link: "/health-check"
+    link: "/health-check",
   },
   {
     id: 6,
     name: "Key Replacement",
     icon: "/images/keys.png",
-    link: "/key-replacement"
-  }
+    link: "/key-replacement",
+  },
 ];
-
 
 const Hero = () => {
   // useEffect(() => {
   //   FacebookPixel.pageView()
   // }, [])
 
-
   return (
-    <div className="relative min-h-screen overflow-hidden h-auto lg:pb-96 lg:h-[1005px] mt-[100px] w-full">
+    // <div className="relative min-h-screen overflow-hidden h-auto lg:pb-80 lg:h-[1005px] mt-[100px] w-full">
+    <div className="relative h-auto mt-[100px] w-full">
       {/* Background Image Container */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/resqman.jpeg')"
+          backgroundImage: "url('/images/resqman.jpeg')",
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0"
+        <div
+          className="absolute inset-0"
           style={{
             background: `
               linear-gradient(90deg, rgba(0, 0, 0, 0.81) 33.18%, rgba(0, 0, 0, 0) 80.52%),
               linear-gradient(180deg, rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(0, 0, 0, 0.53) 100%)
-            `
+            `,
           }}
         />
       </div>
@@ -115,46 +115,75 @@ const Hero = () => {
             className="h1-responsive leading-[60px] lg:h1 uppercase lg:whitespace-nowrap lg:leading-[85.14px]"
             variants={fadeUpVariants}
           >
-             Roadside Assistance, <br className="hidden md:block" /> Whenever You Need It.
+            Roadside Assistance, <br className="hidden md:block" /> Whenever You
+            Need It.
           </motion.h1>
           <motion.p
             className="text-base md:text-xl lg:h4 text-lightest leading-normal lg:leading-[31.18px]"
             variants={fadeUpVariants}
           >
-            Stuck on the road? With ResQ-X, help is just a tap away. Get fast, reliable roadside assistance wherever you are, 24/7.
+            Stuck on the road? With ResQ-X, help is just a tap away. Get fast,
+            reliable roadside assistance wherever you are, 24/7.
           </motion.p>
           <motion.div
             className="w-full max-w-[551px] flex flex-col lg:flex-row items-center gap-[37px]"
             variants={slideInLeftVariants}
           >
             <div className="flex-1 hidden max-w-[351px] h-full rounded-[6px] p-[12px] lg:flex items-center gap-[8px] bg-dark">
-              <Image src={qrcode} alt="Scan qr code" className='w-[88px] h-[88px]' priority />
+              <Image
+                src={qrcode}
+                alt="Scan qr code"
+                className="w-[88px] h-[88px]"
+                priority
+              />
               <p className="text-[20px] font-raleway text-white leading-[23.48px] tracking-[-2%] font-semibold whitespace-nowrap">
                 Scan to Download App
               </p>
             </div>
             <div className="hidden grid-cols-2 gap-4">
-                <a href="https://play.google.com/store/apps/details?id=com.resqx.customer" target="_blank" rel="noopener noreferrer">
-                  <Image src={Playstore} alt="Play Store" className="w-full" priority />
-                </a>
-                <a href="https://apps.apple.com/ng/app/resq-x/id6504094221" target="_blank" rel="noopener noreferrer">
-                  <Image src={AppleStore} alt="App Store" className="w-full" priority />
-                </a>
-              </div>
-            <Link 
-              href={typeof window !== 'undefined' && /Android/i.test(navigator.userAgent) 
-                ? "https://play.google.com/store/apps/details?id=com.resqx.customer"
-                : "https://apps.apple.com/ng/app/resq-x/id6504094221"
+              <a
+                href="https://play.google.com/store/apps/details?id=com.resqx.customer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={Playstore}
+                  alt="Play Store"
+                  className="w-full"
+                  priority
+                />
+              </a>
+              <a
+                href="https://apps.apple.com/ng/app/resq-x/id6504094221"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={AppleStore}
+                  alt="App Store"
+                  className="w-full"
+                  priority
+                />
+              </a>
+            </div>
+            <Link
+              href={
+                typeof window !== "undefined" &&
+                /Android/i.test(navigator.userAgent)
+                  ? "https://play.google.com/store/apps/details?id=com.resqx.customer"
+                  : "https://apps.apple.com/ng/app/resq-x/id6504094221"
               }
               target="_blank"
               rel="noopener noreferrer"
               className="relative flex items-center justify-center gap-3 w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white overflow-hidden group"
             >
               <span className="absolute inset-0 w-full h-full bg-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-              <span className="relative z-10 text-white transition-colors duration-300">Download Now</span>
-              <Image 
-                src={arrow} 
-                alt="Arrow" 
+              <span className="relative z-10 text-white transition-colors duration-300">
+                Download Now
+              </span>
+              <Image
+                src={arrow}
+                alt="Arrow"
                 className="relative z-10 group-hover:[filter:brightness(0)] transition-[filter] duration-300"
                 priority
               />
@@ -163,10 +192,7 @@ const Hero = () => {
         </div>
 
         {/* Services Grid */}
-        <motion.div
-          className="mt-8"
-          variants={containerVariants}
-        >
+        <motion.div className="mt-8" variants={containerVariants}>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 w-full">
             {services.map((service, index) => (
               <motion.div
@@ -175,22 +201,24 @@ const Hero = () => {
                 custom={index} // Add custom delay for stagger
               >
                 <Link
-                  href={service.link} 
+                  href={service.link}
                   onClick={() => {
-                    "goog_report_conversation ('tel:+2348111173799')"
+                    "goog_report_conversation ('tel:+2348111173799')";
                   }}
                   className="flex flex-col items-center w-full h-[234px] gap-[21px] rounded-[8px] px-[32px] py-[40px] bg-dark bg-opacity-80 transition-all duration-300 hover:scale-[1.02]"
                 >
                   <div className="w-[136px] h-[76px] rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <Image 
-                      src={service.icon} 
+                    <Image
+                      src={service.icon}
                       alt={service.name}
                       width={136}
                       height={76}
                       priority
                     />
                   </div>
-                  <p className="h5 text-[20px] text-lightest whitespace-nowrap">{service.name}</p>
+                  <p className="h5 text-[20px] text-lightest whitespace-nowrap">
+                    {service.name}
+                  </p>
                 </Link>
               </motion.div>
             ))}

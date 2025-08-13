@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight } from "lucide-react";
+// import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -25,7 +25,8 @@ const fadeUpVariants = {
 
 const DEFAULT_IMAGE = "/images/home/blog/carImg.jpeg";
 
-export default function BlogSection() {
+export default function BlogSection({ activeCategory }: any) {
+  console.log(activeCategory);
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -39,6 +40,9 @@ export default function BlogSection() {
     fetchPosts();
   }, []);
 
+  console.log("posts", posts);
+  console.log("post 1", posts[0]?.slug);
+
   if (loading) {
     return (
       <div className="container mx-auto text-center py-20">
@@ -51,7 +55,7 @@ export default function BlogSection() {
 
   return (
     <div className="relative w-full px-4 py-16 bg-[#262422] z-10 mt-[-100px]">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="flex flex-col items-center justify-center font-['Raleway'] mb-12"
@@ -73,12 +77,14 @@ export default function BlogSection() {
         {/* Featured Post (Full Width) */}
         {posts[0] && (
           <motion.div variants={fadeUpVariants}>
-            <Link href={`/blog/${posts[0].id}`}>
+            <Link href={`/blog/${posts[0]?.slug}`}>
               <div className="rounded-[12px] overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
                 <div className="relative w-full h-[500px]">
                   <Image
-                    src={posts[0].featured_image_urls?.original || DEFAULT_IMAGE}
-                    alt={posts[0].title}
+                    src={
+                      posts[0]?.featured_image_urls?.original || DEFAULT_IMAGE
+                    }
+                    alt={posts[0]?.title}
                     layout="fill"
                     objectFit="cover"
                     priority
@@ -86,12 +92,14 @@ export default function BlogSection() {
                   <div className="absolute inset-0 bg-[#14162466]"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                     <div className="flex font-normal text-[14px] items-center justify-center w-[107px] h-[28px] rounded-[6px] bg-[#FF8500] text-white capitalize text-sm mb-4">
-                      {posts[0].category?.name}
+                      {posts[0]?.category?.name}
                     </div>
-                    <h3 className="text-2xl lg:text-[36px] lg:w-[720px] font-semibold mb-4 text-white">{posts[0].title}</h3>
+                    {/* <h3 className="text-2xl lg:text-[36px] lg:w-[720px] font-semibold mb-4 text-white">
+                      {posts[0]?.title}
+                    </h3> */}
                     <div className="flex items-center justify-between">
                       <span className="text-sm white font-normal">
-                        {new Date(posts[0].created_at).toLocaleDateString()}
+                        {new Date(posts[0]?.created_at).toLocaleDateString()}
                       </span>
                     </div>
                   </div>
@@ -106,14 +114,14 @@ export default function BlogSection() {
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {posts.slice(1).map((post) => (
-            <motion.div key={post.id} variants={fadeUpVariants}>
-              <Link href={`/blog/${post.id}`}>
+          {posts?.slice(1).map((post) => (
+            <motion.div key={post?.id} variants={fadeUpVariants}>
+              <Link href={`/blog/${post.slug}`}>
                 <div className="h-[488px] rounded-[12px] border border-[#3B3835] p-[16px] flex flex-col gap-[16px] overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
                   <div className="relative h-[240px]">
                     <Image
-                      src={post.featured_image_urls?.original || DEFAULT_IMAGE}
-                      alt={post.title}
+                      src={post?.featured_image_urls?.original || DEFAULT_IMAGE}
+                      alt={post?.title}
                       layout="fill"
                       objectFit="cover"
                       className="rounded-[6px]"
@@ -122,12 +130,14 @@ export default function BlogSection() {
                   </div>
                   <div className="">
                     <div className="flex font-normal text-[14px] items-center justify-center w-[107px] h-[28px] rounded-[6px] bg-[#FF85000D] text-orange capitalize text-sm mb-4">
-                      {post.category?.name}
+                      {post?.category?.name}
                     </div>
-                    <h3 className="text-xl lg:w-[373px] leading-[28px] font-bold mb-3 line-clamp-2">{post.title}</h3>
+                    <h3 className="text-xl lg:w-[373px] leading-[28px] font-bold mb-3 line-clamp-2">
+                      {post?.title}
+                    </h3>
                     <div className="flex items-center justify-between mt-4">
                       <span className="text-sm opacity-90">
-                        {new Date(post.created_at).toLocaleDateString()}
+                        {new Date(post?.created_at).toLocaleDateString()}
                       </span>
                     </div>
                   </div>
