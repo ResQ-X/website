@@ -3,12 +3,7 @@ import Image from "next/image";
 import { Raleway } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-// import { Suspense } from "react";
-// import dynamic from "next/dynamic";
 import "./globals.css";
-// import { ErrorBoundary } from "@/components/ErrorBoundary";
-// import CustomCursor from "@/components/CustomCursor";
-// import DarkParticles from "@/components/FloatingParticles";
 import Script from "next/script";
 import { ConditionalLayout } from "@/components/ConditionalLayout";
 
@@ -193,15 +188,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body
-        className={`
-          antialiased 
-          overflow-x-hidden 
-          min-h-screen 
-          flex 
-          flex-col
-        `}
-      >
+      <body className="antialiased overflow-x-hidden min-h-screen flex flex-col">
         <ConditionalLayout>{children}</ConditionalLayout>
 
         {/* Performance monitoring */}
@@ -215,16 +202,7 @@ export default function RootLayout({
         {/* Skip to main content link for accessibility */}
         <a
           href="#main-content"
-          className="
-            sr-only 
-            focus:not-sr-only 
-            focus:absolute 
-            focus:top-0 
-            focus:left-0 
-            focus:z-50 
-            focus:bg-white 
-            focus:p-4
-          "
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:bg-white focus:p-4"
         >
           Skip to main content
         </a>
