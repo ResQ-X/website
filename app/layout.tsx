@@ -3,12 +3,7 @@ import Image from "next/image";
 import { Raleway } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-// import { Suspense } from "react";
-// import dynamic from "next/dynamic";
 import "./globals.css";
-// import { ErrorBoundary } from "@/components/ErrorBoundary";
-// import CustomCursor from "@/components/CustomCursor";
-// import DarkParticles from "@/components/FloatingParticles";
 import Script from "next/script";
 import { ConditionalLayout } from "@/components/ConditionalLayout";
 
@@ -159,13 +154,35 @@ export default function RootLayout({
             alt="Facebook Pixel"
           />
         </noscript>
+      </head>
+
+      <body className="antialiased overflow-x-hidden min-h-screen flex flex-col">
+        <ConditionalLayout>{children}</ConditionalLayout>
+
+        {/* Performance monitoring */}
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
+
+        {/* Skip to main content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:bg-white focus:p-4"
+        >
+          Skip to main content
+        </a>
 
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-966TDL1C6V"
           strategy="afterInteractive"
         />
-        <script
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -181,7 +198,9 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=AW-16858022239"
           strategy="afterInteractive"
         />
-        <script
+        <Script
+          id="google-ads"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -191,43 +210,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-
-      <body
-        className={`
-          antialiased 
-          overflow-x-hidden 
-          min-h-screen 
-          flex 
-          flex-col
-        `}
-      >
-        <ConditionalLayout>{children}</ConditionalLayout>
-
-        {/* Performance monitoring */}
-        {process.env.NODE_ENV === "production" && (
-          <>
-            <Analytics />
-            <SpeedInsights />
-          </>
-        )}
-
-        {/* Skip to main content link for accessibility */}
-        <a
-          href="#main-content"
-          className="
-            sr-only 
-            focus:not-sr-only 
-            focus:absolute 
-            focus:top-0 
-            focus:left-0 
-            focus:z-50 
-            focus:bg-white 
-            focus:p-4
-          "
-        >
-          Skip to main content
-        </a>
       </body>
     </html>
   );
