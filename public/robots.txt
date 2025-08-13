@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://res-q-x.vercel.app
+Host: https://resqx.ng/
 
 # Sitemaps
-Sitemap: https://res-q-x.vercel.app/sitemap.xml
+Sitemap: https://resqx.ng/sitemap.xml

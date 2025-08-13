@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+// import Image from "next/image";
 import { Raleway } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Script from "next/script";
-import { ConditionalLayout } from "@/components/ConditionalLayout";
 
 // Font optimization
 const raleway = Raleway({
@@ -19,7 +18,7 @@ const raleway = Raleway({
     "system-ui",
     "-apple-system",
     "BlinkMacSystemFont",
-    "Segoe UI",
+    "Segui UI",
     "Roboto",
     "Arial",
     "sans-serif",
@@ -134,46 +133,16 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-
-        {/* Meta Pixel Code */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '9948967765208268');
-              fbq('track', 'PageView');
-            `,
-          }}
-        />
-        <noscript>
-          <Image
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=9948967765208268&ev=PageView&noscript=1"
-            alt="Facebook Pixel"
-          />
-        </noscript>
       </head>
 
-      <body className="antialiased overflow-x-hidden min-h-screen flex flex-col">
-        <ConditionalLayout>{children}</ConditionalLayout>
-
-        {/* Performance monitoring */}
-        {process.env.NODE_ENV === "production" && (
-          <>
-            <Analytics />
-            <SpeedInsights />
-          </>
-        )}
-
-        {/* Skip to main content link for accessibility */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:bg-white focus:p-4"
-        >
-          Skip to main content
-        </a>
+      <body
+        className={`
+          antialiased 
+          overflow-x-hidden 
+          min-h-screen
+        `}
+      >
+        {children}
 
         {/* Google Analytics */}
         <Script
@@ -210,6 +179,42 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* Meta Pixel Code */}
+        <Script
+          id="meta-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '9948967765208268');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
+
+        <a
+          href="#main-content"
+          className="
+            sr-only 
+            focus:not-sr-only 
+            focus:absolute 
+            focus:top-0 
+            focus:left-0 
+            focus:z-50 
+            focus:bg-white 
+            focus:p-4
+          "
+        >
+          Skip to main content
+        </a>
       </body>
     </html>
   );
