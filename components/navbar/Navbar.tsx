@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronDown, PhoneOutgoing, Menu } from "lucide-react";
@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import LogoImage from "@/public/images/logo.png";
 
 const Navbar = () => {
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Prevent scrolling when mobile menu is open
@@ -67,7 +68,10 @@ const Navbar = () => {
     <>
       <nav className="bg-transparent backdrop-blur-[100px] fixed top-0 z-40 flex items-center w-full h-[100px] p-4 lg:p-[26px_56px_26px_61px] justify-between">
         <div className="flex items-center w-full lg:w-[60%] lg:h-[30px]">
-          <div className="relative w-[120px] lg:w-[140px] h-[26.25px] mr-8">
+          <div
+            onClick={() => router.push("/")}
+            className="relative w-[120px] lg:w-[140px] h-[26.25px] mr-8 cursor-pointer"
+          >
             <Image
               src={LogoImage}
               alt="logo"

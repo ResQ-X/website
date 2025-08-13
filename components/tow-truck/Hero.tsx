@@ -5,8 +5,8 @@ import qrcode from "@/public/qrcode.svg";
 import Phone from "@/public/grad/phone.svg";
 import Resqx from "@/public/icons/resqx.png";
 import Blurr from "@/public/grad/Rectangle 28.png";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+// import gsap from "gsap";
+// import ScrollTrigger from "gsap/ScrollTrigger";
 import Playstore from "@/public/icons/Frame 1686552962.svg";
 import AppleStore from "@/public/icons/Frame 1686552963.svg";
 import { PhoneOutgoing } from "lucide-react";
@@ -22,39 +22,39 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate, image }) => {
   const textRef = useRef(null);
   const imageRef = useRef(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    // Animate text and QR code (slide in from the left)
-    gsap.from(textRef.current, {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: textRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-    });
+  //   // Animate text and QR code (slide in from the left)
+  //   gsap.from(textRef.current, {
+  //     x: -100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "power3.out",
+  //     scrollTrigger: {
+  //       trigger: textRef.current,
+  //       start: "top 80%",
+  //       toggleActions: "play none none none",
+  //     },
+  //   });
 
-    // Animate phone image (slide up and fade in from the right)
-    gsap.from(imageRef.current, {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: imageRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-    });
-  }, []);
+  //   // Animate phone image (slide up and fade in from the right)
+  //   gsap.from(imageRef.current, {
+  //     y: 100,
+  //     opacity: 0,
+  //     duration: 1,
+  //     ease: "power3.out",
+  //     scrollTrigger: {
+  //       trigger: imageRef.current,
+  //       start: "top 80%",
+  //       toggleActions: "play none none none",
+  //     },
+  //   });
+  // }, []);
 
   return (
     <>
-      <div className="relative z-[-1] min-h-screen pt-[100px] lg:pt-0 mt-[100px] bg-[#000]">
+      <div className="relative z-[-1] h-auto pt-[100px] lg:pt-0 mt-[100px] bg-[#000]">
         {/* Main Content Container */}
         <div className="relative w-full h-full flex flex-col lg:flex-row items-center px-4 sm:px-8 lg:px-16 pt-10 lg:pt-20 pb-[10rem] lg:pb-[22.35rem] overflow-hidden">
           {/* Left Content */}

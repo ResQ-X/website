@@ -58,6 +58,9 @@ export const metadata: Metadata = {
     "fuel delivery",
     "flat tire",
     "emergency car service",
+    "rescue",
+    "rescue company",
+    "rescue company in lagos",
   ],
   openGraph: {
     title: "ResQ-X - 24/7 Roadside Assistance",
@@ -146,7 +149,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-966TDL1C6V"
