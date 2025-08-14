@@ -39,7 +39,7 @@ export const jobDetailsData: Record<string, JobDetail> = {
       "Exposure to international travel and high-level business operations",
     ],
     applicationProcess: [
-      "Send your CV and a brief cover letter to careers@resqx.net",
+      "Send your CV and a brief cover letter to careers@resqx.ng",
       'Include the subject line "Personal Assistant Application - [Your Name]"',
     ],
   },
