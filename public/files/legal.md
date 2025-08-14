@@ -16,4 +16,4 @@ Last updated: 3rd October, 2024
 
 ## Contact Us
 
-For any questions regarding our refund policy or legal matters, please contact us at: hello@resqx.ng
+For any questions regarding our refund policy or legal matters, please contact us at: support@resqx.ng

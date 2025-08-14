@@ -36,4 +36,4 @@ These Terms shall be governed and construed in accordance with the laws of Niger
 
 ## 9. Contact Us
 
-If you have any questions about these Terms, please contact us at: hello@resqx.ng
+If you have any questions about these Terms, please contact us at: support@resqx.ng
