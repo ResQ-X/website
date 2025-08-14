@@ -72,7 +72,7 @@ const faqData: FAQItem[] = [
   {
     question: "I cannot log in to my ResQ-X account, what do I do?",
     answer:
-      "Please send us a support message at hello@resqx.ng, or contact us directly at 0811 117 3779 for immediate assistance.",
+      "Please send us a support message at support@resqx.ng, or contact us directly at 0811 117 3779 for immediate assistance.",
   },
 ];
 

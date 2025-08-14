@@ -241,7 +241,7 @@ const Footer = () => {
                 >
                   <Linkedin className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
                 </a>
-                <a href="mailto:hello@resqx.ng">
+                <a href="mailto:support@resqx.ng">
                   <Mail className="w-6 h-6 text-white hover:text-orange cursor-pointer" />
                 </a>
               </div>

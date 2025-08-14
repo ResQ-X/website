@@ -87,7 +87,7 @@ Our services are not intended for children under 13. We do not knowingly collect
 ## 10. Contact Us
 
 For privacy-related inquiries:  
-Email: hello@resqx.ng  
+Email: support@resqx.ng
 
 Address: No. 18 Gedegede Ebute, Eti-Osa, Lagos State, Nigeria  
 Phone: +234 817 997 7001
