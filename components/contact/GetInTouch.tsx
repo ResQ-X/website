@@ -220,7 +220,7 @@ const GetInTouch = () => {
           <div className="flex items-center gap-[12px]">
             <Image src={Sms} alt="Location" priority />
             <p className="font-medium text-[20px] leading-[24.2px] text-[#736250]">
-              hello@resqx.net
+              hello@resqx.ng
             </p>
           </div>
           <div className="flex items-center gap-[12px]">
