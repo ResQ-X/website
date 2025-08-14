@@ -8,7 +8,7 @@ import {
   Facebook,
   Twitter,
   Linkedin,
-  Tiktok,
+  // Tiktok,
   Youtube,
 } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
