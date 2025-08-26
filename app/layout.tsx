@@ -65,6 +65,19 @@ export const metadata: Metadata = {
   },
 };
 
+// JSON-LD Schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "ResQ-X",
+  url: "https://resqx.ng",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://resqx.ng/search?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -82,26 +95,11 @@ export default function RootLayout({
         <link rel="icon" href="/icons/resqx_icon_orange.png" />
         <link rel="apple-touch-icon" href="/icons/resqx_icon_orange.png" />
 
-        {/* Facebook Pixel */}
-        <Script id="meta-pixel" strategy="afterInteractive">
-          {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '9948967765208268');
-          fbq('track', 'PageView');`}
-        </Script>
-
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-EZR18WSZN9"
-          strategy="afterInteractive"
+        {/* JSON-LD Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-EZR18WSZN9');
-          `}
-        </Script>
 
         {/* Microsoft Clarity */}
         <Script id="microsoft-clarity" strategy="afterInteractive">
@@ -113,6 +111,22 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "sus3y913po");
           `}
         </Script>
+
+        {/* Google Ads Conversion Tracking */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16858022239"
+          strategy="afterInteractive"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16858022239');
+            `,
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>
