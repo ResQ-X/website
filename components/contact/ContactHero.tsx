@@ -18,14 +18,14 @@ const ContactHero = () => {
   return (
     <div className="relative min-h-screen pt-[250px] mt-[100px] lg:h-[600px] w-full">
       {/* Background Image Container */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/images/spannerman.jpeg')", // Replace with a suitable image
         }}
       >
         {/* Black Overlay */}
-        <div 
+        <div
           className="absolute inset-0 bg-black bg-opacity-80" // Adjust opacity here
         />
 
@@ -39,17 +39,19 @@ const ContactHero = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the element is in view
           >
-            <motion.h1 
+            <motion.h1
               className="text-[46px] font-bold leading-[60px] lg:h1 uppercase lg:leading-[85.14px]"
               variants={fadeUpVariants}
             >
               We&apos;re Here to Help.
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-[16px] font-semibold lg:h4 text-lightest leading-[31.18px]"
               variants={fadeUpVariants}
             >
-              Have questions, need support, or want to learn more about our services? Reach out to us anytime—we’re just a call or message away.
+              Have questions, need support, or want to learn more about our
+              services? Reach out to us anytime—we’re just a call or message
+              away.
             </motion.p>
             {/* Contact Options */}
             <motion.div
@@ -67,7 +69,7 @@ const ContactHero = () => {
                 Call Us
               </motion.a>
               <motion.a
-                href="mailto:hello@resqx.net"
+                href="mailto:support@resqx.ng"
                 className="w-[183px] h-[52px] rounded-[8px] border-[2px] hover:border-white border-white flex items-center justify-center text-white text-[16px] font-semibold tracking-wide transition-all duration-300 hover:bg-white hover:text-black"
                 variants={staggerVariants}
               >

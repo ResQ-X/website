@@ -2,7 +2,6 @@
 
 Last updated: 3rd October, 2024
 
-
 ## Legal Disclaimer
 
 1. ResQ-X provides roadside assistance services. We are not a substitute for emergency services. In case of a life-threatening emergency, please call the appropriate emergency services immediately.
@@ -17,5 +16,4 @@ Last updated: 3rd October, 2024
 
 ## Contact Us
 
-For any questions regarding our refund policy or legal matters, please contact us at: hello@resqx.net
-
+For any questions regarding our refund policy or legal matters, please contact us at: support@resqx.ng

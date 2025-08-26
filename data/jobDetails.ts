@@ -26,9 +26,7 @@ export const jobDetailsData: Record<string, JobDetail> = {
       "Oversee personal errands, shopping, and household-related tasks",
       "Handle visa applications, passport renewals, and international travel arrangements",
     ],
-    education: [
-      "Bachelor's degree preferred",
-    ],
+    education: ["Bachelor's degree preferred"],
     salary: {
       range: "Competitive salary",
       review: "Yearly",
@@ -41,7 +39,7 @@ export const jobDetailsData: Record<string, JobDetail> = {
       "Exposure to international travel and high-level business operations",
     ],
     applicationProcess: [
-      "Send your CV and a brief cover letter to careers@resqx.net",
+      "Send your CV and a brief cover letter to careers@resqx.ng",
       'Include the subject line "Personal Assistant Application - [Your Name]"',
     ],
   },
@@ -94,7 +92,7 @@ export const jobDetailsData: Record<string, JobDetail> = {
       "Apply by filling this form: https://lnkd.in/dKRSzYUD",
     ],
   },
-   "business-development-manager": {
+  "business-development-manager": {
     title: "BUSINESS DEVELOPMENT MANAGER",
     jobType: "Full Time",
     location: "Lagos, Nigeria (Hybrid/Remote)",

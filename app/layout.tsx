@@ -1,37 +1,7 @@
-import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Suspense } from "react";
-import dynamic from "next/dynamic";
 import "./globals.css";
-import { ErrorBoundary } from "@/components/ErrorBoundary";
-import CustomCursor from "@/components/CustomCursor";
-import DarkParticles from "@/components/FloatingParticles";
 import Script from "next/script";
-import { ConditionalLayout } from "@/components/ConditionalLayout";
+import type { Metadata } from "next";
 
-// Font optimization
-const raleway = Raleway({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  variable: "--font-raleway",
-  display: "swap",
-  preload: true,
-  fallback: [
-    "system-ui",
-    "-apple-system",
-    "BlinkMacSystemFont",
-    "Segoe UI",
-    "Roboto",
-    "Arial",
-    "sans-serif",
-  ],
-  adjustFontFallback: true,
-});
-
-// SEO Metadata
 export const metadata: Metadata = {
   metadataBase: new URL("https://resqx.ng"),
   title: {
@@ -95,26 +65,13 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD Schema
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "ResQ-X",
-  url: "https://resqx.ng",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://resqx.ng/search?q={search_term_string}",
-    "query-input": "required name=search_term_string",
-  },
-};
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`${raleway.variable}`} suppressHydrationWarning>
+    <html lang="en">
       <head>
         <meta
           name="viewport"
@@ -125,89 +82,39 @@ export default function RootLayout({
         <link rel="icon" href="/icons/resqx_icon_orange.png" />
         <link rel="apple-touch-icon" href="/icons/resqx_icon_orange.png" />
 
-        {/* Preconnect to critical third-party domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        {/* Facebook Pixel */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '9948967765208268');
+          fbq('track', 'PageView');`}
+        </Script>
 
-        {/* JSON-LD Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-
-        {/* Google Analytics */}
+        {/* Google tag (gtag.js) */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-966TDL1C6V"
+          src="https://www.googletagmanager.com/gtag/js?id=G-EZR18WSZN9"
           strategy="afterInteractive"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-966TDL1C6V');
-            `,
-          }}
-        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EZR18WSZN9');
+          `}
+        </Script>
 
-        {/* Google Ads Conversion Tracking */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16858022239"
-          strategy="afterInteractive"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-16858022239');
-            `,
-          }}
-        />
+        {/* Microsoft Clarity */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "sus3y913po");
+          `}
+        </Script>
       </head>
-
-      <body
-        className={`
-          antialiased 
-          overflow-x-hidden 
-          min-h-screen 
-          flex 
-          flex-col
-        `}
-      >
-        <ConditionalLayout>{children}</ConditionalLayout>
-
-        {/* Performance monitoring */}
-        {process.env.NODE_ENV === "production" && (
-          <>
-            <Analytics />
-            <SpeedInsights />
-          </>
-        )}
-
-        {/* Skip to main content link for accessibility */}
-        <a
-          href="#main-content"
-          className="
-            sr-only 
-            focus:not-sr-only 
-            focus:absolute 
-            focus:top-0 
-            focus:left-0 
-            focus:z-50 
-            focus:bg-white 
-            focus:p-4
-          "
-        >
-          Skip to main content
-        </a>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
