@@ -62,7 +62,7 @@ export const WaitList: React.FC = () => {
   });
 
   useEffect(() => {
-    const endTime = new Date("2025-09-22T23:59:59").getTime();
+    const endTime = new Date("2025-10-06T23:59:59").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
