@@ -1,6 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import type { Metadata } from "next";
+import ReferralPopup from "@/components/ReferralPopup";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://resqx.ng"),
@@ -114,7 +115,28 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ReferralPopup
+          referralLink="https://www.resqx.ng/waitlist"
+          voucherAmount={5000}
+          brandName="ResQX"
+          enableExitIntent={true}
+          // Welcome popup content
+          welcomeContent={{
+            headline: "🎉 Welcome to ResQX!",
+            description: "Join thousands who trust ResQX. Get ₦5,000 to start!",
+            ctaText: "🚀 Claim My Welcome Bonus",
+          }}
+          // Exit-intent popup content
+          exitIntentContent={{
+            headline: "⚠️ Wait! Don't Leave Yet",
+            description: "You're about to miss ₦5,000 free credit!",
+            ctaText: "⏰ Grab It Before I Leave",
+            urgency: "This offer expires when you close this tab!",
+          }}
+        />
+      </body>
     </html>
   );
 }
