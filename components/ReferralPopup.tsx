@@ -1,5 +1,5 @@
 "use client";
-
+import { useState, useEffect } from "react";
 import { X, Gift, Star, Shield, Clock, AlertCircle, Zap } from "lucide-react";
 import { useReferralPopup } from "../hooks/useReferralPopup";
 
@@ -24,6 +24,7 @@ interface ReferralPopupProps {
   voucherAmount?: number;
   brandName?: string;
   enableExitIntent?: boolean;
+  showOnlyOnHomePage?: boolean;
 
   // Mutable content for different triggers
   welcomeContent?: Partial<PopupContent>;
@@ -84,16 +85,74 @@ export default function ReferralPopup({
   voucherAmount = 5000,
   brandName = "ResQX",
   enableExitIntent = true,
+  showOnlyOnHomePage = true, // Default to true for home page only
   welcomeContent = {},
   exitIntentContent = {},
 }: ReferralPopupProps) {
+  // Check if we're on the home page
+  const [isHomePage, setIsHomePage] = useState(false);
+
+  useEffect(() => {
+    if (!showOnlyOnHomePage) {
+      setIsHomePage(true);
+      return;
+    }
+
+    // Check if current page is home page
+    const checkHomePage = () => {
+      const pathname = window.location.pathname;
+      // Consider these as home page paths
+      const homePagePaths = ["/", "/home", ""];
+      const isHome =
+        homePagePaths.includes(pathname) || pathname === window.location.origin;
+      setIsHomePage(isHome);
+    };
+
+    checkHomePage();
+
+    // Listen for navigation changes (for SPAs)
+    const handleLocationChange = () => {
+      checkHomePage();
+    };
+
+    // For Next.js router
+    if (typeof window !== "undefined" && window.history) {
+      const originalPushState = window.history.pushState;
+      const originalReplaceState = window.history.replaceState;
+
+      window.history.pushState = function (...args) {
+        originalPushState.apply(window.history, args);
+        setTimeout(handleLocationChange, 0);
+      };
+
+      window.history.replaceState = function (...args) {
+        originalReplaceState.apply(window.history, args);
+        setTimeout(handleLocationChange, 0);
+      };
+
+      window.addEventListener("popstate", handleLocationChange);
+
+      return () => {
+        window.history.pushState = originalPushState;
+        window.history.replaceState = originalReplaceState;
+        window.removeEventListener("popstate", handleLocationChange);
+      };
+    }
+  }, [showOnlyOnHomePage]);
+
   const { isVisible, isClosing, popupType, closePopup, handleClaim } =
     useReferralPopup({
       delay,
       cooldownDays,
       sessionOnly,
       enableExitIntent,
+      showOnlyOnHomePage: isHomePage, // Pass to hook
     });
+
+  // Don't render if not on home page (when restricted)
+  if (showOnlyOnHomePage && !isHomePage) {
+    return null;
+  }
 
   if (!isVisible) return null;
 

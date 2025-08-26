@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 // import "./globals.css";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import ReferralPopup from "@/components/ReferralPopup";
 // import CustomCursor from "@/components/CustomCursor";
 // import DarkParticles from "@/components/FloatingParticles";
 import Script from "next/script";
@@ -276,9 +277,27 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+
+        <ReferralPopup
+          referralLink="https://www.resqx.ng/waitlist"
+          voucherAmount={5000}
+          brandName="ResQX"
+          enableExitIntent={true}
+          // Welcome popup content
+          welcomeContent={{
+            headline: "🎉 Welcome to ResQX!",
+            description: "Join thousands who trust ResQX. Get ₦5,000 to start!",
+            ctaText: "🚀 Claim My Welcome Bonus",
+          }}
+          // Exit-intent popup content
+          exitIntentContent={{
+            headline: "⚠️ Wait! Don't Leave Yet",
+            description: "You're about to miss ₦5,000 free credit!",
+            ctaText: "⏰ Grab It Before I Leave",
+            urgency: "This offer expires when you close this tab!",
+          }}
+        />
       </body>
     </html>
   );
 }
-
-// components/ErrorBoundary.tsx
