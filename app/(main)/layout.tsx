@@ -22,6 +22,7 @@ const Footer = dynamic(() => import("@/components/footer/Footer"), {
   ssr: true,
   loading: () => <div className="h-[200px] bg-gray-100 animate-pulse" />,
 });
+const WEBSITE_GA_ID = "G-EZR18WSZN9";
 
 // Font optimization
 const raleway = Raleway({
@@ -151,37 +152,19 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
 
-        {/* Google Analytics */}
+        {/* Google Analytics for main website */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-966TDL1C6V"
+          src={`https://www.googletagmanager.com/gtag/js?id=${WEBSITE_GA_ID}`}
           strategy="afterInteractive"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-966TDL1C6V');
-            `,
-          }}
-        />
-
-        {/* Google Ads Conversion Tracking */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16858022239"
-          strategy="afterInteractive"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-16858022239');
-            `,
-          }}
-        />
+        <Script id="ga-website" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${WEBSITE_GA_ID}', { anonymize_ip: true });
+          `}
+        </Script>
 
         {/* Facebook Pixel */}
         <Script id="meta-pixel" strategy="afterInteractive">
