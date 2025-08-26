@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, useCallback } from "react";
 
 interface UseReferralPopupProps {
@@ -5,8 +6,8 @@ interface UseReferralPopupProps {
   cooldownDays?: number;
   sessionOnly?: boolean;
   enableExitIntent?: boolean;
+  showOnlyOnHomePage?: boolean;
 }
-
 interface PopupState {
   isVisible: boolean;
   isClosing: boolean;
@@ -19,6 +20,7 @@ export const useReferralPopup = ({
   cooldownDays = 7,
   sessionOnly = false,
   enableExitIntent = true,
+  showOnlyOnHomePage = true,
 }: UseReferralPopupProps = {}) => {
   const [state, setState] = useState<PopupState>({
     isVisible: false,
@@ -48,7 +50,7 @@ export const useReferralPopup = ({
           const daysSinceShown =
             (Date.now() - parseInt(exitIntentLastShown)) /
             (1000 * 60 * 60 * 24);
-          if (daysSinceShown < 1) return false; // Don't show exit intent more than once per day
+          if (daysSinceShown < 1) return false;
         }
         return true;
       }
@@ -169,20 +171,25 @@ export const useReferralPopup = ({
     }
   }, []);
 
-  // Initialize welcome popup
+  // Initialize welcome popup - only if on home page
   useEffect(() => {
-    if (!checkShouldShow("welcome")) return;
+    if (!showOnlyOnHomePage || !checkShouldShow("welcome")) return;
 
     const timer = setTimeout(() => {
       showPopup("welcome");
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [delay, checkShouldShow, showPopup]);
+  }, [delay, checkShouldShow, showPopup, showOnlyOnHomePage]);
 
-  // Exit intent detection
+  // Exit intent detection - only if on home page
   useEffect(() => {
-    if (!enableExitIntent || typeof window === "undefined") return;
+    if (
+      !enableExitIntent ||
+      !showOnlyOnHomePage ||
+      typeof window === "undefined"
+    )
+      return;
     if (state.isVisible || exitIntentTriggered) return;
 
     let exitIntentShown = false;
@@ -280,6 +287,7 @@ export const useReferralPopup = ({
     showPopup,
     state.isVisible,
     exitIntentTriggered,
+    showOnlyOnHomePage,
   ]);
 
   return {
