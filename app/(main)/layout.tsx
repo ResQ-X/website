@@ -22,7 +22,6 @@ const Footer = dynamic(() => import("@/components/footer/Footer"), {
   ssr: true,
   loading: () => <div className="h-[200px] bg-gray-100 animate-pulse" />,
 });
-const WEBSITE_GA_ID = "G-EZR18WSZN9";
 
 // Font optimization
 const raleway = Raleway({
@@ -154,17 +153,19 @@ export default function RootLayout({
 
         {/* Google Analytics for main website */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${WEBSITE_GA_ID}`}
+          src="https://www.googletagmanager.com/gtag/js?id=G-966TDL1C6V"
           strategy="afterInteractive"
         />
-        <Script id="ga-website" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${WEBSITE_GA_ID}', { anonymize_ip: true });
-          `}
-        </Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-966TDL1C6V');
+            `,
+          }}
+        />
 
         {/* Facebook Pixel */}
         <Script id="meta-pixel" strategy="afterInteractive">
@@ -268,19 +269,26 @@ export default function RootLayout({
           enableExitIntent={true}
           // Welcome popup content
           welcomeContent={{
-            headline: "🎉 Welcome to ResQX!",
+            headline: "Welcome to",
             description: "Join thousands who trust ResQX. Get ₦5,000 to start!",
-            ctaText: "🚀 Claim My Welcome Bonus",
+            ctaText: "Join the waitlist Now",
           }}
           // Exit-intent popup content
           exitIntentContent={{
-            headline: "⚠️ Wait! Don't Leave Yet",
+            headline: "Wait! Don't Leave Yet",
             description: "You're about to miss ₦5,000 free credit!",
-            ctaText: "⏰ Grab It Before I Leave",
+            ctaText: "Grab It Before I Leave",
             urgency: "This offer expires when you close this tab!",
           }}
         />
       </body>
+
+      {/* welcomeContent={{
+            headline: "Get free fuel worth up to ₦5,000!",
+            description:
+              "Join the Refuel by ResQX waitlist today and unlock a #5,000 fuel voucher to try out the product. With Refuel by ResQX, The fuel comes to you wherever you are.",
+            ctaText: "Join the waitlist Now",
+          }} */}
     </html>
   );
 }
