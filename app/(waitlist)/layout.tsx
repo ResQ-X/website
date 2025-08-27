@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 
-const WAITLIST_GA_ID = "G-EZR18WSZN9";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://resqx.ng"),
   title: {
@@ -81,15 +79,15 @@ export default function WaitlistLayout({
 
         {/* Google Analytics for waitlist */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${WAITLIST_GA_ID}`}
+          src="https://www.googletagmanager.com/gtag/js?id=G-EZR18WSZN9"
           strategy="afterInteractive"
         />
-        <Script id="ga-waitlist" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${WAITLIST_GA_ID}', { anonymize_ip: true });
+            gtag('config', 'G-EZR18WSZN9');
           `}
         </Script>
 
