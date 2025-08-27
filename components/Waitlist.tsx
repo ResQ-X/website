@@ -9,6 +9,12 @@ import john from "../public/images/john.jpg";
 import joy from "../public/images/joy.jpg";
 import checkmark from "../public/images/checkmark.gif";
 
+declare global {
+  interface Window {
+    fbq: (action: string, event: string, data?: any) => void;
+  }
+}
+
 export const WaitList: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -45,14 +51,16 @@ export const WaitList: React.FC = () => {
 
       const data = await res.json();
       console.log("Response:", data);
-      setShowPopup(true); // show popup
+      setShowPopup(true);
+
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq("track", "Lead");
+      }
     } catch (error) {
       console.error("Error posting to waitlist:", error);
       alert("Failed to submit");
     }
   };
-
-  //timer
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -547,7 +555,7 @@ export const WaitList: React.FC = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       className="absolute right-[20px] top-[30px] -translate-y-1/2 text-[#777777] cursor-pointer"
                       onClick={() => {
-                        setShowPopup(false); // close popup
+                        setShowPopup(false);
                       }}
                     >
                       <path
