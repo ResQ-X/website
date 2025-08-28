@@ -8,6 +8,7 @@ import james from "../public/images/james.jpg";
 import john from "../public/images/john.jpg";
 import joy from "../public/images/joy.jpg";
 import checkmark from "../public/images/checkmark.gif";
+import caution from "../public/images/caution.gif";
 
 declare global {
   interface Window {
@@ -23,6 +24,9 @@ export const WaitList: React.FC = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,17 +49,26 @@ export const WaitList: React.FC = () => {
         }
       );
 
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-
       const data = await res.json();
-      console.log("Response:", data);
       setShowPopup(true);
 
       if (typeof window !== "undefined" && window.fbq) {
         window.fbq("track", "Lead");
       }
+      if (!res.ok) {
+        if (
+          data.message &&
+          data.message.toLowerCase().includes("already added to the waitlist")
+        ) {
+          setErrorMessage("This email has already been submitted.");
+          setShowErrorPopup(true);
+        } else {
+          setErrorMessage(data.message || "Something went wrong");
+          setShowErrorPopup(true);
+        }
+        return;
+      }
+      setShowPopup(true);
     } catch (error) {
       console.error("Error posting to waitlist:", error);
       alert("Failed to submit");
@@ -70,7 +83,7 @@ export const WaitList: React.FC = () => {
   });
 
   useEffect(() => {
-    const endTime = new Date("2025-09-22T23:59:59").getTime();
+    const endTime = new Date("2025-10-06T23:59:59").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -590,6 +603,61 @@ export const WaitList: React.FC = () => {
                     </div>
                     <p className="text-[#777777] font-medium">
                       Your details have been successfully added to the waitlist.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {showErrorPopup && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+                  <div className="relative bg-white px-6 py-4 rounded-[30px] shadow-lg text-center w-[270px] h-[270px] lg:w-[362px] lg:h-[270px] flex flex-col justify-center ">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="absolute right-[20px] top-[30px] -translate-y-1/2 text-[#777777] cursor-pointer"
+                      onClick={() => {
+                        setShowErrorPopup(false); // close error popup
+                      }}
+                    >
+                      <path
+                        d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                        stroke="#474747"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M9.16992 14.8299L14.8299 9.16992"
+                        stroke="#474747"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M14.8299 14.8299L9.16992 9.16992"
+                        stroke="#474747"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+
+                    {/* 🆕 Error icon */}
+                    <div className="flex justify-center">
+                      <Image
+                        src={caution}
+                        alt="caution"
+                        className=" w-[124px] h-[124px] justify-center"
+                      />
+                    </div>
+
+                    {/* 🆕 Dynamic error message */}
+                    <p className="text-[#777777] font-medium mt-4">
+                      {errorMessage ||
+                        "Something went wrong. Please try again."}
                     </p>
                   </div>
                 </div>

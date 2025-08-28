@@ -92,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({ title, description, rotate, image }) => {
                   <span className="text-sm text-gray-300">24/7 Hotline</span>
                   {/* <span className="text-base sm:text-lg font-semibold">0811-117-3779</span> */}
                   <span className="text-base sm:text-lg font-semibold">
-                    0201-330-6062
+                    0201-887-0024
                   </span>
                 </div>
               </a>

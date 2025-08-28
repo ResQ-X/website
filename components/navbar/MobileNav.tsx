@@ -26,7 +26,9 @@ const MobileNav = ({
       {/* Overlay */}
       <div
         className={`fixed inset-0 bg-black/30 backdrop-blur-3xl transition-opacity duration-300 lg:hidden z-40 ${
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+          isOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
         }`}
         onClick={onClose}
       />
@@ -42,14 +44,17 @@ const MobileNav = ({
           <button onClick={onClose} className="text-white hover:text-orange">
             <X size={24} />
           </button>
-        </div> 
-         
+        </div>
+
         {/* Links Container */}
         <div className="px-6 py-4">
           {/* Main Links */}
           <div className="space-y-7">
             {mainLinks.map((link, index) => (
-              <div key={`mobile-main-${link.text}-${index}`} className="relative">
+              <div
+                key={`mobile-main-${link.text}-${index}`}
+                className="relative"
+              >
                 {link.dropdownItems ? (
                   <button
                     onClick={() => toggleDropdown(link.text)}
@@ -100,7 +105,10 @@ const MobileNav = ({
           {/* Secondary Links */}
           <div className="space-y-4">
             {secondaryLinks.map((link, index) => (
-              <div key={`mobile-secondary-${link.text}-${index}`} className="relative">
+              <div
+                key={`mobile-secondary-${link.text}-${index}`}
+                className="relative"
+              >
                 {link.dropdownItems ? (
                   <button
                     onClick={() => toggleDropdown(link.text)}
@@ -124,9 +132,11 @@ const MobileNav = ({
                     href={link.href}
                     onClick={onClose}
                     className={`block text-lg text-white hover:text-orange ${
-                      link.text === "0201-330-6062" ? "font-semibold" : ""
+                      link.text === "0201-887-0024" ? "font-semibold" : ""
                     } ${
-                      link.text === "Get app" ? "btn text-white hover:text-white" : ""
+                      link.text === "Get app"
+                        ? "btn text-white hover:text-white"
+                        : ""
                     }`}
                   >
                     <span className="flex items-center gap-2">
