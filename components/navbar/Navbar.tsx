@@ -52,7 +52,7 @@ const Navbar = () => {
   ];
 
   const secondaryLinks: NavigationLink[] = [
-    { text: "0201-330-6062", href: "tel:+2342013306062", icon: PhoneOutgoing },
+    { text: "0201-887-0024", href: "tel:+2342013306062", icon: PhoneOutgoing },
     {
       text: "Discover",
       href: "/membership",
@@ -122,7 +122,7 @@ const Navbar = () => {
                     )}
                   >
                     {link.text}
-                    {link.text === "0201-330-6062" && (
+                    {link.text === "0201-887-0024" && (
                       <PhoneOutgoing size={20} />
                     )}
                     {link.text === "Discover" && <ChevronDown size={16} />}
